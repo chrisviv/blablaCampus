@@ -138,7 +138,7 @@ body{
 .formRegister{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     margin: 0px 15px;
 }
@@ -147,15 +147,14 @@ body{
     font-family: 'bungee';
     font-size: 16px;
     color: var(--blackSubtitle);
+    text-align: left;
+    width: 100%;
 }
 
-.formRegister > h2{
-    font-family: 'bungee';
-    font-size: 16px;
-}
+
 
 .ipRegister{
-    width: 99%;
+    width: 100%;
     border: 0;
     background-color: var(--grayBgInput);
     margin: 5px 0px;
@@ -223,8 +222,6 @@ body{
     background: var(--red);
     color: white;
     letter-spacing: 5px;
-    position: relative;
-    left: calc(50% - 125px);
     margin-bottom: 50px;
 }
 
@@ -235,13 +232,15 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     
 }
 .formLogin > h2{
     font-family: "bungee";
     color: var(--blackSubtitle);
     font-size: 20px;
+    text-align: left;
+    width: 100%;
 }
 .ipLogin{
     width: 100%;
@@ -256,7 +255,7 @@ body{
 .formLogin{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     margin: 50px 15px 0px 15px;
 }
@@ -271,12 +270,13 @@ body{
     background: var(--red);
     color: white;
     letter-spacing: 5px;
-    position: relative;
-    left: calc(50% - 125px);
     margin: 50px 0px 10px 0px;
 }
 
-
+.passwordBtn{
+    display: flex;
+    justify-content: center;
+}
 
 .passwordBtn > a> button{
     font-family: "worksans", sans-serif;
@@ -291,3 +291,17 @@ body{
     left: calc(50% - 115px);
 }
 
+.confirmMsg{
+    margin: 30px 10px;
+}
+.confirmMsg > h1{
+    font-family: 'bungee';
+    color: var(--blackSubtitle);
+    font-size: 24px;
+}
+.confirmMsg > h2{
+    font-family: 'epilogue';
+    color: var(--lightGray);
+    font-size: 13px;
+    margin-left: 10px;
+}
