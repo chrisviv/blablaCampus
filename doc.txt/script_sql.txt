@@ -18,7 +18,7 @@ CREATE TABLE trajets(
    date_etape2 DATETIME,
    date_etape3 DATETIME,
    date_destination DATETIME,
-   aller_retour LOGICAL,
+   aller_retour INT,
    nb_voyageurs INT,
    etape_1 VARCHAR(255),
    etape_2 VARCHAR(255),
