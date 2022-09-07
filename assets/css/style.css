@@ -319,20 +319,19 @@ body{
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.13); 
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.13);
+    -webkit-box-shadow: 0px 0px 24px 11px rgba(0,0,0, 0.116); 
+    box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
     padding: 20px;
     border-radius: 30px;
     width: 85%;
     position: absolute;
     right: 10px;
-    top: 85px;
+    top: 93px;
 }
 
 .userPanel::before{
     content: '';
     position: absolute;
-    
     top: -20px;
     right: 10px;
     height : 0;
