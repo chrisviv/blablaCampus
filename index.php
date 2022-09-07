@@ -19,14 +19,14 @@
         </div>
 
         <div class="startBtn" id="startBtn">
-            <a href="register.html">
+            <a href="register.php">
                 <img src="assets/img/car-icon.svg" alt="">
                 <button>COMMENCER</button>
             </a>
         </div>
 
         <div class="loginBtn" id="loginBtn">
-            <a href="login.html">
+            <a href="login.php">
                 <button>SE CONNECTER</button>
             </a>
         </div>

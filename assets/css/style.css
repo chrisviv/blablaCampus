@@ -116,21 +116,21 @@ body{
 }
 
 /*--------------REGISTER-------------------------------*/
-.headerRegister{
+.header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 10px;
 }
-.registerTittle{
+.headerTitle{
     font-family: 'worksans';
 }
-.registerTittle > h1{
+.headerTitle > h1{
     font-size: 12px;
     color: var(--red);
     letter-spacing: 5px;
 }
-.headerLogo > img{
+.headerLogo > a > img{
     width: 50px;
 }
 
@@ -155,13 +155,14 @@ body{
 }
 
 .ipRegister{
-    width: 100%;
+    width: 99%;
     border: 0;
     background-color: var(--grayBgInput);
     margin: 5px 0px;
     height: 50px;
     border-radius: 8px;
     font-family: "epilogue";
+    padding-left: 10px;
 }
 
 .infonMail{
@@ -172,18 +173,16 @@ body{
     font-size: 13px;
 }
 .txtRegister{
-    width: 100%;
+    width: 99%;
     border: 0;
     background-color: var(--grayBgInput);
     margin: 5px 0px;
     height: 150px;
     border-radius: 8px;
     font-family: "epilogue";
+    padding: 10px 0px 0px 10px
 }
 
-.ipRegister::placeholder{
-    padding-left: 10px;
-}
 
 .labelPic{
     display: flex;
@@ -214,7 +213,7 @@ body{
     width: 25px;
 }
 
-.submit{
+.submitRegister{
     font-family: "worksans", sans-serif;
     border: 0;
     border-radius: 20px;
@@ -227,5 +226,68 @@ body{
     position: relative;
     left: calc(50% - 125px);
     margin-bottom: 50px;
+}
+
+
+/*-----------------------------------LOGIN----------------------------------------*/
+
+.loginContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+.formLogin > h2{
+    font-family: "bungee";
+    color: var(--blackSubtitle);
+    font-size: 20px;
+}
+.ipLogin{
+    width: 100%;
+    border: 0;
+    background-color: var(--grayBgInput);
+    margin: 5px 0px;
+    height: 50px;
+    border-radius: 8px;
+    font-family: "epilogue";
+    padding-left: 10px;
+}
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 50px 15px 0px 15px;
+}
+
+.submitLogin{
+    font-family: "worksans", sans-serif;
+    border: 0;
+    border-radius: 20px;
+    width: 250px;
+    height: 70px;
+    font-size: 10px;
+    background: var(--red);
+    color: white;
+    letter-spacing: 5px;
+    position: relative;
+    left: calc(50% - 125px);
+    margin: 50px 0px 10px 0px;
+}
+
+
+
+.passwordBtn > a> button{
+    font-family: "worksans", sans-serif;
+    height: 80px;
+    border: 0;
+    background-color: white;
+    width: 240px;
+    font-size: 10px;
+    color: var(--red);
+    letter-spacing: 5px;
+    position: relative;
+    left: calc(50% - 115px);
 }
 
