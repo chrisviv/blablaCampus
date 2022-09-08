@@ -16,14 +16,18 @@
         <div class="form-container">
             <h1>RECHERCHER UN TRAJET</h1>
             <form action="" class="searchForm autocomplete-container" id="autocomplete-container">
-                <input type="text" placeholder="Départ" id='inputDepart'>
-                <input type="text" placeholder="Destination">
-                <input type="date">
-                <input type="submit" class="searchBtn" value="RECHERCHER">
+                <input type="text" placeholder="Départ" name="" id='inputDepart'>
+                <select name="" id="">
+
+                    <option value="adresse">Centre avenue du stade</option>
+                    <option value="adresse2">Campus numérique</option>
+                </select>
+                <input type="date" name="">
+                <input type="submit" name="" class="searchBtn" value="RECHERCHER">
             </form>
         </div>
 
- 
+
     </div>
 
     

@@ -1,44 +1,44 @@
-
 let autocomplete = document.getElementById("autocomplete-container")
 let inputDepart = document.getElementById("inputDepart");
 
 function addressAutocomplete(inputElement, containerElement, callback) {
-    
-    /* Active request promise reject function. To be able to cancel the promise when a new request comes */
-    var currentPromiseReject;
+
+  /* Active request promise reject function. To be able to cancel the promise when a new request comes */
+  var currentPromiseReject;
 
 
-    /* Current autocomplete items data (GeoJSON.Feature) */
-    var currentItems;
+  /* Current autocomplete items data (GeoJSON.Feature) */
+  var currentItems;
 
 
-    var clearButton = document.createElement("div");
-    clearButton.classList.add("clear-button");
-    addIcon(clearButton);
-    clearButton.addEventListener("click", (e) => {
-      e.stopPropagation();
-      inputElement.value = '';
-      callback(null);
-      clearButton.classList.remove("visible");
-      closeDropDownList();
-    });
-    inputElement.parentNode.appendChild(clearButton);
+  var clearButton = document.createElement("div");
+  clearButton.classList.add("clear-button");
+  addIcon(clearButton);
+  clearButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    inputElement.value = '';
+    callback(null);
+    clearButton.classList.remove("visible");
+    closeDropDownList();
+  });
+  inputElement.parentNode.appendChild(clearButton);
 
-    /* Execute a function when someone writes in the text field: */
-    inputElement.addEventListener("input", function(e) {
+  /* Execute a function when someone writes in the text field: */
+  inputElement.addEventListener("input", function (e) {
 
     /* Close any already open dropdown list */
     closeDropDownList();
 
     var currentValue = this.value;
-    
-     
+
+
 
     // Cancel previous request promise
     if (currentPromiseReject) {
       currentPromiseReject({
         canceled: true
       });
+      clearButton.classList.remove("visible");
     }
 
     if (!currentValue) {
@@ -46,13 +46,13 @@ function addressAutocomplete(inputElement, containerElement, callback) {
     }
 
     if (!currentValue) {
-        clearButton.classList.remove("visible");
-        return false;
-      }
-  
-      // Show clearButton when there is a text
-      clearButton.classList.add("visible");
-    
+      clearButton.classList.remove("visible");
+      return false;
+    }
+
+    // Show clearButton when there is a text
+    clearButton.classList.add("visible");
+
 
     /* Create a new promise and send geocoding request */
     var promise = new Promise((resolve, reject) => {
@@ -66,23 +66,24 @@ function addressAutocomplete(inputElement, containerElement, callback) {
           // check if the call was successful
           if (response.ok) {
             response.json().then(data => resolve(data));
+            
           } else {
             response.json().then(data => reject(data));
           }
         });
     });
 
-  
+
     promise.then((data) => {
-        currentItems = data.features;
+      currentItems = data.features;
 
       /*create a DIV element that will contain the items (values):*/
       var autocompleteItemsElement = document.createElement("div");
       autocompleteItemsElement.setAttribute("class", "autocomplete-items");
       containerElement.appendChild(autocompleteItemsElement);
 
-        /* For each item in the results */
-        data.features.forEach((feature, index) => {
+      /* For each item in the results */
+      data.features.forEach((feature, index) => {
         /* Create a DIV element for each element: */
         var itemElement = document.createElement("DIV");
         /* Set formatted address as item value */
@@ -90,13 +91,13 @@ function addressAutocomplete(inputElement, containerElement, callback) {
         autocompleteItemsElement.appendChild(itemElement);
 
         /* Set the value for the autocomplete text field and notify: */
-        itemElement.addEventListener("click", function(e) {
-        inputElement.value = currentItems[index].properties.formatted;
-        callback(currentItems[index]);
-        /* Close the list of autocompleted values: */
-        closeDropDownList();
-      });
-      autocompleteItemsElement.appendChild(itemElement);
+        itemElement.addEventListener("click", function (e) {
+          inputElement.value = currentItems[index].properties.city;
+          callback(currentItems[index]);
+          /* Close the list of autocompleted values: */
+          closeDropDownList();
+        });
+        autocompleteItemsElement.appendChild(itemElement);
       });
     }, (err) => {
       if (!err.canceled) {
@@ -123,19 +124,19 @@ function addressAutocomplete(inputElement, containerElement, callback) {
     svgElement.appendChild(iconElement);
     buttonElement.appendChild(svgElement);
   }
-  }
-  
+}
 
 
 
-  addressAutocomplete(inputDepart, autocomplete, (data) => {
-    console.log("Selected option: ");
-    console.log(data);
-  });
+
+addressAutocomplete(inputDepart, autocomplete, (data) => {
+  console.log("Selected option: ");
+  console.log(data);
+});
 
 
 
-  
+
 
 
 /* var myAPIKey = '360b948f27c34be5be832cd8c5e132e9' */

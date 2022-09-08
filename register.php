@@ -44,11 +44,11 @@
                 
                 <label for="addPic" class="labelPic">
                     
-                    <img class='uploadImg'src="assets/img/imagefile.svg" alt="">
+                    <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo">
                     <h3>Glisser-déposer ou parcourir un fichier</h3>
                     <h4 style="text-align: center ;">Taille recommandée: JPG, PNG, GIF <br> (150x150px, Max 10mb)</h4>
                 
-                    <input type="file" name="profilePic" id="addPic" style="display:none;">
+                    <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>
 
                 <input class='submitRegister' type="submit" name="" value="CRÉER UN COMPTE">
