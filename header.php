@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlaBlaCampus</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/bbcLogo.svg">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    <div class="header">
+<div class="header">
         <div class="headerLogo">
         <a href="index.php">
             <img src="assets/img/bbcLogo.svg" alt="photo du logo">
@@ -21,7 +10,7 @@
         </div>
     </div>
 
-    <div class="userPanel">
+    <div class="userPanel none" id="userPanel">
 
        <div class="profileContainer">
          <img src="https://picsum.photos/200/300" alt="Photo de profil">
@@ -34,6 +23,7 @@
         
        <div class="trajetBtn">
         <a href="trajets.php">
+            <img src="assets/img/addroad.svg" alt="">
             <button>PROPOSER UN TRAJET</button>
         </a>
         </div>
@@ -65,7 +55,5 @@
                 <a href="http://">Se déconnecter</a>
             </div>
         </div>
-        
     </div>
-</body>
-</html>
+    
