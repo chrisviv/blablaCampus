@@ -30,7 +30,7 @@
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur">
                 <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
-                <input class='submitLogin' type="submit" value="SE CONNECTER">
+                <input class='submitLogin' type="submit" name="" value="SE CONNECTER">
             </form>
     
 

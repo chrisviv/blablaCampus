@@ -11,7 +11,7 @@
 <body>
     <div class="mainAccueil">
         <div class="logo-container">
-            <div class="logo-img"><img src="assets/img/bbcLogo.svg" alt=""></div>
+            <div class="logo-img"><img src="assets/img/bbcLogo.svg" alt="logo de blablacampus"></div>
             <div class="logo-Tittle">
                 <h1>BLABLA</h1>
             </div>
@@ -19,7 +19,7 @@
 
         <div class="startBtn" id="startBtn">
             <a href="register.php">
-                <img src="assets/img/car-icon.svg" alt="">
+                <img src="assets/img/car-icon.svg" alt="icon d'une voiture">
                 <button>COMMENCER</button>
             </a>
         </div>
