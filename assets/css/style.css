@@ -12,6 +12,22 @@
     font-family: epilogue;
     src: url(../fonts/Epilogue-VariableFont_wght.ttf);
 }
+@font-face {
+    font-family: merriweather-italic;
+    src: url(../fonts/Merriweather-LightItalic.ttf);
+}
+@font-face {
+    font-family: merriweather-italic-black;
+    src: url(../fonts/Merriweather-BlackItalic.ttf);
+}
+@font-face {
+    font-family: overpass;
+    src: url(../fonts/Overpass-Regular.ttf);
+}
+@font-face {
+    font-family: overpass-bold;
+    src: url(../fonts/Overpass-Bold.ttf);
+}
 
 
 /*--------------GLOBALS-----------------*/
@@ -285,6 +301,8 @@ body {
     margin: 50px 15px 0px 15px;
 }
 
+
+
 .submitLogin {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -416,14 +434,18 @@ body {
     background: var(--red);
     border-radius: 20px;
     width: 100%;
-    margin: 20px 0px;
+    margin: 30px 0px;
+    padding: 5px;
+    justify-content: center;
+    display: flex;
+    height: 50px;
 
 }
 
 .trajetBtn>a>img {
     width: 25px;
     position: absolute;
-    left: calc(50% - 155px);
+    left: calc(50% - 150px);
 }
 
 .trajetBtn>a {
@@ -438,14 +460,13 @@ body {
     font-family: "worksans", sans-serif;
     border: 0;
     border-radius: 20px;
-
     font-weight: 100;
     font-size: 14px;
     background-color: transparent;
     color: white;
     letter-spacing: 5px;
-    margin: 30px 0px;
     position: relative;
+    margin-left: 10px;
 }
 
 .modalLink {
@@ -497,14 +518,34 @@ body {
 .autocomplete-container input, select {
     font-family: "epilogue";
     border: 0;
-    border-radius: 5px;
-    background-color: var(--grayBgInput);
-    padding: 10px;
+    background-color: transparent;
     color: var(--grayTextiInput);
     font-size: 16px;
     margin: 10px 0px;
+    width: 100%;
+    padding-left: 10px;
+    
 }
 
+.autocomplete-container input:focus{
+   outline: none;
+}
+
+.departBox{
+    background: var(--grayBgInput);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
 .autocomplete-container input::placeholder {
     color: var(--grayTextiInput);
 }
@@ -565,4 +606,203 @@ body {
     margin-top: 25px !important;
     position: relative;
     left: calc(50% - 125px)
+}
+
+.pcMain{
+    display: none;
+}
+
+
+.resetSubtitle{
+    font-family: 'epilogue';
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--lightGray);
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+    .mainAccueil{
+        display: none;
+    }
+
+    .road{
+        position: fixed;
+        left: 0;
+        z-index: -1;
+    }
+    .pcMain{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;flex-wrap: wrap;
+    }
+
+    .logo-container-pc{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo-container-pc > .logo-img > img{
+        width: 80px;
+    }
+    .logo-container-pc > .logo-Tittle > h1{
+        font-size: 30px;
+        
+    }
+
+    .logo-container-pc .logo-Tittle>h1::after {
+        font-family: "bungee";
+        margin: 0;
+        content: 'CAMPUS';
+        position: absolute;
+        color: var(--red);
+        bottom: -26px;
+        left: calc(50% - 65px);
+        font-weight: 100;
+    }
+
+    .left-content{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;  
+    }
+    .left-content-text > h2{
+        font-family: "merriweather-italic";
+        font-size:calc(1.2vw + 1vh + 1vmin);
+        margin: 50px 0px;
+    }
+    .left-content-text > h2 > span{
+        font-family: "merriweather-italic-black";
+        color: var(--red);
+    }
+    .left-content-text > p{
+        font-family: "overpass";
+        line-height: 40px;
+        font-size:calc(0.5vw + 0.2vh + 0.7vmin);
+    }
+    .left-content-text > p > span{
+        font-family: "overpass-bold";
+        color: var(--red);
+        
+    }
+    .right-content{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .box-apli{
+        width: calc(3vw + 4vh + 30vmin);
+        height: calc(100vh - 300px);
+        border-radius: 30px;
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
+        box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
+        background: white;
+    }
+
+    .container-app{
+        position: relative;
+       
+    }
+
+    .marker,.marker2{
+        position: absolute;
+        z-index: -1;
+    }
+    .marker{
+        left: -120px;
+        top: 50%;
+        width: 140px !important;
+        transform: rotate(-20deg);
+    }
+    .marker2{
+        right: -60px;
+        top: 10%;
+        width: 80px !important;
+        transform: rotate(10deg);
+    }
+
+    .box-apli > img{
+        margin: 30px 0px;
+        width: 80%;
+    }
+    .under-boxText{
+        font-family: "bungee";
+        margin: 40px 0px 0px 0px;
+    }
+    .under-boxText > p{
+        color: var(--blackTittle);
+        line-height: 18px;
+        font-size:calc(0.2vw + 0.8vh + 0.5vmin);
+    }
+    .under-boxText > p > span{
+        color: var(--red);
+    }
+
+    .startBtn {
+        background: var(--red);
+        border-radius: 20px;
+        width: 85%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .startBtn>button {
+        font-family: "worksans", sans-serif;
+        border: 0;
+        border-radius: 20px;
+        height: calc(1vw + 1vh + 4vmin);
+        font-size: 13px;
+        background: var(--red);
+        color: white;
+        letter-spacing: 10px;
+        position: relative;
+    }
+    
+    .startBtn>img {
+        width: 21px;
+        margin-right: 5px;
+    }
+
+    .loginBtn>button {
+        font-family: "worksans", sans-serif;
+        height: 80px;
+        border: 0;
+        background-color: transparent;
+        width: 280px;
+        font-size: 10px;
+        color: var(--red);
+        letter-spacing: 10px;
+    }
+
+    .info-legales{
+        position: absolute;
+        bottom: 25px;
+        left: 5%;
+        
+    }
+    .info-legales > a{
+        color: var(--red);
+        text-decoration: none;
+        font-family: "overpass";
+        cursor: pointer;
+        
+    }
+    
 }
