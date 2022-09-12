@@ -1,5 +1,16 @@
-<?php include('head.php')
+<?php include('head.php');
 require_once("./class/User.php");
+if(isset($_GET['register'])){
+    $user = new User();
+    $password = password_hash($_GET['password'], PASSWORD_DEFAULT);
+    $name = $_GET['nom'];
+    $username = $_GET['username'];
+    $email = $_GET['email'];
+    $bio = $_GET['bio'];
+    $picture = $_GET['profilePic'];
+    $user->register($name, $username,$password , $email, $bio, $picture);
+}
+
 ?>
 
     <div class="mainRegister">
@@ -16,7 +27,7 @@ require_once("./class/User.php");
         </div>
 
         <div class="registerContent">
-            <form action="" method="post" class="formRegister">
+            <form action="" method="get" class="formRegister">
 
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="nom" placeholder="Nom">
@@ -51,4 +62,5 @@ require_once("./class/User.php");
     </div>
 
     <script src="assets/js/file.js"></script>
-<?php include('footer.php')?>
+<?php include('footer.php');
+?>

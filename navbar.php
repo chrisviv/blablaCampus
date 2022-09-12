@@ -1,3 +1,12 @@
+<?php 
+require_once("./class/User.php");
+if(isset($_SESSION['name_user'])){
+
+}else{
+    header('Location: ./index.php');
+}
+
+?>
 <div class="header">
         <div class="headerLogo">
         <a href="index.php">
@@ -16,8 +25,8 @@
          <img src="https://picsum.photos/200/300" alt="Photo de profil">
         
          <div class="profile">
-             <h2>PHP USERNAME ICI, IMPORTANT!!!!!</h2>
-             <h3>PHP BIO ICI, IMPORTANT!!!</h3>
+             <h2><?php echo $_SESSION['name_user'] ?></h2>
+             <h3><?php echo $user['bio']?></h3>
          </div>
        </div>
         
