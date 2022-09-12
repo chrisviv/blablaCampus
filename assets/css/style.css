@@ -1,46 +1,28 @@
 @font-face {
     font-family: bungee;
-    src: url(../fonts/Bungee-Regular.ttf);
-}
-
+    src: url(../fonts/Bungee-Regular.ttf);}
 @font-face {
     font-family: worksans;
-    src: url(../fonts/WorkSans-VariableFont_wght.ttf);
-}
-
+    src: url(../fonts/WorkSans-VariableFont_wght.ttf);}
 @font-face {
     font-family: epilogue;
-    src: url(../fonts/Epilogue-VariableFont_wght.ttf);
-}
+    src: url(../fonts/Epilogue-VariableFont_wght.ttf);}
 @font-face {
     font-family: merriweather-italic;
-    src: url(../fonts/Merriweather-LightItalic.ttf);
-}
+    src: url(../fonts/Merriweather-LightItalic.ttf);}
 @font-face {
     font-family: merriweather-italic-black;
-    src: url(../fonts/Merriweather-BlackItalic.ttf);
-}
+    src: url(../fonts/Merriweather-BlackItalic.ttf);}
 @font-face {
     font-family: overpass;
-    src: url(../fonts/Overpass-Regular.ttf);
-}
+    src: url(../fonts/Overpass-Regular.ttf);}
 @font-face {
     font-family: overpass-bold;
-    src: url(../fonts/Overpass-Bold.ttf);
-}
-
-
+    src: url(../fonts/Overpass-Bold.ttf);}
 /*--------------GLOBALS-----------------*/
-body {
-    margin: 0;
-}
-
-.none {
-    display: none !important;
-}
-
+body {margin: 0;}
+.none {display: none !important;}
 /* -----------------------COLORS -------------------*/
-
 :root {
     --black: #000000;
     --blackTittle: #334747;
@@ -48,76 +30,34 @@ body {
     --red: #D41E45;
     --grayBgInput: #F0F0F0;
     --grayTextiInput: #555555;
-    --lightGray: #888888;
-}
-
+    --lightGray: #888888;}
 /*-----------------------------HEADER--------------------------------------------*/
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 25px;
-}
-
-.headerTitle {
-    font-family: 'worksans';
-}
-
-.headerTitle>h1 {
-    font-size: 12px;
-    color: var(--red);
-    letter-spacing: 5px;
-}
-
-.headerLogo>a>img {
-    width: 50px;
-}
-
-
-
+.header {display: flex;justify-content: space-between;align-items: center;padding: 20px 25px;}
+.headerTitle {font-family: 'worksans';}
+.headerTitle>h1 {font-size: 12px;color: var(--red);letter-spacing: 5px;}
+.headerLogo>a>img {width: 50px;}
 /* --------------------ACCUEIL----------------------------*/
-
 /* -----------------lOGO----------------  */
-.mainAccueil {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
+.mainAccueil {display: flex;align-items: center;justify-content: center;min-height: 100vh;flex-direction: column;}
 .logo-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px 15px;
-}
-
-.logo-img>img {
-    width: 100px;
-
-}
-
+    margin: 50px 15px;}
+.logo-img>img {width: 100px;}
 .logo-Tittle {
     margin: 0px 15px;
     display: flex;
     align-items: flex-start;
-    font-size: 20px;
-
-}
-
+    font-size: 20px;}
 .logo-Tittle>h1 {
     font-family: "bungee", sans-serif;
     margin: 0;
     position: relative;
     color: var(--blackTittle);
     font-weight: 100;
-    margin-bottom: 50px;
-
-}
-
+    margin-bottom: 50px;}
 .logo-Tittle>h1::after {
     font-family: "bungee";
     margin: 0;
@@ -126,16 +66,9 @@ body {
     color: var(--red);
     bottom: -40px;
     left: calc(50% - 90px);
-    font-weight: 100;
-}
-
+    font-weight: 100;}
 /*-------------BUTTONS----------------*/
-.startBtn {
-    background: var(--red);
-    border-radius: 20px;
-    width: 300px;
-}
-
+.startBtn {background: var(--red);border-radius: 20px;width: 300px;}
 .startBtn>a>button {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -145,21 +78,13 @@ body {
     background: var(--red);
     color: white;
     letter-spacing: 10px;
-    position: relative;
-}
-
-.startBtn>a>img {
-    width: 21px;
-    margin-right: 5px;
-}
-
+    position: relative;}
+.startBtn>a>img {width: 21px;margin-right: 5px;}
 .startBtn>a {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-}
-
+    text-decoration: none;}
 .loginBtn>a>button {
     font-family: "worksans", sans-serif;
     height: 80px;
@@ -168,27 +93,20 @@ body {
     width: 280px;
     font-size: 10px;
     color: var(--red);
-    letter-spacing: 10px;
-}
-
+    letter-spacing: 10px;}
 /*--------------REGISTER-------------------------------*/
-
 .formRegister {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0px 15px;
-}
-
+    margin: 0px 15px;}
 .formRegister>h2 {
     font-family: 'bungee';
     font-size: 16px;
     color: var(--blackSubtitle);
     text-align: left;
-    width: 100%;
-}
-
+    width: 100%;}
 .ipRegister {
     width: 100%;
     border: 0;
@@ -197,17 +115,13 @@ body {
     height: 50px;
     border-radius: 8px;
     font-family: "epilogue";
-    padding-left: 10px;
-}
-
+    padding-left: 10px;}
 .infonMail {
     text-align: center;
     color: var(--grayTextiInput);
     margin: 5px 0px 20px 0px;
     font-family: "epilogue";
-    font-size: 13px;
-}
-
+    font-size: 13px;}
 .txtRegister {
     width: 99%;
     border: 0;
@@ -216,10 +130,7 @@ body {
     height: 150px;
     border-radius: 8px;
     font-family: "epilogue";
-    padding: 10px 0px 0px 10px
-}
-
-
+    padding: 10px 0px 0px 10px}
 .labelPic {
     display: flex;
     flex-direction: column;
@@ -229,27 +140,18 @@ body {
     background-color: var(--grayBgInput);
     height: 150px;
     border-radius: 30px;
-    margin-bottom: 40px;
-}
-
+    margin-bottom: 40px;}
 .labelPic>h3 {
     font-family: 'epilogue';
     font-size: 13px;
     margin: 5px;
-    font-weight: 800;
-}
-
+    font-weight: 800;}
 .labelPic>h4 {
     font-family: 'epilogue';
     font-size: 10px;
     margin: 0;
-    color: var(--lightGray);
-}
-
-.uploadImg {
-    width: 25px;
-}
-
+    color: var(--lightGray);}
+.uploadImg {width: 25px;}
 .submitRegister {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -260,28 +162,19 @@ body {
     background: var(--red);
     color: white;
     letter-spacing: 5px;
-    margin-bottom: 50px;
-}
-
-
+    margin-bottom: 50px;}
 /*-----------------------------------LOGIN----------------------------------------*/
-
 .loginContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-}
-
+    align-items: center;}
 .formLogin>h2 {
     font-family: "bungee";
     color: var(--blackSubtitle);
     font-size: 20px;
     text-align: left;
-    width: 100%;
-}
-
+    width: 100%;}
 .ipLogin {
     width: 100%;
     border: 0;
@@ -290,19 +183,13 @@ body {
     height: 50px;
     border-radius: 8px;
     font-family: "epilogue";
-    padding-left: 10px;
-}
-
+    padding-left: 10px;}
 .formLogin {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 50px 15px 0px 15px;
-}
-
-
-
+    margin: 50px 15px 0px 15px;}
 .submitLogin {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -313,14 +200,8 @@ body {
     background: var(--red);
     color: white;
     letter-spacing: 5px;
-    margin: 50px 0px 10px 0px;
-}
-
-.passwordBtn {
-    display: flex;
-    justify-content: center;
-}
-
+    margin: 50px 0px 10px 0px;}
+.passwordBtn {display: flex;justify-content: center;}
 .passwordBtn>a>button {
     font-family: "worksans", sans-serif;
     height: 80px;
@@ -331,35 +212,20 @@ body {
     color: var(--red);
     letter-spacing: 5px;
     position: relative;
-    left: calc(50% - 115px);
-}
-
+    left: calc(50% - 115px);}
 /*----------CONFIRM-----------------*/
-
-.confirmMsg {
-    margin: 30px 10px;
-}
-
+.confirmMsg {margin: 30px 10px;}
 .confirmMsg>h1 {
     font-family: 'bungee';
     color: var(--blackSubtitle);
-    font-size: 24px;
-}
-
+    font-size: 24px;}
 .confirmMsg>h2 {
     font-family: 'epilogue';
     color: var(--lightGray);
     font-size: 13px;
-    margin-left: 10px;
-}
-
+    margin-left: 10px;}
 /*-------------------- PROFILE ------------------------------*/
-
-#userBtn {
-    position: relative;
-
-}
-
+#userBtn {position: relative;}
 .userPanel {
     display: flex;
     align-items: center;
@@ -374,9 +240,7 @@ body {
     position: absolute;
     z-index: 5;
     right: 10px;
-    top: 93px;
-}
-
+    top: 93px;}
 .userPanel::before {
     content: '';
     position: absolute;
@@ -386,50 +250,27 @@ body {
     width: 0;
     border-right: 25px solid transparent;
     border-bottom: 43px solid white;
-    border-left: 25px solid transparent;
-
-}
-
+    border-left: 25px solid transparent;}
 .profileContainer>img {
     width: 80px;
     height: 70px;
     border-radius: 100px;
     border: 3px solid var(--red);
-    margin-right: 10px;
-}
-
-.profileContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-
-}
-
-.profile {
-    width: 80%;
-    margin-left: 5px;
-}
-
+    margin-right: 10px;}
+.profileContainer {width: 100%;display: flex;flex-direction: row;}
+.profile {width: 80%;margin-left: 5px;}
 .profile>h2 {
     font-family: "bungee";
     color: var(--red);
     margin: 0;
     font-size: 22px;
-    line-height: 25px;
-}
-
+    line-height: 25px;}
 .profile>h3 {
     font-family: "epilogue";
     color: rgba(51, 51, 51, 0.562);
     margin: 0;
-    font-size: 12px;
-
-}
-
-.profileOptions {
-    width: 100%;
-}
-
+    font-size: 12px;}
+.profileOptions {width: 100%;}
 .trajetBtn {
     background: var(--red);
     border-radius: 20px;
@@ -438,24 +279,16 @@ body {
     padding: 5px;
     justify-content: center;
     display: flex;
-    height: 50px;
-
-}
-
+    height: 50px;}
 .trajetBtn>a>img {
     width: 25px;
     position: absolute;
-    left: calc(50% - 150px);
-}
-
+    left: calc(50% - 150px);}
 .trajetBtn>a {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-}
-
-
+    text-decoration: none;}
 .trajetBtn>a>button {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -466,55 +299,29 @@ body {
     color: white;
     letter-spacing: 5px;
     position: relative;
-    margin-left: 10px;
-}
-
+    margin-left: 10px;}
 .modalLink {
     margin: 5px 0px;
     display: flex;
     height: 50px;
     align-items: center;
-    width: 100%;
-}
-
-.modalLink>img {
-    width: 30px;
-}
-
+    width: 100%;}
+.modalLink>img {width: 30px;}
 .modalLink>a {
     text-decoration: none;
     font-family: "epilogue";
     color: var(--grayTextiInput);
     font-size: 16px;
-    margin-left: 20px;
-}
-
+    margin-left: 20px;}
 /*---------------------------------SEARCH---------------------------------------------*/
-
-.mainSearch {
-    min-height: 100vh;
-}
-
-.form-container {
-    margin: 50px 20px;
-}
-
+.mainSearch {min-height: 100vh;}
+.form-container {margin: 50px 20px;}
 .form-container>h1 {
     font-family: 'bungee';
     font-size: 20px;
-    color: var(--blackSubtitle);
-}
-
-.searchForm {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.autocomplete-container {
-    position: relative;
-}
-
+    color: var(--blackSubtitle);}
+.searchForm {display: flex;flex-direction: column;}
+.autocomplete-container {position: relative;}
 .autocomplete-container input, select {
     font-family: "epilogue";
     border: 0;
@@ -523,76 +330,33 @@ body {
     font-size: 16px;
     margin: 10px 0px;
     width: 100%;
-    padding-left: 10px;
-    
-}
-
-.autocomplete-container input:focus{
-   outline: none;
-}
-
+    padding-left: 10px;}
+.autocomplete-container input:focus{outline: none;}
 .departBox{
     background: var(--grayBgInput);
     display: flex;
     align-items: center;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px 0px;
-}
-
-
+    margin: 10px 0px;}
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-}
-.autocomplete-container input::placeholder {
-    color: var(--grayTextiInput);
-}
-
-
+    display: none;-webkit-appearance: none;}
+.autocomplete-container input::placeholder {color: var(--grayTextiInput);}
 .autocomplete-items {
-    font-family: "epilogue";
-    position: absolute;
-    border: 0;
-    box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1);
+    font-family: "epilogue"; position: absolute;
+    border: 0;box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1);
     background-color: var(--grayBgInput);
-    z-index: 2;
-    top: 44px;
-    left: 0;
-    right: 0;
-}
-
-.autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.autocomplete-items div:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-#inputDepart {
-    position: relative;
-}
-
+    z-index: 2;top: 44px;left: 0;right: 0;}
+.autocomplete-items div {padding: 10px;cursor: pointer;}
+.autocomplete-items div:hover {background-color: rgba(0, 0, 0, 0.1);}
+#inputDepart {position: relative;}
 .clear-button {
     color: rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    position: absolute;
-    right: 5px;
-    top: 17px;
-    display: none;
-}
-
-.clear-button.visible {
-    display: flex;
-}
-
-.clear-button:hover {
-    color: rgba(0, 0, 0, 0.6);
-}
-
+    cursor: pointer;position: absolute;
+    right: 5px; top: 17px;display: none;}
+.clear-button.visible {display: flex;}
+.clear-button:hover {color: rgba(0, 0, 0, 0.6);}
 .searchBtn {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -605,181 +369,154 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     letter-spacing: 10px;
     margin-top: 25px !important;
     position: relative;
-    left: calc(50% - 125px)
-}
-
-.pcMain{
-    display: none;
-}
-
-
+    left: calc(50% - 125px)}
+.pcMain{display: none;}
 .resetSubtitle{
     font-family: 'epilogue';
     font-size: 14px;
     line-height: 20px;
-    color: var(--lightGray);
-}
-
-
-
+    color: var(--lightGray);}
 /*------------------------------LIST--------------------------------*/
 .listMain>h1{
     font-family: "bungee";
     font-size: 25px;
-    color: var(--blackSubtitle);
-}
+    color: var(--blackSubtitle);}
 .infoTrajet{
     background: var(--grayBgInput);
     display: flex;
     justify-content: space-around;
-    align-items: center;
-}
-
+    align-items: center;}
 .dateTrajet > h2{
     font-family: "bungee";
-    margin: 0;
-}
-.day{
-    color: var(--red);
-}
+    margin: 0;}
+.day{color: var(--red);}
+/* ----------------------ANNULATION MA RESERVATION------ */
+.cancelMain>h1{
+    font-family: "bungee";
+    font-size: 17px;
+    color: var(--blackSubtitle);
+    margin: 50px 0 0 20px;}
 
+.cancelMain>p{
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--lightGray);}
 
+.cancelBtn{
+    background: var(--red);
+    border-radius: 10px;
+    width: 317px;
+    height:55px;
+    display: flex;
+    justify-content: center;
+    margin: 40px 20px 20px 20px;}
+
+.cancelBtn>a>button {
+    font-family: "worksans", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border: 0;
+    background: var(--red);
+    color: white;
+    line-height: 15px;
+    letter-spacing: 5px;}
+
+.cancelBtn>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-direction: column;}
+
+.cancelReturn>p{
+    font-family:  "worksans", sans-serif;
+    line-height: 12px;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: var(--red);}
 
 @media screen and (min-width: 1024px) {
-    .mainAccueil{
-        display: none;
-    }
-
-    .road{
-        position: fixed;
-        left: 0;
-        z-index: -1;
-    }
+    .mainAccueil{display: none;}
+    .road{position: fixed;left: 0;z-index: -1;}
     .pcMain{
-        width: 100%;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;flex-wrap: wrap;
-    }
-
-    .logo-container-pc{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .logo-container-pc > .logo-img > img{
-        width: 80px;
-    }
-    .logo-container-pc > .logo-Tittle > h1{
-        font-size: 30px;
-        
-    }
-
+        width: 100%;min-height: 100vh;
+        display: flex;justify-content: center;
+        align-items: center;flex-wrap: wrap;}
+    .logo-container-pc{display: flex;justify-content: center;align-items: center;}
+    .logo-container-pc > .logo-img > img{width: 80px;}
+    .logo-container-pc > .logo-Tittle > h1{font-size: 30px;}
     .logo-container-pc .logo-Tittle>h1::after {
-        font-family: "bungee";
-        margin: 0;
+        font-family: "bungee";margin: 0;
         content: 'CAMPUS';
         position: absolute;
         color: var(--red);
         bottom: -26px;
         left: calc(50% - 65px);
-        font-weight: 100;
-    }
-
+        font-weight: 100;}
     .left-content{
         width: 40%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;  
-    }
+        align-items: flex-start; }
     .left-content-text > h2{
         font-family: "merriweather-italic";
         font-size:calc(1.2vw + 1vh + 1vmin);
-        margin: 50px 0px;
-    }
+        margin: 50px 0px;}
     .left-content-text > h2 > span{
         font-family: "merriweather-italic-black";
-        color: var(--red);
-    }
+        color: var(--red);}
     .left-content-text > p{
         font-family: "overpass";
         line-height: 40px;
-        font-size:calc(0.5vw + 0.2vh + 0.7vmin);
-    }
+        font-size:calc(0.5vw + 0.2vh + 0.7vmin);}
     .left-content-text > p > span{
         font-family: "overpass-bold";
-        color: var(--red);
-        
-    }
-    .right-content{
-        width: 50%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
+        color: var(--red);}
+    .right-content{width: 50%;display: flex;align-items: center;flex-direction: column;}
     .box-apli{
         width: calc(3vw + 4vh + 30vmin);
         height: calc(100vh - 300px);
-        border-radius: 30px;
-        padding: 26px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        border-radius: 30px;padding: 26px;
+        display: flex;flex-direction: column;
+        justify-content: center;align-items: center;
         -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
         box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
-        background: white;
-    }
-
-    .container-app{
-        position: relative;
-       
-    }
-
-    .marker,.marker2{
-        position: absolute;
-        z-index: -1;
-    }
+        background: white;}
+    .container-app{position: relative;}
+    .marker,.marker2{position: absolute;z-index: -1;}
     .marker{
         left: -120px;
         top: 50%;
         width: 140px !important;
-        transform: rotate(-20deg);
-    }
+        transform: rotate(-20deg);    }
     .marker2{
         right: -60px;
         top: 10%;
         width: 80px !important;
-        transform: rotate(10deg);
-    }
-
+        transform: rotate(10deg);    }
     .box-apli > img{
         margin: 30px 0px;
-        width: 80%;
-    }
+        width: 80%;    }
     .under-boxText{
         font-family: "bungee";
-        margin: 40px 0px 0px 0px;
-    }
+        margin: 40px 0px 0px 0px;    }
     .under-boxText > p{
         color: var(--blackTittle);
         line-height: 18px;
-        font-size:calc(0.2vw + 0.8vh + 0.5vmin);
-    }
+        font-size:calc(0.2vw + 0.8vh + 0.5vmin);    }
     .under-boxText > p > span{
-        color: var(--red);
-    }
-
+        color: var(--red);}
     .startBtn {
         background: var(--red);
         border-radius: 20px;
         width: 85%;
         display: flex;
-        justify-content: center;
-    }
-    
+        justify-content: center;}
     .startBtn>button {
         font-family: "worksans", sans-serif;
         border: 0;
@@ -789,14 +526,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         background: var(--red);
         color: white;
         letter-spacing: 10px;
-        position: relative;
-    }
-    
-    .startBtn>img {
-        width: 21px;
-        margin-right: 5px;
-    }
-
+        position: relative;}
+    .startBtn>img {width: 21px;margin-right: 5px;}
     .loginBtn>button {
         font-family: "worksans", sans-serif;
         height: 80px;
@@ -805,21 +536,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         width: 280px;
         font-size: 10px;
         color: var(--red);
-        letter-spacing: 10px;
-    }
-
+        letter-spacing: 10px;}
     .info-legales{
         position: absolute;
         bottom: 25px;
-        left: 5%;
-        
-    }
+        left: 5%; }
     .info-legales > a{
         color: var(--red);
         text-decoration: none;
         font-family: "overpass";
-        cursor: pointer;
-        
-    }
-    
+        cursor: pointer;}
 }
