@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlaBlahCampus</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/bbcLogo.svg">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+<?php include('head.php')?>
     <div class="mainLogin">
         <div class="header">
             <div class="headerLogo">
@@ -30,7 +20,7 @@
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur">
                 <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
-                <input class='submitLogin' type="submit" value="SE CONNECTER">
+                <input class='submitLogin' type="submit" name="" value="SE CONNECTER">
             </form>
     
 
@@ -41,5 +31,4 @@
         </div>
     </div>
     
-</body>
-</html>
+<?php include('footer.php')?>

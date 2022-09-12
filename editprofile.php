@@ -1,37 +1,28 @@
 <?php include('head.php')?>
 
     <div class="mainRegister">
-        <div class="header">
-            <div class="headerLogo">
-                <a href="index.php">
-                    <img src="assets/img/bbcLogo.svg" alt="photo du logo">
-                </a>
-            </div>
+     <?php include('navbar.php') ?>
 
-            <div class="headerTitle">
-                <h1>CRÉER UN COMPTE</h1>
-            </div>
-        </div>
+          
 
         <div class="registerContent">
             <form action="" method="" class="formRegister">
 
-                <h2>ENTREZ VOS COORDONNÉS</h2>
+                <h2>MODIFIEZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="nom" placeholder="Nom">
-                <input class="ipRegister" type="text" name="username" placeholder="Nom d'utilisateur">
 
-                <h2>ENTREZ VOTRE MOT DE PASSE</h2>
+                <h2>MODIFIEZ VOTRE MOT DE PASE</h2>
                 <input class="ipRegister" type="password" name="password" placeholder="Mot de passe">
 
-                <h2>ENTREZ VOTRE EMAIL</h2>
+                <h2>MODIFIEZ VOTRE EMAIL</h2>
                 <input class="ipRegister" type="email" name="email" placeholder="Email">
                 <p class="infonMail">Ajoutez votre adresse e-mail pour recevoir des notifications sur votre activité sur Foundation. Cela ne sera pas affiché sur votre profil.</p>
 
-                <h2>ENTREZ VOTRE BIOGRAPHIE</h2>
+                <h2>MODIFIEZ VOTRE BIOGRAPHIE</h2>
                 <textarea class="txtRegister" type="text" name="bio" placeholder="Entrez votre bio ici"></textarea>
 
                 
-                <h2>TÉLÉCHARGEZ UNE IMAGE DE PROFIL</h2>
+                <h2>MODIFIER VOTRE IMAGE DE PROFIL</h2>
                 
                 <label for="addPic" class="labelPic">
                     
@@ -42,11 +33,12 @@
                     <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>
 
-                <input class='submitRegister' type="submit" name="" value="CRÉER UN COMPTE">
+                <input class='submitRegister' type="submit" name="" value="METTRE À JOUR">
             </form>
         </div>
 
     </div>
 
+    <script src="assets/js/user.js"></script>
     <script src="assets/js/file.js"></script>
 <?php include('footer.php')?>
