@@ -622,9 +622,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 
+/*------------------------------LIST--------------------------------*/
+.listMain>h1{
+    font-family: "bungee";
+    font-size: 25px;
+    color: var(--blackSubtitle);
+}
+.infoTrajet{
+    background: var(--grayBgInput);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
-
-
+.dateTrajet > h2{
+    font-family: "bungee";
+    margin: 0;
+}
+.day{
+    color: var(--red);
+}
 
 
 
