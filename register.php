@@ -1,19 +1,7 @@
-<?php 
-
+<?php include('head.php')
 require_once("./class/User.php");
-
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlaBlaCampus</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/bbcLogo.svg">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+
     <div class="mainRegister">
         <div class="header">
             <div class="headerLogo">
@@ -62,13 +50,5 @@ require_once("./class/User.php");
 
     </div>
 
-
-
-</body>
-</html>
-
-<?php
-if($_POST['register']=="register" && !empty($_POST['nom']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['bio'])){
-    $user = new User();
-    $user -> register($_POST['nom'], $_POST['username'], $_POST['password'], $_POST['email'], $_POST['bio']);
-    }
+    <script src="assets/js/file.js"></script>
+<?php include('footer.php')?>
