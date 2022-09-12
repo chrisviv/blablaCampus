@@ -1,4 +1,13 @@
-<?php include('head.php')?>
+<?php include('head.php');
+require_once("./class/User.php");
+if(isset($_GET['login'])){
+    $username = $_GET['username'];
+    $password = $_GET['password'];
+    $user = new User();
+    $user->login($username, $password);
+}
+
+?>
     <div class="mainLogin">
         <div class="header">
             <div class="headerLogo">
@@ -16,11 +25,11 @@
        
            
             
-            <form action="" method="" class="formLogin">
+            <form action="" method="get" class="formLogin">
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur">
                 <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
-                <input class='submitLogin' type="submit" name="" value="SE CONNECTER">
+                <input class='submitLogin' type="submit" name="login" value="SE CONNECTER">
             </form>
     
 
