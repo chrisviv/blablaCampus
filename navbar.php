@@ -42,7 +42,7 @@
 
             <div class="modalLink">
                 <img src="assets/img/people.svg" alt="icon d'un bonhomme">
-                <a href="http://">Modifier mes informations</a>
+                <a href="editprofile.php">Modifier mes informations</a>
             </div>
             
             <div class="modalLink">

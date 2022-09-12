@@ -10,7 +10,11 @@
 
 @font-face {
     font-family: epilogue;
-    src: url(../fonts/Epilogue-VariableFont_wght.ttf);
+    src: url(../fonts/Epilogue-Light.ttf);
+}
+@font-face {
+    font-family: epilogueBold;
+    src: url(../fonts/Epilogue-Bold.ttf);
 }
 @font-face {
     font-family: merriweather-italic;
@@ -623,9 +627,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 /*------------------------------LIST--------------------------------*/
+.listMain{
+    margin: 25px;
+}
 .listMain>h1{
     font-family: "bungee";
-    font-size: 25px;
+    font-size: 20px;
     color: var(--blackSubtitle);
 }
 .infoTrajet{
@@ -633,16 +640,70 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 15px;
+    border-radius: 20px;
+}
+.dateTrajet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
 }
 
 .dateTrajet > h2{
     font-family: "bungee";
     margin: 0;
+    line-height: 30px;
 }
 .day{
     color: var(--red);
+    font-size: 35px;
+}
+.month{
+    font-size: 20px;
 }
 
+.placesTrajet{
+    font-family: 'epilogue';
+    font-weight: lighter;
+    color: var(--lightGray);
+    font-size: 10px;
+    width: 60%;
+}
+
+.trajetCount > h2{
+    font-family: 'epilogue';
+    font-size: 16px;
+    color: var(--lightGray);
+}
+
+.phpNumber{
+    font-family: 'epilogueBold';
+    color: var(--red);
+}
+.clockInfo{
+    display: flex;
+    font-family: 'epilogue';
+    color: var(--lightGray);
+}
+.clockInfo>h2{
+    font-size: 13px;
+    margin: 10px;
+}
+
+.card-trajet{
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
+    box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
+
+}
+.card-trajet > h2{
+    font-family: "worksans";
+    width: 100%;
+    font-size: 12px;
+    text-align: end;
+}
 
 
 @media screen and (min-width: 1024px) {
