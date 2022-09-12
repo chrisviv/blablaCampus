@@ -1,5 +1,7 @@
 <?php 
 require_once("./class/User.php");
+
+
 if(isset($_SESSION['name_user'])){
 
 }else{
@@ -25,8 +27,8 @@ if(isset($_SESSION['name_user'])){
          <img src="https://picsum.photos/200/300" alt="Photo de profil">
         
          <div class="profile">
-             <h2><?php echo $_SESSION['name_user'] ?></h2>
-             <h3><?php echo $user['bio']?></h3>
+             <h2><?php echo $_SESSION['name_user']; ?></h2>
+             <h3><?php echo 'Bio à mettre'?></h3>
          </div>
        </div>
         
@@ -61,7 +63,7 @@ if(isset($_SESSION['name_user'])){
 
             <div class="modalLink">
                 <img src="assets/img/ForwardArrow.png" alt="icon d'un flèche pour se déconnecter">
-                <a href="http://">Se déconnecter</a>
+                <a href="logout.php">Se déconnecter</a>
             </div>
         </div>
     </div>

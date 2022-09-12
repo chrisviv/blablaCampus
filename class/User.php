@@ -35,13 +35,13 @@ class User extends Database {
         $login = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
         $login->bindValue(':username', $username);
         $login->execute();
-        $user = $login->fetch();
-        if ($user && password_verify($password, $user[password_user])) {
+        $dataUser = $login->fetch();
+        if ($dataUser && password_verify($password, $dataUser[password_user])) {
             session_start();
-            $_SESSION['name_user'] = $username;
-            echo $user['bio'];
-            // $_SESSION['bio'] = $this['bio'];
+            $_SESSION['name_user'] = $dataUser['name_user'];
+            $bio = $dataUser['bio'];
             header('Location: ./search.php');
+
         }
         else {
             echo "Nom d'utilisateur ou mot de passe incorrect !";
@@ -51,6 +51,6 @@ class User extends Database {
 
     public function logout(){
         session_destroy();
-        header('Location: ./indexphp');
+        header('Location: ./index.php');
     }
 }
