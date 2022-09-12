@@ -64,4 +64,8 @@ class User extends Database {
         $datas = $userData->fetch();
         return $datas[0];
     }
+
+    public function editData(){
+        echo 'hello';
+    }
 }

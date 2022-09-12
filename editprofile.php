@@ -1,4 +1,15 @@
-<?php include('head.php')?>
+<?php include('head.php');
+require_once("./class/User.php");
+$user = new User();
+
+if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $user->editData();
+}
+
+
+?>
 
     <div class="mainRegister">
      <?php include('navbar.php') ?>
@@ -6,20 +17,20 @@
           
 
         <div class="registerContent">
-            <form action="" method="" class="formRegister">
+            <form action="" method="post" class="formRegister">
 
                 <h2>MODIFIEZ VOS COORDONNÉS</h2>
-                <input class="ipRegister" type="text" name="nom" placeholder="Nom">
+                <input class="ipRegister" type="text" name="nom" placeholder="Nom" value="<?php echo $user->getData('username') ?>">
 
                 <h2>MODIFIEZ VOTRE MOT DE PASE</h2>
                 <input class="ipRegister" type="password" name="password" placeholder="Mot de passe">
 
                 <h2>MODIFIEZ VOTRE EMAIL</h2>
-                <input class="ipRegister" type="email" name="email" placeholder="Email">
+                <input class="ipRegister" type="email" name="email" placeholder="Email" value="<?php echo $user->getData('mail') ?>">
                 <p class="infonMail">Ajoutez votre adresse e-mail pour recevoir des notifications sur votre activité sur Foundation. Cela ne sera pas affiché sur votre profil.</p>
 
                 <h2>MODIFIEZ VOTRE BIOGRAPHIE</h2>
-                <textarea class="txtRegister" type="text" name="bio" placeholder="Entrez votre bio ici"></textarea>
+                <textarea class="txtRegister" type="text" name="bio" placeholder="Entrez votre bio ici"><?php echo $user->getData('bio') ?></textarea>
 
                 
                 <h2>MODIFIER VOTRE IMAGE DE PROFIL</h2>
@@ -33,7 +44,7 @@
                     <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>
 
-                <input class='submitRegister' type="submit" name="" value="METTRE À JOUR">
+                <input class='submitRegister' type="submit" name="editprofil" value="METTRE À JOUR">
             </form>
         </div>
 

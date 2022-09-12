@@ -1,6 +1,5 @@
 <?php include('head.php');
 require_once("./class/User.php");
-session_start();
 if(isset($_GET['register'])){
     $user = new User();
     $password = password_hash($_GET['password'], PASSWORD_DEFAULT);
