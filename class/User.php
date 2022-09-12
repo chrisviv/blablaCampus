@@ -2,6 +2,10 @@
 require_once("./class/Database.php");
 session_start();
 class User extends Database {
+
+    public $username;
+    public $picture;
+    public $bio;
     
     public function register($nom, $username, $password, $email, $bio, $picture) {
         $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
@@ -37,7 +41,6 @@ class User extends Database {
         $login->execute();
         $dataUser = $login->fetch();
         if ($dataUser && password_verify($password, $dataUser[password_user])) {
-            session_start();
             $_SESSION['name_user'] = $dataUser['name_user'];
             $bio = $dataUser['bio'];
             header('Location: ./search.php');
@@ -52,5 +55,13 @@ class User extends Database {
     public function logout(){
         session_destroy();
         header('Location: ./index.php');
+    }
+
+    public function getData($data){
+        $userData = $this->connect()->prepare("SELECT $data FROM users WHERE username = :username");
+        $userData->bindValue(':username', $_SESSION['name_user']);
+        $userData->execute();
+        $datas = $userData->fetch();
+        return $datas[0];
     }
 }

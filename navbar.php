@@ -1,7 +1,7 @@
 <?php 
 require_once("./class/User.php");
 
-
+$user = new User();
 if(isset($_SESSION['name_user'])){
 
 }else{
@@ -28,7 +28,7 @@ if(isset($_SESSION['name_user'])){
         
          <div class="profile">
              <h2><?php echo $_SESSION['name_user']; ?></h2>
-             <h3><?php echo 'Bio à mettre'?></h3>
+             <h3><?php echo $user->getData('bio'); ?></h3>
          </div>
        </div>
         

@@ -1,6 +1,10 @@
 <?php include('head.php')?>
-    <?php include('homepc.php') ?>
-
+    <?php include('homepc.php');
+    if(isset($_SESSION['name_user'])){
+        header("Location:./search.php");
+    }
+    
+    ?>
 
     <div class="mainAccueil">
         <div class="logo-container">
