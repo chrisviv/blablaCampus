@@ -1,10 +1,3 @@
-<?php
-
-require '../class/Autoloader.php';
-class\Autoloader::register();
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

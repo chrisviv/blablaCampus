@@ -1,6 +1,5 @@
 <?php 
 require_once("./class/Database.php");
-require '../class/Autoloader.php';
 class User extends Database {
     
     public function register($nom, $username, $password, $email, $bio) {
@@ -33,7 +32,7 @@ class User extends Database {
         $login = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
         $login->bindValue(':username', $username);
         $user = $login->fetch();
-        if ($user $$ password_verify($password, $user[password])) {
+        if ($user && password_verify($password, $user[password])) {
             $_SESSION['name_user'] = $username;
             echo $_SESSION['name_user'];
         }

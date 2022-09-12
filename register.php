@@ -1,3 +1,8 @@
+<?php 
+
+require_once("./class/User.php");
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,7 +28,7 @@
         </div>
 
         <div class="registerContent">
-            <form action="" method="" class="formRegister">
+            <form action="" method="post" class="formRegister">
 
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="nom" placeholder="Nom">
@@ -51,7 +56,7 @@
                     <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>
 
-                <input class='submitRegister' type="submit" name="" value="CRÉER UN COMPTE">
+                <input class='submitRegister' type="submit" name="register" value="CRÉER UN COMPTE">
             </form>
         </div>
 
@@ -61,3 +66,9 @@
 
 </body>
 </html>
+
+<?php
+if($_POST['register']=="register" && !empty($_POST['nom']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['bio'])){
+    $user = new User();
+    $user -> register($_POST['nom'], $_POST['username'], $_POST['password'], $_POST['email'], $_POST['bio']);
+    }
