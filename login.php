@@ -3,7 +3,7 @@ require_once("./class/User.php");
 if(isset($_GET['login'])){
     $username = $_GET['username'];
     $password = $_GET['password'];
-    $user = new User();
+    $user = new User($username);
     $user->login($username, $password);
 }
 

@@ -1,11 +1,33 @@
 <?php 
 require_once("./class/Database.php");
-session_start();
 class User extends Database {
-
+    
     public $username;
+    public $name;
+    public $mail;
     public $picture;
     public $bio;
+    private $password;
+    
+    public function __construct($username){
+        session_start();
+        $initData = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
+        if(isset($_SESSION['name_user'])){
+            $initData->bindValue(':username', $_SESSION['name_user']);
+        }
+        else{
+            $initData->bindValue(':username', $username);
+        }
+        $pseudo = $username;
+        $initData->execute();
+        $dataUser = $initData->fetch();
+        $this->username = $dataUser[1];
+        $this->password = $dataUser[2];
+        $this->name = $dataUser[3];
+        $this->mail = $dataUser[4];
+        $this->bio = $dataUser[5];
+        $this->picture = $dataUser[6];
+    }
     
     public function register($nom, $username, $password, $email, $bio, $picture) {
         $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
@@ -39,10 +61,10 @@ class User extends Database {
         $login = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
         $login->bindValue(':username', $username);
         $login->execute();
-        $dataUser = $login->fetch();
-        if ($dataUser && password_verify($password, $dataUser[password_user])) {
-            $_SESSION['name_user'] = $dataUser['name_user'];
-            $bio = $dataUser['bio'];
+        $logData = $login->fetch();
+        if ($logData && password_verify($password, $logData[2])) {
+            $_SESSION['name_user'] = $logData['username'];
+            $bio = $logData['bio'];
             header('Location: ./search.php');
 
         }

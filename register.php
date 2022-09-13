@@ -1,14 +1,14 @@
 <?php include('head.php');
 require_once("./class/User.php");
 if(isset($_GET['register'])){
-    $user = new User();
+    $user = new User($username);
     $password = password_hash($_GET['password'], PASSWORD_DEFAULT);
     $name = $_GET['nom'];
     $username = $_GET['username'];
     $email = $_GET['email'];
     $bio = $_GET['bio'];
     $picture = $_GET['profilePic'];
-    $user->register($name, $username,$password , $email, $bio, $picture);
+    $user->register($name, $username, $password, $email, $bio, $picture);
 }
 
 ?>
