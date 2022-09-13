@@ -6,12 +6,10 @@
     src: url(../fonts/WorkSans-VariableFont_wght.ttf);}
 @font-face {
     font-family: epilogue;
-    src: url(../fonts/Epilogue-Light.ttf);
-}
+    src: url(../fonts/Epilogue-Light.ttf);}
 @font-face {
     font-family: epilogueBold;
-    src: url(../fonts/Epilogue-Bold.ttf);
-}
+    src: url(../fonts/Epilogue-Bold.ttf);}
 @font-face {
     font-family: merriweather-italic;
     src: url(../fonts/Merriweather-LightItalic.ttf);}
