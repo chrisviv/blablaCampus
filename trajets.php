@@ -2,7 +2,7 @@
 <?php include('navbar.php');?>
 <div class="mainReservation">
     
-    <h1>MES RÉSERVATIONS</h2>
+    <h1>MES TRAJETS</h2>
 
     <div class="infoTrajet mg-20">
         <div class="dateTrajet">
@@ -17,7 +17,7 @@
 
         <div class="go-return"><img src="assets/img/go-return.svg" alt=""></div>
     </div>
-
+ 
 </div>
 
 
