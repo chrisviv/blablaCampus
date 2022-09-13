@@ -20,6 +20,7 @@
     font-family: overpass-bold;
     src: url(../fonts/Overpass-Bold.ttf);}
 /*--------------GLOBALS-----------------*/
+*{box-sizing: border-box;padding: 0;}
 body {margin: 0;}
 .none {display: none !important;}
 /* -----------------------COLORS -------------------*/
