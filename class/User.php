@@ -64,7 +64,6 @@ class User extends Database {
         $logData = $login->fetch();
         if ($logData && password_verify($password, $logData[2])) {
             $_SESSION['name_user'] = $logData['username'];
-            $bio = $logData['bio'];
             header('Location: ./search.php');
 
         }
@@ -87,7 +86,36 @@ class User extends Database {
         return $datas[0];
     }
 
-    public function editData(){
-        echo 'hello';
+    public function editData($username, $password, $email, $bio, $picture){
+        $checkPass = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
+        $checkPass->bindValue(':username', $_SESSION['name_user']);
+        $checkPass->execute();
+        $logData = $checkPass->fetch();
+        if ($logData && password_verify($password, $logData[2])) {
+            
+        }
+        else {
+            echo "Nom d'utilisateur ou mot de passe incorrect !";
+            echo $_SESSION['name_user'];
+        }
+        $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE email = :email");
+        $checkMail->bindValue(':email', $email);
+        $usernameExist = $checkName->fetch();
+        $mailExist = $checkMail->fetch();
+        if ($mailExist != false) {
+            echo "Cette adresse email est déjà utilisée.";
+        }
+        else {
+            $insert = $this->connect()->prepare("UPDATE `users` SET username = :username, SET mail = :mail, SET bio = :bio, SET picture = :picture WHERE username = :lastname");
+            $insert->bindParam(':username', $username, PDO::PARAM_STR);
+            $insert->bindParam(':mdp', $password, PDO::PARAM_STR);
+            $insert->bindParam(':nom', $nom, PDO::PARAM_STR);
+            $insert->bindParam(':mail', $email, PDO::PARAM_STR);
+            $insert->bindParam(':bio', $bio, PDO::PARAM_STR);
+            $insert->bindParam(':picture', $picture, PDO::PARAM_STR);
+            $insert->bindParam(':lastname', $_SESSION['name_user'], PDO::PARAM_STR);
+            $insert->execute();
+            header("Location:./search.php");
+        }
     }
 }

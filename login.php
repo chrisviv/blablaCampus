@@ -6,6 +6,9 @@ if(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['usernam
     $user = new User($username);
     $user->login($username, $password);
 }
+elseif(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['username'])){
+    $login = $_POST['username'];
+}
 
 ?>
     <div class="mainLogin">
@@ -27,7 +30,7 @@ if(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['usernam
             
             <form action="" method="post" class="formLogin">
                 <h2>ENTREZ VOS COORDONNÉS</h2>
-                <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur">
+                <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php if(isset($login)){echo $login;}?>">
                 <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
                 <input class='submitLogin' type="submit" name="login" value="SE CONNECTER">
             </form>
