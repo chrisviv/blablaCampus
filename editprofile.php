@@ -1,12 +1,20 @@
 <?php include('head.php');
 require_once("./class/User.php");
-$user = new User();
+// $user = new User();
 
-if(isset($_POST['login'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $user->editData();
-}
+if(isset($_POST['edit']))
+
+
+// if(isset($_GET['register'])){
+//     $user = new User($username);
+//     $password = password_hash($_GET['password'], PASSWORD_DEFAULT);
+//     $name = $_GET['nom'];
+//     $username = $_GET['username'];
+//     $email = $_GET['email'];
+//     $bio = $_GET['bio'];
+//     $picture = $_GET['profilePic'];
+//     $user->editData($name, $username, $password, $email, $bio, $picture);
+// }
 
 
 ?>
@@ -17,13 +25,13 @@ if(isset($_POST['login'])){
           
 
         <div class="registerContent">
-            <form action="" method="post" class="formRegister">
+            <form action="edit" method="post" class="formRegister">
 
                 <h2>MODIFIEZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="nom" placeholder="Nom" value="<?php echo $user->getData('username') ?>">
 
                 <h2>MODIFIEZ VOTRE MOT DE PASE</h2>
-                <input class="ipRegister" type="password" name="password" placeholder="Mot de passe">
+                <input class="ipRegister" type="password" name="password" placeholder="Mot de passe" required>
 
                 <h2>MODIFIEZ VOTRE EMAIL</h2>
                 <input class="ipRegister" type="email" name="email" placeholder="Email" value="<?php echo $user->getData('mail') ?>">
