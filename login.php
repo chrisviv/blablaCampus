@@ -1,9 +1,9 @@
 <?php include('head.php');
 require_once("./class/User.php");
-if(isset($_GET['login'])){
-    $username = $_GET['username'];
-    $password = $_GET['password'];
-    $user = new User();
+if(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $user = new User($username);
     $user->login($username, $password);
 }
 
@@ -25,7 +25,7 @@ if(isset($_GET['login'])){
        
            
             
-            <form action="" method="get" class="formLogin">
+            <form action="" method="post" class="formLogin">
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur">
                 <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">

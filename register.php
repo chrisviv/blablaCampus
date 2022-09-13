@@ -1,15 +1,14 @@
 <?php include('head.php');
 require_once("./class/User.php");
-session_start();
-if(isset($_GET['register'])){
-    $user = new User();
-    $password = password_hash($_GET['password'], PASSWORD_DEFAULT);
-    $name = $_GET['nom'];
-    $username = $_GET['username'];
-    $email = $_GET['email'];
-    $bio = $_GET['bio'];
-    $picture = $_GET['profilePic'];
-    $user->register($name, $username,$password , $email, $bio, $picture);
+if(isset($_POST['register'])){
+    $user = new User($username);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $name = $_POST['nom'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $bio = $_POST['bio'];
+    $picture = $_POST['profilePic'];
+    $user->register($name, $username, $password, $email, $bio, $picture);
 }
 
 ?>
@@ -28,7 +27,7 @@ if(isset($_GET['register'])){
         </div>
 
         <div class="registerContent">
-            <form action="" method="get" class="formRegister">
+            <form action="" method="post" class="formRegister">
 
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="nom" placeholder="Nom">

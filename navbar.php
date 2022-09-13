@@ -1,7 +1,6 @@
 <?php 
 require_once("./class/User.php");
-
-$user = new User();
+$user = new User('');
 if(isset($_SESSION['name_user'])){
 
 }else{
@@ -27,8 +26,8 @@ if(isset($_SESSION['name_user'])){
          <img src="https://picsum.photos/200/300" alt="Photo de profil">
         
          <div class="profile">
-             <h2><?php echo $_SESSION['name_user']; ?></h2>
-             <h3><?php echo $user->getData('bio'); ?></h3>
+             <h2><?php echo $user->username; ?></h2>
+             <h3><?php echo $user->bio; ?></h3>
          </div>
        </div>
         
@@ -53,7 +52,7 @@ if(isset($_SESSION['name_user'])){
 
             <div class="modalLink">
                 <img src="assets/img/people.svg" alt="icon d'un bonhomme">
-                <a href="http://">Modifier mes informations</a>
+                <a href="editprofile.php">Modifier mes informations</a>
             </div>
             
             <div class="modalLink">
