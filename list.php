@@ -6,13 +6,13 @@
 
     <div class="infoTrajet">
         <div class="dateTrajet">
-            <h2 class="day">05</h2>
-            <h2 class="month">SEP</h2>
+            <h2 class="day">05</h2> <!-- php -->
+            <h2 class="month">SEP</h2><!-- php -->
         </div>
 
         <div class="placesTrajet">
-            <h2 class="departPlace">Dole</h2>
-            <h2 class="arrivePlace">Lons le Saunier</h2>
+            <h2 class="departPlace">Dole</h2><!-- php -->
+            <h2 class="arrivePlace">Lons le Saunier</h2><!-- php -->
         </div>
 
         <div class="go-return"><img src="assets/img/go-return.svg" alt=""></div>
@@ -20,7 +20,7 @@
 
     <div class="trajetCount">
         <h2>
-            <span class="phpNumber">5</span>
+            <span class="phpNumber">5</span><!-- php -->
             trajets disponibles
         </h2>
 
@@ -32,14 +32,14 @@
 
     <div class="card-trajet">
         <h2>PLACES DISPONIBLES 
-            <span class="phpNumber">2</span>
+            <span class="phpNumber">2</span><!-- php -->
         </h2>
 
         <div class="card-body">
             <div class="travel-start">
-                <h3 class="hour">06H30</h3>
+                <h3 class="hour">06H30</h3><!-- php -->
                 <img src="assets/img/circle-line.svg" alt="">
-                <h3 class="place">Dole</h3>
+                <h3 class="place">Dole</h3><!-- php -->
             </div>
             
         <!--     <div class="travel-half">
@@ -48,6 +48,8 @@
                 <h3 class="place">Dole</h3>
             </div> -->
           
+
+            
             <div class="travel-end">
                 <h3 class="hour">07H30</h3>
                 <img src="assets/img/circle.svg" alt="">
