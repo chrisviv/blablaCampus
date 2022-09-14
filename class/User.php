@@ -2,7 +2,7 @@
 session_start();
 require_once("./class/Database.php");
 class User extends Database {
-    
+
     public $username;
     public $name;
     public $mail;
@@ -10,25 +10,6 @@ class User extends Database {
     public $bio;
     private $password;
     private $id;
-    
-    // public function __construct($pseudo){
-    //     $initData = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
-    //     if(isset($_SESSION['name_user']) && $_SESSION['name_user'] != ''){
-    //         $initData->bindValue(':username', $_SESSION['name_user']);
-    //     }
-    //     else{
-    //         $initData->bindValue(':username', $pseudo);
-    //     }
-    //     $initData->execute();
-    //     $dataUser = $initData->fetch();
-    //     $this->id = $dataUser[0];
-    //     $this->username = $dataUser[1];
-    //     $this->password = $dataUser[2];
-    //     $this->name = $dataUser[3];
-    //     $this->mail = $dataUser[4];
-    //     $this->bio = $dataUser[5];
-    //     $this->picture = $dataUser[6];
-    // }
     
     public function register($nom, $pseudo, $password, $email, $bio, $picture) {
         $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
@@ -55,6 +36,7 @@ class User extends Database {
             $insert->bindParam(':bio', $bio, PDO::PARAM_STR);
             $insert->bindParam(':picture', $picture, PDO::PARAM_STR);
             $insert->execute();
+            $_SESSION['name_user'] = $pseudo;
             header('Location: ./search.php');
             $catchData = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
             $catchData->bindValue(':username', $pseudo);
@@ -100,28 +82,22 @@ class User extends Database {
         $this->picture = $datas[6];
     }
 
-    public function editData($username, $password, $email, $bio, $picture){
-        if ($this && password_verify($password, $this->password)) {
-            $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE email = :email");
-            $checkMail->bindValue(':email', $email);
-            $mailExist = $checkMail->fetch();
-            if ($mailExist != false) {
-                echo "Cette adresse email est déjà utilisée.";
-            }
-            else {
-                $insert = $this->connect()->prepare("UPDATE `users` SET username = :username, SET mail = :mail, SET bio = :bio, SET picture = :picture WHERE id_user = :id");
-                $insert->bindParam(':username', $username, PDO::PARAM_STR);
-                $insert->bindParam(':mail', $email, PDO::PARAM_STR);
-                $insert->bindParam(':bio', $bio, PDO::PARAM_STR);
-                $insert->bindParam(':picture', $picture, PDO::PARAM_STR);
-                $insert->bindValue(':id', $this->id);
-                $insert->execute();
-                header("Location:./search.php");
-            }
+    public function editData($username, $email, $bio, $picture){
+        $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE email = :email");
+        $checkMail->bindValue(':email', $email);
+        $mailExist = $checkMail->fetch();
+        if ($mailExist != false) {
+            echo "Cette adresse email est déjà utilisée.";
         }
         else {
-            echo "Mot de passe incorrect !";
-            echo $_SESSION['name_user'];
+            $insert = $this->connect()->prepare("UPDATE `users` SET username = :username, SET mail = :mail, SET bio = :bio, SET picture = :picture WHERE id_user = :id");
+            $insert->bindParam(':username', $username, PDO::PARAM_STR);
+            $insert->bindParam(':mail', $email, PDO::PARAM_STR);
+            $insert->bindParam(':bio', $bio, PDO::PARAM_STR);
+            $insert->bindParam(':picture', $picture, PDO::PARAM_STR);
+            $insert->bindValue(':id', $this->id);
+            $insert->execute();
+            header("Location:./search.php");
         }
     }
 }

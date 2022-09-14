@@ -3,7 +3,7 @@ if(isset($_POST['register'])){
     $pseudo = $_POST['username'];
     $_SESSION['name_user'] = $pseudo;
     require_once("./class/User.php");
-    $user = new User($pseudo);
+    $user = new User();
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $name = $_POST['nom'];
     $email = $_POST['email'];

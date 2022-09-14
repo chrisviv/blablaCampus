@@ -3,12 +3,13 @@ require_once("./class/User.php");
 
 if(isset($_POST['edit'])){
     $username = $_POST['username'];
-    $user = new User($username);
+    $user = new User();
     $password = $_POST['password'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
     $picture = $_POST['profilePic'];
-    $user->editData($username, $password, $email, $bio, $picture);
+    $user->editData($username, $email, $bio, $picture);
+    $user->getData($_SESSION['name_user']);
 }
 
 ?>
@@ -23,9 +24,6 @@ if(isset($_POST['edit'])){
 
                 <h2>MODIFIEZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="username" placeholder="Nom" value="<?php echo $user->username ?>" required>
-
-                <h2>MODIFIEZ VOTRE MOT DE PASE</h2>
-                <input class="ipRegister" type="password" name="password" placeholder="Mot de passe" required>
 
                 <h2>MODIFIEZ VOTRE EMAIL</h2>
                 <input class="ipRegister" type="email" name="email" placeholder="Email" value="<?php echo $user->mail ?>" required>
