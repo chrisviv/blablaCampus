@@ -670,8 +670,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     justify-content: center;
     margin: 20px 20px 20px 20px;
     position: relative;
-    left: calc(50% - 188px);
-}
+    left: calc(50% - 188px);}
 .deleteRideBtn>a>button {
     font-family:  "bungee";
     font-size: 18px;
@@ -693,7 +692,61 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     text-align: center;
     letter-spacing: 5px;
     color: var(--red);}
-@media screen and (min-width: 1024px) {
+/*-------------------------- RESERVER UNE PLACE- chris------------------------- */
+.bookSeatMain{margin-top:30px}
+.bookSeatMain>h1{
+    width: 100%;
+    font-family: "bungee";
+    font-size: 17px;
+    margin: 50px 0 0 20px;
+    line-height: 28px;
+    font-weight: 400;}
+.boxBookSeat >p{
+    width: 100%;
+    font-family:  "epilogue";
+    font-weight: 700;
+    font-size: 13px;
+    color:var(--lightGray);
+    line-height: 20px;
+    margin-left: 20px;}
+span{color: var(--red);}
+.bookSeatBtn{
+    background: var(--red);
+    border-radius: 10px;
+    width: 275px;
+    height:55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 20px 20px 20px;
+    position: relative;
+    left: calc(50% - 161px);}
+.bookSeatBtn>a>button {
+    font-family: "worksans", sans-serif;
+    font-size: 13px;
+    border: 0;
+    background: var(--red);
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 300;}
+.infoBookSeat{
+    background: var(--grayBgInput);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    border-radius: 8px;
+    position: relative;
+    margin: 20px;}
+.dateBookSeat{display: flex;flex-direction: column;
+    justify-content: center;align-items: center;width: 15%;}
+.dateBookSeat> h2{font-family: "bungee";margin: 0;line-height: 30px;}
+.day{color: var(--red);font-size: 40px;}
+.month{font-size: 20px;}
+.placesBookSeat{font-family: epilogue;font-weight: 500;color: var(--lightGray); font-size: 10px;width: 60%;}
+.boxBookSeat{margin-top:40px}
+
+    @media screen and (min-width: 1024px) {
     .mainAccueil{display: none;}
     .road{position: fixed;left: 0;z-index: -1;}
     .pcMain{
