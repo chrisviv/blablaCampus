@@ -554,6 +554,145 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
+/* ----------------------ANNULATION MA RESERVATION- chris----------------- */
+.cancelMain>h1{
+    font-family: "bungee";
+    font-size: 17px;
+    color: var(--blackSubtitle);
+    margin: 50px 0 0 30px;}
+.cancelMain>p{
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    margin-left: 30px;
+    color: var(--lightGray);}
+.cancelBtn{
+    background: var(--red);
+    border-radius: 10px;
+    width: 300px;
+    height:55px;
+    display: flex;
+    justify-content: center;
+    margin: 40px 20px 20px 20px;
+    position: relative;
+    left: calc(50% - 172px);}
+.cancelBtn>a>button {
+    font-family: "worksans", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border: 0;
+    background: var(--red);
+    color: white;
+    line-height: 15px;
+    letter-spacing: 5px;}
+.cancelBtn>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-direction: column;}
+.cancelReturn>p{
+    font-family:  "worksans", sans-serif;
+    line-height: 12px;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: var(--red);}
+/*------------------------- SUPPRIMER TRAJET- chris----------------------- */
+.deleteMain>h1{
+    width: 100%;
+    font-family: "bungee";
+    font-size: 17px;
+    color: var(--blackSubtitle);
+    margin: 50px 0 0 30px;
+    font-weight: 400;}
+.deleteMain>p{
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--lightGray);
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    MARGIN-LEFT: 30px;}
+.deleteBtn{
+    background: var(--red);
+    border-radius: 10px;
+    width: 300px;
+    height:55px;
+    display: flex;
+    justify-content: center;
+    margin: 40px 20px 20px 20px;
+    position: relative;
+    left: calc(50% - 172px);}
+.deleteBtn>a>button {
+    font-family: "worksans", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border: 0;
+    background: var(--red);
+    color: white;
+    line-height: 15px;
+    letter-spacing: 5px;}
+.deleteBtn>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-direction: column;}
+.deleteReturn>p{
+    font-family:  "worksans", sans-serif;
+    line-height: 12px;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: var(--red);}
+/*------------------------- ANNULER MES TRAJETS- chris--------------------- */
+.deleteRideMain>h1{
+    width: 100%;
+    font-family: "bungee";
+    font-size: 17px;
+    color: var(--blackSubtitle);
+    margin: 50px 0 0 30px;
+    line-height: 20px;
+    font-weight: 400;}
+.deleteRideBtn{
+    background: var(--red);
+    border-radius: 10px;
+    width: 300px;
+    height:82px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px 20px 20px;
+    position: relative;
+    left: calc(50% - 188px);
+}
+.deleteRideBtn>a>button {
+    font-family:  "bungee";
+    font-size: 18px;
+    text-align: center;
+    border: 0;
+    background: var(--red);
+    color: white;
+    line-height: 20px;}
+.deleteRideBtn>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-direction: column;}
+.deleteReturn>p{
+    font-family:  "worksans", sans-serif;
+    line-height: 12px;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: var(--red);}
 @media screen and (min-width: 1024px) {
     .mainAccueil{display: none;}
     .road{position: fixed;left: 0;z-index: -1;}
