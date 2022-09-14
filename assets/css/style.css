@@ -43,6 +43,9 @@ body {
     display: none !important;
 }
 
+.dactive{
+    display: block !important;
+}
 /* -----------------------COLORS -------------------*/
 
 :root {
@@ -642,6 +645,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     align-items: center;
     padding: 15px;
     border-radius: 20px;
+    position: relative;
 }
 .dateTrajet{
     display: flex;
@@ -662,6 +666,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 .month{
     font-size: 20px;
+}
+
+.btnEdit, .btnDel{
+    position: absolute;
+    width: 50%;
+    font-family: "bungee";
+    height: 100%;
+    top: 0;
+    font-size: 18px;
+    color: white;
+    border: 0;
+}
+
+.btnEdit{
+    left: 0;
+    background-color: var(--red);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+
+.btnDel{
+    right: 0;
+    background-color: var(--black);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .placesTrajet{
@@ -693,7 +723,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .card-trajet{
-    width: 90%;
+    
     -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
     box-shadow: 0px 8px 24px rgba(17, 17, 17, 0.25);
     padding: 20px;
