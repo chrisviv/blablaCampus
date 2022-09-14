@@ -8,6 +8,6 @@ uploadField.onchange = function() {
        alert("File is too big!");
        this.value = "";
     }else{
-        alert('ok')
+        
     };
 };

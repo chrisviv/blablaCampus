@@ -1,4 +1,6 @@
-<?php include('head.php');?>
+<?php include('head.php');
+require_once("./class/User.php");
+?>
 
     <div class="mainSearch">
         <?php include('navbar.php');?>

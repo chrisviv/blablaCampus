@@ -1,14 +1,14 @@
 <?php include('head.php');
-require_once("./class/User.php");
 if(isset($_POST['register'])){
     $pseudo = $_POST['username'];
+    $_SESSION['name_user'] = $pseudo;
+    require_once("./class/User.php");
     $user = new User($pseudo);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $name = $_POST['nom'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
     $picture = $_POST['profilePic'];
-    $_SESSION['name_user'] = $pseudo;
     $user->register($name, $pseudo, $password, $email, $bio, $picture);
 }
 

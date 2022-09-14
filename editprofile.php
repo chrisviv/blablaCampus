@@ -2,8 +2,8 @@
 require_once("./class/User.php");
 
 if(isset($_POST['edit'])){
-    $user = new User($username);
     $username = $_POST['username'];
+    $user = new User($username);
     $password = $_POST['password'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
@@ -22,17 +22,17 @@ if(isset($_POST['edit'])){
             <form action="" method="post" class="formRegister">
 
                 <h2>MODIFIEZ VOS COORDONNÉS</h2>
-                <input class="ipRegister" type="text" name="username" placeholder="Nom" value="<?php echo $user->getData('username') ?>" required>
+                <input class="ipRegister" type="text" name="username" placeholder="Nom" value="<?php echo $user->username ?>" required>
 
                 <h2>MODIFIEZ VOTRE MOT DE PASE</h2>
                 <input class="ipRegister" type="password" name="password" placeholder="Mot de passe" required>
 
                 <h2>MODIFIEZ VOTRE EMAIL</h2>
-                <input class="ipRegister" type="email" name="email" placeholder="Email" value="<?php echo $user->getData('mail') ?>" required>
+                <input class="ipRegister" type="email" name="email" placeholder="Email" value="<?php echo $user->mail ?>" required>
                 <p class="infonMail">Ajoutez votre adresse e-mail pour recevoir des notifications sur votre activité sur Foundation. Cela ne sera pas affiché sur votre profil.</p>
 
                 <h2>MODIFIEZ VOTRE BIOGRAPHIE</h2>
-                <textarea class="txtRegister" type="text" name="bio" placeholder="Entrez votre bio ici"><?php echo $user->getData('bio') ?></textarea>
+                <textarea class="txtRegister" type="text" name="bio" placeholder="Entrez votre bio ici"><?php echo $user->bio ?></textarea>
 
                 
                 <h2>MODIFIER VOTRE IMAGE DE PROFIL</h2>
