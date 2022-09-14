@@ -9,16 +9,15 @@ class User extends Database {
     public $bio;
     private $password;
     
-    public function __construct($username){
+    public function __construct($pseudo){
         session_start();
-        $initData = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
+        $initData = $this->connect()->prepare("SELECT * FROM users WHERE `username` = :username");
         if(isset($_SESSION['name_user'])){
             $initData->bindValue(':username', $_SESSION['name_user']);
         }
         else{
-            $initData->bindValue(':username', $username);
+            $initData->bindValue(':username', $pseudo);
         }
-        $pseudo = $username;
         $initData->execute();
         $dataUser = $initData->fetch();
         $this->username = $dataUser[1];
@@ -29,9 +28,9 @@ class User extends Database {
         $this->picture = $dataUser[6];
     }
     
-    public function register($nom, $username, $password, $email, $bio, $picture) {
+    public function register($nom, $pseudo, $password, $email, $bio, $picture) {
         $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
-        $checkName->bindValue(':username', $username);
+        $checkName->bindValue(':username', $pseudo);
         $checkName->execute();
         $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE email = :email");
         $checkMail->bindValue(':email', $email);
@@ -39,21 +38,23 @@ class User extends Database {
         $mailExist = $checkMail->fetch();
         if ($usernameExist != false) {
             echo "Ce nom d'utilisateur est déjà utilisé.";
+            session_destroy();
         }
         elseif ($mailExist != false) {
             echo "Cette adresse email est déjà utilisée.";
+            session_destroy();
         }
         else {
             $insert = $this->connect()->prepare("INSERT INTO `users`(username, password_user, name_user, mail ,bio, picture) VALUES (:username,:mdp,:nom,:mail,:bio, :picture)");
-            $insert->bindParam(':username', $username, PDO::PARAM_STR);
+            $insert->bindParam(':username', $pseudo, PDO::PARAM_STR);
             $insert->bindParam(':mdp', $password, PDO::PARAM_STR);
             $insert->bindParam(':nom', $nom, PDO::PARAM_STR);
             $insert->bindParam(':mail', $email, PDO::PARAM_STR);
             $insert->bindParam(':bio', $bio, PDO::PARAM_STR);
             $insert->bindParam(':picture', $picture, PDO::PARAM_STR);
             $insert->execute();
-            $_SESSION['name_user'] = $username;
-            header("Location:./search.php");
+            // $_SESSION['name_user'] = $pseudo;
+            header('Location: ./search.php');
         }
     }
 

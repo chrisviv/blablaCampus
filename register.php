@@ -1,14 +1,15 @@
 <?php include('head.php');
 require_once("./class/User.php");
 if(isset($_POST['register'])){
-    $user = new User($username);
+    $pseudo = $_POST['username'];
+    $user = new User($pseudo);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $name = $_POST['nom'];
-    $username = $_POST['username'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
     $picture = $_POST['profilePic'];
-    $user->register($name, $username, $password, $email, $bio, $picture);
+    $_SESSION['name_user'] = $pseudo;
+    $user->register($name, $pseudo, $password, $email, $bio, $picture);
 }
 
 ?>
@@ -30,14 +31,14 @@ if(isset($_POST['register'])){
             <form action="" method="post" class="formRegister">
 
                 <h2>ENTREZ VOS COORDONNÉS</h2>
-                <input class="ipRegister" type="text" name="nom" placeholder="Nom">
-                <input class="ipRegister" type="text" name="username" placeholder="Nom d'utilisateur">
+                <input class="ipRegister" type="text" name="nom" placeholder="Nom" required>
+                <input class="ipRegister" type="text" name="username" placeholder="Nom d'utilisateur" required>
 
                 <h2>ENTREZ VOTRE MOT DE PASSE</h2>
-                <input class="ipRegister" type="password" name="password" placeholder="Mot de passe">
+                <input class="ipRegister" type="password" name="password" placeholder="Mot de passe" required>
 
                 <h2>ENTREZ VOTRE EMAIL</h2>
-                <input class="ipRegister" type="email" name="email" placeholder="Email">
+                <input class="ipRegister" type="email" name="email" placeholder="Email" required>
                 <p class="infonMail">Ajoutez votre adresse e-mail pour recevoir des notifications sur votre activité sur Foundation. Cela ne sera pas affiché sur votre profil.</p>
 
                 <h2>ENTREZ VOTRE BIOGRAPHIE</h2>

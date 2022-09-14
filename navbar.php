@@ -1,11 +1,11 @@
 <?php 
 require_once("./class/User.php");
 $user = new User('');
-if(isset($_SESSION['name_user'])){
+// if(isset($_SESSION['name_user'])){
 
-}else{
-    header('Location: ./index.php');
-}
+// }else{
+//     header('Location: ./index.php');
+// }
 
 ?>
 <div class="header">

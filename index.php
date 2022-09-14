@@ -1,7 +1,13 @@
-<?php include('head.php')?>
+<?php
+
+include('head.php');
+session_start();
+
+
+?>
     <?php include('homepc.php');
     if(isset($_SESSION['name_user'])){
-        header("Location:./search.php");
+        header('Location: ./search.php');
     }
     
     ?>
