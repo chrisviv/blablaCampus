@@ -53,7 +53,6 @@ class User extends Database {
             $insert->bindParam(':bio', $bio, PDO::PARAM_STR);
             $insert->bindParam(':picture', $picture, PDO::PARAM_STR);
             $insert->execute();
-            // $_SESSION['name_user'] = $pseudo;
             header('Location: ./search.php');
         }
     }

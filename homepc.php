@@ -1,4 +1,4 @@
-<?php include("head.php")?>  
+<?php include_once("head.php")?>  
 
     <div class="pcMain">
         <img src="assets/img/road.svg" class="road" alt="">
