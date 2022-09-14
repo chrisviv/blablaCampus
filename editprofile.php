@@ -4,12 +4,10 @@ require_once("./class/User.php");
 if(isset($_POST['edit'])){
     $username = $_POST['username'];
     $user = new User();
-    $password = $_POST['password'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
     $picture = $_POST['profilePic'];
     $user->editData($username, $email, $bio, $picture);
-    $user->getData($_SESSION['name_user']);
 }
 
 ?>

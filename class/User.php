@@ -9,7 +9,7 @@ class User extends Database {
     public $picture;
     public $bio;
     private $password;
-    private $id;
+    public $id;
     
     public function register($nom, $pseudo, $password, $email, $bio, $picture) {
         $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
@@ -90,14 +90,16 @@ class User extends Database {
             echo "Cette adresse email est déjà utilisée.";
         }
         else {
-            $insert = $this->connect()->prepare("UPDATE `users` SET username = :username, SET mail = :mail, SET bio = :bio, SET picture = :picture WHERE id_user = :id");
+            $insert = $this->connect()->prepare("UPDATE `users` SET `username`= :username , `mail`= :mail , `bio`= :bio SET `picture`= :picture WHERE id_user = :id");
             $insert->bindParam(':username', $username, PDO::PARAM_STR);
             $insert->bindParam(':mail', $email, PDO::PARAM_STR);
             $insert->bindParam(':bio', $bio, PDO::PARAM_STR);
             $insert->bindParam(':picture', $picture, PDO::PARAM_STR);
             $insert->bindValue(':id', $this->id);
             $insert->execute();
+            $_SESSION['name_user'] = $username;
             header("Location:./search.php");
+            getData($_SESSION['name_user']);
         }
     }
 }

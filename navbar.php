@@ -3,6 +3,7 @@ require_once("./class/User.php");
 $user = new User('');
 $user->getData($_SESSION['name_user']);
 
+
 ?>
 <div class="header">
         <div class="headerLogo">
