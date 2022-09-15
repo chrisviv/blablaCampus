@@ -16,12 +16,12 @@ if(!isset($_SESSION['name_user'])){
                 <div class="departBox">
 
                     <img src="assets/img/markerMap.svg" alt="">
-                    <input type="text" placeholder="Départ" name="" id='inputDepart'>
+                    <input type="text" placeholder="Départ" name="" id='inputDepart' required>
                 </div>
 
                <div class="departBox">
                     <img src="assets/img/markerMap.svg" alt="">
-                 <select name="" id="">
+                 <select name="" id="" required>
                     
                       <option value="" disabled selected hidden>
                          Destination
@@ -42,7 +42,7 @@ if(!isset($_SESSION['name_user'])){
 
                <div class="departBox">
                 <img src="assets/img/calendar.svg" alt="">
-                 <input type="date" name="" class="date">
+                 <input type="date" name="" class="date" required>
                </div>
                 <input type="submit" name="" class="searchBtn" value="RECHERCHER">
             </form>

@@ -1,9 +1,11 @@
 <?php include('head.php');
 require_once("./class/User.php");
+$user = new User();
+$user->getData($_SESSION['name_user']);
+var_dump($user->id);
 
 if(isset($_POST['edit'])){
     $username = $_POST['username'];
-    $user = new User();
     $email = $_POST['email'];
     $bio = $_POST['bio'];
     $picture = $_POST['profilePic'];
