@@ -39,12 +39,12 @@ $user->getData($_SESSION['name_user']);
 
             <div class="modalLink">
                 <img src="assets/img/people.svg" alt="icon d'un bonhomme">
-                <a href="http://">Mes trajets</a>
+                <a href="trajets.php">Mes trajets</a>
             </div>
 
             <div class="modalLink">
                 <img src="assets/img/book.svg" alt="icon du livre de réservation">
-                <a href="http://">Mes réservations</a>
+                <a href="reservations.php">Mes réservations</a>
             </div>
 
             <div class="modalLink">
