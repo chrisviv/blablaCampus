@@ -85,9 +85,14 @@ class User extends Database {
     public function editData($username, $email, $bio, $picture){
         $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE email = :email");
         $checkMail->bindValue(':email', $email);
-        $mailExist = $checkMail->fetch();
-        if ($mailExist != false) {
+        $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
+        $checkName->bindValue(':email', $username);
+        $nameExist = $checkName->fetch();
+        if ($mailExist != false && $mailExist != $this->mail) {
             echo "Cette adresse email est déjà utilisée.";
+        }
+        elseif ($nameExist != false && $nameExist != $this->username){
+            echo "Ce nom d'utilisateur est déjà utilisé.";
         }
         else {
             $insert = $this->connect()->prepare("UPDATE `users` SET `username`= :username , `mail`= :mail , `bio`= :bio , `picture`= :picture WHERE id_user = :id");

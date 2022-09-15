@@ -2,7 +2,6 @@
 require_once("./class/User.php");
 $user = new User();
 $user->getData($_SESSION['name_user']);
-var_dump($user->id);
 
 if(isset($_POST['edit'])){
     $username = $_POST['username'];
@@ -23,7 +22,7 @@ if(isset($_POST['edit'])){
             <form action="" method="post" class="formRegister">
 
                 <h2>MODIFIEZ VOS COORDONNÉS</h2>
-                <input class="ipRegister" type="text" name="username" placeholder="Nom" value="<?php echo $user->username ?>" required>
+                <input class="ipRegister" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php echo $user->username ?>" required>
 
                 <h2>MODIFIEZ VOTRE EMAIL</h2>
                 <input class="ipRegister" type="email" name="email" placeholder="Email" value="<?php echo $user->mail ?>" required>
