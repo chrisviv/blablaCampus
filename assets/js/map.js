@@ -1,5 +1,11 @@
 let autocomplete = document.getElementById("autocomplete-container")
+let autocomplete2 = document.getElementById("container-add");
 let inputDepart = document.getElementById("inputDepart");
+let inputDepart2 = document.getElementById("inputDepart2");
+
+
+
+
 
 function addressAutocomplete(inputElement, containerElement, callback) {
 
@@ -133,9 +139,91 @@ addressAutocomplete(inputDepart, autocomplete, (data) => {
   console.log("Selected option: ");
   console.log(data);
 });
+addressAutocomplete(inputDepart2, autocomplete2, (data) => {
+  console.log("Selected option: ");
+  console.log(data);
+});
 
 
 
+
+
+let btnAdd = document.querySelector('.btnAdd')
+let submit = document.querySelector('.submitTs')
+
+function createElement(){
+  var forml = document.getElementById('formAdd')
+  let divContainer = document.createElement("div");
+  divContainer.classList.add("etapes-row", "autocomplete-container", "auto-complete-array")
+
+
+  let content = document.createElement("div");
+  content.classList.add('addBox')
+
+  let img = document.createElement('img')
+  img.src = "assets/img/markerMap.svg"
+
+  let inputAdd = document.createElement('input')
+  inputAdd.classList.add('input-etape')
+  inputAdd.type = "text"
+  inputAdd.placeholder = 'Etape'
+  inputAdd.name = "etapes"
+
+  for (let i = 0; i < inputAdd.length; i++) {
+    
+    inputAdd.name = "etapes"
+    console.log(inputAdd.name);
+  }
+  
+
+
+  content.appendChild(img)
+  content.appendChild(inputAdd)
+  divContainer.appendChild(content);
+  forml.insertBefore(divContainer, submit);
+  divContainer.appendChild(btnAdd)
+
+
+  
+}
+
+
+
+  btnAdd.addEventListener('click', ()=>{
+  
+let inputEtape = document.querySelectorAll(".input-etape");
+let autocompleteArray = document.querySelectorAll(".auto-complete-array");
+
+function autoArray(){
+  for (let i = 0; i < autocompleteArray.length; i++) {
+    
+    addressAutocomplete(inputEtape[i], autocompleteArray[i], (data) => {
+     
+    });
+  }
+}
+
+autoArray()
+
+   
+    let arrayy = document.querySelectorAll('.etapes-row');
+    
+    for (let i = 0; i < arrayy.length; i++) {
+      
+    
+  }
+  if (arrayy.length <= 2) {
+    
+    createElement()
+    
+    console.log(inputEtape.length);
+  }
+
+
+  })
+
+  
+ 
 
 
 

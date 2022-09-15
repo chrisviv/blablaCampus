@@ -1,7 +1,7 @@
-<?php include('head.php')?>
-
+<?php include('head.php');
+include('navbar.php') ?>
     <div class="mainRegister">
-     <?php include('navbar.php') ?>
+     
 
           
 

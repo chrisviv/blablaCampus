@@ -81,6 +81,10 @@ body {
     width: 50px;
 }
 
+input:focus, select:focus{
+    outline: none;
+ }
+
 
 
 /* --------------------ACCUEIL----------------------------*/
@@ -534,9 +538,7 @@ body {
     
 }
 
-.autocomplete-container input:focus{
-   outline: none;
-}
+
 
 .departBox{
     background: var(--grayBgInput);
@@ -842,6 +844,80 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .mg-20{
     margin-top: 20px;
+}
+
+/*--------------------PROPOSER UN TRAJET -------------------*/
+
+.formAdd {
+    
+    margin: 0px 20px;
+}
+.formAdd > h1 {
+    font-family: 'bungee';
+    font-size: 16px;
+    color: var(--blackSubtitle);
+   
+}
+.formAdd > h3 {
+    font-family: 'epilogue';
+    font-size: 13px;
+    color: var(--lightGray);
+    margin: 20px 0px;
+    
+   
+}
+.addBox{
+        background: var(--grayBgInput);
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 20px 0px;   
+        height: 30px;
+}
+
+
+.addBox > input{
+    font-family: 'epilogue';
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    padding-left: 5px;
+    color: var(--grayTextiInput);
+    font-weight: bold;
+    
+}
+.addBox > select{
+   font-weight: bold;
+   
+}
+.addBox > img{
+   width: 20px;
+    
+}
+.optionAdd{
+    font-family: 'epilogue';
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    padding-left: 5px;
+    font-weight: bold;
+    
+}
+
+.optionFlex-row{
+    display: flex;
+    flex-direction: row;
+}
+.etapes-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.etapes-row > .addBox{
+    width: 80%;
 }
 
 
