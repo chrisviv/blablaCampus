@@ -10,13 +10,15 @@ class User extends Database {
     public $bio;
     private $password;
     public $id;
-    
+
+//Fonction d'enregistrement d'un nouvel utilisateur
     public function register($nom, $pseudo, $password, $email, $bio, $picture) {
         $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
         $checkName->bindValue(':username', $pseudo);
         $checkName->execute();
         $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE email = :email");
         $checkMail->bindValue(':email', $email);
+        $checkMail->execute();
         $usernameExist = $checkName->fetch();
         $mailExist = $checkMail->fetch();
         if ($usernameExist != false) {
@@ -47,6 +49,7 @@ class User extends Database {
         }
     }
 
+//Système de connection
     public function login($username, $password) {
         $login = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
         $login->bindValue(':username', $username);
@@ -68,6 +71,7 @@ class User extends Database {
         header('Location: ./index.php');
     }
 
+//Initialisation des variables utilisateur
     public function getData($username){
         $userData = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
         $userData->bindValue(':username', $username);
@@ -82,16 +86,20 @@ class User extends Database {
         $this->picture = $datas[6];
     }
 
+// Modification des informations utilisateur
     public function editData($username, $email, $bio, $picture){
-        $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE email = :email");
+        $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE mail = :email");
         $checkMail->bindValue(':email', $email);
+        $checkMail->execute();
         $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
-        $checkName->bindValue(':email', $username);
+        $checkName->bindValue(':username', $username);
+        $checkName->execute();
+        $mailExist = $checkMail->fetch();
         $nameExist = $checkName->fetch();
-        if ($mailExist != false && $mailExist != $this->mail) {
+        if ($mailExist != false && $mailExist['mail'] != $this->mail) {
             echo "Cette adresse email est déjà utilisée.";
         }
-        elseif ($nameExist != false && $nameExist != $this->username){
+        elseif ($nameExist != false && $nameExist['username'] != $this->username){
             echo "Ce nom d'utilisateur est déjà utilisé.";
         }
         else {
@@ -105,6 +113,20 @@ class User extends Database {
             $_SESSION['name_user'] = $username;
             header("Location:./search.php");
             getData($_SESSION['name_user']);
+        }
+    }
+
+// Envoie de mail pour récupération de mot de passe
+    public function passRemember($email) {
+        $checkMail = $this->connect()->prepare("SELECT mail FROM users WHERE mail = :email");
+        $checkMail->bindValue(':email', $email);
+        $checkMail->execute();
+        $mailExist = $checkMail->fetch();
+        if($mailExist != false) {
+            echo "Email envoyé !";
+        }
+        else{
+            echo "Aucun compte n'est associé à cette adresse mail.";
         }
     }
 }
