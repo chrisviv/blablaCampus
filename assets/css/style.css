@@ -745,6 +745,76 @@ span{color: var(--red);}
 .month{font-size: 20px;}
 .placesBookSeat{font-family: epilogue;font-weight: 500;color: var(--lightGray); font-size: 10px;width: 60%;}
 .boxBookSeat{margin-top:40px}
+/* --------------------------VALIDATION DE LA RESERVATION TRAJET - chris ------*/
+.bookVadilateMain{margin-top:30px}
+.bookVadilateMain>h1{
+    width: 100%;
+    font-family: "bungee";
+    font-size: 16px;
+    margin: 50px 0 0 20px;
+    line-height: 28px;
+    font-weight: 400;}
+.bookValidate{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    line-height: 20px;}   
+.redCircul{
+    width: 41px;
+    height: 41px;
+    border-radius: 50px;
+    border: 3px solid var(--red);
+    font-size: 10px;
+    margin: 25px 20px 51px 25px;}
+.bookValidateCircul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center} 
+.bookVadilateCircul >p{
+    width: 100%;
+    font-family:  "epilogue";
+    font-weight: 300;
+    font-style: italic;
+    font-size: 11px;
+    color:var(--lightGray);
+    line-height: 13px;
+    margin: 5px 0px;}
+.bookVadilateCircul> p> span{
+    color: var(--red);
+    font-style:normal;
+    font-weight: 700;
+    font-size: 13px;}
+.boxBookValidate{
+    font-family: epilogue;
+    font-weight: 500;
+    color: var(--lightGray);
+    font-size: 12px;
+    margin-left: 25px;
+    margin-top: 40px;}
+.boxBookValidate > p >span{
+    font-weight: 700;
+    line-height: 20px;}
+.bookValidateBtn{
+    background: var(--red);
+    border-radius: 10px;
+    width: 305px;
+    height:55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 20px 20px 20px;
+    position: relative;
+    left: calc(50% - 175px);}
+.bookValidateBtn>a>button {
+    font-family: "worksans", sans-serif;
+    font-size: 12px;
+    border: 0;
+    background: var(--red);
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 300;}
 
     @media screen and (min-width: 1024px) {
     .mainAccueil{display: none;}
