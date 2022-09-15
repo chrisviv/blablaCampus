@@ -16,7 +16,7 @@ class User extends Database {
         $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
         $checkName->bindValue(':username', $pseudo);
         $checkName->execute();
-        $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE email = :email");
+        $checkMail = $this->connect()->prepare("SELECT * FROM users WHERE mail = :email");
         $checkMail->bindValue(':email', $email);
         $checkMail->execute();
         $usernameExist = $checkName->fetch();
@@ -24,13 +24,12 @@ class User extends Database {
         if ($usernameExist != false) {
             echo "Ce nom d'utilisateur est déjà utilisé.";
             session_destroy();
-        }
-        elseif ($mailExist != false) {
+        }else if ($mailExist != false) {
             echo "Cette adresse email est déjà utilisée.";
             session_destroy();
         }
         else {
-            $insert = $this->connect()->prepare("INSERT INTO `users`(username, password_user, name_user, mail ,bio, picture) VALUES (:username,:mdp,:nom,:mail,:bio, :picture)");
+            $insert = $this->connect()->prepare("INSERT INTO `users`(username, password_user, name_user, mail ,bio, picture) VALUES (:username, :mdp, :nom, :mail, :bio, :picture)");
             $insert->bindParam(':username', $pseudo, PDO::PARAM_STR);
             $insert->bindParam(':mdp', $password, PDO::PARAM_STR);
             $insert->bindParam(':nom', $nom, PDO::PARAM_STR);
@@ -38,14 +37,16 @@ class User extends Database {
             $insert->bindParam(':bio', $bio, PDO::PARAM_STR);
             $insert->bindParam(':picture', $picture, PDO::PARAM_STR);
             $insert->execute();
+            var_dump($pseudo);
             $_SESSION['name_user'] = $pseudo;
-            header('Location: ./search.php');
-            $catchData = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
-            $catchData->bindValue(':username', $pseudo);
-            $catchData->execute();
-            $regData = $catchData->fetch();
-            $username = $catchData['username'];
-            getData($username);
+            $_SESSION['confirmMessage'] = 'Votre compte a bien été créé !';
+            // $catchData = $this->connect()->prepare("SELECT username FROM users WHERE username = :username");
+            // $catchData->bindParam(':username', $pseudo, PDO::PARAM_STR);
+            // $catchData->execute();
+            // $regData = $catchData->fetch();
+            // getData($pseudo);
+            header('Location: ./confirmation.php');
+            
         }
     }
 
@@ -57,7 +58,8 @@ class User extends Database {
         $logData = $login->fetch();
         if ($logData && password_verify($password, $logData[2])) {
             $_SESSION['name_user'] = $logData['username'];
-            header('Location: ./search.php');
+            $_SESSION['confirmMessage'] = 'Vous êtes bien connecté !';
+            header('Location: ./confirmation.php');
             $username = $logData['username'];
             getData($username);
         }
@@ -111,7 +113,8 @@ class User extends Database {
             $insert->bindValue(':id', $this->id);
             $insert->execute();
             $_SESSION['name_user'] = $username;
-            header("Location:./search.php");
+            $_SESSION['confirmMessage'] = 'Vos informations ont bien été mises à jour !';
+            header("Location:./confirmation.php");
             getData($_SESSION['name_user']);
         }
     }

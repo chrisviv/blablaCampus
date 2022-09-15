@@ -1,5 +1,6 @@
 <?php include('head.php');
 require_once("./class/User.php");
+
 if(!isset($_SESSION['name_user'])){
     header("Location:./index.php");
 }

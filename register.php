@@ -10,6 +10,7 @@ if(isset($_POST['register'])){
     $bio = $_POST['bio'];
     $picture = $_POST['profilePic'];
     $user->register($name, $pseudo, $password, $email, $bio, $picture);
+   
 }
 
 ?>

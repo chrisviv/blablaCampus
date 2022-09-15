@@ -1,4 +1,7 @@
-<?php include("head.php")?>  
+<?php include("head.php");
+require_once("./class/User.php");
+
+?>  
 
     <div class="header">
         <div class="headerLogo">
@@ -14,7 +17,8 @@
 
     <div class="confirmMsg">
         <h1>FÉLICITATION!</h1>
-        <h2> message php ici! </h2>
+        <h2 class='msg'><?php echo $_SESSION['confirmMessage'] ?></h2>
     </div>
 
-<?php include("footer.php")?>  
+    <script src="assets/js/redirect.js"></script>
+<?php include("footer.php")?>
