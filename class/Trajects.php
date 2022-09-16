@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("./class/Database.php");
+require_once("./class/User.php");
 class Trajects extends User {
 
     public $idTraject;
@@ -18,6 +19,14 @@ class Trajects extends User {
     public $step3;
     public $idUser;
 
+    public function __construct($username) {
+        $getId = $this->connect()->prepare("SELECT id FROM users WHERE username = :username");
+        $getId->bindValue(':username', $username);
+        $getId->execute();
+        $id = $getId->fetch();
+        $this->id = $id;
+    }
+
     public function newTraject($depart, $destination, $dateDepart, $allerRetour, $nbPassagers, $step1, $step2, $step3) {
         $addTraject = $this->connect()->prepare("INSERT INTO trajets (depart, destination, date_depart, aller_retour, nb_voyageurs, etape_1, etape_2, etape_3, id_user) VALUES (:depart, :destination, :date_depart, :aller_retour, :nb_voyageurs, :etape_1, :etape_2, :etape_3, :id_user)");
         $addTraject->bindValue(':depart', $depart);
@@ -29,8 +38,12 @@ class Trajects extends User {
         $addTraject->bindValue(':etape_2', $step2);
         $addTraject->bindValue(':etape_3', $step3);
         $addTraject->bindValue(':id_user', $_SESSION['name_user']);
+        $addTraject->execute();
+        $_SESSION['confirmMessage'] = 'Votre trajet a bien été créé !';
+        header('Location: ./confirmation.php');
+    }
 
-
+    public function editTraject() {
 
     }
 

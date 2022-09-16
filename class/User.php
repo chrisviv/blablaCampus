@@ -37,15 +37,14 @@ class User extends Database {
             $insert->bindParam(':bio', $bio, PDO::PARAM_STR);
             $insert->bindParam(':picture', $picture, PDO::PARAM_STR);
             $insert->execute();
-            var_dump($pseudo);
             $_SESSION['name_user'] = $pseudo;
             $_SESSION['confirmMessage'] = 'Votre compte a bien été créé !';
+            header('Location: ./confirmation.php');
             // $catchData = $this->connect()->prepare("SELECT username FROM users WHERE username = :username");
             // $catchData->bindParam(':username', $pseudo, PDO::PARAM_STR);
             // $catchData->execute();
             // $regData = $catchData->fetch();
             // getData($pseudo);
-            header('Location: ./confirmation.php');
             
         }
     }

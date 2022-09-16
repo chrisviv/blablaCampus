@@ -14,7 +14,7 @@ if(isset($_POST['edit'])){
 ?>
 
     <div class="mainRegister">
-     <?php include('navbar.php') ?>
+     
 
           
 
