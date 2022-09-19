@@ -1,7 +1,9 @@
 <?php include('head.php');
+// include('upload.php');
 require_once("./class/User.php");
 $user = new User();
 $user->getData($_SESSION['name_user']);
+var_dump($_FILES['profilePic']['tmp_name']);
 
 if(isset($_POST['edit'])){
     $username = $_POST['username'];
@@ -19,7 +21,7 @@ if(isset($_POST['edit'])){
           
 
         <div class="registerContent">
-            <form action="" method="post" class="formRegister">
+            <form action="" method="post" class="formRegister" enctype="multipart/form-data">
 
                 <h2>MODIFIEZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php echo $user->username ?>" required>

@@ -8,9 +8,8 @@ if(isset($_POST['register'])){
     $name = $_POST['nom'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
-    $picture = $_POST['profilePic'];
+    $picture = $_FILES['profilePic'];
     $user->register($name, $pseudo, $password, $email, $bio, $picture);
-   
 }
 
 ?>
@@ -29,7 +28,7 @@ if(isset($_POST['register'])){
         </div>
 
         <div class="registerContent">
-            <form action="" method="post" class="formRegister">
+            <form action="" method="post" class="formRegister" enctype="multipart/form-data">
 
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="nom" placeholder="Nom" required>
