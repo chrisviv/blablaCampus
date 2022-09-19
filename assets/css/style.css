@@ -869,6 +869,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .addBox{
         background: var(--grayBgInput);
         display: flex;
+        position: relative;
         align-items: center;
         border-radius: 5px;
         padding: 10px;
@@ -896,6 +897,45 @@ input[type="date"]::-webkit-calendar-picker-indicator {
    width: 20px;
     
 }
+
+
+.etapeSearchBox{
+    background: var(--grayBgInput);
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 0px;   
+    height: 30px;
+}
+
+
+.etapeSearchBox > input{
+font-family: 'epilogue';
+font-size: 16px;
+width: 100%;
+background-color: transparent;
+border: 0;
+padding-left: 5px;
+color: var(--grayTextiInput);
+font-weight: bold;
+
+}
+.etapeSearchBox > select{
+font-weight: bold;
+
+}
+.etapeSearchBox > img{
+width: 20px;
+
+}
+
+.etapeSearchBox > .clear-button{
+    right: calc(10% - 20px);
+    top: 15px;
+}
+
 .optionAdd{
     font-family: 'epilogue';
     font-size: 16px;
@@ -916,9 +956,29 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     flex-direction: row;
     justify-content: space-between;
 }
-.etapes-row > .addBox{
+.etapes-row > .etapeSearchBox{
     width: 80%;
 }
+
+.submitTs{
+    font-family: "worksans", sans-serif;
+    border: 0;
+    border-radius: 20px;
+    width: 250px;
+    height: 70px;
+    font-size: 12px;
+    background: var(--red);
+    color: white;
+    letter-spacing: 5px;
+    margin: 50px 0px 50px 0px;
+    position: relative;
+    left: calc(50% - 125px);
+}
+
+#allez, #retour{
+    accent-color: var(--red);
+}
+
 
 
 @media screen and (min-width: 1024px) {

@@ -54,7 +54,7 @@ include('navbar.php');
         </div>
 
         <h3>Type de trajet</h3>
-
+        
         <div class="optionFlex-row">
             <div class="optionAdd">
                 <input type="checkbox" id="allez" name="allez">
@@ -79,7 +79,7 @@ include('navbar.php');
         <h3>Etapes éventuelles</h3>
 
       <div class="etapes-row autocomplete-container auto-complete-array">
-          <div class="addBox">
+          <div class="etapeSearchBox">
               <img src="assets/img/markerMap.svg" alt="">
               <input type="text" name="etapes"  placeholder="Etape" class="input-etape">
         
@@ -90,7 +90,7 @@ include('navbar.php');
 
 
 
-        <input class='submitRegister submitTs' type="submit" name="" value="PROPOSER UN TRAJET">
+        <input class='submitTs' type="submit" name="" value="PROPOSER UN TRAJET">
     </form>
 
 
@@ -99,6 +99,6 @@ include('navbar.php');
 
 
 
-<script src="assets/js/map.js"></script>
+<script src="assets/js/autocomplete2.js"></script>
 <script src="assets/js/user.js"></script>
 <?php include('footer.php')?>
