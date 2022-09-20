@@ -27,7 +27,7 @@ class Trajects extends User {
         $this->idUser = $id[0];
     }
 
-// Ajout de trajet A TESTER !
+// Ajout de trajet
     public function newTraject($depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3) {
         $addTraject = $this->connect()->prepare("INSERT INTO trajets (`depart`, `destination`, `jour_voyage`, `heure_depart`, `heure_etape1`, `heure_etape2`, `heure_etape3`, `heure_destination`, `aller_retour`, `nb_voyageurs`, `etape_1`, `etape_2`, `etape_3`, `id_user`) VALUES (:depart, :destination, :jour_voyage, :heure_depart, :heure_etape1, :heure_etape2, :heure_etape3, :heure_destination, :aller_retour, :nb_voyageurs, :etape_1, :etape_2, :etape_3, :id_user)");
         $addTraject->bindValue(':depart', $depart);
@@ -46,20 +46,10 @@ class Trajects extends User {
         $addTraject->bindValue(':id_user', $this->idUser);
         $addTraject->execute();
         $_SESSION['confirmMessage'] = 'Votre trajet a bien été créé !';
-        // $getTrajectID = $this->connect()->prepare("SELECT id_trajet FROM trajets WHERE depart = :depart AND destination = :destination AND jour_voyage = :jour_voyage AND heure_depart = :heure_depart AND id_user = :id_user");
-        // $getTrajectID->bindValue(':depart', $depart);
-        // $getTrajectID->bindValue(':destination', $destination);
-        // $getTrajectID->bindValue(':jour_voyage', $jour_voyage);
-        // $getTrajectID->bindValue(':heure_depart', $heure_depart);
-        // $getTrajectID->bindValue(':id_user', $_SESSION['name_user']);
-        // $getTrajectID->execute();
-        // $trajectID = $getTrajectID->fetch();
-        // var_dump($trajectID);
-        // getTrajectData($trajectID);
         header('Location: ./confirmation.php');
     }
 
-// Modification de trajet A TESTER !    
+// Modification de trajet   
     public function editTraject($id, $depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3) {
         $editTraject = $this->connect()->prepare("");
     }
@@ -74,20 +64,22 @@ class Trajects extends User {
         $getData->bindValue(':id', $idUser);
         $getData->execute();
         $datas = $getData->fetchAll();
-        $this->idTraject = $datas['id_trajet'];
-        $this->depart = $datas['depart'];
-        $this->destination = $datas['destination'];
-        $this->JourVoyage = $datas['jour_voyage'];
-        $this->heureDepart = $datas['heure_depart'];
-        $this->heureStep1 = $datas['heure_etape1'];
-        $this->heureStep2 = $datas['heure_etape2'];
-        $this->heureStep3 = $datas['heure_etape3'];
-        $this->heureDestination = $datas['heure_destination'];
-        $this->allerRetour = $datas['aller_retour'];
-        $this->nbPassagers = $datas['nb_passagers'];
-        $this->step1 = $datas['etape_1'];
-        $this->step2 = $datas['etape_2'];
-        $this->step3 = $datas['etape_3'];
+        return $datas;
+
+        // $this->idTraject = $datas['id_trajet'];
+        // $this->depart = $datas['depart'];
+        // $this->destination = $datas['destination'];
+        // $this->JourVoyage = $datas['jour_voyage'];
+        // $this->heureDepart = $datas['heure_depart'];
+        // $this->heureStep1 = $datas['heure_etape1'];
+        // $this->heureStep2 = $datas['heure_etape2'];
+        // $this->heureStep3 = $datas['heure_etape3'];
+        // $this->heureDestination = $datas['heure_destination'];
+        // $this->allerRetour = $datas['aller_retour'];
+        // $this->nbPassagers = $datas['nb_passagers'];
+        // $this->step1 = $datas['etape_1'];
+        // $this->step2 = $datas['etape_2'];
+        // $this->step3 = $datas['etape_3'];
     }
 
 }

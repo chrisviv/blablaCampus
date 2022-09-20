@@ -3,12 +3,19 @@
 require_once("./class/Trajects.php");
 
 $trajet = new Trajects($_SESSION['name_user']);
+$trajects = $trajet->getTrajectData($trajet->idUser);
 ?>
 <div class="mainReservation">
     
     <h1>MES TRAJETS</h2>
 
+<?php
 
+for ($i=0; $i < count($trajects); $i++) {
+    echo '<div class="infoTrajet mg-20 "><div class="dateTrajet"><h2 class="day">'.$day.'</h2><h2 class="arrivePlace">'.$month.'</h2></div><div class="placesTrajet"><h2 class="departPlace">'.$trajects[$i]['depart'].'</h2><h2 class="arrivePlace">'.$trajects[$i]['destination'].'</h2></div><div class="go-return"><img src="assets/img/go-return.svg" alt=""></div><form action="" class="none edit-delete-form" ><button type="submit" name="edit" class="btnEdit">EDITER</button><button type="submit" name="delete" class="btnDel">SUPPRIMER</button></form></div>';
+}
+
+?>
 
 
 
