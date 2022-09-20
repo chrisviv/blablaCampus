@@ -1,6 +1,6 @@
 let msg = document.querySelector('.msg');
 
-if (msg.textContent == 'Vous êtes bien connecté !' || msg.textContent == 'Votre compte a bien été créé !' || msg.textContent == 'Vos informations ont bien été mises à jour !') {
+if (msg.textContent == 'Vous êtes bien connecté !' || msg.textContent == 'Votre compte a bien été créé !' || msg.textContent == 'Vos informations ont bien été mises à jour !' || msg.textContent == 'Votre trajet a bien été créé !') {
     setTimeout(()=>{
         window.location.href='search.php'
     }, 1200);

@@ -49,7 +49,7 @@ if(isset($_POST['register'])){
                 
                 <label for="addPic" class="labelPic">
                     
-                    <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo">
+                    <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo" enctype="multipart/form-data">
                     <h3>Glisser-déposer ou parcourir un fichier</h3>
                     <h4 style="text-align: center ;">Taille recommandée: JPG, PNG, GIF <br> (150x150px, Max 10mb)</h4>
                 

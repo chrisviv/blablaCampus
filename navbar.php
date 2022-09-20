@@ -30,7 +30,7 @@ $user->getData($_SESSION['name_user']);
        </div>
         
        <div class="trajetBtn">
-        <a href="trajets.php">
+        <a href="add.php">
             <img src="assets/img/addroad.svg" alt="icon de route">
             <button>PROPOSER UN TRAJET</button>
         </a>

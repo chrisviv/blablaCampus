@@ -1,5 +1,4 @@
 <?php include('head.php');
-// include('upload.php');
 require_once("./class/User.php");
 $user = new User();
 $user->getData($_SESSION['name_user']);

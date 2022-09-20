@@ -55,43 +55,40 @@ class User extends Database {
                 $uploadOk = 0;
               }
             }
-
             // Check if file already exists
             if (file_exists($target_file)) {
                 echo "Ce fichier existe déjà !";
                 $uploadOk = 0;
             }
-  
             // Check file size
-            if ($_FILES["profilePic"]["size"] > 50000000) {
+            if ($_FILES["profilePic"]["size"] > 10000000) {
                 echo "Désolé ce fichier est trop volumineux.";
                 $uploadOk = 0;
             }
-  
             // // Allow certain file formats
             // if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             // && $imageFileType != "gif" ) {
             //     echo "Désolé, le fichier doit-être au format JPG, PNG ou GIF.";
             //     $uploadOk = 0;
             // }
-  
             // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
                 echo "Désolé, votre fichier n'a pas été téléchargé.";
             // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["profilePic"]["tmp_name"], $target_file)) {
-                echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été téléchargé.";
+                echo "Le fichier ". htmlspecialchars( basename( $_FILES["profilePic"]["name"])). " a été téléchargé.";
                 
-                $insert->bindParam(':picture', $_FILES["fileToUpload"]["name"]);
+                $insert->bindParam(':picture', $_FILES["profilePic"]["name"]);
                 $insert->execute();
                 $insert->debugDumpParams();
-               } else {
+                } else {
                 echo "Désolé, il y a eu une erreur lors du téléchargement.";
                 }
             }
- die();
+            die();
             //FIN DE TEST
+
             header('Location: ./confirmation.php'); 
         }
     }

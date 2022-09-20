@@ -53,7 +53,7 @@ if(!isset($_SESSION['name_user'])){
     </div>
 
     
-    <script src="assets/js/map.js"></script>
+    <script src="assets/js/autocomplete.js"></script>
     <script src="assets/js/user.js"></script>
 
 <?php include('footer.php')?>
