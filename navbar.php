@@ -1,3 +1,13 @@
+<?php 
+require_once("./class/User.php");
+$user = new User('');
+if(isset($_SESSION['name_user'])){
+
+}else{
+    header('Location: ./index.php');
+}
+
+?>
 <div class="header">
         <div class="headerLogo">
         <a href="index.php">
@@ -16,8 +26,8 @@
          <img src="https://picsum.photos/200/300" alt="Photo de profil">
         
          <div class="profile">
-             <h2>PHP USERNAME ICI, IMPORTANT!!!!!</h2>
-             <h3>PHP BIO ICI, IMPORTANT!!!</h3>
+             <h2><?php echo $user->username; ?></h2>
+             <h3><?php echo $user->bio; ?></h3>
          </div>
        </div>
         
@@ -52,7 +62,7 @@
 
             <div class="modalLink">
                 <img src="assets/img/ForwardArrow.png" alt="icon d'un flèche pour se déconnecter">
-                <a href="">Se déconnecter</a>
+                <a href="logout.php">Se déconnecter</a>
             </div>
         </div>
     </div>

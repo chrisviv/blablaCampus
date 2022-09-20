@@ -16,9 +16,9 @@
                     rendre en <span>formation</span></h2>
 
                     <p>Tu es nouveau dans la formation et tu cherches quelqu’un faisant le même chemin que toi pour venir en formation. <br> 
-                        Pas de soucis <span>blabla Campus</span> est là pour toi.
+                        Pas de soucis <span>blabla Campus</span> est là pour toi.<br>
                         Crée toi un compte ou connecte toi pour soit proposer un covoiturage, soit pour voir toutes les offes disponibles. <br>
-                        <span>blabla Campus</span>  est un service gratuit, il n’est en aucun cas question de mettre en place une monétisation des trajets.
+                        <span>blabla Campus</span>  est un service gratuit, il n’est en aucun cas question de mettre en place une monétisation des trajets.<br>
                         Bon voyage à toutes et à tous!</p>
             </div>
 

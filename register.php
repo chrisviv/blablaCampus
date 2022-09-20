@@ -1,4 +1,17 @@
-<?php include('head.php')?>
+<?php include('head.php');
+require_once("./class/User.php");
+if(isset($_POST['register'])){
+    $user = new User($username);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $name = $_POST['nom'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $bio = $_POST['bio'];
+    $picture = $_POST['profilePic'];
+    $user->register($name, $username, $password, $email, $bio, $picture);
+}
+
+?>
 
     <div class="mainRegister">
         <div class="header">
@@ -14,7 +27,7 @@
         </div>
 
         <div class="registerContent">
-            <form action="" method="" class="formRegister">
+            <form action="" method="post" class="formRegister">
 
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="nom" placeholder="Nom">
@@ -35,18 +48,19 @@
                 
                 <label for="addPic" class="labelPic">
                     
-                    <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo">
+                    <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo" enctype="multipart/form-data">
                     <h3>Glisser-déposer ou parcourir un fichier</h3>
                     <h4 style="text-align: center ;">Taille recommandée: JPG, PNG, GIF <br> (150x150px, Max 10mb)</h4>
                 
                     <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>
 
-                <input class='submitRegister' type="submit" name="" value="CRÉER UN COMPTE">
+                <input class='submitRegister' type="submit" name="register" value="CRÉER UN COMPTE">
             </form>
         </div>
 
     </div>
 
     <script src="assets/js/file.js"></script>
-<?php include('footer.php')?>
+<?php include('footer.php');
+?>
