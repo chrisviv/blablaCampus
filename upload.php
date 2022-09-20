@@ -11,7 +11,7 @@ $fileName = $_FILES['profilePic']['name'];
 $fileSize = $_FILES['profilePic']['size'];
 $fileTmpName = $_FILES['profilePic']['tmp_name'];
 $fileType = $_FILES['profilePic']['type'];
-$fileExtension = strtolower(end(explod('.',$fileName)));
+$fileExtension = strtolower(end(explode('.',$fileName)));
 
 $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName);
 

@@ -82,6 +82,22 @@ class Trajects extends User {
         // $this->step3 = $datas['etape_3'];
     }
 
+    public function getTrajectDataByID($id) {
+        $getData = $this->connect()->prepare("SELECT * FROM trajets WHERE id_trajet = :id");
+        $getData->bindValue(':id', $id);
+        $getData->execute();
+        $datas = $getData->fetch();
+        return $datas;
+    }
+
+    public function deleteTraject($idTraject) {
+        $delete = $this->connect()->prepare("DELETE FROM trajets WHERE id_trajet = :id_trajet");
+        $delete->bindValue(':id_trajet', $idTraject);
+        $delete->execute();
+        $_SESSION['confirmMessage'] = 'Votre trajet a bien été supprimé !';
+        header('Location: ./confirmation.php');
+    }
+
 }
 
 

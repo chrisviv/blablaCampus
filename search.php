@@ -4,6 +4,8 @@ require_once("./class/User.php");
 if(!isset($_SESSION['name_user'])){
     header("Location:./index.php");
 }
+
+include('homepc.php');
 ?>
 
     <div class="mainSearch">
@@ -52,7 +54,7 @@ if(!isset($_SESSION['name_user'])){
 
     </div>
 
-    
+    <script src="assets/js/test.js"></script>
     <script src="assets/js/autocomplete.js"></script>
     <script src="assets/js/user.js"></script>
 

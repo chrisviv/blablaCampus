@@ -1,8 +1,9 @@
 <?php include('head.php');
+include('navbar.php');
 require_once("./class/User.php");
 $user = new User();
 $user->getData($_SESSION['name_user']);
-var_dump($_FILES['profilePic']['tmp_name']);
+// var_dump($_FILES['profilePic']['tmp_name']);
 
 if(isset($_POST['edit'])){
     $username = $_POST['username'];

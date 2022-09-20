@@ -30,29 +30,9 @@
             <img src="assets/img/markerMapBox.svg" alt="" class="marker">
             <img src="assets/img/markerMapBox.svg" alt="" class="marker2">
              <div class="box-apli">
-                   
-             
-                 <div class="logo-container-pc">
-                     <div class="logo-img"><img src="assets/img/bbcLogo.svg" alt="logo de blablacampus"></div>
-                     <div class="logo-Tittle">
-                         <h1>BLABLA</h1>
-                     </div>
-                 </div>
-            
-                 <img src="assets/img/logo-pc.svg" alt="">
-            
-                 <div class="startBtn" id="startBtn">
+                  
                      
-                         <img src="assets/img/car-icon.svg" alt="icon d'une voiture">
-                         <button>COMMENCER</button>
-                    
-                 </div>
-            
-                 <div class="loginBtn" id="loginBtn">
-                    
-                         <button>SE CONNECTER</button>
-                     
-                 </div>
+             </div>
            </div>
             </div>
 

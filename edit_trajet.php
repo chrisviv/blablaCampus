@@ -2,71 +2,44 @@
 include('navbar.php');
 require_once("./class/Trajects.php");
 
-if(isset($_GET['addTraject'])) {
-    $trajet = new Trajects($_SESSION['name_user']);
-    $depart = $_GET['depart'];
-    $destination = $_GET['destination'];
-    $jour_voyage = $_GET['jour_voyage'];
-    $heure_depart = $_GET['hdepart'];
-    if(isset($_GET['retour'])) {
-        $allerRetour = $_GET['retour'];
-    }
-    else {
-        $allerRetour = 'off';
-    }
-    $nbPassagers = $_GET['places'];
-    if(isset($_GET['etapes'])) {
-        $step1 = $_GET['etapes'];
-    }
-    else {
-        $step1 = '';
-    }
-    if(isset($_GET['etapes1'])) {
-        $step2 = $_GET['etapes1'];
-    }
-    else {
-        $step2 = '';
-    }
-    if(isset($_GET['etapes2'])) {
-        $step3 = $_GET['etapes2'];
-    }
-    else {
-        $step3 = '';
-    }
-    $trajet->newTraject($depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3);
-}
+$trajet = new Trajects($_SESSION['name_user']);
+$data = $trajet->getTrajectDataByID($_GET['edit']);
+
+
 ?>
 
 <div class="mainAdd">
 
 
-    <form action="" method="get" class="formAdd" id='formAdd'>
-
-        <h1>PROPOSER UN TRAJET</h1>
+    <form action="" method="" class="formAdd" id='formAdd'>
+        <input type="hidden"  name="id_trajet" value="<?php echo $_GET['edit']; ?>">
+        <input type="hidden"  name="hide_etape2" value="<?php if(isset($data['etape_2'])){echo $data['etape_2'];} ?>" id='hide_etape2'>
+        <input type="hidden"  name="hide_etape3" value="<?php if(isset($data['etape_3'])){echo $data['etape_3'];} ?>" id='hide_etape3'>
+        <h1>EDITER UN TRAJET</h1>
 
         <h3>D’où partez vous?</h3>
 
         <div class="addBox  autocomplete-container" id="container-add">
 
             <img src="assets/img/markerMap.svg" alt="">
-            <input type="text" placeholder="Départ" name="depart" id='inputDepart2' required>
+            <input type="text" placeholder="Départ" name="" id='inputDepart2' value="<?php echo $data['depart'] ?>">
         </div>
 
-        <h3>A quelle heure partez-vous?</h3>
+        <h3>A quelle heure partez -vous?</h3>
 
         <div class="addBox">
             <img src="assets/img/clock.svg" alt="">
-            <input type="time" placeholder="Départ" name="hdepart" id='inputDepart' required>
+            <input type="time" name="" id='inputDepart' value="<?php echo $data['heure_depart'] ?>">
         </div>
 
         <h3>Pour aller où?</h3>
 
         <div class="addBox">
             <img src="assets/img/markerMap.svg" alt="">
-            <select name="destination" id="">
+            <select name="" id="">
 
                 <option value="" disabled selected hidden class="bold">
-                    Destination
+                    <?php echo $data['destination'] ?>
                 </option>
 
 
@@ -85,19 +58,19 @@ if(isset($_GET['addTraject'])) {
 
         <div class="addBox">
             <img src="assets/img/calendar.svg" alt="">
-            <input type="date" name="jour_voyage" class="date" required>
+            <input type="date" name="" class="date" value="<?php echo $data['jour_voyage'] ?>">
         </div>
 
         <h3>Type de trajet</h3>
         
         <div class="optionFlex-row">
             <div class="optionAdd">
-                <input type="checkbox" id="allez" name="allez">
+                <input type="checkbox" id="allez" name="allez" <?php if($data['aller_retour'] == 'off') {echo 'checked';}?>>
                 <label for="allez">Allez</label>
             </div>
             
             <div class="optionAdd"> 
-                <input type="checkbox" id="retour" name="retour">
+                <input type="checkbox" id="retour" name="retour" <?php if($data['aller_retour'] == 'on') {echo 'checked';}?>>
                 <label for="retour">Allez/Retour</label>
             </div>
         </div>
@@ -106,7 +79,7 @@ if(isset($_GET['addTraject'])) {
 
         <div class="addBox">
             <img src="assets/img/places.svg" alt="">
-            <input type="number" min="1" max="4" name="places" placeholder="Places disponibles">
+            <input type="number" min="1" max="4" name="places" placeholder="Places disponibles" value="<?php echo $data['nb_voyageurs'] ?>">
 
            
         </div>
@@ -116,7 +89,7 @@ if(isset($_GET['addTraject'])) {
       <div class="etapes-row autocomplete-container auto-complete-array">
           <div class="etapeSearchBox">
               <img src="assets/img/markerMap.svg" alt="">
-              <input type="text" name="etapes"  placeholder="Etape" class="input-etape" value="">
+              <input type="text" name="etapes"  placeholder="Etape" class="input-etape" value="<?php echo $data['etape_1'] ?>">
         
           </div>  
         
@@ -125,7 +98,7 @@ if(isset($_GET['addTraject'])) {
 
 
 
-        <input class='submitTs' type="submit" name="addTraject" value="PROPOSER UN TRAJET">
+        <input class='submitTs' type="submit" name="" value="METTRE A JOUR">
     </form>
 
 
@@ -134,6 +107,6 @@ if(isset($_GET['addTraject'])) {
 
 
 
-<script src="assets/js/autocomplete2.js"></script>
+<script src="assets/js/autocomplete3.js"></script>
 <script src="assets/js/user.js"></script>
 <?php include('footer.php')?>
