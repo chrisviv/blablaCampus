@@ -16,9 +16,9 @@ for ($i=0; $i < count($trajects); $i++) {
     $day = substr($trajects[$i]['jour_voyage'], 8);
     $month = substr($trajects[$i]['jour_voyage'], 5, 2);
     if($month == '01') {
-        $month = 'JAN';
+        $month = 'JANV';
     } elseif($month == '02') {
-        $month = 'FEV';
+        $month = 'FEVR';
     }elseif($month == '03') {
         $month = 'MARS';
     }elseif($month == '04') {
@@ -32,7 +32,7 @@ for ($i=0; $i < count($trajects); $i++) {
     }elseif($month == '08') {
         $month = 'AOUT';
     }elseif($month == '09') {
-        $month = 'SEP';
+        $month = 'SEPT';
     }elseif($month == '10') {
         $month = 'OCT';
     }elseif($month == '11') {
@@ -40,7 +40,14 @@ for ($i=0; $i < count($trajects); $i++) {
     }elseif($month == '12') {
         $month = 'DEC';
     }
-    echo '<div class="infoTrajet mg-20 "><div class="dateTrajet"><h2 class="day">'.$day.'</h2><h2 class="arrivePlace">'.$month.'</h2></div><div class="placesTrajet"><h2 class="departPlace">'.$trajects[$i]['depart'].'</h2><h2 class="arrivePlace">'.$trajects[$i]['destination'].'</h2></div><div class="go-return"><img src="assets/img/go-return.svg" alt=""></div><form action="" class="none edit-delete-form" ><a href="edit_trajet.php?edit='.$trajects[$i]["id_trajet"].'" class="btnEdit">EDITER</a><a href="delete.php?supp='.$trajects[$i]["id_trajet"].'" class="btnDel">SUPPRIMER</a></form></div>';
+    if($trajects[$i]['aller_retour'] == 'on') {
+        $arrow = 'assets/img/go-return.svg';
+    }
+    elseif($trajects[$i]['aller_retour'] != 'on'){
+        $arrow = 'assets/img/arrow-up.svg';
+    }
+
+    echo '<div class="infoTrajet mg-20 "><div class="dateTrajet"><h2 class="day">'.$day.'</h2><h2 class="arrivePlace">'.$month.'</h2></div><div class="placesTrajet"><h2 class="departPlace">'.$trajects[$i]['depart'].'</h2><h2 class="arrivePlace">'.$trajects[$i]['destination'].'</h2></div><div class="go-return"><img src="'.$arrow.'" alt=""></div><form action="" class="none edit-delete-form" ><a href="edit_trajet.php?edit='.$trajects[$i]["id_trajet"].'" class="btnEdit">EDITER</a><a href="delete.php?supp='.$trajects[$i]["id_trajet"].'" class="btnDel">SUPPRIMER</a></form></div>';
 }
 
 ?>

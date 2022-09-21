@@ -72,33 +72,16 @@ class Trajects extends User {
     }
 
 // Filter de trajet A TESTER !
-    public function searchTraject($depart, $destination, $jour_voyage) {
-        $req = array();
-        $value = array();
-    
-       
-        if (!empty($_GET['filter_intervention'])) {
-            array_push($req, 'AND type_intervention = ""?""');
-            array_push($value, $_GET['filter_intervention']);
-        }
-    
-        if (!empty($_GET['filter_step'])) {
-            array_push($req, 'AND step_intervention = ""?""');
-            array_push($value, $_GET['filter_step']);
-        }
-    
-        if (!empty($_GET['filter_date'])) {
-            array_push($req, 'AND date_intervention = ""?""');
-            array_push($value, $_GET['filter_date']);
-        }
-    
-      
-        $request = implode(" ", $req);
-        $search = connect()->prepare('SELECT * FROM interventions WHERE 1  ' . $request . '');
-        $search->execute($value);
-        //$search->debugDumpParams();
-        $resultSearch = $search->fetchAll();
-        return $resultSearch;
+    public function searchTraject($depart, $destination, $jour_voyage, $aller_retour) {
+        $searchTraject = $this->connect()->prepare("SELECT users.username , users.bio , depart , destination , jour_voyage , heure_depart , aller_retour , nb_voyageurs , etape_1 , etape_2 , etape_3 , trajets.id_user , id_trajet FROM `trajets` INNER JOIN users ON trajets.id_user = users.id_user WHERE `depart` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour ORDER BY `heure_depart`;");
+        $searchTraject->bindValue(':depart', $depart);
+        $searchTraject->bindValue(':destination', $destination);
+        $searchTraject->bindValue(':jour_voyage', $jour_voyage);
+        $searchTraject->bindValue(':aller_retour', $aller_retour);
+        $searchTraject->execute();
+        $data = $searchTraject->fetchAll();
+        return $data;
+        
     }
 
     public function getTrajectData($idUser) {
