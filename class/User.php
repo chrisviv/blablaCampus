@@ -81,7 +81,7 @@ class User extends Database {
                 
                 $insert->bindParam(':picture', $_FILES["profilePic"]["name"]);
                 $insert->execute();
-                // $insert->debugDumpParams();
+                $insert->debugDumpParams();
                 } else {
                 echo "Désolé, il y a eu une erreur lors du téléchargement.";
                 }
