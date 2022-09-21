@@ -1,7 +1,8 @@
-<?php include('head.php') ?>
-<?php include('navbar.php')?>
+<?php include('head.php');
+include('homePc.php');
+?>
 <div class="listMain">
-    
+    <?php include('navbar.php');?>
     <h1>TRAJETS DISPONIBLES</h2>
 
     <div class="infoTrajet">

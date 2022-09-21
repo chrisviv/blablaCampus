@@ -1,14 +1,13 @@
 <?php include('head.php');
-
-include('homePc.php')
+include('navbar.php');
 ?>
 
 <div class="mainAdd">
-    <?php include('navbar.php');?>
+
 
     <form action="" method="" class="formAdd" id='formAdd'>
 
-        <h1>PROPOSER UN TRAJET</h1>
+        <h1>EDITER UN TRAJET</h1>
 
         <h3>D’où partez vous?</h3>
 
@@ -91,7 +90,7 @@ include('homePc.php')
 
 
 
-        <input class='submitTs' type="submit" name="" value="PROPOSER UN TRAJET">
+        <input class='submitTs' type="submit" name="" value="METTRE A JOUR">
     </form>
 
 

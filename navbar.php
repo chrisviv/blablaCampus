@@ -1,11 +1,9 @@
-<?php 
+<?php
 require_once("./class/User.php");
 $user = new User('');
-if(isset($_SESSION['name_user'])){
 
-}else{
-    header('Location: ./index.php');
-}
+$user->getData($_SESSION['name_user']);
+
 
 ?>
 <div class="header">
@@ -57,7 +55,7 @@ if(isset($_SESSION['name_user'])){
             
             <div class="modalLink">
                 <img src="assets/img/bx_message.svg" alt="icon du message">
-                <a href="http://">Messagerie</a>
+                <a href="messagerie.php">Messagerie</a>
             </div>
 
             <div class="modalLink">

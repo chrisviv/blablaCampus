@@ -13,5 +13,4 @@ abstract class Database {
             die('Erreur : '.$e->getMessage());
         }
     }
-
 }

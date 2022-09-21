@@ -3,10 +3,14 @@ require_once("./class/User.php");
 if(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $user = new User($username);
+    $user = new User();
     $user->login($username, $password);
 }
+elseif(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['username'])){
+    $login = $_POST['username'];
+}
 
+include('homePc.php');
 ?>
     <div class="mainLogin">
         <div class="header">
@@ -26,8 +30,8 @@ if(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['usernam
            
             
             <form action="" method="post" class="formLogin">
-                <h2>ENTREZ VOS COORDONNÉS</h2>
-                <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur">
+                <h2>ENTREZ VOS COORDONNÉES</h2>
+                <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php if(isset($login)){echo $login;}?>">
                 <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
                 <input class='submitLogin' type="submit" name="login" value="SE CONNECTER">
             </form>

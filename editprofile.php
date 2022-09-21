@@ -1,50 +1,47 @@
 <?php include('head.php');
+// include('upload.php');
 require_once("./class/User.php");
-// $user = new User();
+$user = new User();
+$user->getData($_SESSION['name_user']);
 
-if(isset($_POST['edit']))
+
+if(isset($_POST['edit'])){
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $bio = $_POST['bio'];
+    $picture = $_POST['profilePic'];
+    $user->editData($username, $email, $bio, $picture);
 
 
-// if(isset($_GET['register'])){
-//     $user = new User($username);
-//     $password = password_hash($_GET['password'], PASSWORD_DEFAULT);
-//     $name = $_GET['nom'];
-//     $username = $_GET['username'];
-//     $email = $_GET['email'];
-//     $bio = $_GET['bio'];
-//     $picture = $_GET['profilePic'];
-//     $user->editData($name, $username, $password, $email, $bio, $picture);
-// }
-
+}
+include('homePc.php');
 
 ?>
 
     <div class="mainRegister">
-     
+        
+        <?php include('navbar.php'); ?>
 
           
 
         <div class="registerContent">
-            <form action="edit" method="post" class="formRegister">
+            <form action="" method="post" class="formRegister" enctype="multipart/form-data">
 
                 <h2>MODIFIEZ VOS COORDONNÉS</h2>
-                <input class="ipRegister" type="text" name="nom" placeholder="Nom" value="<?php echo $user->getData('username') ?>">
-
-                <h2>MODIFIEZ VOTRE MOT DE PASE</h2>
-                <input class="ipRegister" type="password" name="password" placeholder="Mot de passe" required>
+                <input class="ipRegister" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php echo $user->username ?>" required>
 
                 <h2>MODIFIEZ VOTRE EMAIL</h2>
-                <input class="ipRegister" type="email" name="email" placeholder="Email" value="<?php echo $user->getData('mail') ?>">
+                <input class="ipRegister" type="email" name="email" placeholder="Email" value="<?php echo $user->mail ?>" required>
                 <p class="infonMail">Ajoutez votre adresse e-mail pour recevoir des notifications sur votre activité sur Foundation. Cela ne sera pas affiché sur votre profil.</p>
 
                 <h2>MODIFIEZ VOTRE BIOGRAPHIE</h2>
-                <textarea class="txtRegister" type="text" name="bio" placeholder="Entrez votre bio ici"><?php echo $user->getData('bio') ?></textarea>
+                <textarea class="txtRegister" type="text" name="bio" placeholder="Entrez votre bio ici"><?php echo $user->bio ?></textarea>
 
                 
                 <h2>MODIFIER VOTRE IMAGE DE PROFIL</h2>
                 
                 <label for="addPic" class="labelPic">
-                    
+                
                     <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo">
                     <h3>Glisser-déposer ou parcourir un fichier</h3>
                     <h4 style="text-align: center ;">Taille recommandée: JPG, PNG, GIF <br> (150x150px, Max 10mb)</h4>
@@ -52,10 +49,9 @@ if(isset($_POST['edit']))
                     <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>
 
-                <input class='submitRegister' type="submit" name="editprofil" value="METTRE À JOUR">
+                <input class='submitRegister' type="submit" name="edit" value="METTRE À JOUR">
             </form>
         </div>
-
     </div>
 
     <script src="assets/js/user.js"></script>
