@@ -8,54 +8,66 @@ if(!isset($_SESSION['name_user'])){
 include('homePc.php')
 ?>
 
-    <div class="mainSearch">
-      <?php include('navbar.php');?>
+<div class="mainSearch">
+    <?php include('navbar.php');?>
 
 
-        <div class="form-container">
-            <h1>RECHERCHER UN TRAJET</h1>
-            <form action="" class="searchForm autocomplete-container" id="autocomplete-container">
+    <div class="form-container">
+        <h1>RECHERCHER UN TRAJET</h1>
+        <form action="" class="searchForm autocomplete-container" id="autocomplete-container">
 
-                <div class="departBox">
+            <div class="departBox">
 
-                    <img src="assets/img/markerMap.svg" alt="">
-                    <input type="text" placeholder="Départ" name="" id='inputDepart' required>
+                <img src="assets/img/markerMap.svg" alt="">
+                <input type="text" placeholder="Départ" name="" id='inputDepart' required>
+            </div>
+
+            <div class="departBox">
+                <img src="assets/img/markerMap.svg" alt="">
+                <select name="" id="" required>
+
+                    <option value="" disabled selected hidden>
+                        Destination
+                    </option>
+
+
+                    <option value="adresse">
+                        Centre avenue du stade
+                    </option>
+
+                    <option value="adresse2">
+                        Campus numérique
+                    </option>
+
+                </select>
+            </div>
+
+            <div class="departBox">
+                <img src="assets/img/calendar.svg" alt="">
+                <input type="date" name="" class="date" required>
+            </div>
+
+
+            <div class="optionFlex-row">
+                <div class="optionAdd">
+                    <input type="checkbox" id="allez" name="allez" checked>
+                    <label for="allez">Allez</label>
                 </div>
 
-               <div class="departBox">
-                    <img src="assets/img/markerMap.svg" alt="">
-                 <select name="" id="" required>
-                    
-                      <option value="" disabled selected hidden>
-                         Destination
-                      </option>
-                    
-                
-                     <option value="adresse">
-                         Centre avenue du stade
-                     </option>
-                
-                     <option value="adresse2">
-                         Campus numérique
-                     </option>
-                
-                 </select>
-               </div>
-
-
-               <div class="departBox">
-                <img src="assets/img/calendar.svg" alt="">
-                 <input type="date" name="" class="date" required>
-               </div>
-                <input type="submit" name="" class="searchBtn" value="RECHERCHER">
-            </form>
-        </div>
-
-
+                <div class="optionAdd">
+                    <input type="checkbox" id="retour" name="retour">
+                    <label for="retour">Allez/Retour</label>
+                </div>
+            </div>
+            <input type="submit" name="" class="searchBtn" value="RECHERCHER">
+        </form>
     </div>
 
-    <script src="assets/js/test.js"></script>
-    <script src="assets/js/autocomplete.js"></script>
-    <script src="assets/js/user.js"></script>
+
+</div>
+
+<script src="assets/js/test.js"></script>
+<script src="assets/js/autocomplete.js"></script>
+<script src="assets/js/user.js"></script>
 
 <?php include('footer.php')?>

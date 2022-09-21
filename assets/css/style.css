@@ -51,7 +51,8 @@ body {
     display: block !important;
 }
 
-input[type="submit"], button{
+input[type="submit"],
+button {
     cursor: pointer;
 }
 
@@ -519,7 +520,6 @@ select {
     color: var(--grayTextiInput);
     font-size: 16px;
     margin: 10px 0px;
-    width: 100%;
     padding-left: 10px;
 
 }
@@ -1071,8 +1071,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: flex;
     justify-content: start;
     width: 100%;
-    MARGIN-LEFT: 30px;}
-.ipDelConfirm{
+    MARGIN-LEFT: 30px;
+}
+
+.ipDelConfirm {
     MARGIN-LEFT: 30px;
 }
 
@@ -1096,15 +1098,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: var(--red);
     color: white;
     line-height: 15px;
-    letter-spacing: 5px;}
+    letter-spacing: 5px;
+}
 
-    .ipDeleteBox{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-.deleteReturn{
-    font-family:  "worksans", sans-serif;
+.ipDeleteBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteReturn {
+    font-family: "worksans", sans-serif;
     line-height: 12px;
     border: 0;
     background: transparent;
@@ -1414,203 +1418,203 @@ span {
 
 
 
-   
 
-    .road {
-        position: fixed;
-        left: 0;
-        z-index: -1;
-        min-height: 100vh;
-    }
 
-    .pcMain {
-        width: 100%;
-        min-height: 100vh;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
+.road {
+    position: fixed;
+    left: 0;
+    z-index: -1;
+    min-height: 100vh;
+}
 
-    .logo-container-pc {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.pcMain {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-    .logo-container-pc>.logo-img>img {
-        width: 80px;
-    }
+.logo-container-pc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .logo-container-pc>.logo-Tittle>h1 {
-        font-size: 30px;
-    }
+.logo-container-pc>.logo-img>img {
+    width: 80px;
+}
 
-    .logo-container-pc .logo-Tittle>h1::after {
-        font-family: "bungee";
-        margin: 0;
-        content: 'CAMPUS';
-        position: absolute;
-        color: var(--red);
-        bottom: -26px;
-        left: calc(50% - 65px);
-        font-weight: 100;
-    }
+.logo-container-pc>.logo-Tittle>h1 {
+    font-size: 30px;
+}
 
-    .left-content {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        min-height: 100vh;
-    }
+.logo-container-pc .logo-Tittle>h1::after {
+    font-family: "bungee";
+    margin: 0;
+    content: 'CAMPUS';
+    position: absolute;
+    color: var(--red);
+    bottom: -26px;
+    left: calc(50% - 65px);
+    font-weight: 100;
+}
 
-    .left-content-text>h2 {
-        font-family: "merriweather-italic";
-        font-size: calc(1.2vw + 1vh + 1vmin);
-        margin: 50px 0px;
-    }
+.left-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+}
 
-    .left-content-text>h2>span {
-        font-family: "merriweather-italic-black";
-        color: var(--red);
-    }
+.left-content-text>h2 {
+    font-family: "merriweather-italic";
+    font-size: calc(1.2vw + 1vh + 1vmin);
+    margin: 50px 0px;
+}
 
-    .left-content-text>p {
-        font-family: "overpass";
-        line-height: 40px;
-        font-size: calc(0.5vw + 0.2vh + 0.7vmin);
-    }
+.left-content-text>h2>span {
+    font-family: "merriweather-italic-black";
+    color: var(--red);
+}
 
-    .left-content-text>p>span {
-        font-family: "overpass-bold";
-        color: var(--red);
-    }
+.left-content-text>p {
+    font-family: "overpass";
+    line-height: 40px;
+    font-size: calc(0.5vw + 0.2vh + 0.7vmin);
+}
 
-    .right-content {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
+.left-content-text>p>span {
+    font-family: "overpass-bold";
+    color: var(--red);
+}
 
-    .box-apli {
-        width: calc(3vw + 4vh + 30vmin);
-        height: calc(100vh - 300px);
-        min-height: 70vh;
-        border-radius: 30px;
-        padding: 26px;
-        overflow: scroll;
-        -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
-        box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
-        background: white;
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
+.right-content {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
-    .box-apli::-webkit-scrollbar {
-        display: none;
-    }
-    .mainAccueil{
-        min-height: 70vh;
-    }
+.box-apli {
+    width: calc(3vw + 4vh + 30vmin);
+    height: calc(100vh - 300px);
+    min-height: 70vh;
+    border-radius: 30px;
+    padding: 26px;
+    overflow: scroll;
+    -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
+    box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
+    background: white;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
 
-    .container-app {
-        position: relative;
-    }
+.box-apli::-webkit-scrollbar {
+    display: none;
+}
 
-    .marker,
-    .marker2 {
-        position: absolute;
-        z-index: -1;
-    }
+.mainAccueil {
+    min-height: 70vh;
+}
 
-    .marker {
-        left: -120px;
-        top: 50%;
-        width: 140px !important;
-        transform: rotate(-20deg);
-    }
+.container-app {
+    position: relative;
+}
 
-    .marker2 {
-        right: -60px;
-        top: 10%;
-        width: 80px !important;
-        transform: rotate(10deg);
-    }
+.marker,
+.marker2 {
+    position: absolute;
+    z-index: -1;
+}
 
-    .box-apli>img {
-        margin: 30px 0px;
-        width: 80%;
-    }
+.marker {
+    left: -120px;
+    top: 50%;
+    width: 140px !important;
+    transform: rotate(-20deg);
+}
 
-    .under-boxText {
-        font-family: "bungee";
-        margin: 40px 0px 0px 0px;
-        justify-content: center;
-        display: flex;
-    }
+.marker2 {
+    right: -60px;
+    top: 10%;
+    width: 80px !important;
+    transform: rotate(10deg);
+}
 
-    .under-boxText>p {
-        color: var(--blackTittle);
-        line-height: 18px;
-        font-size: calc(0.2vw + 0.8vh + 0.5vmin);
-    }
+.box-apli>img {
+    margin: 30px 0px;
+    width: 80%;
+}
 
-    .under-boxText>p>span {
-        color: var(--red);
-    }
+.under-boxText {
+    font-family: "bungee";
+    margin: 40px 0px 0px 0px;
+    justify-content: center;
+    display: flex;
+}
 
-    .startBtn {
-        background: var(--red);
-        border-radius: 20px;
-        width: 85%;
-        display: flex;
-        justify-content: center;
-    }
+.under-boxText>p {
+    color: var(--blackTittle);
+    line-height: 18px;
+    font-size: calc(0.2vw + 0.8vh + 0.5vmin);
+}
 
-    .startBtn>button {
-        font-family: "worksans", sans-serif;
-        border: 0;
-        border-radius: 20px;
-        height: calc(1vw + 1vh + 4vmin);
-        font-size: 13px;
-        background: var(--red);
-        color: white;
-        letter-spacing: 10px;
-        position: relative;
-    }
+.under-boxText>p>span {
+    color: var(--red);
+}
 
-    .startBtn>img {
-        width: 21px;
-        margin-right: 5px;
-    }
+.startBtn {
+    background: var(--red);
+    border-radius: 20px;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+}
 
-    .loginBtn>button {
-        font-family: "worksans", sans-serif;
-        height: 80px;
-        border: 0;
-        background-color: transparent;
-        width: 280px;
-        font-size: 10px;
-        color: var(--red);
-        letter-spacing: 10px;
-    }
+.startBtn>button {
+    font-family: "worksans", sans-serif;
+    border: 0;
+    border-radius: 20px;
+    height: calc(1vw + 1vh + 4vmin);
+    font-size: 13px;
+    background: var(--red);
+    color: white;
+    letter-spacing: 10px;
+    position: relative;
+}
 
-    .info-legales {
-        position: absolute;
-        bottom: 25px;
-        left: 5%;
-        
-    }
+.startBtn>img {
+    width: 21px;
+    margin-right: 5px;
+}
 
-    .info-legales>a {
-        color: var(--red);
-        text-decoration: none;
-        font-family: "overpass";
-        cursor: pointer;
-    }
- 
+.loginBtn>button {
+    font-family: "worksans", sans-serif;
+    height: 80px;
+    border: 0;
+    background-color: transparent;
+    width: 280px;
+    font-size: 10px;
+    color: var(--red);
+    letter-spacing: 10px;
+}
 
-    
+.info-legales {
+    position: absolute;
+    bottom: 25px;
+    left: 5%;
+
+}
+
+.info-legales>a {
+    color: var(--red);
+    text-decoration: none;
+    font-family: "overpass";
+    cursor: pointer;
+}

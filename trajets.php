@@ -61,14 +61,8 @@ for ($i=0; $i < count($trajects); $i++) {
             <a href="#" name="edit" class="btnEdit">EDITER</a>
             <a href="#" name="delete" class="btnDel">SUPPRIMER</a>
         </form>
-<<<<<<< HEAD
 </div> -->
 
-=======
-    </div>
-    
- 
->>>>>>> 6e94d2f4c2136e8b21d7c130cc34b6d329902b22
 </div>
 
 

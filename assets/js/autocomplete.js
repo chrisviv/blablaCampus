@@ -132,6 +132,22 @@ addressAutocomplete(inputDepart, autocomplete, (data) => {
 
 });
 
+let allez = document.getElementById('allez')
+let retour = document.getElementById('retour')
+
+
+    allez.addEventListener('click', ()=>{
+        if (allez.checked == true) {
+            retour.checked = false
+        }
+    })
+
+    retour.addEventListener('click', ()=>{
+        if(retour.checked == true){
+            allez.checked = false
+        }
+    })
+
 
 /* var myAPIKey = '360b948f27c34be5be832cd8c5e132e9' */
 
