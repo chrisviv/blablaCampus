@@ -56,6 +56,10 @@ button {
     cursor: pointer;
 }
 
+select {
+    width: 100%;
+}
+
 /* -----------------------COLORS -------------------*/
 :root {
     --black: #000000;
