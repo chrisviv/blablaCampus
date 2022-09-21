@@ -51,16 +51,58 @@ class Trajects extends User {
 
 // Modification de trajet   
     public function editTraject($id, $depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3) {
-        $editTraject = $this->connect()->prepare("");
+        $editTraject = $this->connect()->prepare("UPDATE `trajets` SET `depart`= :depart ,`destination`= :destination ,`jour_voyage`= :jour_voyage ,`heure_depart`= :heure_depart , `heure_etape1` = :heure_etape1 , `heure_etape2` = :heure_etape2 ,  `heure_etape3` = :heure_etape3 ,`heure_destination` = :heure_destination ,`aller_retour`= :aller_retour,`nb_voyageurs`= :nb_voyageurs ,`etape_1`= :etape_1 ,`etape_2`= :etape_2 ,`etape_3`= :etape_3  WHERE `id_trajet` = :id_trajet");
+        $editTraject->bindValue(':depart', $depart);
+        $editTraject->bindValue(':destination', $destination);
+        $editTraject->bindValue(':jour_voyage', $jour_voyage);
+        $editTraject->bindValue(':heure_depart', $heure_depart);
+        $editTraject->bindValue(':heure_etape1', '');
+        $editTraject->bindValue(':heure_etape2', '');
+        $editTraject->bindValue(':heure_etape3', '');
+        $editTraject->bindValue(':heure_destination', '');
+        $editTraject->bindValue(':aller_retour', $allerRetour);
+        $editTraject->bindValue(':nb_voyageurs', $nbPassagers);
+        $editTraject->bindValue(':etape_1', $step1);
+        $editTraject->bindValue(':etape_2', $step2);
+        $editTraject->bindValue(':etape_3', $step3);
+        $editTraject->bindValue(':id_trajet', $id);
+        $editTraject->execute();
+        $_SESSION['confirmMessage'] = 'Votre trajet a bien été modifié !';
+        header('Location: ./confirmation.php');
     }
 
 // Filter de trajet A TESTER !
-    public function searchTraject() {
-        
+    public function searchTraject($depart, $destination, $jour_voyage) {
+        $req = array();
+        $value = array();
+    
+       
+        if (!empty($_GET['filter_intervention'])) {
+            array_push($req, 'AND type_intervention = ""?""');
+            array_push($value, $_GET['filter_intervention']);
+        }
+    
+        if (!empty($_GET['filter_step'])) {
+            array_push($req, 'AND step_intervention = ""?""');
+            array_push($value, $_GET['filter_step']);
+        }
+    
+        if (!empty($_GET['filter_date'])) {
+            array_push($req, 'AND date_intervention = ""?""');
+            array_push($value, $_GET['filter_date']);
+        }
+    
+      
+        $request = implode(" ", $req);
+        $search = connect()->prepare('SELECT * FROM interventions WHERE 1  ' . $request . '');
+        $search->execute($value);
+        //$search->debugDumpParams();
+        $resultSearch = $search->fetchAll();
+        return $resultSearch;
     }
 
     public function getTrajectData($idUser) {
-        $getData = $this->connect()->prepare("SELECT * FROM trajets WHERE id_user = :id");
+        $getData = $this->connect()->prepare("SELECT * FROM trajets WHERE id_user = :id ORDER BY `jour_voyage`");
         $getData->bindValue(':id', $idUser);
         $getData->execute();
         $datas = $getData->fetchAll();
@@ -83,7 +125,7 @@ class Trajects extends User {
     }
 
     public function getTrajectDataByID($id) {
-        $getData = $this->connect()->prepare("SELECT * FROM trajets WHERE id_trajet = :id");
+        $getData = $this->connect()->prepare("SELECT * FROM trajets WHERE id_trajet = :id ORDER BY `jour_voyage`");
         $getData->bindValue(':id', $id);
         $getData->execute();
         $datas = $getData->fetch();

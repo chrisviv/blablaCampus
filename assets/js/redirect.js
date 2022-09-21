@@ -8,7 +8,7 @@ if (msg.textContent == 'Vous êtes bien connecté !' || msg.textContent == 'Votr
     setTimeout(()=>{
         window.location.href='index.php'
     }, 1200);
-}else if(msg.textContent == 'Votre trajet a bien été supprimé !'){
+}else if(msg.textContent == 'Votre trajet a bien été supprimé !' || msg.textContent == 'Votre trajet a bien été modifié !'){
     setTimeout(()=>{
         window.location.href='trajets.php'
     }, 1200);

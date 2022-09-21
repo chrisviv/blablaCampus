@@ -45,7 +45,7 @@
                 <p>Cette application <br> <span>est mieux sur mobile</span></p>
             </div>
            
-        </div>
+        
 
         <div class="info-legales">
             <a href="">Mentions légales</a> - <a href="">Politique de confidentialité</a>
