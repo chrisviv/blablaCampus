@@ -5,11 +5,11 @@ if(!isset($_SESSION['name_user'])){
     header("Location:./index.php");
 }
 
-include('homepc.php');
+include('homePc.php')
 ?>
 
     <div class="mainSearch">
-        <?php include('navbar.php');?>
+      <?php include('navbar.php');?>
 
 
         <div class="form-container">

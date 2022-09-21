@@ -55,7 +55,7 @@ $user->getData($_SESSION['name_user']);
             
             <div class="modalLink">
                 <img src="assets/img/bx_message.svg" alt="icon du message">
-                <a href="http://">Messagerie</a>
+                <a href="messagerie.php">Messagerie</a>
             </div>
 
             <div class="modalLink">

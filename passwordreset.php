@@ -5,20 +5,21 @@ if(isset($_POST['sendMail'])){
     $user->passRemember($_POST['email']);
 }
 
+include('homePc.php');
 ?>
 
 <div class="mainReset">
-<div class="header">
-            <div class="headerLogo">
-            <a href="index.php">
-                <img src="assets/img/bbcLogo.svg" alt="photo du logo">
-            </a>
-            </div>
+    <div class="header">
+                <div class="headerLogo">
+                <a href="index.php">
+                    <img src="assets/img/bbcLogo.svg" alt="photo du logo">
+                </a>
+                </div>
 
-            <div class="headerTitle">
-                <h1>MOT DE PASSE PERDU</h1>
+                <div class="headerTitle">
+                    <h1>MOT DE PASSE PERDU</h1>
+                </div>
             </div>
-        </div>
 
          
         <form action="" method="post" class="formLogin">

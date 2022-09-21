@@ -1,12 +1,13 @@
 <?php include('head.php')?>
-<?php include('navbar.php');
+<?php 
 require_once("./class/Trajects.php");
+include('homePc.php');
 
 $trajet = new Trajects($_SESSION['name_user']);
 $trajects = $trajet->getTrajectData($trajet->idUser);
 ?>
 <div class="mainReservation">
-    
+    <?php include('navbar.php');?>
     <h1>MES TRAJETS</h2>
 
 <?php
@@ -60,8 +61,14 @@ for ($i=0; $i < count($trajects); $i++) {
             <a href="#" name="edit" class="btnEdit">EDITER</a>
             <a href="#" name="delete" class="btnDel">SUPPRIMER</a>
         </form>
+<<<<<<< HEAD
 </div> -->
 
+=======
+    </div>
+    
+ 
+>>>>>>> 6e94d2f4c2136e8b21d7c130cc34b6d329902b22
 </div>
 
 

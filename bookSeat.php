@@ -1,7 +1,8 @@
-<?php include('head.php') ?>
+<?php include('head.php');
+ include('navbar.php');?>
 
 <div class="bookSeatMain">
-    <?php include('navbar.php')?>
+    
     <h1>RÉSERVER UNE PLACE</h1>
 
     <div class="infoBookSeat">

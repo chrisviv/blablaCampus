@@ -1,5 +1,4 @@
 <?php include('head.php');
-include('navbar.php');
 require_once("./class/User.php");
 $user = new User();
 $user->getData($_SESSION['name_user']);
@@ -11,12 +10,16 @@ if(isset($_POST['edit'])){
     $bio = $_POST['bio'];
     $picture = $_POST['profilePic'];
     $user->editData($username, $email, $bio, $picture);
+
+
 }
+include('homePc.php');
 
 ?>
 
     <div class="mainRegister">
-     
+        
+        <?php include('navbar.php'); ?>
 
           
 

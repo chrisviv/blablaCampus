@@ -12,6 +12,9 @@ if(isset($_POST['register'])){
     $user->register($name, $pseudo, $password, $email, $bio, $picture);
 }
 
+
+
+include('homePc.php');
 ?>
 
     <div class="mainRegister">
@@ -62,6 +65,16 @@ if(isset($_POST['register'])){
 
     </div>
 
+
+    <script>
+       
+            
+        append(homePc, register)
+      
+        
+
+    </script>
+   
     <script src="assets/js/file.js"></script>
-<?php include('footer.php');
-?>
+
+<?php include('footer.php');?>

@@ -1,4 +1,6 @@
-<?php include('head.php') ?>
+<?php include('head.php');
+include('homePc.php');
+?>
 
 <div class="cancelMain">
     <?php include('navbar.php')?>

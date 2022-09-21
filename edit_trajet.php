@@ -1,5 +1,4 @@
 <?php include('head.php');
-include('navbar.php');
 require_once("./class/Trajects.php");
 
 $trajet = new Trajects($_SESSION['name_user']);
@@ -43,11 +42,12 @@ if(isset($_GET['editTraject'])) {
     $trajet->editTraject($id, $depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3);
 }
 
-
+include('homePc.php');
 
 ?>
 
 <div class="mainAdd">
+<?php include('navbar.php');?>
 
 
     <form action="" method="get" class="formAdd" id='formAdd'>

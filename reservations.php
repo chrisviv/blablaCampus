@@ -1,6 +1,10 @@
-<?php include('head.php')?>
-<?php include('navbar.php');?>
+<?php include('head.php');
+include('homePc.php');
+?>
+
+
 <div class="mainReservation">
+<?php include('navbar.php');?>
     
     <h1>MES RÉSERVATIONS</h2>
 

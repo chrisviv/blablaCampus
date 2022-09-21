@@ -1,11 +1,11 @@
-<?php include('head.php') ?>
+<?php include('head.php');
+ include('navbar.php')?>
 
 <div class="bookVadilateMain">
-    <?php include('navbar.php')?>
+   
     <h1>VALIDATION DE LE RÉSERVATION</h1>
-</div>
 
-<div class="bookValidate">
+    <div class="bookValidate">
     <img class='redCircul'src="https://picsum.photos/200" alt="">
     <div class="bookVadilateCircul">
         
@@ -26,5 +26,9 @@
         <button>VALIDER LA RÉSERVATION</button>
     </a>
 </div>
+</div>
 
+
+
+<?php include('footer.php')?>
    

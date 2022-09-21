@@ -1,27 +1,43 @@
 @font-face {
     font-family: bungee;
-    src: url(../fonts/Bungee-Regular.ttf);}
+    src: url(../fonts/Bungee-Regular.ttf);
+}
+
 @font-face {
     font-family: worksans;
-    src: url(../fonts/WorkSans-VariableFont_wght.ttf);}
+    src: url(../fonts/WorkSans-VariableFont_wght.ttf);
+}
+
 @font-face {
     font-family: epilogue;
-    src: url(../fonts/Epilogue-Light.ttf);}
+    src: url(../fonts/Epilogue-Light.ttf);
+}
+
 @font-face {
     font-family: epilogueBold;
-    src: url(../fonts/Epilogue-Bold.ttf);}
+    src: url(../fonts/Epilogue-Bold.ttf);
+}
+
 @font-face {
     font-family: merriweather-italic;
-    src: url(../fonts/Merriweather-LightItalic.ttf);}
+    src: url(../fonts/Merriweather-LightItalic.ttf);
+}
+
 @font-face {
     font-family: merriweather-italic-black;
-    src: url(../fonts/Merriweather-BlackItalic.ttf);}
+    src: url(../fonts/Merriweather-BlackItalic.ttf);
+}
+
 @font-face {
     font-family: overpass;
-    src: url(../fonts/Overpass-Regular.ttf);}
+    src: url(../fonts/Overpass-Regular.ttf);
+}
+
 @font-face {
     font-family: overpass-bold;
-    src: url(../fonts/Overpass-Bold.ttf);}
+    src: url(../fonts/Overpass-Bold.ttf);
+}
+
 /*--------------GLOBALS-----------------*/
 body {
     margin: 0;
@@ -31,9 +47,14 @@ body {
     display: none !important;
 }
 
-.dactive{
+.dactive {
     display: block !important;
 }
+
+input[type="submit"], button{
+    cursor: pointer;
+}
+
 /* -----------------------COLORS -------------------*/
 :root {
     --black: #000000;
@@ -42,7 +63,9 @@ body {
     --red: #D41E45;
     --grayBgInput: #F0F0F0;
     --grayTextiInput: #555555;
-    --lightGray: #888888;}
+    --lightGray: #888888;
+}
+
 /*-----------------------------HEADER--------------------------------------------*/
 
 .header {
@@ -66,34 +89,51 @@ body {
     width: 50px;
 }
 
-input:focus, select:focus{
+input:focus,
+select:focus {
     outline: none;
- }
+}
 
 
 
 /* --------------------ACCUEIL----------------------------*/
 /* -----------------lOGO----------------  */
-.mainAccueil {display: flex;align-items: center;justify-content: center;min-height: 100vh;flex-direction: column;}
+.mainAccueil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
 .logo-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px 15px;}
-.logo-img>img {width: 100px;}
+    margin: 50px 15px;
+}
+
+.logo-img>img {
+    width: 100px;
+}
+
 .logo-Tittle {
     margin: 0px 15px;
     display: flex;
     align-items: flex-start;
-    font-size: 20px;}
+    font-size: 20px;
+}
+
 .logo-Tittle>h1 {
     font-family: "bungee", sans-serif;
     margin: 0;
     position: relative;
     color: var(--blackTittle);
     font-weight: 100;
-    margin-bottom: 50px;}
+    margin-bottom: 50px;
+}
+
 .logo-Tittle>h1::after {
     font-family: "bungee";
     margin: 0;
@@ -102,9 +142,16 @@ input:focus, select:focus{
     color: var(--red);
     bottom: -40px;
     left: calc(50% - 90px);
-    font-weight: 100;}
+    font-weight: 100;
+}
+
 /*-------------BUTTONS----------------*/
-.startBtn {background: var(--red);border-radius: 20px;width: 300px;}
+.startBtn {
+    background: var(--red);
+    border-radius: 20px;
+    width: 300px;
+}
+
 .startBtn>a>button {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -114,13 +161,21 @@ input:focus, select:focus{
     background: var(--red);
     color: white;
     letter-spacing: 10px;
-    position: relative;}
-.startBtn>a>img {width: 21px;margin-right: 5px;}
+    position: relative;
+}
+
+.startBtn>a>img {
+    width: 21px;
+    margin-right: 5px;
+}
+
 .startBtn>a {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;}
+    text-decoration: none;
+}
+
 .loginBtn>a>button {
     font-family: "worksans", sans-serif;
     height: 80px;
@@ -129,20 +184,26 @@ input:focus, select:focus{
     width: 280px;
     font-size: 10px;
     color: var(--red);
-    letter-spacing: 10px;}
+    letter-spacing: 10px;
+}
+
 /*--------------REGISTER-------------------------------*/
 .formRegister {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0px 15px;}
+    margin: 0px 15px;
+}
+
 .formRegister>h2 {
     font-family: 'bungee';
     font-size: 16px;
     color: var(--blackSubtitle);
     text-align: left;
-    width: 100%;}
+    width: 100%;
+}
+
 .ipRegister {
     width: 100%;
     border: 0;
@@ -151,13 +212,17 @@ input:focus, select:focus{
     height: 50px;
     border-radius: 8px;
     font-family: "epilogue";
-    padding-left: 10px;}
+    padding-left: 10px;
+}
+
 .infonMail {
     text-align: center;
     color: var(--grayTextiInput);
     margin: 5px 0px 20px 0px;
     font-family: "epilogue";
-    font-size: 13px;}
+    font-size: 13px;
+}
+
 .txtRegister {
     width: 99%;
     border: 0;
@@ -166,7 +231,9 @@ input:focus, select:focus{
     height: 150px;
     border-radius: 8px;
     font-family: "epilogue";
-    padding: 10px 0px 0px 10px}
+    padding: 10px 0px 0px 10px
+}
+
 .labelPic {
     display: flex;
     flex-direction: column;
@@ -176,18 +243,27 @@ input:focus, select:focus{
     background-color: var(--grayBgInput);
     height: 150px;
     border-radius: 30px;
-    margin-bottom: 40px;}
+    margin-bottom: 40px;
+}
+
 .labelPic>h3 {
     font-family: 'epilogue';
     font-size: 13px;
     margin: 5px;
-    font-weight: 800;}
+    font-weight: 800;
+}
+
 .labelPic>h4 {
     font-family: 'epilogue';
     font-size: 10px;
     margin: 0;
-    color: var(--lightGray);}
-.uploadImg {width: 25px;}
+    color: var(--lightGray);
+}
+
+.uploadImg {
+    width: 25px;
+}
+
 .submitRegister {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -198,19 +274,25 @@ input:focus, select:focus{
     background: var(--red);
     color: white;
     letter-spacing: 5px;
-    margin-bottom: 50px;}
+    margin-bottom: 50px;
+}
+
 /*-----------------------------------LOGIN----------------------------------------*/
 .loginContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;}
+    align-items: center;
+}
+
 .formLogin>h2 {
     font-family: "bungee";
     color: var(--blackSubtitle);
     font-size: 20px;
     text-align: left;
-    width: 100%;}
+    width: 100%;
+}
+
 .ipLogin {
     width: 100%;
     border: 0;
@@ -219,13 +301,17 @@ input:focus, select:focus{
     height: 50px;
     border-radius: 8px;
     font-family: "epilogue";
-    padding-left: 10px;}
+    padding-left: 10px;
+}
+
 .formLogin {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 50px 15px 0px 15px;}
+    margin: 50px 15px 0px 15px;
+}
+
 .submitLogin {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -236,8 +322,14 @@ input:focus, select:focus{
     background: var(--red);
     color: white;
     letter-spacing: 5px;
-    margin: 50px 0px 10px 0px;}
-.passwordBtn {display: flex;justify-content: center;}
+    margin: 50px 0px 10px 0px;
+}
+
+.passwordBtn {
+    display: flex;
+    justify-content: center;
+}
+
 .passwordBtn>a>button {
     font-family: "worksans", sans-serif;
     height: 80px;
@@ -248,20 +340,32 @@ input:focus, select:focus{
     color: var(--red);
     letter-spacing: 5px;
     position: relative;
-    left: calc(50% - 115px);}
+    left: calc(50% - 115px);
+}
+
 /*----------CONFIRM-----------------*/
-.confirmMsg {margin: 30px 10px;}
+.confirmMsg {
+    margin: 30px 10px;
+}
+
 .confirmMsg>h1 {
     font-family: 'bungee';
     color: var(--blackSubtitle);
-    font-size: 24px;}
+    font-size: 24px;
+}
+
 .confirmMsg>h2 {
     font-family: 'epilogue';
     color: var(--lightGray);
     font-size: 13px;
-    margin-left: 10px;}
+    margin-left: 10px;
+}
+
 /*-------------------- PROFILE ------------------------------*/
-#userBtn {position: relative;}
+#userBtn {
+    position: relative;
+}
+
 .userPanel {
     display: flex;
     align-items: center;
@@ -276,7 +380,9 @@ input:focus, select:focus{
     position: absolute;
     z-index: 5;
     right: 10px;
-    top: 93px;}
+    top: 93px;
+}
+
 .userPanel::before {
     content: '';
     position: absolute;
@@ -286,27 +392,47 @@ input:focus, select:focus{
     width: 0;
     border-right: 25px solid transparent;
     border-bottom: 43px solid white;
-    border-left: 25px solid transparent;}
+    border-left: 25px solid transparent;
+}
+
 .profileContainer>img {
     width: 80px;
     height: 70px;
     border-radius: 100px;
     border: 3px solid var(--red);
-    margin-right: 10px;}
-.profileContainer {width: 100%;display: flex;flex-direction: row;}
-.profile {width: 80%;margin-left: 5px;}
+    margin-right: 10px;
+}
+
+.profileContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile {
+    width: 80%;
+    margin-left: 5px;
+}
+
 .profile>h2 {
     font-family: "bungee";
     color: var(--red);
     margin: 0;
     font-size: 22px;
-    line-height: 25px;}
+    line-height: 25px;
+}
+
 .profile>h3 {
     font-family: "epilogue";
     color: rgba(51, 51, 51, 0.562);
     margin: 0;
-    font-size: 12px;}
-.profileOptions {width: 100%;}
+    font-size: 12px;
+}
+
+.profileOptions {
+    width: 100%;
+}
+
 .trajetBtn {
     background: var(--red);
     border-radius: 20px;
@@ -315,16 +441,22 @@ input:focus, select:focus{
     padding: 5px;
     justify-content: center;
     display: flex;
-    height: 50px;}
+    height: 50px;
+}
+
 .trajetBtn>a>img {
     width: 25px;
     position: absolute;
-    left: calc(50% - 150px);}
+    left: calc(50% - 150px);
+}
+
 .trajetBtn>a {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;}
+    text-decoration: none;
+}
+
 .trajetBtn>a>button {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -335,30 +467,52 @@ input:focus, select:focus{
     color: white;
     letter-spacing: 5px;
     position: relative;
-    margin-left: 10px;}
+    margin-left: 10px;
+}
+
 .modalLink {
     margin: 5px 0px;
     display: flex;
     height: 50px;
     align-items: center;
-    width: 100%;}
-.modalLink>img {width: 30px;}
+    width: 100%;
+}
+
+.modalLink>img {
+    width: 30px;
+}
+
 .modalLink>a {
     text-decoration: none;
     font-family: "epilogue";
     color: var(--grayTextiInput);
     font-size: 16px;
-    margin-left: 20px;}
+    margin-left: 20px;
+}
+
 /*---------------------------------SEARCH---------------------------------------------*/
-.mainSearch {min-height: 100vh;}
-.form-container {margin: 50px 20px;}
+
+.form-container {
+    margin: 50px 20px;
+}
+
 .form-container>h1 {
     font-family: 'bungee';
     font-size: 20px;
-    color: var(--blackSubtitle);}
-.searchForm {display: flex;flex-direction: column;}
-.autocomplete-container {position: relative;}
-.autocomplete-container input, select {
+    color: var(--blackSubtitle);
+}
+
+.searchForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.autocomplete-container {
+    position: relative;
+}
+
+.autocomplete-container input,
+select {
     font-family: "epilogue";
     border: 0;
     background-color: transparent;
@@ -367,36 +521,72 @@ input:focus, select:focus{
     margin: 10px 0px;
     width: 100%;
     padding-left: 10px;
-    
+
 }
 
 
 
-.departBox{
+.departBox {
     background: var(--grayBgInput);
     display: flex;
     align-items: center;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px 0px;}
+    margin: 10px 0px;
+}
+
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;-webkit-appearance: none;}
-.autocomplete-container input::placeholder {color: var(--grayTextiInput);}
+    display: none;
+    -webkit-appearance: none;
+}
+
+.autocomplete-container input::placeholder {
+    color: var(--grayTextiInput);
+}
+
 .autocomplete-items {
-    font-family: "epilogue"; position: absolute;
-    border: 0;box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1);
+    font-family: "epilogue";
+    position: absolute;
+    border: 0;
+    box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1);
     background-color: var(--grayBgInput);
-    z-index: 2;top: 44px;left: 0;right: 0;}
-.autocomplete-items div {padding: 10px;cursor: pointer;}
-.autocomplete-items div:hover {background-color: rgba(0, 0, 0, 0.1);}
-#inputDepart {position: relative;}
+    z-index: 2;
+    top: 44px;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-items div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#inputDepart {
+    position: relative;
+}
+
 .clear-button {
     color: rgba(0, 0, 0, 0.4);
-    cursor: pointer;position: absolute;
-    right: 5px; top: 17px;display: none;}
-.clear-button.visible {display: flex;}
-.clear-button:hover {color: rgba(0, 0, 0, 0.6);}
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 17px;
+    display: none;
+}
+
+.clear-button.visible {
+    display: flex;
+}
+
+.clear-button:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
 .searchBtn {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -409,23 +599,30 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     letter-spacing: 10px;
     margin-top: 25px !important;
     position: relative;
-    left: calc(50% - 125px)}
-.pcMain{display: none;}
-.resetSubtitle{
+    left: calc(50% - 125px)
+}
+
+
+
+.resetSubtitle {
     font-family: 'epilogue';
     font-size: 14px;
     line-height: 20px;
-    color: var(--lightGray);}
+    color: var(--lightGray);
+}
+
 /*------------------------------LIST--------------------------------*/
-.listMain{
+.listMain {
     margin: 25px;
 }
-.listMain>h1{
+
+.listMain>h1 {
     font-family: "bungee";
     font-size: 20px;
     color: var(--blackSubtitle);
 }
-.infoTrajet{
+
+.infoTrajet {
     background: var(--grayBgInput);
     display: flex;
     justify-content: space-around;
@@ -434,7 +631,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 20px;
     position: relative;
 }
-.dateTrajet{
+
+.dateTrajet {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -442,20 +640,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 15%;
 }
 
-.dateTrajet > h2{
+.dateTrajet>h2 {
     font-family: "bungee";
     margin: 0;
     line-height: 30px;
 }
-.day{
+
+.day {
     color: var(--red);
     font-size: 35px;
 }
-.month{
+
+.month {
     font-size: 20px;
 }
 
-.btnEdit, .btnDel{
+.btnEdit,
+.btnDel {
     position: absolute;
     width: 50%;
     font-family: "bungee";
@@ -470,7 +671,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     text-decoration: none;
 }
 
-.btnEdit{
+.btnEdit {
     left: 0;
     background-color: var(--red);
     border-top-left-radius: 20px;
@@ -478,14 +679,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
-.btnDel{
+.btnDel {
     right: 0;
     background-color: var(--black);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
-.placesTrajet{
+.placesTrajet {
     font-family: 'epilogue';
     font-weight: lighter;
     color: var(--lightGray);
@@ -493,88 +694,98 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 60%;
 }
 
-.trajetCount > h2{
+.trajetCount>h2 {
     font-family: 'epilogue';
     font-size: 16px;
     color: var(--lightGray);
 }
 
-.phpNumber{
+.phpNumber {
     font-family: 'epilogueBold';
     color: var(--red);
 }
-.clockInfo{
+
+.clockInfo {
     display: flex;
     font-family: 'epilogue';
     color: var(--lightGray);
 }
-.clockInfo>h2{
+
+.clockInfo>h2 {
     font-size: 13px;
     margin: 10px;
 }
 
-.card-trajet{
-    
+.card-trajet {
+
     -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
     box-shadow: 0px 8px 24px rgba(17, 17, 17, 0.25);
     padding: 20px;
     border-radius: 20px;
     margin-top: 25px;
 }
-.card-trajet > h2{
+
+.card-trajet>h2 {
     font-family: "worksans";
     width: 100%;
     font-size: 9px;
     text-align: end;
-    
+
 }
 
-.travel-start{
+.travel-start {
     display: flex;
-    
-   
+
+
 }
-.travel-start > h3{
+
+.travel-start>h3 {
     margin: 0px;
     font-size: 12px;
     line-height: 24px;
 }
 
-.travel-start > img{
+.travel-start>img {
     margin: 0px 20px;
 }
-.travel-half{
+
+.travel-half {
     display: flex;
-    
-   
+
+
 }
-.travel-half > h3{
+
+.travel-half>h3 {
     margin: 0px;
     font-size: 12px;
     line-height: 24px;
 }
 
-.travel-half > img{
+.travel-half>img {
     margin: 0px 20px;
 }
-.travel-end{
+
+.travel-end {
     display: flex;
     align-items: center;
 }
-.travel-end > h3{
+
+.travel-end>h3 {
     margin: 0px;
     font-size: 12px;
 }
-.travel-end > img{
+
+.travel-end>img {
     margin: 0px 21px;
 }
 
-.hour{
+.hour {
     color: var(--red);
     font-family: "epilogueBold";
     width: 15%;
 }
-.place{
+
+.place {
     color: var(--blackSubtitle);
     font-family: "epilogueBold";
     width: 78%;
@@ -586,8 +797,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 40px;
     border-radius: 100px;
     border: 3px solid var(--red);
-   
-    
+
+
 }
 
 .profile-travel {
@@ -622,52 +833,56 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /**--------------------------RESERVATIONS----------------------**/
 
-.mainReservation{
- margin: 20px;   
-}
-.mainReservation >h1{
- font-family: "bungee";
- font-size: 20px;
- color: var(--blackSubtitle);
+.mainReservation {
+    margin: 20px;
 }
 
-.mg-20{
+.mainReservation>h1 {
+    font-family: "bungee";
+    font-size: 20px;
+    color: var(--blackSubtitle);
+}
+
+.mg-20 {
     margin-top: 20px;
 }
 
 /*--------------------PROPOSER UN TRAJET -------------------*/
 
 .formAdd {
-    
+
     margin: 0px 20px;
 }
-.formAdd > h1 {
+
+.formAdd>h1 {
     font-family: 'bungee';
     font-size: 16px;
     color: var(--blackSubtitle);
-   
+
 }
-.formAdd > h3 {
+
+.formAdd>h3 {
     font-family: 'epilogue';
     font-size: 13px;
     color: var(--lightGray);
     margin: 20px 0px;
-    
-   
+
+
 }
-.addBox{
-        background: var(--grayBgInput);
-        display: flex;
-        position: relative;
-        align-items: center;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 20px 0px;   
-        height: 30px;
+
+.addBox {
+    background: var(--grayBgInput);
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 0px;
+    height: 30px;
 }
 
 
-.addBox > input{
+.addBox>input {
     font-family: 'epilogue';
     font-size: 16px;
     width: 100%;
@@ -676,56 +891,60 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-left: 5px;
     color: var(--grayTextiInput);
     font-weight: bold;
-    
+
 }
-.addBox > select{
-   font-weight: bold;
-   
+
+.addBox>select {
+    font-weight: bold;
+
 }
-.addBox > img{
-   width: 20px;
-    
+
+.addBox>img {
+    width: 20px;
+
 }
 
 
-.etapeSearchBox{
+.etapeSearchBox {
     background: var(--grayBgInput);
     display: flex;
     position: relative;
     align-items: center;
     border-radius: 5px;
     padding: 10px;
-    margin: 20px 0px;   
+    margin: 20px 0px;
     height: 30px;
 }
 
 
-.etapeSearchBox > input{
-font-family: 'epilogue';
-font-size: 16px;
-width: 100%;
-background-color: transparent;
-border: 0;
-padding-left: 5px;
-color: var(--grayTextiInput);
-font-weight: bold;
-
-}
-.etapeSearchBox > select{
-font-weight: bold;
-
-}
-.etapeSearchBox > img{
-width: 20px;
+.etapeSearchBox>input {
+    font-family: 'epilogue';
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    padding-left: 5px;
+    color: var(--grayTextiInput);
+    font-weight: bold;
 
 }
 
-.etapeSearchBox > .clear-button{
+.etapeSearchBox>select {
+    font-weight: bold;
+
+}
+
+.etapeSearchBox>img {
+    width: 20px;
+
+}
+
+.etapeSearchBox>.clear-button {
     right: calc(10% - 20px);
     top: 15px;
 }
 
-.optionAdd{
+.optionAdd {
     font-family: 'epilogue';
     font-size: 16px;
     width: 100%;
@@ -733,23 +952,25 @@ width: 20px;
     border: 0;
     padding-left: 5px;
     font-weight: bold;
-    
+
 }
 
-.optionFlex-row{
+.optionFlex-row {
     display: flex;
     flex-direction: row;
 }
+
 .etapes-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.etapes-row > .etapeSearchBox{
+
+.etapes-row>.etapeSearchBox {
     width: 80%;
 }
 
-.submitTs{
+.submitTs {
     font-family: "worksans", sans-serif;
     border: 0;
     border-radius: 20px;
@@ -764,36 +985,43 @@ width: 20px;
     left: calc(50% - 125px);
 }
 
-#allez, #retour{
+#allez,
+#retour {
     accent-color: var(--red);
 }
 
 
 
 /* ----------------------ANNULATION MA RESERVATION- chris----------------- */
-.cancelMain>h1{
+.cancelMain>h1 {
     font-family: "bungee";
     font-size: 17px;
     color: var(--blackSubtitle);
-    margin: 50px 0 0 30px;}
-.cancelMain>p{
+    margin: 50px 0 0 30px;
+}
+
+.cancelMain>p {
     font-family: 'Epilogue';
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 20px;
     margin-left: 30px;
-    color: var(--lightGray);}
-.cancelBtn{
+    color: var(--lightGray);
+}
+
+.cancelBtn {
     background: var(--red);
     border-radius: 10px;
     width: 300px;
-    height:55px;
+    height: 55px;
     display: flex;
     justify-content: center;
     margin: 40px 20px 20px 20px;
     position: relative;
-    left: calc(50% - 172px);}
+    left: calc(50% - 172px);
+}
+
 .cancelBtn>a>button {
     font-family: "worksans", sans-serif;
     font-size: 12px;
@@ -802,29 +1030,37 @@ width: 20px;
     background: var(--red);
     color: white;
     line-height: 15px;
-    letter-spacing: 5px;}
+    letter-spacing: 5px;
+}
+
 .cancelBtn>a {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    flex-direction: column;}
-.cancelReturn>p{
-    font-family:  "worksans", sans-serif;
+    flex-direction: column;
+}
+
+.cancelReturn>p {
+    font-family: "worksans", sans-serif;
     line-height: 12px;
     font-size: 10px;
     text-align: center;
     letter-spacing: 5px;
-    color: var(--red);}
+    color: var(--red);
+}
+
 /*------------------------- SUPPRIMER TRAJET- chris----------------------- */
-.deleteMain>h1{
+.deleteMain>h1 {
     width: 100%;
     font-family: "bungee";
     font-size: 17px;
     color: var(--blackSubtitle);
     margin: 50px 0 0 30px;
-    font-weight: 400;}
-.deleteMain>p{
+    font-weight: 400;
+}
+
+.deleteMain>p {
     font-family: 'Epilogue';
     font-style: normal;
     font-weight: 500;
@@ -837,16 +1073,22 @@ width: 20px;
     width: 100%;
     MARGIN-LEFT: 30px;}
 .ipDelConfirm{
+    MARGIN-LEFT: 30px;
+}
+
+.deleteBtn {
     background: var(--red);
     border-radius: 10px;
     width: 300px;
-    height:55px;
+    height: 55px;
     display: flex;
     justify-content: center;
     margin: 40px 20px 20px 20px;
     position: relative;
-    left: calc(50% - 172px);}
-.deleteBtn {
+    left: calc(50% - 172px);
+}
+
+.deleteBtn>a>button {
     font-family: "worksans", sans-serif;
     font-size: 12px;
     text-align: center;
@@ -869,76 +1111,101 @@ width: 20px;
     font-size: 13px;
     text-align: center;
     letter-spacing: 5px;
-    color: var(--red);}
+    color: var(--red);
+}
+
 /*------------------------- ANNULER MES TRAJETS- chris--------------------- */
-.deleteRideMain>h1{
+.deleteRideMain>h1 {
     width: 100%;
     font-family: "bungee";
     font-size: 17px;
     color: var(--blackSubtitle);
     margin: 50px 0 0 30px;
     line-height: 20px;
-    font-weight: 400;}
-.deleteRideBtn{
+    font-weight: 400;
+}
+
+.deleteRideBtn {
     background: var(--red);
     border-radius: 10px;
     width: 300px;
-    height:82px;
+    height: 82px;
     display: flex;
     justify-content: center;
     margin: 20px 20px 20px 20px;
     position: relative;
-    left: calc(50% - 188px);}
+    left: calc(50% - 188px);
+}
+
 .deleteRideBtn>a>button {
-    font-family:  "bungee";
+    font-family: "bungee";
     font-size: 18px;
     text-align: center;
     border: 0;
     background: var(--red);
     color: white;
-    line-height: 20px;}
+    line-height: 20px;
+}
+
 .deleteRideBtn>a {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    flex-direction: column;}
-.deleteReturn>p{
-    font-family:  "worksans", sans-serif;
+    flex-direction: column;
+}
+
+.deleteReturn>p {
+    font-family: "worksans", sans-serif;
     line-height: 12px;
     font-size: 10px;
     text-align: center;
     letter-spacing: 5px;
-    color: var(--red);}
+    color: var(--red);
+}
+
 /*-------------------------- RESERVER UNE PLACE- chris------------------------- */
-.bookSeatMain{margin-top:30px}
-.bookSeatMain>h1{
+.bookSeatMain {
+    margin-top: 30px
+}
+
+.bookSeatMain>h1 {
     width: 100%;
     font-family: "bungee";
     font-size: 17px;
     margin: 50px 0 0 20px;
     line-height: 28px;
-    font-weight: 400;}
-.boxBookSeat >p{
+    font-weight: 400;
+    color: var(--blackSubtitle);
+}
+
+.boxBookSeat>p {
     width: 100%;
-    font-family:  "epilogue";
+    font-family: "epilogue";
     font-weight: 700;
     font-size: 13px;
-    color:var(--lightGray);
+    color: var(--lightGray);
     line-height: 20px;
-    margin-left: 20px;}
-span{color: var(--red);}
-.bookSeatBtn{
+    margin-left: 20px;
+}
+
+span {
+    color: var(--red);
+}
+
+.bookSeatBtn {
     background: var(--red);
     border-radius: 10px;
     width: 275px;
-    height:55px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 35px 20px 20px 20px;
     position: relative;
-    left: calc(50% - 161px);}
+    left: calc(50% - 161px);
+}
+
 .bookSeatBtn>a>button {
     font-family: "worksans", sans-serif;
     font-size: 13px;
@@ -946,8 +1213,10 @@ span{color: var(--red);}
     background: var(--red);
     color: white;
     letter-spacing: 5px;
-    font-weight: 300;}
-.infoBookSeat{
+    font-weight: 300;
+}
+
+.infoBookSeat {
     background: var(--grayBgInput);
     display: flex;
     justify-content: space-around;
@@ -955,76 +1224,127 @@ span{color: var(--red);}
     padding: 5px;
     border-radius: 8px;
     position: relative;
-    margin: 20px;}
-.dateBookSeat{display: flex;flex-direction: column;
-    justify-content: center;align-items: center;width: 15%;}
-.dateBookSeat> h2{font-family: "bungee";margin: 0;line-height: 30px;}
-.day{color: var(--red);font-size: 40px;}
-.month{font-size: 20px;}
-.placesBookSeat{font-family: epilogue;font-weight: 500;color: var(--lightGray); font-size: 10px;width: 60%;}
-.boxBookSeat{margin-top:40px}
+    margin: 20px;
+}
+
+.dateBookSeat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+
+.dateBookSeat>h2 {
+    font-family: "bungee";
+    margin: 0;
+    line-height: 30px;
+}
+
+.day {
+    color: var(--red);
+    font-size: 40px;
+}
+
+.month {
+    font-size: 20px;
+}
+
+.placesBookSeat {
+    font-family: epilogue;
+    font-weight: 500;
+    color: var(--lightGray);
+    font-size: 10px;
+    width: 60%;
+}
+
+.boxBookSeat {
+    margin-top: 40px
+}
+
 /* --------------------------VALIDATION DE LA RESERVATION TRAJET - chris ------*/
-.bookVadilateMain{margin-top:30px}
-.bookVadilateMain>h1{
+.bookVadilateMain {
+    margin: 30px 20px
+}
+
+.bookVadilateMain>h1 {
     width: 100%;
     font-family: "bungee";
     font-size: 16px;
-    margin: 50px 0 0 20px;
     line-height: 28px;
-    font-weight: 400;}
-.bookValidate{
+    font-weight: 400;
+    color: var(--blackSubtitle);
+}
+
+.bookValidate {
     display: flex;
     width: 100%;
     align-items: center;
-    line-height: 20px;}   
-.redCircul{
+    line-height: 20px;
+}
+
+.redCircul {
     width: 41px;
     height: 41px;
     border-radius: 50px;
     border: 3px solid var(--red);
     font-size: 10px;
-    margin: 25px 20px 51px 25px;}
-.bookValidateCircul{
+    margin: 25px 20px 51px 25px;
+}
+
+.bookValidateCircul {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center} 
-.bookVadilateCircul >p{
+    justify-content: center;
+    align-items: center
+}
+
+.bookVadilateCircul>p {
     width: 100%;
-    font-family:  "epilogue";
+    font-family: "epilogue";
     font-weight: 300;
     font-style: italic;
     font-size: 11px;
-    color:var(--lightGray);
+    color: var(--lightGray);
     line-height: 13px;
-    margin: 5px 0px;}
-.bookVadilateCircul> p> span{
+    margin: 5px 0px;
+}
+
+.bookVadilateCircul>p>span {
     color: var(--red);
-    font-style:normal;
+    font-style: normal;
     font-weight: 700;
-    font-size: 13px;}
-.boxBookValidate{
+    font-size: 13px;
+}
+
+.boxBookValidate {
     font-family: epilogue;
     font-weight: 500;
     color: var(--lightGray);
     font-size: 12px;
     margin-left: 25px;
-    margin-top: 40px;}
-.boxBookValidate > p >span{
+    margin-top: 40px;
+}
+
+.boxBookValidate>p>span {
     font-weight: 700;
-    line-height: 20px;}
-.bookValidateBtn{
+    line-height: 20px;
+}
+
+.bookValidateBtn {
     background: var(--red);
     border-radius: 10px;
     width: 305px;
-    height:55px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 35px 20px 20px 20px;
     position: relative;
-    left: calc(50% - 175px);}
+    left: calc(50% - 175px);
+}
+
 .bookValidateBtn>a>button {
     font-family: "worksans", sans-serif;
     font-size: 12px;
@@ -1032,128 +1352,224 @@ span{color: var(--red);}
     background: var(--red);
     color: white;
     letter-spacing: 5px;
-    font-weight: 300;}
+    font-weight: 300;
+}
+
 /* --------------------------------MESSAGERIE -chris-------------------- */
-.messagerieMain{
+.messagerieMain {
     display: flex;
     width: 100%;
     align-items: center;
-    line-height: 20px;}   
-.redCirculChat{
+    line-height: 20px;
+}
+
+.redCirculChat {
     width: 41px;
     height: 41px;
     border-radius: 50px;
     border: 3px solid var(--red);
     font-size: 10px;
-    margin: 25px 20px 51px 25px;}
-.messagerieCircul{
+    margin: 25px 20px 51px 25px;
+}
+
+.messagerieCircul {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center;} 
-.messagerieCircul >p{
+    justify-content: center;
+    align-items: center;
+}
+
+.messagerieCircul>p {
     width: 100%;
-    font-family:  "epilogue";
+    font-family: "epilogue";
     font-weight: 300;
     font-style: italic;
     font-size: 11px;
-    color:var(--lightGray);
+    color: var(--lightGray);
     line-height: 8px;
-    margin: 5px 0px;}
-.messagerieCircul> p> span{font-weight: 700;}
-.ligne{
+    margin: 5px 0px;
+}
+
+.messagerieCircul>p>span {
+    font-weight: 700;
+}
+
+.ligne {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    width: 88%;margin-left: 20px;}
-.circul{width: 5px;height: 5px;border-radius: 50px;
-    background: rgba(0, 0, 0, 0.2); margin-left: 20px;
-    margin-left: 15px;margin-top: -3.5px}
+    width: 88%;
+    margin-left: 20px;
+}
+
+.circul {
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+    margin-left: 15px;
+    margin-top: -3.5px
+}
 
 
 
-    @media screen and (min-width: 1024px) {
-    .mainAccueil{display: none;}
-    .road{position: fixed;left: 0;z-index: -1;}
-    .pcMain{
-        width: 100%;min-height: 100vh;
-        display: flex;justify-content: center;
-        align-items: center;flex-wrap: wrap;}
-    .logo-container-pc{display: flex;justify-content: center;align-items: center;}
-    .logo-container-pc > .logo-img > img{width: 80px;}
-    .logo-container-pc > .logo-Tittle > h1{font-size: 30px;}
+
+   
+
+    .road {
+        position: fixed;
+        left: 0;
+        z-index: -1;
+        min-height: 100vh;
+    }
+
+    .pcMain {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .logo-container-pc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-container-pc>.logo-img>img {
+        width: 80px;
+    }
+
+    .logo-container-pc>.logo-Tittle>h1 {
+        font-size: 30px;
+    }
+
     .logo-container-pc .logo-Tittle>h1::after {
-        font-family: "bungee";margin: 0;
+        font-family: "bungee";
+        margin: 0;
         content: 'CAMPUS';
         position: absolute;
         color: var(--red);
         bottom: -26px;
         left: calc(50% - 65px);
-        font-weight: 100;}
-    .left-content{
+        font-weight: 100;
+    }
+
+    .left-content {
         width: 40%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start; }
-    .left-content-text > h2{
+        align-items: flex-start;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .left-content-text>h2 {
         font-family: "merriweather-italic";
-        font-size:calc(1.2vw + 1vh + 1vmin);
-        margin: 50px 0px;}
-    .left-content-text > h2 > span{
+        font-size: calc(1.2vw + 1vh + 1vmin);
+        margin: 50px 0px;
+    }
+
+    .left-content-text>h2>span {
         font-family: "merriweather-italic-black";
-        color: var(--red);}
-    .left-content-text > p{
+        color: var(--red);
+    }
+
+    .left-content-text>p {
         font-family: "overpass";
         line-height: 40px;
-        font-size:calc(0.5vw + 0.2vh + 0.7vmin);}
-    .left-content-text > p > span{
+        font-size: calc(0.5vw + 0.2vh + 0.7vmin);
+    }
+
+    .left-content-text>p>span {
         font-family: "overpass-bold";
-        color: var(--red);}
-    .right-content{width: 50%;display: flex;align-items: center;flex-direction: column;}
-    .box-apli{
+        color: var(--red);
+    }
+
+    .right-content {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .box-apli {
         width: calc(3vw + 4vh + 30vmin);
+        height: calc(100vh - 300px);
         min-height: 70vh;
-        border-radius: 30px;padding: 26px;
-        display: flex;flex-direction: column;
-        justify-content: center;align-items: center;
+        border-radius: 30px;
+        padding: 26px;
+        overflow: scroll;
         -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
         box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
         background: white;
-        overflow: scroll;}
-        .mainSearch{
-            min-height: 100vh;
-            
-        }
-        
-    .container-app{position: relative;}
-    .marker,.marker2{position: absolute;z-index: -1;}
-    .marker{
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .box-apli::-webkit-scrollbar {
+        display: none;
+    }
+    .mainAccueil{
+        min-height: 70vh;
+    }
+
+    .container-app {
+        position: relative;
+    }
+
+    .marker,
+    .marker2 {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .marker {
         left: -120px;
         top: 50%;
         width: 140px !important;
-        transform: rotate(-20deg);    }
-    .marker2{
+        transform: rotate(-20deg);
+    }
+
+    .marker2 {
         right: -60px;
         top: 10%;
         width: 80px !important;
-        transform: rotate(10deg);    }
-    .box-apli > img{
+        transform: rotate(10deg);
+    }
+
+    .box-apli>img {
         margin: 30px 0px;
-        width: 80%;    }
-    .under-boxText{
+        width: 80%;
+    }
+
+    .under-boxText {
         font-family: "bungee";
-        margin: 40px 0px 0px 0px;    }
-    .under-boxText > p{
+        margin: 40px 0px 0px 0px;
+        justify-content: center;
+        display: flex;
+    }
+
+    .under-boxText>p {
         color: var(--blackTittle);
         line-height: 18px;
-        font-size:calc(0.2vw + 0.8vh + 0.5vmin);    }
-    .under-boxText > p > span{
-        color: var(--red);}
+        font-size: calc(0.2vw + 0.8vh + 0.5vmin);
+    }
+
+    .under-boxText>p>span {
+        color: var(--red);
+    }
+
     .startBtn {
         background: var(--red);
         border-radius: 20px;
         width: 85%;
         display: flex;
-        justify-content: center;}
+        justify-content: center;
+    }
+
     .startBtn>button {
         font-family: "worksans", sans-serif;
         border: 0;
@@ -1163,8 +1579,14 @@ span{color: var(--red);}
         background: var(--red);
         color: white;
         letter-spacing: 10px;
-        position: relative;}
-    .startBtn>img {width: 21px;margin-right: 5px;}
+        position: relative;
+    }
+
+    .startBtn>img {
+        width: 21px;
+        margin-right: 5px;
+    }
+
     .loginBtn>button {
         font-family: "worksans", sans-serif;
         height: 80px;
@@ -1173,14 +1595,22 @@ span{color: var(--red);}
         width: 280px;
         font-size: 10px;
         color: var(--red);
-        letter-spacing: 10px;}
-    .info-legales{
+        letter-spacing: 10px;
+    }
+
+    .info-legales {
         position: absolute;
         bottom: 25px;
-        left: 5%; }
-    .info-legales > a{
+        left: 5%;
+        
+    }
+
+    .info-legales>a {
         color: var(--red);
         text-decoration: none;
         font-family: "overpass";
-        cursor: pointer;}
-}
+        cursor: pointer;
+    }
+ 
+
+    
