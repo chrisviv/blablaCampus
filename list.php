@@ -47,6 +47,7 @@ var_dump($data);
 
 
 
+
 ?>
 <div class="listMain">
     <?php include('navbar.php');?>
@@ -60,7 +61,6 @@ var_dump($data);
         }else {
             echo 'TRAJETS DISPONIBLES';
         }
-        
         ?>
         </h2>
 
@@ -107,6 +107,7 @@ var_dump($data);
             if($data[$i]['etape1'] != ''){
                 $etape1 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape1']."</h3></div>";
             }
+            var_dump($etape1);
             echo "
         <div class='card-trajet'>
             <h2>PLACES DISPONIBLES

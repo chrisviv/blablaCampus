@@ -2,14 +2,32 @@
 require_once("./class/User.php");
 $user = new User();
 $user->getData($_SESSION['name_user']);
-// var_dump($_FILES['profilePic']['tmp_name']);
+
+
 
 if(isset($_POST['edit'])){
+    $fileName = $_FILES['profilePic']['name'];
+    $fileTmpName = $_FILES['profilePic']['tmp_name'];
+    $fileSize = $_FILES['profilePic']['size'];
+    $fileError = $_FILES['profilePic']['error'];
+    $fileType = $_FILES['profilePic']['type'];
+
+    $fileExt = explode('.',$fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpg','png','gif');
+
+// if (in_array($fileActualExt,$allowed )) {
+
+// }
+
+    $picture = base64_encode(file_get_contents(addslashes($fileTmpName)));
+    var_dump($picture);
     $username = $_POST['username'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
-    $picture = $_POST['profilePic'];
     $user->editData($username, $email, $bio, $picture);
+
+    var_dump($_FILES['profilePic']);
 
 
 }

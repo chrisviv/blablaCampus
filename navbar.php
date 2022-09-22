@@ -3,6 +3,7 @@ require_once("./class/User.php");
 $user = new User('');
 
 $user->getData($_SESSION['name_user']);
+var_dump($user->picture);
 
 
 ?>
@@ -21,7 +22,8 @@ $user->getData($_SESSION['name_user']);
     <div class="userPanel none" id="userPanel">
 
        <div class="profileContainer">
-         <img src="https://picsum.photos/200/300" alt="Photo de profil">
+        <?php echo '<img src="data:image;base64,' . $user->picture . '" alt="Image dune personne"/>';?>
+        
         
          <div class="profile">
              <h2><?php echo $user->username; ?></h2>

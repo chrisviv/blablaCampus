@@ -8,8 +8,30 @@ if(isset($_POST['register'])){
     $name = $_POST['nom'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
-    $picture = $_FILES['profilePic'];
-    $user->register($name, $pseudo, $password, $email, $bio, $picture);
+
+    $fileName = $_FILES['profilePic']['name'];
+    $fileTmpName = $_FILES['profilePic']['tmp_name'];
+    $fileSize = $_FILES['profilePic']['size'];
+    $fileError = $_FILES['profilePic']['error'];
+    $fileType = $_FILES['profilePic']['type'];
+
+    $fileExt = explode('.',$fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpg','png','gif');
+
+    if (in_array($fileActualExt,$allowed )) {
+        echo 'premier if';
+        if ($fileError === 0) {
+            echo '2eme if';
+            if ($fileSize < 100000000) {
+                echo '3eme if';
+                $picture = base64_encode(file_get_contents(addslashes($fileTmpName)));
+            }else{
+                echo $fileSize;
+            }
+        }
+    }
+    $user->register($name, $pseudo, $password, $email, $bio, base64_encode(file_get_contents(addslashes($fileTmpName))));
 }
 
 
