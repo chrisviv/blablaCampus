@@ -73,7 +73,7 @@ class Trajects extends User {
 
 // Filter de trajet A TESTER !
     public function searchTraject($depart, $destination, $jour_voyage, $aller_retour) {
-        $searchTraject = $this->connect()->prepare("SELECT users.username , users.bio , depart , destination , jour_voyage , heure_depart , aller_retour , nb_voyageurs , etape_1 , etape_2 , etape_3 , trajets.id_user , id_trajet FROM `trajets` INNER JOIN users ON trajets.id_user = users.id_user WHERE `depart` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour ORDER BY `heure_depart`;");
+        $searchTraject = $this->connect()->prepare("SELECT users.username , users.bio , users.picture , depart , destination , jour_voyage , heure_depart , aller_retour , nb_voyageurs , etape_1 , etape_2 , etape_3 , trajets.id_user , id_trajet FROM `trajets` INNER JOIN users ON trajets.id_user = users.id_user WHERE `depart` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour ORDER BY `heure_depart`;");
         $searchTraject->bindValue(':depart', $depart);
         $searchTraject->bindValue(':destination', $destination);
         $searchTraject->bindValue(':jour_voyage', $jour_voyage);

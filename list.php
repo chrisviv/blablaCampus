@@ -104,10 +104,21 @@ var_dump($data);
         
         for ($i=0; $i < count($data); $i++) {
             $none = "";
-            if($data[$i]['etape1'] != ''){
-                $etape1 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape1']."</h3></div>";
+            if($data[$i]['etape_1'] != ''){
+                $etape1 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape_1']."</h3></div>";
+            }else{
+                $etape1 ="";
             }
-            var_dump($etape1);
+            if($data[$i]['etape_2'] != ''){
+                $etape2 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape_2']."</h3></div>";
+            }else{
+                $etape2 ="";
+            }
+            if($data[$i]['etape_3'] != ''){
+                $etape3 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape_3']."</h3></div>";
+            }else{
+                $etape3 ="";
+            }
             echo "
         <div class='card-trajet'>
             <h2>PLACES DISPONIBLES
@@ -121,6 +132,8 @@ var_dump($data);
                     <h3 class='place'>".$data[$i]['depart']."</h3>
                 </div>
                     ".$etape1."
+                    ".$etape2."
+                    ".$etape3."
                 <div class='travel-end'>
                     <h3 class='hour'>JS</h3>
                     <img src='assets/img/circle.svg' alt='cercle avec ligne'>
@@ -129,7 +142,7 @@ var_dump($data);
             </div>
 
             <div class='profile-travel'>
-                <img src='https://picsum.photos/200/300' alt='Photo de profil'>
+                <img src='data:image;base64," . $data[$i]['picture'] . "' alt='Image dune personne'/>
 
                 <div class='user-travel'>
                     <h2>".$data[$i]['username']."</h2>
@@ -143,25 +156,17 @@ var_dump($data);
         
         
         ?>
-        <div class="card-trajet">
+        <!-- <div class="card-trajet">
             <h2>PLACES DISPONIBLES
-                <span class="phpNumber">2</span><!-- php -->
+                <span class="phpNumber">2</span>
             </h2>
 
             <div class='card-body'>
                 <div class='travel-start'>
-                    <h3 class='hour'>06H30</h3><!-- php -->
+                    <h3 class='hour'>06H30</h3>
                     <img src='assets/img/circle-line.svg' alt='Cercle avec ligne'>
-                    <h3 class='place'>Dole</h3><!-- php -->
+                    <h3 class='place'>Dole</h3>
                 </div>
-
-                <!-- <div class='travel-half'>
-                <h3 class='hour'>06H30</h3>
-                <img src='assets/img/circle-line.svg' alt='cercle avec ligne'>
-                <h3 class='place'>Dole</h3>
-            </div> -->
-
-
 
                 <div class='travel-end'>
                     <h3 class='hour'>07H30</h3>
@@ -217,7 +222,7 @@ var_dump($data);
             </div>
 
 
-        </div>
+        </div> -->
 </div>
 
 <script src="assets/js/user.js"></script>
