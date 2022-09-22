@@ -14,32 +14,8 @@ $trajects = $trajet->getTrajectData($trajet->idUser);
 
 for ($i=0; $i < count($trajects); $i++) {
     $day = substr($trajects[$i]['jour_voyage'], 8);
-    $month = substr($trajects[$i]['jour_voyage'], 5, 2);
-    if($month == '01') {
-        $month = 'JANV';
-    } elseif($month == '02') {
-        $month = 'FEVR';
-    }elseif($month == '03') {
-        $month = 'MARS';
-    }elseif($month == '04') {
-        $month = 'AVR';
-    }elseif($month == '05') {
-        $month = 'MAI';
-    }elseif($month == '06') {
-        $month = 'JUIN';
-    }elseif($month == '07') {
-        $month = 'JUIL';
-    }elseif($month == '08') {
-        $month = 'AOUT';
-    }elseif($month == '09') {
-        $month = 'SEPT';
-    }elseif($month == '10') {
-        $month = 'OCT';
-    }elseif($month == '11') {
-        $month = 'NOV';
-    }elseif($month == '12') {
-        $month = 'DEC';
-    }
+    $monthNumber = substr($trajects[$i]['jour_voyage'], 5, 2);
+    $month = $trajet->checkMonth($monthNumber);
     if($trajects[$i]['aller_retour'] == 'on') {
         $arrow = 'assets/img/go-return.svg';
     }

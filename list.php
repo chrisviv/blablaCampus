@@ -8,33 +8,11 @@ $destination = $_SESSION['search'][1];
 $jour_voyage = $_SESSION['search'][2];
 $aller_retour = $_SESSION['search'][3];
 $data = $trajet->searchTraject($depart, $destination, $jour_voyage, $aller_retour);
+// Conversion format date
 $day = substr($_SESSION['search'][2], 8);
-$month = substr($_SESSION['search'][2], 5, 2);
-if($month == '01') {
-    $month = 'JANV';
-} elseif($month == '02') {
-    $month = 'FEVR';
-}elseif($month == '03') {
-    $month = 'MARS';
-}elseif($month == '04') {
-    $month = 'AVR';
-}elseif($month == '05') {
-    $month = 'MAI';
-}elseif($month == '06') {
-    $month = 'JUIN';
-}elseif($month == '07') {
-    $month = 'JUIL';
-}elseif($month == '08') {
-    $month = 'AOUT';
-}elseif($month == '09') {
-    $month = 'SEPT';
-}elseif($month == '10') {
-    $month = 'OCT';
-}elseif($month == '11') {
-    $month = 'NOV';
-}elseif($month == '12') {
-    $month = 'DEC';
-}
+$monthNumber = substr($_SESSION['search'][2], 5, 2);
+$month = $trajet->checkMonth($monthNumber);
+// Modification flèches aller_retour
 if($_SESSION['search'][3] == 'on') {
     $arrow = 'assets/img/go-return.svg';
 }
@@ -101,9 +79,10 @@ var_dump($data);
 
         <?php
         
-        
+        // Generation des trajets
         for ($i=0; $i < count($data); $i++) {
             $none = "";
+            // Generation des étapes
             if($data[$i]['etape_1'] != ''){
                 $etape1 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape_1']."</h3></div>";
             }else{
@@ -119,7 +98,9 @@ var_dump($data);
             }else{
                 $etape3 ="";
             }
+    // Affichage des etapes
             echo "
+    <a href='bookSeat.php?reserv=".$data[$i]['id_trajet']."'>
         <div class='card-trajet'>
             <h2>PLACES DISPONIBLES
                 <span class='phpNumber'>".$data[$i]['nb_voyageurs']."</span>
@@ -151,7 +132,8 @@ var_dump($data);
             </div>
 
 
-        </div>";
+        </div>
+    </a>";
         }
         
         

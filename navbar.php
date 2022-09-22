@@ -21,7 +21,7 @@ $user->getData($_SESSION['name_user']);
     <div class="userPanel none" id="userPanel">
 
        <div class="profileContainer">
-        <?php echo '<img src="data:image;base64,' . $user->picture . '" alt="Image dune personne"/>';?>
+        <?php echo '<img src="data:image;base64,' . $user->picture . '" alt="Photo de Profil"/>';?>
         
         
          <div class="profile">
@@ -32,7 +32,7 @@ $user->getData($_SESSION['name_user']);
         
        <div class="trajetBtn">
         <a href="add.php">
-            <img src="assets/img/addroad.svg" alt="icon de route">
+            <img src="assets/img/addroad.svg" alt="Icône de route">
             <button>PROPOSER UN TRAJET</button>
         </a>
         </div>
