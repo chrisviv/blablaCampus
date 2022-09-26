@@ -3,18 +3,30 @@ include('navbar.php');
 require_once("./class/Trajects.php");
 
 $trajet = new Trajects($_SESSION['name_user']);
-$dataTrajet = $trajet->getTrajectDataByID($_GET['reserv']);
+$user = new User();
+
+if(isset($_GET['reserv'])) {
+    $dataTrajet = $trajet->getTrajectDataByID($_GET['reserv']);
+}elseif(isset($_GET['id_trajet'])) {
+    $dataTrajet = $trajet->getTrajectDataByID($_GET['id_trajet']);
+}
 $day = substr($dataTrajet['jour_voyage'], 8);
 $monthNumber = substr($dataTrajet['jour_voyage'], 5, 2);
 $month = $trajet->checkMonth($monthNumber);
-if($dataTrajet['username'] == $_SESSION['name_user']) {
-    header('Location: ./search.php');
-}
+
+
 if($_SESSION['search'][3] == 'on') {
     $arrow = 'assets/img/go-return.svg';
 }
 elseif($_SESSION['search'][3] != 'on'){
     $arrow = 'assets/img/arrow-up.svg';
+}
+$user->getData($_SESSION['name_user']);
+$idUser = $user->id;
+
+if(isset($_GET['reservation'])){
+    $idTrajet = $_GET['id_trajet'];
+    $trajet->addReservation($idUser, $idTrajet);
 }
 
 
@@ -46,15 +58,33 @@ elseif($_SESSION['search'][3] != 'on'){
         <p>En te remerciant.</p>
     </div>
 
-    <div class="bookSeatBtn" id="bookSeatBtn">
-        <a href="list.php">
-            <button>ENVOYER MA DEMANDE</button>
-        </a>
-    </div>
-
-
-
-    
+        <?php
+        if($dataTrajet != "NULL") {
+            $trajectID = $dataTrajet["id_trajet"];
+        }
+        
+        if($dataTrajet['username'] != $_SESSION['name_user']) {
+            echo "
+            <form action='' method='get'>
+                <input type='hidden' name='id_trajet' value='$trajectID'>
+                <input class='bookSeatBtn' type='submit' name='reservation' value='ENVOYER MA DEMANDE'>
+            </form>
+            ";
+        }else {
+            echo "
+            <form action=''>
+                
+                <div class='bookSeatBtn' id='bookSeatBtn'>
+                <a href='edit_trajet.php?edit=".$trajectID."'>
+                    EDITER MON TRAJET
+                </a>
+                </div>
+                </a>
+                </form>
+                ";
+            }
+            
+            ?>
     
 </div>
 

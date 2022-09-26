@@ -136,6 +136,15 @@ class Trajects extends User {
         }
     }
 
+    public function addReservation($idUser, $idTrajet) {
+        $newReservation = $this->connect()->prepare("INSERT INTO reservation (`id_user` , `id_trajet`) VALUES (:idUser , :idTrajet)");
+        $newReservation->bindValue(':idUser', $idUser);
+        $newReservation->bindValue(':idTrajet', $idTrajet);
+        $newReservation->execute();
+        $_SESSION['confirmMessage'] = 'Votre message a bien été envoyé !';
+        header('Location: ./confirmation.php');
+    }
+
 }
 
 

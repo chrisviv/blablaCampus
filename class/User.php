@@ -128,6 +128,7 @@ class User extends Database {
         $this->mail = $datas[4];
         $this->bio = $datas[5];
         $this->picture = $datas[6];
+        return $datas;
     }
 
 // Modification des informations utilisateur
