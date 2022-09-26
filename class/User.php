@@ -128,6 +128,7 @@ class User extends Database {
         $this->mail = $datas[4];
         $this->bio = $datas[5];
         $this->picture = $datas[6];
+        return $datas;
     }
 
 // Modification des informations utilisateur
@@ -156,8 +157,8 @@ class User extends Database {
             $insert->execute();
             $_SESSION['name_user'] = $username;
             $_SESSION['confirmMessage'] = 'Vos informations ont bien été mises à jour !';
-            // header("Location:./confirmation.php");
-            // getData($_SESSION['name_user']);
+            header("Location:./confirmation.php");
+            getData($_SESSION['name_user']);
         }
     }
 

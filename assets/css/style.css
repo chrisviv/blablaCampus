@@ -1218,7 +1218,7 @@ span {
     left: calc(50% - 161px);
 }
 
-.bookSeatBtn>a>button {
+.bookSeatBtn>a>input {
     font-family: "worksans", sans-serif;
     font-size: 13px;
     border: 0;

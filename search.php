@@ -9,7 +9,12 @@ if(isset($_GET['search'])) {
     $depart = $_GET['depart'];
     $destination = $_GET['destination'];
     $jour_voyage = $_GET['date'];
-    $aller_retour = $_GET['retour'];
+    if(isset($_GET['retour'])){
+        $aller_retour = $_GET['retour'];
+    }
+    if(isset($_GET['allez'])) {
+        $aller_retour = 'off';
+    }
     $_SESSION['search'] = [$depart, $destination, $jour_voyage, $aller_retour];
     header('Location: ./list.php');
 }

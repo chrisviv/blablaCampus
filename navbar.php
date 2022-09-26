@@ -1,7 +1,6 @@
 <?php
 require_once("./class/User.php");
 $user = new User('');
-
 $user->getData($_SESSION['name_user']);
 
 
@@ -14,15 +13,14 @@ $user->getData($_SESSION['name_user']);
         </div>
 
         <div class="headerTitle">
-            <img src="assets/img/userIcon.svg" alt="icone du utilisateur" id="userBtn">
+            <img src="assets/img/userIcon.svg" alt="icone de l'utilisateur" id="userBtn">
         </div>
     </div>
 
     <div class="userPanel none" id="userPanel">
 
        <div class="profileContainer">
-        <?php echo '<img src="data:image;base64,' . $user->picture . '" alt="Photo de Profil"/>';?>
-        
+            <img src="data:image;base64,<?php echo $user->picture; ?>" alt="Photo de Profil"/>
         
          <div class="profile">
              <h2><?php echo $user->username; ?></h2>
