@@ -23,7 +23,7 @@ for ($i=0; $i < count($trajects); $i++) {
         $arrow = 'assets/img/arrow-up.svg';
     }
 
-    echo '<div class="infoTrajet mg-20 "><div class="dateTrajet"><h2 class="day">'.$day.'</h2><h2 class="arrivePlace">'.$month.'</h2></div><div class="placesTrajet"><h2 class="departPlace">'.$trajects[$i]['depart'].'</h2><h2 class="arrivePlace">'.$trajects[$i]['destination'].'</h2></div><div class="go-return"><img src="'.$arrow.'" alt=""></div><form action="" class="none edit-delete-form" ><a href="edit_trajet.php?edit='.$trajects[$i]["id_trajet"].'" class="btnEdit">EDITER</a><a href="delete.php?supp='.$trajects[$i]["id_trajet"].'" class="btnDel">SUPPRIMER</a></form></div>';
+    echo '<div class="infoTrajet mg-20 "><div class="dateTrajet"><h2 class="day">'.$day.'</h2><h2 class="month2">'.$month.'</h2></div><div class="placesTrajet"><h2 class="departPlace">'.$trajects[$i]['depart'].'</h2><h2 class="arrivePlace">'.$trajects[$i]['destination'].'</h2></div><div class="go-return"><img src="'.$arrow.'" alt=""></div><form action="" class="none edit-delete-form" ><a href="edit_trajet.php?edit='.$trajects[$i]["id_trajet"].'" class="btnEdit">EDITER</a><a href="delete.php?supp='.$trajects[$i]["id_trajet"].'" class="btnDel">SUPPRIMER</a></form></div>';
 }
 
 ?>
