@@ -8,6 +8,15 @@ include('homePc.php');
     
     <h1>MES RÉSERVATIONS</h2>
 
+    <?php
+    
+    
+    
+    
+    
+    
+    ?>
+
     <div class="infoTrajet mg-20">
         <div class="dateTrajet">
             <h2 class="day">05</h2>

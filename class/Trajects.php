@@ -136,6 +136,34 @@ class Trajects extends User {
         }
     }
 
+    public function checkMonthFull($month) {
+        if($month == '01') {
+            return 'janvier';
+        } elseif($month == '02') {
+            return 'février';
+        }elseif($month == '03') {
+            return 'mars';
+        }elseif($month == '04') {
+            return 'avril';
+        }elseif($month == '05') {
+            return 'mai';
+        }elseif($month == '06') {
+            return 'juin';
+        }elseif($month == '07') {
+            return 'juillet';
+        }elseif($month == '08') {
+            return 'août';
+        }elseif($month == '09') {
+            return 'septembre';
+        }elseif($month == '10') {
+            return 'octobre';
+        }elseif($month == '11') {
+            return 'novembre';
+        }elseif($month == '12') {
+            return 'décembre';
+        }
+    }
+
     public function addReservation($idUser, $idTrajet) {
         $newReservation = $this->connect()->prepare("INSERT INTO reservation (`id_user` , `id_trajet`) VALUES (:idUser , :idTrajet)");
         $newReservation->bindValue(':idUser', $idUser);
@@ -143,6 +171,14 @@ class Trajects extends User {
         $newReservation->execute();
         $_SESSION['confirmMessage'] = 'Votre message a bien été envoyé !';
         header('Location: ./confirmation.php');
+    }
+
+    public function getReservations($idUser) {
+        $reservationdata = $this->connect()->prepare("SELECT trajets.id_user, reservation.id_user, trajets.depart, trajets.destination, trajets.jour_voyage FROM `reservation` INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE trajets.id_user = :id_user;");
+        $reservationdata->bindValue(':id_user', $idUser);
+        $reservationdata->execute();
+        $data = $reservationdata->fetchAll();
+        return $data;
     }
 
 }

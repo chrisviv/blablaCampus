@@ -20,7 +20,11 @@ $user->getData($_SESSION['name_user']);
     <div class="userPanel none" id="userPanel">
 
        <div class="profileContainer">
-            <img src="data:image;base64,<?php echo $user->picture; ?>" alt="Photo de Profil"/>
+            <img src="data:image;base64,
+            <?php 
+            echo $user->picture; 
+            ?>" 
+            alt="Photo de Profil"/>
         
          <div class="profile">
              <h2><?php echo $user->username; ?></h2>
