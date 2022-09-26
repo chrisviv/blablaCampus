@@ -43,6 +43,10 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .none {
     display: none !important;
 }
@@ -729,12 +733,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-top: 25px;
 }
 
-.card-trajet>h2 {
+a>.card-trajet>h2 {
     font-family: "worksans";
     width: 100%;
     font-size: 9px;
     text-align: end;
-
+    color: black;
 }
 
 .travel-start {

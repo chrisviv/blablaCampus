@@ -2,15 +2,35 @@
 require_once("./class/User.php");
 $user = new User();
 $user->getData($_SESSION['name_user']);
-// var_dump($_FILES['profilePic']['tmp_name']);
+
+
 
 if(isset($_POST['edit'])){
+    $fileName = $_FILES['profilePic']['name'];
+    $fileTmpName = $_FILES['profilePic']['tmp_name'];
+    $fileSize = $_FILES['profilePic']['size'];
+    $fileError = $_FILES['profilePic']['error'];
+    $fileType = $_FILES['profilePic']['type'];
+
+
+    $fileExt = explode('.',$fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpg','png','gif');
+
+if (in_array($fileActualExt,$allowed )) {
+    if ($fileError === 0) {
+        if ($fileSize < 1000000) {
+            $picture = base64_encode(file_get_contents(addslashes($fileTmpName)));
+        }
+    }
+}
+    
     $username = $_POST['username'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
-    $picture = $_POST['profilePic'];
     $user->editData($username, $email, $bio, $picture);
 
+   
 
 }
 include('homePc.php');
@@ -43,7 +63,7 @@ include('homePc.php');
                 
                     <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo">
                     <h3>Glisser-déposer ou parcourir un fichier</h3>
-                    <h4 style="text-align: center ;">Taille recommandée: JPG, PNG, GIF <br> (150x150px, Max 10mb)</h4>
+                    <h4 style="text-align: center ;">Taille recommandée: JPG, PNG, GIF <br> (150x150px, Max 1mb)</h4>
                 
                     <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>

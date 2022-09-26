@@ -71,34 +71,17 @@ class Trajects extends User {
         header('Location: ./confirmation.php');
     }
 
-// Filter de trajet A TESTER !
-    public function searchTraject($depart, $destination, $jour_voyage) {
-        $req = array();
-        $value = array();
-    
-       
-        if (!empty($_GET['filter_intervention'])) {
-            array_push($req, 'AND type_intervention = ""?""');
-            array_push($value, $_GET['filter_intervention']);
-        }
-    
-        if (!empty($_GET['filter_step'])) {
-            array_push($req, 'AND step_intervention = ""?""');
-            array_push($value, $_GET['filter_step']);
-        }
-    
-        if (!empty($_GET['filter_date'])) {
-            array_push($req, 'AND date_intervention = ""?""');
-            array_push($value, $_GET['filter_date']);
-        }
-    
-      
-        $request = implode(" ", $req);
-        $search = connect()->prepare('SELECT * FROM interventions WHERE 1  ' . $request . '');
-        $search->execute($value);
-        //$search->debugDumpParams();
-        $resultSearch = $search->fetchAll();
-        return $resultSearch;
+// Filter de trajet
+    public function searchTraject($depart, $destination, $jour_voyage, $aller_retour) {
+        $searchTraject = $this->connect()->prepare("SELECT users.username , users.bio , users.picture , depart , destination , jour_voyage , heure_depart , aller_retour , nb_voyageurs , etape_1 , etape_2 , etape_3 , trajets.id_user , id_trajet FROM `trajets` INNER JOIN users ON trajets.id_user = users.id_user WHERE `depart` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour ORDER BY `heure_depart`;");
+        $searchTraject->bindValue(':depart', $depart);
+        $searchTraject->bindValue(':destination', $destination);
+        $searchTraject->bindValue(':jour_voyage', $jour_voyage);
+        $searchTraject->bindValue(':aller_retour', $aller_retour);
+        $searchTraject->execute();
+        $data = $searchTraject->fetchAll();
+        return $data;
+        
     }
 
     public function getTrajectData($idUser) {
@@ -107,25 +90,10 @@ class Trajects extends User {
         $getData->execute();
         $datas = $getData->fetchAll();
         return $datas;
-
-        // $this->idTraject = $datas['id_trajet'];
-        // $this->depart = $datas['depart'];
-        // $this->destination = $datas['destination'];
-        // $this->JourVoyage = $datas['jour_voyage'];
-        // $this->heureDepart = $datas['heure_depart'];
-        // $this->heureStep1 = $datas['heure_etape1'];
-        // $this->heureStep2 = $datas['heure_etape2'];
-        // $this->heureStep3 = $datas['heure_etape3'];
-        // $this->heureDestination = $datas['heure_destination'];
-        // $this->allerRetour = $datas['aller_retour'];
-        // $this->nbPassagers = $datas['nb_passagers'];
-        // $this->step1 = $datas['etape_1'];
-        // $this->step2 = $datas['etape_2'];
-        // $this->step3 = $datas['etape_3'];
     }
 
     public function getTrajectDataByID($id) {
-        $getData = $this->connect()->prepare("SELECT * FROM trajets WHERE id_trajet = :id ORDER BY `jour_voyage`");
+        $getData = $this->connect()->prepare("SELECT * FROM trajets INNER JOIN users ON trajets.id_user = users.id_user WHERE id_trajet = :id ORDER BY `jour_voyage`");
         $getData->bindValue(':id', $id);
         $getData->execute();
         $datas = $getData->fetch();
@@ -138,6 +106,34 @@ class Trajects extends User {
         $delete->execute();
         $_SESSION['confirmMessage'] = 'Votre trajet a bien été supprimé !';
         header('Location: ./confirmation.php');
+    }
+
+    public function checkMonth($month) {
+        if($month == '01') {
+            return 'JANV';
+        } elseif($month == '02') {
+            return 'FEVR';
+        }elseif($month == '03') {
+            return 'MARS';
+        }elseif($month == '04') {
+            return 'AVR';
+        }elseif($month == '05') {
+            return 'MAI';
+        }elseif($month == '06') {
+            return 'JUIN';
+        }elseif($month == '07') {
+            return 'JUIL';
+        }elseif($month == '08') {
+            return 'AOUT';
+        }elseif($month == '09') {
+            return 'SEPT';
+        }elseif($month == '10') {
+            return 'OCT';
+        }elseif($month == '11') {
+            return 'NOV';
+        }elseif($month == '12') {
+            return 'DEC';
+        }
     }
 
 }

@@ -5,6 +5,15 @@ if(!isset($_SESSION['name_user'])){
     header("Location:./index.php");
 }
 
+if(isset($_GET['search'])) {
+    $depart = $_GET['depart'];
+    $destination = $_GET['destination'];
+    $jour_voyage = $_GET['date'];
+    $aller_retour = $_GET['retour'];
+    $_SESSION['search'] = [$depart, $destination, $jour_voyage, $aller_retour];
+    header('Location: ./list.php');
+}
+
 include('homePc.php')
 ?>
 
@@ -14,28 +23,28 @@ include('homePc.php')
 
     <div class="form-container">
         <h1>RECHERCHER UN TRAJET</h1>
-        <form action="" class="searchForm autocomplete-container" id="autocomplete-container">
+        <form action="" method="get" class="searchForm autocomplete-container" id="autocomplete-container">
 
             <div class="departBox">
 
                 <img src="assets/img/markerMap.svg" alt="">
-                <input type="text" placeholder="Départ" name="" id='inputDepart' required>
+                <input type="text" placeholder="Départ" name="depart" id='inputDepart' required>
             </div>
 
             <div class="departBox">
                 <img src="assets/img/markerMap.svg" alt="">
-                <select name="" id="" required>
+                <select name="destination" id="" required>
 
                     <option value="" disabled selected hidden>
                         Destination
                     </option>
 
 
-                    <option value="adresse">
+                    <option value="Centre avenue du stade">
                         Centre avenue du stade
                     </option>
 
-                    <option value="adresse2">
+                    <option value="Campus numérique">
                         Campus numérique
                     </option>
 
@@ -44,7 +53,7 @@ include('homePc.php')
 
             <div class="departBox">
                 <img src="assets/img/calendar.svg" alt="">
-                <input type="date" name="" class="date" required>
+                <input type="date" name="date" class="date" required>
             </div>
 
 
@@ -59,7 +68,7 @@ include('homePc.php')
                     <label for="retour">Allez/Retour</label>
                 </div>
             </div>
-            <input type="submit" name="" class="searchBtn" value="RECHERCHER">
+            <input type="submit" name="search" class="searchBtn" value="RECHERCHER">
         </form>
     </div>
 
