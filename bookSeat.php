@@ -4,7 +4,6 @@ require_once("./class/Trajects.php");
 
 $trajet = new Trajects($_SESSION['name_user']);
 $dataTrajet = $trajet->getTrajectDataByID($_GET['reserv']);
-var_dump($dataTrajet);
 $day = substr($dataTrajet['jour_voyage'], 8);
 $monthNumber = substr($dataTrajet['jour_voyage'], 5, 2);
 $month = $trajet->checkMonth($monthNumber);
@@ -43,7 +42,7 @@ elseif($_SESSION['search'][3] != 'on'){
 
    <div class="boxBookSeat">
         <p> Bonjour <span> <?= $dataTrajet['username'] ?> </span></p>
-        <p>Je souhaiterai réserver une place dans ta voiture <br> pour le trajet <span><?= $dataTrajet['depart']." - ".$dataTrajet['destination']  ?></span></p>
+        <p>Je souhaiterai réserver une place dans ta voiture <br> pour le trajet <span><?= $_SESSION['search'][0]." - ".$_SESSION['search'][1]  ?></span></p>
         <p>En te remerciant.</p>
     </div>
 

@@ -88,15 +88,6 @@ include('homePc.php');
     </div>
 
 
-    <script>
-       
-            
-        append(homePc, register)
-      
-        
-
-    </script>
-   
     <script src="assets/js/file.js"></script>
 
 <?php include('footer.php');?>

@@ -19,7 +19,6 @@ if($_SESSION['search'][3] == 'on') {
 elseif($_SESSION['search'][3] != 'on'){
     $arrow = 'assets/img/arrow-up.svg';
 }
-var_dump($data);
 
 
 
