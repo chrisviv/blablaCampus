@@ -29,7 +29,7 @@ class User extends Database {
             session_destroy();
         }
         else {
-            $insert = $this->connect()->prepare("INSERT INTO `users`(username, password_user, name_user, mail ,bio, picture) VALUES (:username, :mdp, :nom, :mail, :bio, :picture)");
+            $insert = $this->connect()->prepare("INSERT INTO users (username, password_user, name_user, mail, bio, picture) VALUES (:username, :mdp, :nom, :mail, :bio, :picture)");
             $insert->bindParam(':username', $pseudo, PDO::PARAM_STR);
             $insert->bindParam(':mdp', $password, PDO::PARAM_STR);
             $insert->bindParam(':nom', $nom, PDO::PARAM_STR);
@@ -80,18 +80,6 @@ class User extends Database {
             //     if (move_uploaded_file($_FILES["profilePic"]["tmp_name"], $target_file)) {
             //     echo "Le fichier ". htmlspecialchars( basename( $_FILES["profilePic"]["name"])). " a été téléchargé.";
                 
-<<<<<<< HEAD
-                $insert->bindParam(':picture', $_FILES["profilePic"]["name"]);
-                $insert->execute();
-                $insert->debugDumpParams();
-                } else {
-                echo "Désolé, il y a eu une erreur lors du téléchargement.";
-                }
-            }
-            die();
-            //FIN DE TEST
-=======
->>>>>>> ceee99cdc4a933f0a960328cb0f32b5dc048fe35
 
             //     // $insert->debugDumpParams();
             //     } else {
