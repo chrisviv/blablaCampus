@@ -224,6 +224,23 @@ class Trajects extends User {
         $exist = $check->fetch();
         return $exist;
     }
+
+    public function getValidReservations($idUser) {
+        $get = $this->connect()->prepare("SELECT trajets.jour_voyage , trajets.depart , trajets.destination , trajets.aller_retour FROM reservation INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE reservation.id_user = :idUser AND reservation.accepted = '1';
+        ");
+        $get->bindValue(':idUser',$idUser);
+        $get->execute();
+        $data = $get->fetchAll();
+        return $data;
+    }
+
+    public function getValidations($idUser) {
+        $reservationdata = $this->connect()->prepare("SELECT reservation.id_reservation, trajets.id_user, reservation.id_user, trajets.depart, trajets.destination, trajets.jour_voyage FROM `reservation` INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE reservation.id_user = :id_user AND accepted = '1';");
+        $reservationdata->bindValue(':id_user', $idUser);
+        $reservationdata->execute();
+        $data = $reservationdata->fetchAll();
+        return $data;
+    }
     
 
 

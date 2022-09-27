@@ -80,7 +80,6 @@ elseif($_SESSION['search'][3] != 'on'){
         
         // Generation des trajets
         for ($i=0; $i < count($data); $i++) {
-            $none = "";
             // Generation des étapes
             if($data[$i]['etape_1'] != ''){
                 $etape1 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape_1']."</h3></div>";
