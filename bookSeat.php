@@ -24,9 +24,20 @@ elseif($_SESSION['search'][3] != 'on'){
 $user->getData($_SESSION['name_user']);
 $idUser = $user->id;
 
+$idConducteur = $user->getID($dataTrajet['username']);
+
+$msg = 'ENVOYER MA DEMANDE';
+
 if(isset($_GET['reservation'])){
     $idTrajet = $_GET['id_trajet'];
-    $trajet->addReservation($idUser, $idTrajet);
+    $existReserv = $trajet->checkReservations($idTrajet, $idUser);
+    
+    if($existReserv != true){
+        $trajet->addReservation($idUser, $idConducteur['id_user'],$idTrajet);
+    }
+    else {
+        $msg = 'Tu as déjà réservé ce trajet';
+    }
 }
 
 
@@ -67,7 +78,7 @@ if(isset($_GET['reservation'])){
             echo "
             <form action='' method='get'>
                 <input type='hidden' name='id_trajet' value='$trajectID'>
-                <input class='bookSeatBtn' type='submit' name='reservation' value='ENVOYER MA DEMANDE'>
+                <input class='bookSeatBtn' type='submit' name='reservation' value='$msg'>
             </form>
             ";
         }else {

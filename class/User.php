@@ -134,4 +134,12 @@ class User extends Database {
             echo "Aucun compte n'est associé à cette adresse mail.";
         }
     }
+
+    public function getID($username) {
+        $getId = $this->connect()->prepare("SELECT id_user FROM users WHERE username = :username");
+        $getId->bindValue(':username', $username);
+        $getId->execute();
+        $id = $getId->fetch();
+        return $id;
+    }
 }
