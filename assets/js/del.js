@@ -2,16 +2,16 @@ let editDel = document.querySelectorAll('.edit-delete-form');
 
 let infoTrajet  = document.querySelectorAll('.infoTrajet ');
 
-function c(){
+function editDelTravel(){
     
 for (let i = 0; i < infoTrajet.length; i++) {
     infoTrajet[i].addEventListener('click', ()=>{   
-        coco(editDel[i])
+        timeout(editDel[i])
         
     
     })}
 
-    function coco(e){
+    function timeout(e){
        
         e.className = e.className.replace("none", "");
 
@@ -20,27 +20,24 @@ for (let i = 0; i < infoTrajet.length; i++) {
                 e.classList.add('none')
             }, 3000)
         }
-        console.log(e);
         
     }
 }
 
-
-    c()
 
 
 let annulerbox = document.querySelectorAll('.annulerbox')
 let deleteRideBtn = document.querySelectorAll('.deleteRideBtn')
 
-function annuler(){
+function annulerReservation(){
 for (let i = 0; i < annulerbox.length; i++) {
     annulerbox[i].addEventListener('click', ()=>{   
-        coco(deleteRideBtn[i])
+        timeout(deleteRideBtn[i])
         
     
     })}
 
-    function coco(e){
+    function timeout(e){
        
         e.className = e.className.replace("none", "");
 
@@ -49,10 +46,10 @@ for (let i = 0; i < annulerbox.length; i++) {
                 e.classList.add('none')
             }, 3000)
         }
-        console.log(e);
         
     }
 }
 
 
-    annuler()
+    annulerReservation()
+editDelTravel()

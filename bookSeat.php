@@ -1,5 +1,5 @@
 <?php include('head.php');
-include('navbar.php');
+
 require_once("./class/Trajects.php");
 
 $trajet = new Trajects($_SESSION['name_user']);
@@ -40,11 +40,11 @@ if(isset($_GET['reservation'])){
     }
 }
 
-
+include('homepc.php')
 ?>
 
 <div class="bookSeatMain">
-    
+    <?php include('navbar.php'); ?>
     <h1>RÉSERVER UNE PLACE</h1>
 
     <div class="infoBookSeat">

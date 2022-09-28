@@ -1,5 +1,5 @@
 <?php include('head.php');
-include('navbar.php');
+include('homepc.php')
 require_once("./class/Trajects.php");
 
 $trajet = new Trajects($_SESSION['name_user']);
@@ -24,8 +24,10 @@ if(isset($_GET['validate'])){
 
 ?>
 
+
+
 <div class="bookVadilateMain">
-   
+   <?php include('navbar.php'); ?>
     <h1>VALIDATION DE LE RÉSERVATION</h1>
 
     <div class="bookValidate">
