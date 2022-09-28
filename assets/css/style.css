@@ -619,7 +619,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--lightGray);
 }
 
-/*------------------------------LIST--------------------------------*/
+/*------------------------------ TRAJET --------------------------------*/
 .listMain {
     margin: 25px;
 }
@@ -638,6 +638,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 15px;
     border-radius: 20px;
     position: relative;
+    margin: 20px 10px;
 }
 
 .dateTrajet {
@@ -1125,7 +1126,6 @@ a>.card-trajet>h2 {
 
 /*------------------------- ANNULER MES TRAJETS- chris--------------------- */
 .deleteRideMain>h1 {
-    width: 100%;
     font-family: "bungee";
     font-size: 17px;
     color: var(--blackSubtitle);
@@ -1138,12 +1138,12 @@ a>.card-trajet>h2 {
     background: var(--red);
     border-radius: 10px;
     width: 300px;
-    height: 82px;
+    height: 70px;
     display: flex;
     justify-content: center;
-    margin: 20px 20px 20px 20px;
+    margin: 20px 0px;
     position: relative;
-    left: calc(50% - 188px);
+    left: calc(50% - 150px);
 }
 
 .deleteRideBtn>a>button {
@@ -1174,9 +1174,7 @@ a>.card-trajet>h2 {
 }
 
 /*-------------------------- RESERVER UNE PLACE- chris------------------------- */
-.bookSeatMain {
-    margin-top: 30px
-}
+
 
 .bookSeatMain>h1 {
     width: 100%;
@@ -1269,9 +1267,7 @@ span {
 }
 
 /* --------------------------VALIDATION DE LA RESERVATION TRAJET - chris ------*/
-.bookVadilateMain {
-    margin: 30px 20px
-}
+
 
 .bookVadilateMain>h1 {
     width: 100%;
@@ -1536,17 +1532,17 @@ span {
 }
 
 .marker {
-    left: -120px;
+    left: -100px;
     top: 50%;
     width: 140px !important;
-    transform: rotate(-20deg);
+    transform: rotate(-25deg);
 }
 
 .marker2 {
-    right: -60px;
+    right: -59px;
     top: 10%;
     width: 80px !important;
-    transform: rotate(10deg);
+    transform: rotate(25deg);
 }
 
 .box-apli>img {
@@ -1556,7 +1552,7 @@ span {
 
 .under-boxText {
     font-family: "bungee";
-    margin: 40px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
     justify-content: center;
     display: flex;
 }
@@ -1689,5 +1685,8 @@ span {
    
     font-size: 13px;
     
+}
+.listMain {
+    margin: 0px;
 }
 }

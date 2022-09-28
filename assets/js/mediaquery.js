@@ -8,6 +8,7 @@ let search = document.querySelector('.mainSearch')
 let add = document.querySelector('.mainAdd')
 let reservation = document.querySelector('.mainReservation')
 let messagerie = document.querySelector('.bookVadilateMain')
+let bookSeatMain = document.querySelector('.bookSeatMain')
 let list = document.querySelector('.listMain')
 let del = document.querySelector('.deleteMain')
 let delRide = document.querySelector('.deleteRideMain')
@@ -41,6 +42,7 @@ append(homePc, del)
 append(homePc, delRide)
 append(homePc, resetpw)
 append(homePc, cancel)
+append(homePc, bookSeatMain)
   
 
   

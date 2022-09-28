@@ -11,7 +11,7 @@ $trajects = $trajet->getTrajectData($trajet->idUser);
     <h1>MES TRAJETS</h2>
 
 <?php
-echo (count($trajects));
+
 if(count($trajects) > 0) {
     for ($i=0; $i < count($trajects); $i++) {
         $day = substr($trajects[$i]['jour_voyage'], 8);

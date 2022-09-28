@@ -2,16 +2,16 @@ let editDel = document.querySelectorAll('.edit-delete-form');
 
 let infoTrajet  = document.querySelectorAll('.infoTrajet ');
 
-function c(){
+function editDelTravel(){
     
 for (let i = 0; i < infoTrajet.length; i++) {
     infoTrajet[i].addEventListener('click', ()=>{   
-        coco(editDel[i])
+        timeout(editDel[i])
         
     
     })}
 
-    function coco(e){
+    function timeout(e){
        
         e.className = e.className.replace("none", "");
 
@@ -25,4 +25,4 @@ for (let i = 0; i < infoTrajet.length; i++) {
     }
 }
 
-c()
+editDelTravel()

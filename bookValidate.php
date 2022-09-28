@@ -1,8 +1,10 @@
 <?php include('head.php');
- include('navbar.php')?>
+
+ include('homepc.php')
+ ?>
 
 <div class="bookVadilateMain">
-   
+   <?php include('navbar.php'); ?>
     <h1>VALIDATION DE LE RÉSERVATION</h1>
 
     <div class="bookValidate">

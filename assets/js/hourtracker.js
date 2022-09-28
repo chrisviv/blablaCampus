@@ -3,8 +3,7 @@ let placeStart = document.querySelectorAll('.place-start')
 let hourStart = document.querySelectorAll('.hour-start')
 let hourEnd = document.querySelectorAll('.hour-end')
 var apiKey = '360b948f27c34be5be832cd8c5e132e9';
-
-
+let arrive = "Lons-le-Saunier"
 let halfPlace = document.querySelectorAll('.half-place')
 let halfPlace2 = document.querySelectorAll('.half-place2')
 let halfPlace3 = document.querySelectorAll('.half-place3')
@@ -147,11 +146,7 @@ function tracking2(){
       
     }
 
-    
-  
-    
-
-
+    getPlaces(currentDepart, arrive, hourEnd[i], hourStart[i])
   }
   
 
