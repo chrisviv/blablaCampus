@@ -32,7 +32,7 @@ $data = $trajet->getValidReservations($idUser['id_user']);
             }
         
             echo '
-            <div class="infoTrajet mg-20 ">
+            <div class="infoTrajet mg-20 annulerbox">
                 <div class="dateTrajet">
                     <h2 class="day">'.$day.'</h2>
                     <h2 class="arrivePlace">'.$month.'</h2>
@@ -44,7 +44,13 @@ $data = $trajet->getValidReservations($idUser['id_user']);
                 <div class="go-return">
                     <img src="'.$arrow.'" alt="">
                 </div>
-            </div>';
+                <div class="deleteRideBtn none" id="deleteRideBtn">
+                <a href="#">
+                    <button>ANNULER</button>
+                </a>
+            </div>
+            </div>
+            ';
         }
     }
     
@@ -71,6 +77,6 @@ $data = $trajet->getValidReservations($idUser['id_user']);
 
 
 
-
+<script src="assets/js/del.js"></script>
 <script src="assets/js/user.js"></script>
 <?php include('footer.php')?>

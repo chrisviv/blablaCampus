@@ -142,4 +142,12 @@ class User extends Database {
         $id = $getId->fetch();
         return $id;
     }
+
+    public function sendResetMail($mail) {
+
+    }
+
+    // public function resetPassword($password, $token) {
+    //     $reset = $this->connect()->prepare("UPDATE users SET password_user = :newPassword WHERE token = :token");
+    // }
 }
