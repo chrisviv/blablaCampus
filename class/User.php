@@ -39,55 +39,6 @@ class User extends Database {
             $insert->execute();
             $_SESSION['name_user'] = $pseudo;
             $_SESSION['confirmMessage'] = 'Votre compte a bien été créé !';
-            
-            //TEST
-            // $target_dir = "assets/avatars/";
-            // $target_file = $target_dir;
-            // $uploadOk = 1;
-            // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-            // // Check if image file is a actual image or fake image
-            // if(isset($_POST["submit"])) {
-            //   $check = getimagesize($_FILES["profilePic"]["tmp_name"]);
-            //   if($check !== false) {
-            //     echo "Ce fichier est une image - " . $check["mime"] . ".";
-            //     $uploadOk = 1;
-            //   } else {
-            //     echo "Ce fichier n'est pas une image.";
-            //     $uploadOk = 0;
-            //   }
-            // }
-            // // Check if file already exists
-            // if (file_exists($target_file)) {
-            //     echo "Ce fichier existe déjà !";
-            //     $uploadOk = 0;
-            // }
-            // // Check file size
-            // if ($_FILES["profilePic"]["size"] > 10000000) {
-            //     echo "Désolé ce fichier est trop volumineux.";
-            //     $uploadOk = 0;
-            // }
-            // // // Allow certain file formats
-            // // if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            // // && $imageFileType != "gif" ) {
-            // //     echo "Désolé, le fichier doit-être au format JPG, PNG ou GIF.";
-            // //     $uploadOk = 0;
-            // // }
-            // // Check if $uploadOk is set to 0 by an error
-            // if ($uploadOk == 0) {
-            //     echo "Désolé, votre fichier n'a pas été téléchargé.";
-            // // if everything is ok, try to upload file
-            // } else {
-            //     if (move_uploaded_file($_FILES["profilePic"]["tmp_name"], $target_file)) {
-            //     echo "Le fichier ". htmlspecialchars( basename( $_FILES["profilePic"]["name"])). " a été téléchargé.";
-                
-
-            //     // $insert->debugDumpParams();
-            //     } else {
-            //     echo "Désolé, il y a eu une erreur lors du téléchargement.";
-            //     }
-            // }
-            // die();
-            // //FIN DE TEST
             header('Location: ./confirmation.php'); 
         }
     }
@@ -128,6 +79,14 @@ class User extends Database {
         $this->mail = $datas[4];
         $this->bio = $datas[5];
         $this->picture = $datas[6];
+        return $datas;
+    }
+
+    public function getDataByID($id){
+        $userData = $this->connect()->prepare("SELECT * FROM users WHERE id_user = :iduser");
+        $userData->bindValue(':iduser', $id);
+        $userData->execute();
+        $datas = $userData->fetch();
         return $datas;
     }
 
@@ -175,4 +134,20 @@ class User extends Database {
             echo "Aucun compte n'est associé à cette adresse mail.";
         }
     }
+
+    public function getID($username) {
+        $getId = $this->connect()->prepare("SELECT id_user FROM users WHERE username = :username");
+        $getId->bindValue(':username', $username);
+        $getId->execute();
+        $id = $getId->fetch();
+        return $id;
+    }
+
+    public function sendResetMail($mail) {
+
+    }
+
+    // public function resetPassword($password, $token) {
+    //     $reset = $this->connect()->prepare("UPDATE users SET password_user = :newPassword WHERE token = :token");
+    // }
 }

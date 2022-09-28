@@ -3,6 +3,20 @@ require_once("./class/User.php");
 $user = new User('');
 $user->getData($_SESSION['name_user']);
 
+if(isset($user->picture)){
+    $picture = $user->picture;
+}
+else {
+    echo 'pas de photo de profil';
+}
+
+if(isset($user->bio)){
+    $bio = $user->bio;
+}
+else {
+    echo 'pas de photo de profil';
+}
+
 
 ?>
 <div class="header">
@@ -20,11 +34,15 @@ $user->getData($_SESSION['name_user']);
     <div class="userPanel none" id="userPanel">
 
        <div class="profileContainer">
-            <img src="data:image;base64,<?php echo $user->picture; ?>" alt="Photo de Profil"/>
+            <img src="data:image;base64,
+            <?php 
+            echo $picture
+            ?>" 
+            alt="Photo de Profil"/>
         
          <div class="profile">
              <h2><?php echo $user->username; ?></h2>
-             <h3><?php echo $user->bio; ?></h3>
+             <h3><?php echo $bio; ?></h3>
          </div>
        </div>
         

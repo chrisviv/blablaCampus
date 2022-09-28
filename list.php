@@ -80,20 +80,19 @@ elseif($_SESSION['search'][3] != 'on'){
         
         // Generation des trajets
         for ($i=0; $i < count($data); $i++) {
-            $none = "";
             // Generation des étapes
             if($data[$i]['etape_1'] != ''){
-                $etape1 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape_1']."</h3></div>";
+                $etape1 = "<div class='travel-half'><h3 class='hour half-hour'></h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place half-place'>".$data[$i]['etape_1']."</h3></div>";
             }else{
                 $etape1 ="";
             }
             if($data[$i]['etape_2'] != ''){
-                $etape2 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape_2']."</h3></div>";
+                $etape2 = "<div class='travel-half'><h3 class='hour half-hour2'></h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place half-place2'>".$data[$i]['etape_2']."</h3></div>";
             }else{
                 $etape2 ="";
             }
             if($data[$i]['etape_3'] != ''){
-                $etape3 = "<div class='travel-half'><h3 class='hour'>JS</h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place'>".$data[$i]['etape_3']."</h3></div>";
+                $etape3 = "<div class='travel-half'><h3 class='hour half-hour3'></h3><img src='assets/img/circle-line.svg'alt='cercle avec ligne'><h3 class='place half-place3'>".$data[$i]['etape_3']."</h3></div>";
             }else{
                 $etape3 ="";
             }
@@ -107,17 +106,17 @@ elseif($_SESSION['search'][3] != 'on'){
 
             <div class='card-body'>
                 <div class='travel-start'>
-                    <h3 class='hour'>".substr($data[$i]['heure_depart'], 0, 5)."</h3>
+                    <h3 class='hour hour-start'>".substr($data[$i]['heure_depart'], 0, 5)."</h3>
                     <img src='assets/img/circle-line.svg' alt='Cercle avec ligne'>
-                    <h3 class='place'>".$data[$i]['depart']."</h3>
+                    <h3 class='place place-start'>".$data[$i]['depart']."</h3>
                 </div>
                     ".$etape1."
                     ".$etape2."
                     ".$etape3."
                 <div class='travel-end'>
-                    <h3 class='hour'>JS</h3>
+                    <h3 class='hour hour-end'></h3>
                     <img src='assets/img/circle.svg' alt='cercle avec ligne'>
-                    <h3 class='place'>".$data[$i]['destination']."</h3>
+                    <h3 class='place place-end' >".$data[$i]['destination']."</h3>
                 </div>
             </div>
 
@@ -205,6 +204,6 @@ elseif($_SESSION['search'][3] != 'on'){
 
         </div> -->
 </div>
-
+<script src="assets/js/hourtracker.js"></script>
 <script src="assets/js/user.js"></script>
 <?php include('footer.php') ?>

@@ -71,7 +71,7 @@ select {
     font-family: 'worksans';
 }
 .headerTitle>h1 {
-    font-size: 12px;
+    font-size: 9px;
     color: var(--red);
     letter-spacing: 5px;
 }
@@ -88,8 +88,8 @@ select:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     flex-direction: column;
+    min-height: 100vh;
 }
 .logo-container {
     width: 100%;
@@ -271,7 +271,7 @@ select:focus {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 50px 15px 0px 15px;
+    margin: 20px 15px 0px 15px;
 }
 .submitLogin {
     font-family: "worksans", sans-serif;
@@ -431,7 +431,7 @@ select:focus {
 }
 /*---------------------------------SEARCH---------------------------------------------*/
 .form-container {
-    margin: 50px 20px;
+    margin: 20px 20px;
 }
 .form-container>h1 {
     font-family: 'bungee';
@@ -527,7 +527,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     line-height: 20px;
     color: var(--lightGray);
 }
+<<<<<<< HEAD
 /*------------------------------LIST--------------------------------*/
+=======
+
+/*------------------------------ TRAJET --------------------------------*/
+>>>>>>> 82e58285bc3905f6d400b9be805a6353bd60750f
 .listMain {
     margin: 25px;
 }
@@ -544,6 +549,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 15px;
     border-radius: 20px;
     position: relative;
+    margin: 20px 10px;
 }
 .dateTrajet {
     display: flex;
@@ -703,15 +709,25 @@ a>.card-trajet>h2 {
     margin: 0;
     font-size: 10px;
 }
+<<<<<<< HEAD
 /*--------------------------RESERVATIONS----------------------*/
 .mainReservation {
     margin: 20px;
 }
+=======
+
+/**--------------------------RESERVATIONS----------------------**/
+
+
+
+>>>>>>> 82e58285bc3905f6d400b9be805a6353bd60750f
 .mainReservation>h1 {
     font-family: "bungee";
     font-size: 20px;
+    margin: 10px;
     color: var(--blackSubtitle);
 }
+<<<<<<< HEAD
 .mg-20 {
     margin-top: 20px;
 }
@@ -726,6 +742,16 @@ a>.card-trajet>h2 {
 /*--------------------PROPOSER UN TRAJET -------------------*/
 .formAdd {   
      margin: 0px 20px;
+=======
+
+
+
+/*--------------------PROPOSER UN TRAJET -------------------*/
+
+.formAdd {
+
+    margin: 0px 20px;
+>>>>>>> 82e58285bc3905f6d400b9be805a6353bd60750f
 }
 .formAdd>h1 {
     font-family: 'bungee';
@@ -955,7 +981,6 @@ a>.card-trajet>h2 {
 }
 /*------------------------- ANNULER MES TRAJETS- chris--------------------- */
 .deleteRideMain>h1 {
-    width: 100%;
     font-family: "bungee";
     font-size: 17px;
     color: var(--blackSubtitle);
@@ -966,13 +991,11 @@ a>.card-trajet>h2 {
 .deleteRideBtn {
     background: var(--red);
     border-radius: 10px;
-    width: 300px;
-    height: 82px;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    margin: 20px 20px 20px 20px;
-    position: relative;
-    left: calc(50% - 188px);
+    position: absolute;
 }
 .deleteRideBtn>a>button {
     font-family: "bungee";
@@ -999,9 +1022,14 @@ a>.card-trajet>h2 {
     color: var(--red);
 }
 /*-------------------------- RESERVER UNE PLACE- chris------------------------- */
+<<<<<<< HEAD
 .bookSeatMain {
     margin-top: 30px
 }
+=======
+
+
+>>>>>>> 82e58285bc3905f6d400b9be805a6353bd60750f
 .bookSeatMain>h1 {
     width: 100%;
     font-family: "bungee";
@@ -1071,10 +1099,16 @@ span {
     margin: 0;
     line-height: 30px;
 }
+<<<<<<< HEAD
 .day {
     color: var(--red);
     font-size: 40px;
 }
+=======
+
+
+
+>>>>>>> 82e58285bc3905f6d400b9be805a6353bd60750f
 .month {
     font-size: 20px;
 }
@@ -1089,9 +1123,14 @@ span {
     margin-top: 40px
 }
 /* --------------------------VALIDATION DE LA RESERVATION TRAJET - chris ------*/
+<<<<<<< HEAD
 .bookVadilateMain {
     margin: 30px 20px
 }
+=======
+
+
+>>>>>>> 82e58285bc3905f6d400b9be805a6353bd60750f
 .bookVadilateMain>h1 {
     width: 100%;
     font-family: "bungee";
@@ -1287,26 +1326,34 @@ span {
     flex-direction: column;
 }
 .box-apli {
-    width: calc(3vw + 4vh + 30vmin);
+    width: 350px;
+    max-width: 20vw;
     height: calc(100vh - 300px);
     min-height: 70vh;
     border-radius: 30px;
-    padding: 26px;
+    padding: 13px;
     overflow: scroll;
     -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
     box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
     background: white;
     -ms-overflow-style: none;
-    /* IE and Edge */
+ 
     scrollbar-width: none;
-    /* Firefox */
+    
+
+    
 }
 .box-apli::-webkit-scrollbar {
     display: none;
 }
+<<<<<<< HEAD
 .mainAccueil {
     min-height: 70vh;
 }
+=======
+
+
+>>>>>>> 82e58285bc3905f6d400b9be805a6353bd60750f
 .container-app {
     position: relative;
 }
@@ -1316,16 +1363,16 @@ span {
     z-index: -1;
 }
 .marker {
-    left: -120px;
+    left: -100px;
     top: 50%;
     width: 140px !important;
-    transform: rotate(-20deg);
+    transform: rotate(-25deg);
 }
 .marker2 {
-    right: -60px;
+    right: -59px;
     top: 10%;
     width: 80px !important;
-    transform: rotate(10deg);
+    transform: rotate(25deg);
 }
 .box-apli>img {
     margin: 30px 0px;
@@ -1333,7 +1380,7 @@ span {
 }
 .under-boxText {
     font-family: "bungee";
-    margin: 40px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
     justify-content: center;
     display: flex;
 }
@@ -1388,4 +1435,78 @@ span {
     text-decoration: none;
     font-family: "overpass";
     cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    .mainAccueil{
+        min-height: 70vh;
+    }
+    .dateTrajet>h2{
+        line-height: 22px;
+    }
+
+    .month2{
+        font-size: 18px;
+    }
+    .day{
+        font-size: 28px;
+    }
+
+    .placesTrajet {
+        font-size: 9px;
+        width: 57%;
+    }
+
+    .userPanel{
+        width: 70%;
+        height: 370px;
+        right: 23px;
+        top: 110px;
+    }
+    .profile>h2{
+        font-size: 17px;
+    }
+    .profile>h3{
+        font-size: 9px;
+    }
+    .profileContainer>img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .trajetBtn>a>button{
+        font-size: 9px;
+    }
+
+    .trajetBtn>a{
+        height: 35px;
+    }
+
+    .trajetBtn{
+        margin: 20px 0px;
+        align-items: center;
+    }
+    .trajetBtn>a{
+        height: 35px;
+    }
+    .trajetBtn>a>img{
+        width: 20px;
+    
+        left: calc(50% - 115px);
+    }
+    .modalLink{
+        height: 35px;
+    }
+    .modalLink>img {
+        width: 20px;
+    }
+    
+.modalLink>a {
+   
+    font-size: 13px;
+    
+}
+.listMain {
+    margin: 0px;
+}
 }
