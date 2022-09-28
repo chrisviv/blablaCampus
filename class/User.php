@@ -29,7 +29,7 @@ class User extends Database {
             session_destroy();
         }
         else {
-            $insert = $this->connect()->prepare("INSERT INTO `users`(username, password_user, name_user, mail ,bio, picture) VALUES (:username, :mdp, :nom, :mail, :bio, :picture)");
+            $insert = $this->connect()->prepare("INSERT INTO users (username, password_user, name_user, mail, bio, picture) VALUES (:username, :mdp, :nom, :mail, :bio, :picture)");
             $insert->bindParam(':username', $pseudo, PDO::PARAM_STR);
             $insert->bindParam(':mdp', $password, PDO::PARAM_STR);
             $insert->bindParam(':nom', $nom, PDO::PARAM_STR);

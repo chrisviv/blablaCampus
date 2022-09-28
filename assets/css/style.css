@@ -2,68 +2,54 @@
     font-family: bungee;
     src: url(../fonts/Bungee-Regular.ttf);
 }
-
 @font-face {
     font-family: worksans;
     src: url(../fonts/WorkSans-VariableFont_wght.ttf);
 }
-
 @font-face {
     font-family: epilogue;
     src: url(../fonts/Epilogue-Light.ttf);
 }
-
 @font-face {
     font-family: epilogueBold;
     src: url(../fonts/Epilogue-Bold.ttf);
 }
-
 @font-face {
     font-family: merriweather-italic;
     src: url(../fonts/Merriweather-LightItalic.ttf);
 }
-
 @font-face {
     font-family: merriweather-italic-black;
     src: url(../fonts/Merriweather-BlackItalic.ttf);
 }
-
 @font-face {
     font-family: overpass;
     src: url(../fonts/Overpass-Regular.ttf);
 }
-
 @font-face {
     font-family: overpass-bold;
     src: url(../fonts/Overpass-Bold.ttf);
 }
-
 /*--------------GLOBALS-----------------*/
 body {
     margin: 0;
 }
-
 a {
     text-decoration: none;
 }
-
 .none {
     display: none !important;
 }
-
 .dactive {
     display: block !important;
 }
-
 input[type="submit"],
-button {
+button ,.headerTitle,.labelPic,.infoTrajet {
     cursor: pointer;
 }
-
 select {
     width: 100%;
 }
-
 /* -----------------------COLORS -------------------*/
 :root {
     --black: #000000;
@@ -74,37 +60,28 @@ select {
     --grayTextiInput: #555555;
     --lightGray: #888888;
 }
-
 /*-----------------------------HEADER--------------------------------------------*/
-
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 25px;
 }
-
 .headerTitle {
     font-family: 'worksans';
 }
-
 .headerTitle>h1 {
     font-size: 9px;
     color: var(--red);
     letter-spacing: 5px;
 }
-
 .headerLogo>a>img {
     width: 50px;
 }
-
 input:focus,
 select:focus {
     outline: none;
 }
-
-
-
 /* --------------------ACCUEIL----------------------------*/
 /* -----------------lOGO----------------  */
 .mainAccueil {
@@ -114,7 +91,6 @@ select:focus {
     flex-direction: column;
     min-height: 100vh;
 }
-
 .logo-container {
     width: 100%;
     display: flex;
@@ -122,18 +98,15 @@ select:focus {
     align-items: center;
     margin: 50px 15px;
 }
-
 .logo-img>img {
     width: 100px;
 }
-
 .logo-Tittle {
     margin: 0px 15px;
     display: flex;
     align-items: flex-start;
     font-size: 20px;
 }
-
 .logo-Tittle>h1 {
     font-family: "bungee", sans-serif;
     margin: 0;
@@ -142,7 +115,6 @@ select:focus {
     font-weight: 100;
     margin-bottom: 50px;
 }
-
 .logo-Tittle>h1::after {
     font-family: "bungee";
     margin: 0;
@@ -153,14 +125,12 @@ select:focus {
     left: calc(50% - 90px);
     font-weight: 100;
 }
-
 /*-------------BUTTONS----------------*/
 .startBtn {
     background: var(--red);
     border-radius: 20px;
     width: 300px;
 }
-
 .startBtn>a>button {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -172,19 +142,16 @@ select:focus {
     letter-spacing: 10px;
     position: relative;
 }
-
 .startBtn>a>img {
     width: 21px;
     margin-right: 5px;
 }
-
 .startBtn>a {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
 }
-
 .loginBtn>a>button {
     font-family: "worksans", sans-serif;
     height: 80px;
@@ -195,7 +162,6 @@ select:focus {
     color: var(--red);
     letter-spacing: 10px;
 }
-
 /*--------------REGISTER-------------------------------*/
 .formRegister {
     display: flex;
@@ -204,7 +170,6 @@ select:focus {
     justify-content: center;
     margin: 0px 15px;
 }
-
 .formRegister>h2 {
     font-family: 'bungee';
     font-size: 16px;
@@ -212,7 +177,6 @@ select:focus {
     text-align: left;
     width: 100%;
 }
-
 .ipRegister {
     width: 100%;
     border: 0;
@@ -223,7 +187,6 @@ select:focus {
     font-family: "epilogue";
     padding-left: 10px;
 }
-
 .infonMail {
     text-align: center;
     color: var(--grayTextiInput);
@@ -231,7 +194,6 @@ select:focus {
     font-family: "epilogue";
     font-size: 13px;
 }
-
 .txtRegister {
     width: 99%;
     border: 0;
@@ -242,7 +204,6 @@ select:focus {
     font-family: "epilogue";
     padding: 10px 0px 0px 10px
 }
-
 .labelPic {
     display: flex;
     flex-direction: column;
@@ -254,25 +215,21 @@ select:focus {
     border-radius: 30px;
     margin-bottom: 40px;
 }
-
 .labelPic>h3 {
     font-family: 'epilogue';
     font-size: 13px;
     margin: 5px;
     font-weight: 800;
 }
-
 .labelPic>h4 {
     font-family: 'epilogue';
     font-size: 10px;
     margin: 0;
     color: var(--lightGray);
 }
-
 .uploadImg {
     width: 25px;
 }
-
 .submitRegister {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -285,7 +242,6 @@ select:focus {
     letter-spacing: 5px;
     margin-bottom: 50px;
 }
-
 /*-----------------------------------LOGIN----------------------------------------*/
 .loginContent {
     display: flex;
@@ -293,7 +249,6 @@ select:focus {
     justify-content: center;
     align-items: center;
 }
-
 .formLogin>h2 {
     font-family: "bungee";
     color: var(--blackSubtitle);
@@ -301,7 +256,6 @@ select:focus {
     text-align: left;
     width: 100%;
 }
-
 .ipLogin {
     width: 100%;
     border: 0;
@@ -312,7 +266,6 @@ select:focus {
     font-family: "epilogue";
     padding-left: 10px;
 }
-
 .formLogin {
     display: flex;
     flex-direction: column;
@@ -320,7 +273,6 @@ select:focus {
     justify-content: center;
     margin: 20px 15px 0px 15px;
 }
-
 .submitLogin {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -333,12 +285,10 @@ select:focus {
     letter-spacing: 5px;
     margin: 50px 0px 10px 0px;
 }
-
 .passwordBtn {
     display: flex;
     justify-content: center;
 }
-
 .passwordBtn>a>button {
     font-family: "worksans", sans-serif;
     height: 80px;
@@ -351,30 +301,25 @@ select:focus {
     position: relative;
     left: calc(50% - 115px);
 }
-
 /*----------CONFIRM-----------------*/
 .confirmMsg {
     margin: 30px 10px;
 }
-
 .confirmMsg>h1 {
     font-family: 'bungee';
     color: var(--blackSubtitle);
     font-size: 24px;
 }
-
 .confirmMsg>h2 {
     font-family: 'epilogue';
     color: var(--lightGray);
     font-size: 13px;
     margin-left: 10px;
 }
-
 /*-------------------- PROFILE ------------------------------*/
 #userBtn {
     position: relative;
 }
-
 .userPanel {
     display: flex;
     align-items: center;
@@ -391,7 +336,6 @@ select:focus {
     right: 10px;
     top: 93px;
 }
-
 .userPanel::before {
     content: '';
     position: absolute;
@@ -403,7 +347,6 @@ select:focus {
     border-bottom: 43px solid white;
     border-left: 25px solid transparent;
 }
-
 .profileContainer>img {
     width: 80px;
     height: 70px;
@@ -411,18 +354,15 @@ select:focus {
     border: 3px solid var(--red);
     margin-right: 10px;
 }
-
 .profileContainer {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
-
 .profile {
     width: 80%;
     margin-left: 5px;
 }
-
 .profile>h2 {
     font-family: "bungee";
     color: var(--red);
@@ -430,18 +370,15 @@ select:focus {
     font-size: 22px;
     line-height: 25px;
 }
-
 .profile>h3 {
     font-family: "epilogue";
     color: rgba(51, 51, 51, 0.562);
     margin: 0;
     font-size: 12px;
 }
-
 .profileOptions {
     width: 100%;
 }
-
 .trajetBtn {
     background: var(--red);
     border-radius: 20px;
@@ -452,20 +389,17 @@ select:focus {
     display: flex;
     height: 50px;
 }
-
 .trajetBtn>a>img {
     width: 25px;
     position: absolute;
     left: calc(50% - 150px);
 }
-
 .trajetBtn>a {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
 }
-
 .trajetBtn>a>button {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -478,7 +412,6 @@ select:focus {
     position: relative;
     margin-left: 10px;
 }
-
 .modalLink {
     margin: 5px 0px;
     display: flex;
@@ -486,11 +419,9 @@ select:focus {
     align-items: center;
     width: 100%;
 }
-
 .modalLink>img {
     width: 30px;
 }
-
 .modalLink>a {
     text-decoration: none;
     font-family: "epilogue";
@@ -498,28 +429,22 @@ select:focus {
     font-size: 16px;
     margin-left: 20px;
 }
-
 /*---------------------------------SEARCH---------------------------------------------*/
-
 .form-container {
     margin: 20px 20px;
 }
-
 .form-container>h1 {
     font-family: 'bungee';
     font-size: 20px;
     color: var(--blackSubtitle);
 }
-
 .searchForm {
     display: flex;
     flex-direction: column;
 }
-
 .autocomplete-container {
     position: relative;
 }
-
 .autocomplete-container input,
 select {
     font-family: "epilogue";
@@ -531,9 +456,6 @@ select {
     padding-left: 10px;
 
 }
-
-
-
 .departBox {
     background: var(--grayBgInput);
     display: flex;
@@ -542,17 +464,14 @@ select {
     padding: 10px;
     margin: 10px 0px;
 }
-
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
 }
-
 .autocomplete-container input::placeholder {
     color: var(--grayTextiInput);
 }
-
 .autocomplete-items {
     font-family: "epilogue";
     position: absolute;
@@ -564,20 +483,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     left: 0;
     right: 0;
 }
-
 .autocomplete-items div {
     padding: 10px;
     cursor: pointer;
 }
-
 .autocomplete-items div:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
-
 #inputDepart {
     position: relative;
 }
-
 .clear-button {
     color: rgba(0, 0, 0, 0.4);
     cursor: pointer;
@@ -586,15 +501,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     top: 17px;
     display: none;
 }
-
 .clear-button.visible {
     display: flex;
 }
-
 .clear-button:hover {
     color: rgba(0, 0, 0, 0.6);
 }
-
 .searchBtn {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -609,9 +521,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     position: relative;
     left: calc(50% - 125px)
 }
-
-
-
 .resetSubtitle {
     font-family: 'epilogue';
     font-size: 14px;
@@ -623,13 +532,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .listMain {
     margin: 25px;
 }
-
 .listMain>h1 {
     font-family: "bungee";
     font-size: 20px;
     color: var(--blackSubtitle);
 }
-
 .infoTrajet {
     background: var(--grayBgInput);
     display: flex;
@@ -640,7 +547,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     position: relative;
     margin: 20px 10px;
 }
-
 .dateTrajet {
     display: flex;
     flex-direction: column;
@@ -648,22 +554,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     align-items: center;
     width: 15%;
 }
-
 .dateTrajet>h2 {
     font-family: "bungee";
     margin: 0;
     line-height: 30px;
 }
-
 .day {
     color: var(--red);
     font-size: 35px;
 }
-
 .month {
     font-size: 20px;
 }
-
 .btnEdit,
 .btnDel {
     position: absolute;
@@ -679,22 +581,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     align-items: center;
     text-decoration: none;
 }
-
 .btnEdit {
     left: 0;
     background-color: var(--red);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-
-
 .btnDel {
     right: 0;
     background-color: var(--black);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-
 .placesTrajet {
     font-family: 'epilogue';
     font-weight: lighter;
@@ -702,38 +600,31 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 10px;
     width: 60%;
 }
-
 .trajetCount>h2 {
     font-family: 'epilogue';
     font-size: 16px;
     color: var(--lightGray);
 }
-
 .phpNumber {
     font-family: 'epilogueBold';
     color: var(--red);
 }
-
 .clockInfo {
     display: flex;
     font-family: 'epilogue';
     color: var(--lightGray);
 }
-
 .clockInfo>h2 {
     font-size: 13px;
     margin: 10px;
 }
-
 .card-trajet {
-
     -webkit-box-shadow: 0px 0px 24px 11px rgba(0, 0, 0, 0.116);
     box-shadow: 0px 8px 24px rgba(17, 17, 17, 0.25);
     padding: 20px;
     border-radius: 20px;
     margin-top: 25px;
 }
-
 a>.card-trajet>h2 {
     font-family: "worksans";
     width: 100%;
@@ -741,89 +632,66 @@ a>.card-trajet>h2 {
     text-align: end;
     color: black;
 }
-
 .travel-start {
     display: flex;
-
-
 }
-
 .travel-start>h3 {
     margin: 0px;
     font-size: 12px;
     line-height: 24px;
 }
-
 .travel-start>img {
     margin: 0px 20px;
 }
-
 .travel-half {
     display: flex;
-
-
 }
-
 .travel-half>h3 {
     margin: 0px;
     font-size: 12px;
     line-height: 24px;
 }
-
 .travel-half>img {
     margin: 0px 20px;
 }
-
 .travel-end {
     display: flex;
     align-items: center;
 }
-
 .travel-end>h3 {
     margin: 0px;
     font-size: 12px;
 }
-
 .travel-end>img {
     margin: 0px 21px;
 }
-
 .hour {
     color: var(--red);
     font-family: "epilogueBold";
     width: 15%;
 }
-
 .place {
     color: var(--blackSubtitle);
     font-family: "epilogueBold";
     width: 78%;
 }
-
-
 .profile-travel>img {
     width: 40px;
     height: 40px;
     border-radius: 100px;
     border: 3px solid var(--red);
-
-
 }
-
 .profile-travel {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0px 0px 0px;
-
 }
-
 .user-travel {
     width: 80%;
     margin-left: 10px;
 }
-
 .user-travel>h2 {
     font-family: "epilogueBold";
     color: var(--blackSubtitle);
@@ -831,13 +699,11 @@ a>.card-trajet>h2 {
     font-size: 13px;
     line-height: 25px;
 }
-
 .user-travel>h3 {
     font-family: "epilogue";
     color: var(--blackSubtitle);
     margin: 0;
     font-size: 10px;
-
 }
 
 /**--------------------------RESERVATIONS----------------------**/
@@ -859,23 +725,29 @@ a>.card-trajet>h2 {
 
     margin: 0px 20px;
 }
-
+/* MES TRAJETS */
+.mainReservation> H2, .bookVadilateMain > H2{
+    font-family: "epilogue";
+    color: var(--lightGray);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px
+}
+/*--------------------PROPOSER UN TRAJET -------------------*/
+.formAdd {   
+     margin: 0px 20px;
+}
 .formAdd>h1 {
     font-family: 'bungee';
     font-size: 16px;
     color: var(--blackSubtitle);
-
 }
-
 .formAdd>h3 {
     font-family: 'epilogue';
     font-size: 13px;
     color: var(--lightGray);
     margin: 20px 0px;
-
-
 }
-
 .addBox {
     background: var(--grayBgInput);
     display: flex;
@@ -886,8 +758,6 @@ a>.card-trajet>h2 {
     margin: 20px 0px;
     height: 30px;
 }
-
-
 .addBox>input {
     font-family: 'epilogue';
     font-size: 16px;
@@ -897,20 +767,14 @@ a>.card-trajet>h2 {
     padding-left: 5px;
     color: var(--grayTextiInput);
     font-weight: bold;
-
 }
-
 .addBox>select {
     font-weight: bold;
-
 }
-
 .addBox>img {
     width: 20px;
 
 }
-
-
 .etapeSearchBox {
     background: var(--grayBgInput);
     display: flex;
@@ -921,8 +785,6 @@ a>.card-trajet>h2 {
     margin: 20px 0px;
     height: 30px;
 }
-
-
 .etapeSearchBox>input {
     font-family: 'epilogue';
     font-size: 16px;
@@ -932,24 +794,18 @@ a>.card-trajet>h2 {
     padding-left: 5px;
     color: var(--grayTextiInput);
     font-weight: bold;
-
 }
-
 .etapeSearchBox>select {
     font-weight: bold;
-
 }
-
 .etapeSearchBox>img {
     width: 20px;
 
 }
-
 .etapeSearchBox>.clear-button {
     right: calc(10% - 20px);
     top: 15px;
 }
-
 .optionAdd {
     font-family: 'epilogue';
     font-size: 16px;
@@ -958,24 +814,19 @@ a>.card-trajet>h2 {
     border: 0;
     padding-left: 5px;
     font-weight: bold;
-
 }
-
 .optionFlex-row {
     display: flex;
     flex-direction: row;
 }
-
 .etapes-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
 .etapes-row>.etapeSearchBox {
     width: 80%;
 }
-
 .submitTs {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -990,14 +841,10 @@ a>.card-trajet>h2 {
     position: relative;
     left: calc(50% - 125px);
 }
-
 #allez,
 #retour {
     accent-color: var(--red);
 }
-
-
-
 /* ----------------------ANNULATION MA RESERVATION- chris----------------- */
 .cancelMain>h1 {
     font-family: "bungee";
@@ -1005,7 +852,6 @@ a>.card-trajet>h2 {
     color: var(--blackSubtitle);
     margin: 50px 0 0 30px;
 }
-
 .cancelMain>p {
     font-family: 'Epilogue';
     font-style: normal;
@@ -1015,7 +861,6 @@ a>.card-trajet>h2 {
     margin-left: 30px;
     color: var(--lightGray);
 }
-
 .cancelBtn {
     background: var(--red);
     border-radius: 10px;
@@ -1027,7 +872,6 @@ a>.card-trajet>h2 {
     position: relative;
     left: calc(50% - 172px);
 }
-
 .cancelBtn>a>button {
     font-family: "worksans", sans-serif;
     font-size: 12px;
@@ -1038,7 +882,6 @@ a>.card-trajet>h2 {
     line-height: 15px;
     letter-spacing: 5px;
 }
-
 .cancelBtn>a {
     display: flex;
     align-items: center;
@@ -1046,7 +889,6 @@ a>.card-trajet>h2 {
     text-decoration: none;
     flex-direction: column;
 }
-
 .cancelReturn>p {
     font-family: "worksans", sans-serif;
     line-height: 12px;
@@ -1055,64 +897,53 @@ a>.card-trajet>h2 {
     letter-spacing: 5px;
     color: var(--red);
 }
-
 /*------------------------- SUPPRIMER TRAJET- chris----------------------- */
 .deleteMain>h1 {
     width: 100%;
     font-family: "bungee";
     font-size: 17px;
     color: var(--blackSubtitle);
-    margin: 50px 0 0 30px;
+    margin: 50px 0 0 20px;
     font-weight: 400;
 }
-
 .deleteMain>p {
     font-family: 'Epilogue';
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 20px;
-    text-align: center;
+    margin-left: 20px;
     color: var(--lightGray);
     display: flex;
     justify-content: start;
-    width: 100%;
-    MARGIN-LEFT: 30px;
+    
+    
 }
-
 .ipDelConfirm {
     MARGIN-LEFT: 30px;
 }
-
 .deleteBtn {
     background: var(--red);
     border-radius: 10px;
-    width: 300px;
+    width: 250px;
     height: 55px;
     display: flex;
     justify-content: center;
-    margin: 40px 20px 20px 20px;
+    margin: 20px 0px 20px 0px;
     position: relative;
-    left: calc(50% - 172px);
-}
-
-.deleteBtn>a>button {
-    font-family: "worksans", sans-serif;
-    font-size: 12px;
-    text-align: center;
-    border: 0;
-    background: var(--red);
+    left: calc(50% - 142px);
+    border: none;
     color: white;
-    line-height: 15px;
+    font-family: 'worksans';
+    font-size: 13px;
     letter-spacing: 5px;
-}
+ }
 
 .ipDeleteBox {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .deleteReturn {
     font-family: "worksans", sans-serif;
     line-height: 12px;
@@ -1123,7 +954,6 @@ a>.card-trajet>h2 {
     letter-spacing: 5px;
     color: var(--red);
 }
-
 /*------------------------- ANNULER MES TRAJETS- chris--------------------- */
 .deleteRideMain>h1 {
     font-family: "bungee";
@@ -1133,7 +963,6 @@ a>.card-trajet>h2 {
     line-height: 20px;
     font-weight: 400;
 }
-
 .deleteRideBtn {
     background: var(--red);
     border-radius: 10px;
@@ -1143,7 +972,6 @@ a>.card-trajet>h2 {
     justify-content: center;
     position: absolute;
 }
-
 .deleteRideBtn>a>button {
     font-family: "bungee";
     font-size: 18px;
@@ -1153,7 +981,6 @@ a>.card-trajet>h2 {
     color: white;
     line-height: 20px;
 }
-
 .deleteRideBtn>a {
     display: flex;
     align-items: center;
@@ -1161,7 +988,6 @@ a>.card-trajet>h2 {
     text-decoration: none;
     flex-direction: column;
 }
-
 .deleteReturn>p {
     font-family: "worksans", sans-serif;
     line-height: 12px;
@@ -1170,7 +996,6 @@ a>.card-trajet>h2 {
     letter-spacing: 5px;
     color: var(--red);
 }
-
 /*-------------------------- RESERVER UNE PLACE- chris------------------------- */
 
 
@@ -1183,7 +1008,6 @@ a>.card-trajet>h2 {
     font-weight: 400;
     color: var(--blackSubtitle);
 }
-
 .boxBookSeat>p {
     width: 100%;
     font-family: "epilogue";
@@ -1193,24 +1017,26 @@ a>.card-trajet>h2 {
     line-height: 20px;
     margin-left: 20px;
 }
-
 span {
     color: var(--red);
 }
-
 .bookSeatBtn {
     background: var(--red);
     border-radius: 10px;
-    width: 275px;
+    width: 250px;
     height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 35px 20px 20px 20px;
     position: relative;
-    left: calc(50% - 161px);
+    left: calc(50% - 145px);
+    border: none;
+    color: white;
+    font-family: 'worksans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
 }
-
 .bookSeatBtn>a>input {
     font-family: "worksans", sans-serif;
     font-size: 13px;
@@ -1220,7 +1046,6 @@ span {
     letter-spacing: 5px;
     font-weight: 300;
 }
-
 .infoBookSeat {
     background: var(--grayBgInput);
     display: flex;
@@ -1231,7 +1056,6 @@ span {
     position: relative;
     margin: 20px;
 }
-
 .dateBookSeat {
     display: flex;
     flex-direction: column;
@@ -1239,7 +1063,6 @@ span {
     align-items: center;
     width: 15%;
 }
-
 .dateBookSeat>h2 {
     font-family: "bungee";
     margin: 0;
@@ -1251,7 +1074,6 @@ span {
 .month {
     font-size: 20px;
 }
-
 .placesBookSeat {
     font-family: epilogue;
     font-weight: 500;
@@ -1259,11 +1081,9 @@ span {
     font-size: 10px;
     width: 60%;
 }
-
 .boxBookSeat {
     margin-top: 40px
 }
-
 /* --------------------------VALIDATION DE LA RESERVATION TRAJET - chris ------*/
 
 
@@ -1275,14 +1095,12 @@ span {
     font-weight: 400;
     color: var(--blackSubtitle);
 }
-
 .bookValidate {
     display: flex;
     width: 100%;
     align-items: center;
     line-height: 20px;
 }
-
 .redCircul {
     width: 41px;
     height: 41px;
@@ -1291,7 +1109,6 @@ span {
     font-size: 10px;
     margin: 25px 20px 51px 25px;
 }
-
 .bookValidateCircul {
     width: 100%;
     display: flex;
@@ -1299,7 +1116,6 @@ span {
     justify-content: center;
     align-items: center
 }
-
 .bookVadilateCircul>p {
     width: 100%;
     font-family: "epilogue";
@@ -1310,14 +1126,12 @@ span {
     line-height: 13px;
     margin: 5px 0px;
 }
-
 .bookVadilateCircul>p>span {
     color: var(--red);
     font-style: normal;
     font-weight: 700;
     font-size: 13px;
 }
-
 .boxBookValidate {
     font-family: epilogue;
     font-weight: 500;
@@ -1326,12 +1140,10 @@ span {
     margin-left: 25px;
     margin-top: 40px;
 }
-
 .boxBookValidate>p>span {
     font-weight: 700;
     line-height: 20px;
 }
-
 .bookValidateBtn {
     background: var(--red);
     border-radius: 10px;
@@ -1344,7 +1156,6 @@ span {
     position: relative;
     left: calc(50% - 175px);
 }
-
 .bookValidateBtn>a>button {
     font-family: "worksans", sans-serif;
     font-size: 12px;
@@ -1354,7 +1165,6 @@ span {
     letter-spacing: 5px;
     font-weight: 300;
 }
-
 /* --------------------------------MESSAGERIE -chris-------------------- */
 .messagerieMain {
     display: flex;
@@ -1362,7 +1172,6 @@ span {
     align-items: center;
     line-height: 20px;
 }
-
 .redCirculChat {
     width: 41px;
     height: 41px;
@@ -1371,7 +1180,6 @@ span {
     font-size: 10px;
     margin: 25px 20px 51px 25px;
 }
-
 .messagerieCircul {
     width: 100%;
     display: flex;
@@ -1379,7 +1187,6 @@ span {
     justify-content: center;
     align-items: center;
 }
-
 .messagerieCircul>p {
     width: 100%;
     font-family: "epilogue";
@@ -1387,20 +1194,20 @@ span {
     font-style: italic;
     font-size: 11px;
     color: var(--lightGray);
-    line-height: 8px;
-    margin: 5px 0px;
+    line-height: 14px;
+    margin: 0px 0px;
 }
-
+.m-10{
+    margin: 10px 0px !important;
+}
 .messagerieCircul>p>span {
     font-weight: 700;
 }
-
 .ligne {
     border: 1px solid rgba(0, 0, 0, 0.2);
     width: 88%;
     margin-left: 20px;
 }
-
 .circul {
     width: 5px;
     height: 5px;
@@ -1410,19 +1217,12 @@ span {
     margin-left: 15px;
     margin-top: -3.5px
 }
-
-
-
-
-
-
 .road {
     position: fixed;
     left: 0;
     z-index: -1;
     min-height: 100vh;
 }
-
 .pcMain {
     width: 100%;
     min-height: 100vh;
@@ -1431,21 +1231,17 @@ span {
     align-items: center;
     flex-wrap: wrap;
 }
-
 .logo-container-pc {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .logo-container-pc>.logo-img>img {
     width: 80px;
 }
-
 .logo-container-pc>.logo-Tittle>h1 {
     font-size: 30px;
 }
-
 .logo-container-pc .logo-Tittle>h1::after {
     font-family: "bungee";
     margin: 0;
@@ -1456,7 +1252,6 @@ span {
     left: calc(50% - 65px);
     font-weight: 100;
 }
-
 .left-content {
     width: 40%;
     display: flex;
@@ -1465,36 +1260,30 @@ span {
     justify-content: center;
     min-height: 100vh;
 }
-
 .left-content-text>h2 {
     font-family: "merriweather-italic";
     font-size: calc(1.2vw + 1vh + 1vmin);
     margin: 50px 0px;
 }
-
 .left-content-text>h2>span {
     font-family: "merriweather-italic-black";
     color: var(--red);
 }
-
 .left-content-text>p {
     font-family: "overpass";
     line-height: 40px;
     font-size: calc(0.5vw + 0.2vh + 0.7vmin);
 }
-
 .left-content-text>p>span {
     font-family: "overpass-bold";
     color: var(--red);
 }
-
 .right-content {
     width: 50%;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-
 .box-apli {
     width: 350px;
     max-width: 20vw;
@@ -1513,7 +1302,6 @@ span {
 
     
 }
-
 .box-apli::-webkit-scrollbar {
     display: none;
 }
@@ -1522,49 +1310,41 @@ span {
 .container-app {
     position: relative;
 }
-
 .marker,
 .marker2 {
     position: absolute;
     z-index: -1;
 }
-
 .marker {
     left: -100px;
     top: 50%;
     width: 140px !important;
     transform: rotate(-25deg);
 }
-
 .marker2 {
     right: -59px;
     top: 10%;
     width: 80px !important;
     transform: rotate(25deg);
 }
-
 .box-apli>img {
     margin: 30px 0px;
     width: 80%;
 }
-
 .under-boxText {
     font-family: "bungee";
     margin: 20px 0px 0px 0px;
     justify-content: center;
     display: flex;
 }
-
 .under-boxText>p {
     color: var(--blackTittle);
     line-height: 18px;
     font-size: calc(0.2vw + 0.8vh + 0.5vmin);
 }
-
 .under-boxText>p>span {
     color: var(--red);
 }
-
 .startBtn {
     background: var(--red);
     border-radius: 20px;
@@ -1572,7 +1352,6 @@ span {
     display: flex;
     justify-content: center;
 }
-
 .startBtn>button {
     font-family: "worksans", sans-serif;
     border: 0;
@@ -1584,12 +1363,10 @@ span {
     letter-spacing: 10px;
     position: relative;
 }
-
 .startBtn>img {
     width: 21px;
     margin-right: 5px;
 }
-
 .loginBtn>button {
     font-family: "worksans", sans-serif;
     height: 80px;
@@ -1600,14 +1377,12 @@ span {
     color: var(--red);
     letter-spacing: 10px;
 }
-
 .info-legales {
     position: absolute;
     bottom: 25px;
     left: 5%;
 
 }
-
 .info-legales>a {
     color: var(--red);
     text-decoration: none;

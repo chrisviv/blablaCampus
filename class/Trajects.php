@@ -18,6 +18,7 @@ class Trajects extends User {
     public $step2;    
     public $step3;
     public $idUser;
+    public $baseurl;
 
     public function __construct($username) {
         $getId = $this->connect()->prepare("SELECT id_user FROM users WHERE username = :username");
@@ -90,7 +91,7 @@ class Trajects extends User {
 
 // Filter de trajet
     public function searchTraject($depart, $destination, $jour_voyage, $aller_retour) {
-        $searchTraject = $this->connect()->prepare("SELECT users.username , users.bio , users.picture , depart , destination , jour_voyage , heure_depart , aller_retour , nb_voyageurs , etape_1 , etape_2 , etape_3 , trajets.id_user , id_trajet FROM `trajets` INNER JOIN users ON trajets.id_user = users.id_user WHERE `depart` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour OR `etape_1` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour OR `etape_2` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour OR `etape_3` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour ORDER BY `heure_depart`;");
+        $searchTraject = $this->connect()->prepare("SELECT users.username , users.bio , users.picture , depart , destination , jour_voyage , heure_depart , aller_retour , nb_voyageurs , etape_1 , etape_2 , etape_3 , trajets.id_user , id_trajet FROM `trajets` INNER JOIN users ON trajets.id_user = users.id_user WHERE `depart` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour OR `etape_1` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour OR `etape_2` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour OR `etape_3` = :depart AND `destination` = :destination AND `jour_voyage` = :jour_voyage AND `aller_retour` = :aller_retour ORDER BY `heure_depart` WHERE nb_voyageurs > '0';");
         $searchTraject->bindValue(':depart', $depart);
         $searchTraject->bindValue(':destination', $destination);
         $searchTraject->bindValue(':jour_voyage', $jour_voyage);
@@ -188,7 +189,7 @@ class Trajects extends User {
         $newReservation->bindValue(':idTrajet', $idTrajet);
         $newReservation->execute();
         $_SESSION['confirmMessage'] = 'Votre message a bien été envoyé !';
-        $this->redirect("./confirmation.php", "0");
+        $this->redirect("./blablacampus/confirmation.php", "0");
 
     }
 
@@ -212,8 +213,18 @@ class Trajects extends User {
         $confirm = $this->connect()->prepare("UPDATE reservation SET `accepted` = '1' WHERE id_reservation = :idReservation");
         $confirm->bindValue(':idReservation', $idReservation);
         $confirm->execute();
+        $place = $this->connect()->prepare("SELECT reservation.id_trajet , trajets.nb_voyageurs FROM trajets INNER JOIN reservation ON reservation.id_trajet = trajets.id_trajet WHERE id_reservation = :idReservation");
+        $place->bindValue(':idReservation', $idReservation);
+        $place->execute();
+        $places = $place->fetch();
+        $idTrajet = $places['id_trajet'];
+        $placeDispo = $places['nb_voyageurs'] - 1;
+        $removePlace = $this->connect()->prepare("UPDATE trajets SET nb_voyageurs = :nbVoyageurs WHERE id_trajet = :idTrajet");
+        $removePlace->bindValue(':idTrajet', $idTrajet);
+        $removePlace->bindValue(':nbVoyageurs', $placeDispo);
+        $removePlace->execute();
         $_SESSION['confirmMessage'] = 'Votre message a bien été envoyé !';
-        $this->redirect("./confirmation.php", "0");
+        $this->redirect("./blablacampus/confirmation.php", "0");
     }
 
     public function checkReservations($idTrajet, $idUser) {
@@ -226,7 +237,7 @@ class Trajects extends User {
     }
 
     public function getValidReservations($idUser) {
-        $get = $this->connect()->prepare("SELECT trajets.jour_voyage , trajets.depart , trajets.destination , trajets.aller_retour FROM reservation INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE reservation.id_user = :idUser AND reservation.accepted = '1';
+        $get = $this->connect()->prepare("SELECT trajets.id_trajet , trajets.jour_voyage , trajets.depart , trajets.destination , trajets.aller_retour FROM reservation INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE reservation.id_user = :idUser AND reservation.accepted = '1';
         ");
         $get->bindValue(':idUser',$idUser);
         $get->execute();
@@ -240,6 +251,22 @@ class Trajects extends User {
         $reservationdata->execute();
         $data = $reservationdata->fetchAll();
         return $data;
+    }
+
+    public function cancelTraject($idTrajet) {
+        $place = $this->connect()->prepare("SELECT trajets.nb_voyageurs FROM trajets WHERE id_trajet = :idTrajet");
+        $place->bindValue(':idTrajet', $idTrajet);
+        $place->execute();
+        $tempPlace = $place->fetch();
+        $placeDispo = $tempPlace['nb_voyageurs'] + 1;
+        $addPlace = $this->connect()->prepare("UPDATE trajets SET nb_voyageurs = :nbVoyageurs WHERE id_trajet = :idTrajet");
+        $addPlace->bindValue(':idTrajet', $idTrajet);
+        $addPlace->bindValue(':nbVoyageurs', $placeDispo);
+        $addPlace->execute();
+        $cancel = $this->connect()->prepare("DELETE FROM reservation WHERE id_trajet = :idTrajet");
+        $cancel->bindValue(':idTrajet', $idTrajet);
+        $cancel->execute();
+        $this->redirect("./blablacampus/confirmation.php", "0");
     }
     
 

@@ -88,6 +88,10 @@ include('homePc.php');
     </div>
 
 
+<<<<<<< HEAD
+ 
+=======
+>>>>>>> e814dad7e0fdd3d28d147ebd9691cc75923901c0
     <script src="assets/js/file.js"></script>
 
 <?php include('footer.php');?>
