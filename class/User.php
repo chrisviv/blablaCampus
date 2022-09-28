@@ -144,10 +144,14 @@ class User extends Database {
     }
 
     public function sendResetMail($mail) {
-
+        $token = uniqid(uniqid());
+        return $token;
     }
 
-    // public function resetPassword($password, $token) {
-    //     $reset = $this->connect()->prepare("UPDATE users SET password_user = :newPassword WHERE token = :token");
-    // }
+    public function resetPassword($password, $token) {
+        $reset = $this->connect()->prepare("UPDATE users SET password_user = :newPassword WHERE token = :token");
+        $reset->bindValue(':newPassword', $password);
+        $reset->bindValue(':token', $token);
+        $reset->execute();
+    }
 }
