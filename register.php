@@ -73,10 +73,15 @@ include('homePc.php');
                 <h2>TÉLÉCHARGEZ UNE IMAGE DE PROFIL</h2>
                 
                 <label for="addPic" class="labelPic">
-                    
+                    <div class="labelContent">
                     <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo" enctype="multipart/form-data">
                     <h3>Glisser-déposer ou parcourir un fichier</h3>
                     <h4 style="text-align: center ;">Taille recommandée: JPG, PNG, GIF <br> (150x150px, Max 10mb)</h4>
+                    </div>
+
+                    <div class="hiddenContent none">
+                        <img src="assets/img/plus-solid.svg" alt="icon de plus">
+                    </div>
                 
                     <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>
@@ -88,10 +93,6 @@ include('homePc.php');
     </div>
 
 
-<<<<<<< HEAD
- 
-=======
->>>>>>> e814dad7e0fdd3d28d147ebd9691cc75923901c0
     <script src="assets/js/file.js"></script>
 
 <?php include('footer.php');?>
