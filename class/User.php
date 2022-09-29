@@ -144,10 +144,31 @@ class User extends Database {
     }
 
     public function sendResetMail($mail) {
-
+        $token = uniqid(uniqid());
+        return $token;
+        $header="MIME-Version: 1.0\r\n";
+        $header.='From:"support@blablacampus.fr"<'.$mail.'>'."\n";
+        $header.='Content-Type:text/html; charset="uft-8"'."\n";
+        $header.='Content-Transfer-Encoding: 8bit';
+        $message="
+        <html>
+            <body>
+                <div align='center'>
+                    <u>Message de réinitialisation de mot de passe à l'adresse :</u>$mail<br />
+                    <br/>
+                    <p>$token</p>
+                </div>
+            </body>
+        </html>
+        ";
+        var_dump($message);
+        mail($mail, "SUPPORT - blablacampus.fr", $message, $header);
     }
 
-    // public function resetPassword($password, $token) {
-    //     $reset = $this->connect()->prepare("UPDATE users SET password_user = :newPassword WHERE token = :token");
-    // }
+    public function resetPassword($password, $token) {
+        $reset = $this->connect()->prepare("UPDATE users SET password_user = :newPassword WHERE token = :token");
+        $reset->bindValue(':newPassword', $password);
+        $reset->bindValue(':token', $token);
+        $reset->execute();
+    }
 }

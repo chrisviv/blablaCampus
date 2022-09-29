@@ -10,6 +10,7 @@ require_once("./class/Trajects.php");
 $trajet = new Trajects($_SESSION['name_user']);
 $idUser = $trajet->getID($_SESSION['name_user']);
 
+$trajet->checkDeletedTraject($idUser['id_user']);
 $data = $trajet->getValidReservations($idUser['id_user']);
 
 
@@ -18,7 +19,6 @@ $data = $trajet->getValidReservations($idUser['id_user']);
     <h1>MES RÉSERVATIONS</h2>
 
     <?php
-    
     if(count($data) > 0) {
         for ($i=0; $i < count($data); $i++) {
             $day = substr($data[$i]['jour_voyage'], 8);
@@ -45,13 +45,15 @@ $data = $trajet->getValidReservations($idUser['id_user']);
                     <img src="'.$arrow.'" alt="">
                 </div>
                 <div class="deleteRideBtn none" id="deleteRideBtn">
-                <a href="#">
+                <a href="annulation.php?cancel='.$data[$i]['id_trajet'].'">
                     <button>ANNULER</button>
                 </a>
             </div>
             </div>
             ';
         }
+    }else {
+        echo "Tu n'as pas de réservation de trajet.";
     }
     
     

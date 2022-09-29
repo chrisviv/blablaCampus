@@ -44,7 +44,7 @@ a {
     display: block !important;
 }
 input[type="submit"],
-button {
+button ,.headerTitle,.labelPic,.infoTrajet {
     cursor: pointer;
 }
 select {
@@ -762,6 +762,15 @@ a>.card-trajet>h2 {
 
     margin: 0px 20px;
 }
+/* MES TRAJETS */
+.mainReservation> H2, .bookVadilateMain > H2{
+    font-family: "epilogue";
+    color: var(--lightGray);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px
+}
+/*--------------------PROPOSER UN TRAJET -------------------*/
 .formAdd>h1 {
     font-family: 'bungee';
     font-size: 16px;
@@ -928,7 +937,7 @@ a>.card-trajet>h2 {
     font-family: "bungee";
     font-size: 17px;
     color: var(--blackSubtitle);
-    margin: 50px 0 0 30px;
+    margin: 50px 0 0 20px;
     font-weight: 400;
 }
 .deleteMain>p {
@@ -937,12 +946,12 @@ a>.card-trajet>h2 {
     font-weight: 500;
     font-size: 13px;
     line-height: 20px;
-    text-align: center;
+    margin-left: 20px;
     color: var(--lightGray);
     display: flex;
     justify-content: start;
-    width: 100%;
-    MARGIN-LEFT: 30px;
+    
+    
 }
 .ipDelConfirm {
     MARGIN-LEFT: 30px;
@@ -950,29 +959,20 @@ a>.card-trajet>h2 {
 .deleteBtn {
     background: var(--red);
     border-radius: 10px;
-    width: 300px;
+    width: 250px;
     height: 55px;
     display: flex;
     justify-content: center;
-    margin: 40px 20px 20px 20px;
+    margin: 20px 0px 20px 0px;
     position: relative;
-    left: calc(50% - 172px);
+    left: calc(50% - 142px);
     border: none;
     color: white;
     font-family: 'worksans';
     font-size: 13px;
     letter-spacing: 5px;
  }
-.deleteBtn>a>button {
-    font-family: "worksans", sans-serif;
-    font-size: 12px;
-    text-align: center;
-    border: 0;
-    background: var(--red);
-    color: white;
-    line-height: 15px;
-    letter-spacing: 5px;
-}
+
 .ipDeleteBox {
     display: flex;
     align-items: center;
@@ -1057,18 +1057,18 @@ span {
 .bookSeatBtn {
     background: var(--red);
     border-radius: 10px;
-    width: 275px;
+    width: 250px;
     height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 35px 20px 20px 20px;
     position: relative;
-    left: calc(50% - 161px);
+    left: calc(50% - 145px);
     border: none;
     color: white;
-    font-family: 'worksans'sans-serif;
-    font-size: 13px;
+    font-family: 'worksans', sans-serif;
+    font-size: 10px;
     letter-spacing: 5px;
 }
 .bookSeatBtn>a>input {
@@ -1228,8 +1228,11 @@ span {
     font-style: italic;
     font-size: 11px;
     color: var(--lightGray);
-    line-height: 8px;
-    margin: 5px 0px;
+    line-height: 14px;
+    margin: 0px 0px;
+}
+.m-10{
+    margin: 10px 0px !important;
 }
 .messagerieCircul>p>span {
     font-weight: 700;

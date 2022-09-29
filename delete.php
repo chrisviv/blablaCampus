@@ -20,7 +20,7 @@ include('homePc.php');
         
     </div>
     <div class="ipDeleteBox">
-        <input type='submit' name="retour" value="RETOUR"  class="deleteReturn">
+        <a href="./trajets.php" class="deleteReturn">RETOUR</a>
     </div>
 </div>
 </form>
