@@ -4,6 +4,7 @@ if(isset($_POST['sendMail'])){
     $user = new User();
     $user->passRemember($_POST['email']);
     $uniqid = $user->sendResetMail($_POST['email']);
+    var_dump($uniqid);
 }
 
 include('homePc.php');

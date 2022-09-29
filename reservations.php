@@ -10,6 +10,7 @@ require_once("./class/Trajects.php");
 $trajet = new Trajects($_SESSION['name_user']);
 $idUser = $trajet->getID($_SESSION['name_user']);
 
+$trajet->checkDeletedTraject($idUser['id_user']);
 $data = $trajet->getValidReservations($idUser['id_user']);
 
 

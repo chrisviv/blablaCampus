@@ -183,7 +183,7 @@ class Trajects extends User {
     }
 
     public function addReservation($idUser, $idConducteur, $idTrajet) {
-        $newReservation = $this->connect()->prepare("INSERT INTO reservation (`id_user` , `id_conducteur` , `id_trajet`) VALUES (:idUser , :idConducteur , :idTrajet)");
+        $newReservation = $this->connect()->prepare("INSERT INTO reservation (`id_user` , `id_conducteur` , `id_trajet` , `cancel`) VALUES (:idUser , :idConducteur , :idTrajet , '0')");
         $newReservation->bindValue(':idUser', $idUser);
         $newReservation->bindValue(':idConducteur', $idConducteur);
         $newReservation->bindValue(':idTrajet', $idTrajet);
@@ -208,7 +208,7 @@ class Trajects extends User {
         $data = $validationData->fetch();
         return $data;
     }
-
+    // CONFIRMATION DE RESERVATION
     public function confirmReservation($idReservation) {
         $confirm = $this->connect()->prepare("UPDATE reservation SET `accepted` = '1' WHERE id_reservation = :idReservation");
         $confirm->bindValue(':idReservation', $idReservation);
@@ -237,8 +237,7 @@ class Trajects extends User {
     }
 
     public function getValidReservations($idUser) {
-        $get = $this->connect()->prepare("SELECT trajets.id_trajet , trajets.jour_voyage , trajets.depart , trajets.destination , trajets.aller_retour FROM reservation INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE reservation.id_user = :idUser AND reservation.accepted = '1';
-        ");
+        $get = $this->connect()->prepare("SELECT trajets.id_trajet , trajets.jour_voyage , trajets.depart , trajets.destination , trajets.aller_retour FROM reservation INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE reservation.id_user = :idUser AND reservation.accepted = '1';");
         $get->bindValue(':idUser',$idUser);
         $get->execute();
         $data = $get->fetchAll();
@@ -246,7 +245,7 @@ class Trajects extends User {
     }
 
     public function getValidations($idUser) {
-        $reservationdata = $this->connect()->prepare("SELECT reservation.id_reservation, trajets.id_user, reservation.id_user, trajets.depart, trajets.destination, trajets.jour_voyage FROM `reservation` INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE reservation.id_user = :id_user AND accepted = '1';");
+        $reservationdata = $this->connect()->prepare("SELECT reservation.id_reservation, trajets.id_user, reservation.id_user, trajets.depart, trajets.destination, trajets.jour_voyage FROM `reservation` INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE reservation.id_user = :id_user AND accepted = '1' AND cancel = '0'");
         $reservationdata->bindValue(':id_user', $idUser);
         $reservationdata->execute();
         $data = $reservationdata->fetchAll();
@@ -268,6 +267,35 @@ class Trajects extends User {
         $cancel->execute();
         $_SESSION['confirmMessage']= 'Votre réservation a bien été annulée.';
         $this->redirect("./blablacampus/confirmation.php", "0");
+    }
+
+    public function checkDeletedTraject($idUser) {
+        $getReservation = $this->connect()->prepare("SELECT id_trajet FROM reservation WHERE id_user = :id_user");
+        $getReservation->bindValue(':id_user', $idUser);
+        $getReservation->execute();
+        $reservation = $getReservation->fetchAll();
+
+        for ($i=0; $i < count($reservation); $i++) {
+            $getTrajets = $this->connect()->prepare("SELECT id_trajet FROM trajets WHERE id_trajet = :id_trajet");
+            $getTrajets->bindValue(':id_trajet', $reservation[$i]['id_trajet']);
+            $getTrajets->execute();
+            $trajet = $getTrajets->fetch();
+
+            if($trajet['id_trajet'] = false) {
+
+                $deleted = $this->connect()->prepare("UPDATE reservation SET cancel = '1' WHERE id_trajet = :id_trajet");
+                $deleted->bindValue(':id_trajet', $reservation[$i]['id_trajet']);
+                $deleted->execute();
+            }
+        }
+    }
+
+    public function getCanceled($idUser) {
+        $reservationdata = $this->connect()->prepare("SELECT reservation.id_reservation, reservation.id_user, reservation.id_conducteur FROM `reservation` WHERE reservation.id_user = :id_user AND accepted = '1' AND cancel = '1'");
+        $reservationdata->bindValue(':id_user', $idUser);
+        $reservationdata->execute();
+        $data = $reservationdata->fetchAll();
+        return $data;
     }
     
 
