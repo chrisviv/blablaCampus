@@ -757,11 +757,14 @@ a>.card-trajet>h2 {
 
 
 /*--------------------PROPOSER UN TRAJET -------------------*/
+<<<<<<< HEAD
 
 .formAdd {
 
     margin: 0px 20px;
 }
+=======
+>>>>>>> babbffc6a409cbbf13d136a576917b3086a84321
 /* MES TRAJETS */
 .mainReservation> H2, .bookVadilateMain > H2{
     font-family: "epilogue";
@@ -771,6 +774,12 @@ a>.card-trajet>h2 {
     line-height: 20px
 }
 /*--------------------PROPOSER UN TRAJET -------------------*/
+<<<<<<< HEAD
+=======
+.formAdd {   
+     margin: 0px 20px;
+}
+>>>>>>> babbffc6a409cbbf13d136a576917b3086a84321
 .formAdd>h1 {
     font-family: 'bungee';
     font-size: 16px;
