@@ -215,13 +215,22 @@ select:focus {
     border-radius: 30px;
     margin-bottom: 40px;
 }
-.labelPic>h3 {
+.labelContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    user-select: none;
+
+}
+.labelContent>h3 {
     font-family: 'epilogue';
     font-size: 13px;
     margin: 5px;
     font-weight: 800;
 }
-.labelPic>h4 {
+.labelContent>h4 {
     font-family: 'epilogue';
     font-size: 10px;
     margin: 0;
@@ -241,6 +250,34 @@ select:focus {
     color: white;
     letter-spacing: 5px;
     margin-bottom: 50px;
+}
+
+.hiddenContent{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border: 2.5px dashed black;
+    border-radius: 30px;
+    height: 80%;
+    user-select: none;
+}
+.hiddenContent2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+}
+.hiddenContent2>h2{
+   font-family: 'epilogue';
+   font-size: 13px;
+}
+
+.hiddenContent > img{
+    width: 10%;
+    stroke: var(--red);
+    color: #D41E45;
 }
 /*-----------------------------------LOGIN----------------------------------------*/
 .loginContent {
@@ -720,11 +757,6 @@ a>.card-trajet>h2 {
 
 
 /*--------------------PROPOSER UN TRAJET -------------------*/
-
-.formAdd {
-
-    margin: 0px 20px;
-}
 /* MES TRAJETS */
 .mainReservation> H2, .bookVadilateMain > H2{
     font-family: "epilogue";
