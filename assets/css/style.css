@@ -221,6 +221,7 @@ select:focus {
     justify-content: center;
     align-items: center;
     width: 100%;
+    user-select: none;
 
 }
 .labelContent>h3 {
@@ -259,6 +260,18 @@ select:focus {
     border: 2.5px dashed black;
     border-radius: 30px;
     height: 80%;
+    user-select: none;
+}
+.hiddenContent2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+}
+.hiddenContent2>h2{
+   font-family: 'epilogue';
+   font-size: 13px;
 }
 
 .hiddenContent > img{

@@ -74,16 +74,21 @@ include('homePc.php');
                 
                 <label for="addPic" class="labelPic">
                     <div class="labelContent">
-                    <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo" enctype="multipart/form-data">
+                    <img class='uploadImg'src="assets/img/imagefile.svg" alt="icon pour déposer une photo" draggable="false" enctype="multipart/form-data">
                     <h3>Glisser-déposer ou parcourir un fichier</h3>
                     <h4 style="text-align: center ;">Taille recommandée: JPG, PNG, GIF <br> (150x150px, Max 10mb)</h4>
                     </div>
 
                     <div class="hiddenContent none">
-                        <img src="assets/img/plus-solid.svg" alt="icon de plus">
+                        <img src="assets/img/plus-solid.svg" alt="icon de plus" draggable="false">
                     </div>
+                    <div class="hiddenContent2 none">
+                        <img src="" alt="icon de plus" draggable="false" class='check-false'>
+                        <h2 class="nameImg"></h2>
+                    </div>
+                  
                 
-                    <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
+                    <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF" >
                 </label>
 
                 <input class='submitRegister' type="submit" name="register" value="CRÉER UN COMPTE">
