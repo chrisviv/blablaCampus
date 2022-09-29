@@ -51,7 +51,6 @@ labelContent.ondragover = labelContent.ondragenter = function(evt) {
        
      };
     
-    console.log(uploadField.files);
     evt.preventDefault();
   };
 
@@ -60,12 +59,25 @@ labelContent.ondragover = labelContent.ondragenter = function(evt) {
 
   uploadField.onchange = function() {
 
-    console.log(uploadField);
+
     
     if(this.files[0].size > 1048576){
-       alert("File is too big!");
-       this.value = "";
+      this.value = "";
+      labelContent.classList.add('none')
+      hiddenContent2.classList.remove('none')
+      hiddenContent.classList.add('none')
+      check_false.src = "assets/img/fileX.svg"
+      nameImg.textContent = "VOTRE FICHIER EST TRÈS LOURD"
+      setTimeout(() => {
+        labelContent.classList.remove('none')
+        hiddenContent2.classList.add('none')
+      }, "2000")
+
     }else{
-        alert('ok')
+      labelContent.classList.add('none')
+      hiddenContent2.classList.remove('none')
+      hiddenContent.classList.add('none')
+      check_false.src = "assets/img/check.svg"
+      nameImg.textContent = uploadField.files[0].name
     };
 };
