@@ -40,7 +40,7 @@ if(isset($_GET['reservation'])){
     }
 }
 
-include('homepc.php')
+include('./homepc.php');
 ?>
 
 <div class="bookSeatMain">

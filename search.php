@@ -19,7 +19,11 @@ if(isset($_GET['search'])) {
     header('Location: ./list.php');
 }
 
+<<<<<<< HEAD
 include('homepc.php')
+=======
+include('./homepc.php');
+>>>>>>> 5871de78af5df6328b1a1fc458927f81061b8ec7
 ?>
 
 <div class="mainSearch">
