@@ -117,7 +117,7 @@ class User extends Database {
             $_SESSION['name_user'] = $username;
             $_SESSION['confirmMessage'] = 'Vos informations ont bien été mises à jour !';
             header("Location:./confirmation.php");
-            $this->getData($_SESSION['name_user']);
+            getData($_SESSION['name_user']);
         }
     }
 
@@ -145,6 +145,10 @@ class User extends Database {
 
     public function sendResetMail($mail) {
         $token = uniqid(uniqid());
+        $addToken = $this->connect()->prepare("UPDATE users SET `token` = :token WHERE `mail` = :mail");
+        $addToken->bindValue(':token', $token);
+        $addToken->bindValue(':mail', $mail);
+        $addToken->execute();
         return $token;
         $header="MIME-Version: 1.0\r\n";
         $header.='From:"support@blablacampus.fr"<'.$mail.'>'."\n";

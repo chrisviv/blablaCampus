@@ -1,6 +1,6 @@
 <?php
-require_once("./class/Database.php");
-require_once("./class/User.php");
+require_once("Database.php");
+require_once("User.php");
 class Trajects extends User {
 
     public $idTraject;
@@ -21,14 +21,14 @@ class Trajects extends User {
     public $baseurl;
 
     public function __construct($username) {
-        $getId = $this->connect()->prepare("SELECT id_user FROM users WHERE username = :username");
+        $getId = $this->connect()->prepare("SELECT `id_user` FROM `users` WHERE username = :username");
         $getId->bindValue(':username', $username);
         $getId->execute();
         $id = $getId->fetch();
         $this->idUser = $id[0];
     }
 
-    // FUNCTION DE REDIRECTION
+// FUNCTION DE REDIRECTION
 
     public function redirect($filename, $duree) {
         if (!headers_sent()) {
@@ -47,15 +47,15 @@ class Trajects extends User {
 
 // Ajout de trajet
     public function newTraject($depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3) {
-        $addTraject = $this->connect()->prepare("INSERT INTO trajets (`depart`, `destination`, `jour_voyage`, `heure_depart`, `heure_etape1`, `heure_etape2`, `heure_etape3`, `heure_destination`, `aller_retour`, `nb_voyageurs`, `etape_1`, `etape_2`, `etape_3`, `id_user`) VALUES (:depart, :destination, :jour_voyage, :heure_depart, :heure_etape1, :heure_etape2, :heure_etape3, :heure_destination, :aller_retour, :nb_voyageurs, :etape_1, :etape_2, :etape_3, :id_user)");
+        $addTraject = $this->connect()->prepare("INSERT INTO trajets (depart, destination, jour_voyage, heure_depart, aller_retour, nb_voyageurs, etape_1, etape_2, etape_3, id_user) VALUES (:depart, :destination, :jour_voyage, :heure_depart, :aller_retour, :nb_voyageurs, :etape_1, :etape_2, :etape_3, :id_user)");
         $addTraject->bindValue(':depart', $depart);
         $addTraject->bindValue(':destination', $destination);
         $addTraject->bindValue(':jour_voyage', $jour_voyage);
         $addTraject->bindValue(':heure_depart', $heure_depart);
-        $addTraject->bindValue(':heure_etape1', '');
-        $addTraject->bindValue(':heure_etape2', '');
-        $addTraject->bindValue(':heure_etape3', '');
-        $addTraject->bindValue(':heure_destination', '');
+        // $addTraject->bindValue(':heure_etape1', '');
+        // $addTraject->bindValue(':heure_etape2', '');
+        // $addTraject->bindValue(':heure_etape3', '');
+        // $addTraject->bindValue(':heure_destination', '');
         $addTraject->bindValue(':aller_retour', $allerRetour);
         $addTraject->bindValue(':nb_voyageurs', $nbPassagers);
         $addTraject->bindValue(':etape_1', $step1);
@@ -63,21 +63,18 @@ class Trajects extends User {
         $addTraject->bindValue(':etape_3', $step3);
         $addTraject->bindValue(':id_user', $this->idUser);
         $addTraject->execute();
+       // $addTraject->debugDumpParams();
         $_SESSION['confirmMessage'] = 'Votre trajet a bien été créé !';
-        header('Location: ./confirmation.php');
+         header('Location: ./confirmation.php');
     }
 
 // Modification de trajet   
     public function editTraject($id, $depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3) {
-        $editTraject = $this->connect()->prepare("UPDATE `trajets` SET `depart`= :depart ,`destination`= :destination ,`jour_voyage`= :jour_voyage ,`heure_depart`= :heure_depart , `heure_etape1` = :heure_etape1 , `heure_etape2` = :heure_etape2 ,  `heure_etape3` = :heure_etape3 ,`heure_destination` = :heure_destination ,`aller_retour`= :aller_retour,`nb_voyageurs`= :nb_voyageurs ,`etape_1`= :etape_1 ,`etape_2`= :etape_2 ,`etape_3`= :etape_3  WHERE `id_trajet` = :id_trajet");
+        $editTraject = $this->connect()->prepare("UPDATE `trajets` SET `depart`= :depart ,`destination`= :destination ,`jour_voyage`= :jour_voyage ,`heure_depart`= :heure_depart , `aller_retour`= :aller_retour,`nb_voyageurs`= :nb_voyageurs ,`etape_1`= :etape_1 ,`etape_2`= :etape_2 ,`etape_3`= :etape_3  WHERE `id_trajet` = :id_trajet");
         $editTraject->bindValue(':depart', $depart);
         $editTraject->bindValue(':destination', $destination);
         $editTraject->bindValue(':jour_voyage', $jour_voyage);
         $editTraject->bindValue(':heure_depart', $heure_depart);
-        $editTraject->bindValue(':heure_etape1', '');
-        $editTraject->bindValue(':heure_etape2', '');
-        $editTraject->bindValue(':heure_etape3', '');
-        $editTraject->bindValue(':heure_destination', '');
         $editTraject->bindValue(':aller_retour', $allerRetour);
         $editTraject->bindValue(':nb_voyageurs', $nbPassagers);
         $editTraject->bindValue(':etape_1', $step1);
@@ -102,6 +99,7 @@ class Trajects extends User {
         
     }
 
+//RECUPERATION DES INFORMATIONS DES TRAJETS
     public function getTrajectData($idUser) {
         $getData = $this->connect()->prepare("SELECT * FROM trajets WHERE id_user = :id ORDER BY `jour_voyage`");
         $getData->bindValue(':id', $idUser);
@@ -118,6 +116,7 @@ class Trajects extends User {
         return $datas;
     }
 
+//SUPPRESSION DES TRAJETS
     public function deleteTraject($idTraject) {
         $delete = $this->connect()->prepare("DELETE FROM trajets WHERE id_trajet = :id_trajet");
         $delete->bindValue(':id_trajet', $idTraject);
@@ -126,6 +125,7 @@ class Trajects extends User {
         header('Location: ./confirmation.php');
     }
 
+//TRANSFORME LE MOIS DE CHIFFRE EN DIMINUTIF DE MOIS
     public function checkMonth($month) {
         if($month == '01') {
             return 'JANV';
@@ -154,6 +154,7 @@ class Trajects extends User {
         }
     }
 
+//TRANSFORME LE MOIS DE CHIFFRE EN MOIS
     public function checkMonthFull($month) {
         if($month == '01') {
             return 'janvier';
@@ -182,6 +183,7 @@ class Trajects extends User {
         }
     }
 
+//AJOUTE UNE RESERVATION
     public function addReservation($idUser, $idConducteur, $idTrajet) {
         $newReservation = $this->connect()->prepare("INSERT INTO reservation (`id_user` , `id_conducteur` , `id_trajet` , `cancel`) VALUES (:idUser , :idConducteur , :idTrajet , '0')");
         $newReservation->bindValue(':idUser', $idUser);
@@ -193,6 +195,7 @@ class Trajects extends User {
 
     }
 
+//RECUPERE LES RESERVATIONS DE L'UTILISATEUR
     public function getReservations($idUser) {
         $reservationdata = $this->connect()->prepare("SELECT reservation.id_reservation, trajets.id_user, reservation.id_user, trajets.depart, trajets.destination, trajets.jour_voyage FROM `reservation` INNER JOIN trajets ON reservation.id_trajet = trajets.id_trajet WHERE trajets.id_user = :id_user;");
         $reservationdata->bindValue(':id_user', $idUser);
@@ -200,6 +203,7 @@ class Trajects extends User {
         $data = $reservationdata->fetchAll();
         return $data;
     }
+
 
     public function getDataValidation($idReservation) {
         $validationData = $this->connect()->prepare("SELECT users.username , users.picture , trajets.depart , trajets.destination , trajets.jour_voyage , id_reservation FROM (reservation INNER JOIN trajets ON trajets.id_trajet = reservation.id_trajet) INNER JOIN users ON users.id_user = reservation.id_user WHERE id_reservation = :idReservation ;");

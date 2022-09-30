@@ -1,6 +1,6 @@
 <?php include('head.php');
-include('homePc.php');
-require_once("./class/trajects.php");
+include('./homepc.php');
+require_once("./class/Trajects.php");
 
 ?>
 

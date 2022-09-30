@@ -10,7 +10,7 @@ elseif(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['use
     $login = $_POST['username'];
 }
 
-include('homepc.php');
+include('./homepc.php');
 ?>
     <div class="mainLogin">
         <div class="header">

@@ -4,7 +4,7 @@ $trajet = new Trajects($_SESSION['name_user']);
 if(isset($_GET['delete'])) {
     $trajet->deleteTraject($_GET['id_trajet']);
 }
-include('homepc.php');
+include('./homepc.php');
 
 
 ?>

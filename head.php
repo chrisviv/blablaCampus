@@ -1,3 +1,9 @@
+<?php 
+// var_dump($_SESSION['name_user']);
+// if($_SESSION['name_user'] == '') {
+//     header('Location: ./index.php');
+// }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

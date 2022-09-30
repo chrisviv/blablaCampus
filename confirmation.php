@@ -1,6 +1,6 @@
 <?php include("head.php");
-require_once("./class/user.php");
-include('homePc.php');
+require_once("./class/User.php");
+include('./homepc.php');
 ?>  
 
   <div class="mainConfirmation">
