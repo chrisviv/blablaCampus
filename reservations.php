@@ -1,6 +1,6 @@
 <?php include('head.php');
 include('homePc.php');
-require_once("./class/Trajects.php");
+require_once("./class/trajects.php");
 
 ?>
 
@@ -53,7 +53,7 @@ $data = $trajet->getValidReservations($idUser['id_user']);
             ';
         }
     }else {
-        echo "Tu n'as pas de réservation de trajet.";
+        echo "<h2>Tu n'as pas de réservation de trajet.</h2>";
     }
     
     
