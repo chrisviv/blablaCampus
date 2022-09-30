@@ -67,7 +67,7 @@ labelContent.ondragover = labelContent.ondragenter = function(evt) {
       hiddenContent2.classList.remove('none')
       hiddenContent.classList.add('none')
       check_false.src = "assets/img/fileX.svg"
-      nameImg.textContent = "VOTRE FICHIER EST TRÈS LOURD"
+      nameImg.textContent = "VOTRE FICHIER EST TROP LOURD"
       setTimeout(() => {
         labelContent.classList.remove('none')
         hiddenContent2.classList.add('none')

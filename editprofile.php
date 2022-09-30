@@ -4,26 +4,32 @@ $user = new User();
 $user->getData($_SESSION['name_user']);
 
 
-
 if(isset($_POST['edit'])){
-    $fileName = $_FILES['profilePic']['name'];
-    $fileTmpName = $_FILES['profilePic']['tmp_name'];
-    $fileSize = $_FILES['profilePic']['size'];
-    $fileError = $_FILES['profilePic']['error'];
-    $fileType = $_FILES['profilePic']['type'];
 
 
-    $fileExt = explode('.',$fileName);
-    $fileActualExt = strtolower(end($fileExt));
-    $allowed = array('jpg','png','gif');
 
-if (in_array($fileActualExt,$allowed )) {
-    if ($fileError === 0) {
-        if ($fileSize < 1000000) {
-            $picture = base64_encode(file_get_contents(addslashes($fileTmpName)));
+
+    if($_FILES['profilePic']['name'] == '') {
+        $picture = $user->picture;
+    }
+    else {
+        var_dump($_FILES['profilePic']);
+        $fileName = $_FILES['profilePic']['name'];
+        $fileTmpName = $_FILES['profilePic']['tmp_name'];
+        $fileSize = $_FILES['profilePic']['size'];
+        $fileError = $_FILES['profilePic']['error'];
+        $fileType = $_FILES['profilePic']['type'];
+        $fileExt = explode('.',$fileName);
+        $fileActualExt = strtolower(end($fileExt));
+        $allowed = array('jpg','png','gif');
+        if(in_array($fileActualExt,$allowed )) {
+            if($fileError === 0) {
+                if($fileSize < 1000000) {
+                    $picture = base64_encode(file_get_contents(addslashes($fileTmpName)));
+                }
+            }
         }
     }
-}
     
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -74,7 +80,7 @@ include('homePc.php');
                         <img src="" alt="icon de plus" draggable="false" class='check-false'>
                         <h2 class="nameImg"></h2>
                     </div>
-                
+                    <input type="hidden" name="pathPicture" value="<?= $user->picture?>">
                     <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>
 
