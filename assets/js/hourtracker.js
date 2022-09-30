@@ -50,7 +50,7 @@ function track(){
 
           }, (err) => {
             if (!err.canceled) {
-              console.log(err);
+             
             }
           });
         
@@ -181,7 +181,7 @@ function tracking2(){
           const data = await response.json();
           
           const time = data.features[0].properties.time 
-          console.log(secondsToHms(time)); 
+          
           
           
           let replace = add.textContent.replace(':','')
@@ -189,7 +189,7 @@ function tracking2(){
        
 
           let finalValue = parseInt(replace) + parseInt(secondvalue)
-          console.log(finalValue);
+         
           if (finalValue <= 1000) {
             finalValue = '0'+finalValue
            

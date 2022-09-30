@@ -102,7 +102,7 @@ function addressAutocomplete(inputElement, containerElement, callback) {
       });
     }, (err) => {
       if (!err.canceled) {
-        console.log(err);
+        
       }
     });
   });

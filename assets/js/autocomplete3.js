@@ -107,7 +107,7 @@ function addressAutocomplete(inputElement, containerElement, callback) {
       });
     }, (err) => {
       if (!err.canceled) {
-        console.log(err);
+      
       }
     });
   });
@@ -136,12 +136,10 @@ function addressAutocomplete(inputElement, containerElement, callback) {
 
 
 addressAutocomplete(inputDepart, autocomplete, (data) => {
-  console.log("Selected option: ");
-  console.log(data);
+
 });
 addressAutocomplete(inputDepart2, autocomplete2, (data) => {
-  console.log("Selected option: ");
-  console.log(data);
+ 
 });
 
 
@@ -245,7 +243,7 @@ let retour = document.getElementById('retour')
     let cc = document.querySelector('.input-etape')
     let hide_etape2 = document.getElementById('hide_etape2')
     let hide_etape3 = document.getElementById('hide_etape3')
-    console.log(hide_etape2);
+    
     if(cc.value != ""){
       createElement(hide_etape2.value)
       createElement(hide_etape3.value)
@@ -253,4 +251,4 @@ let retour = document.getElementById('retour')
       
     }
 
-    console.log(cc);
+   

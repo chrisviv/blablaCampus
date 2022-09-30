@@ -107,7 +107,7 @@ function addressAutocomplete(inputElement, containerElement, callback) {
       });
     }, (err) => {
       if (!err.canceled) {
-        console.log(err);
+       
       }
     });
   });
@@ -136,12 +136,10 @@ function addressAutocomplete(inputElement, containerElement, callback) {
 
 
 addressAutocomplete(inputDepart, autocomplete, (data) => {
-  console.log("Selected option: ");
-  console.log(data);
+  
 });
 addressAutocomplete(inputDepart2, autocomplete2, (data) => {
-  console.log("Selected option: ");
-  console.log(data);
+ 
 });
 
 
@@ -212,7 +210,7 @@ btnAdd.addEventListener('click', ()=>{
       for (let i = 1; i < cc.length; i++) {
         
         cc[i].name = "etapes" + i
-        console.log(cc[i].name);
+        
         
       }
     
