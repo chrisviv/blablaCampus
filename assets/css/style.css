@@ -289,7 +289,7 @@ select:focus {
 .formLogin>h2 {
     font-family: "bungee";
     color: var(--blackSubtitle);
-    font-size: 20px;
+    font-size: 16px;
     text-align: left;
     width: 100%;
 }
@@ -771,6 +771,12 @@ a>.card-trajet>h2 {
 }
 .formAdd>h1 {
     font-family: 'bungee';
+    font-size: 16px;
+    color: var(--blackSubtitle);
+}
+.formAdd>h3 {
+    font-family: 'epilogue';
+    font-size: 13px;
     color: var(--lightGray);
     margin: 20px 0px;
 }
@@ -1312,7 +1318,7 @@ span {
 }
 .box-apli {
     width: 350px;
-    max-width: 20vw;
+    max-width: 25vw;
     height: calc(100vh - 300px);
     min-height: 70vh;
     border-radius: 30px;
@@ -1422,6 +1428,7 @@ span {
     }
     .dateTrajet>h2{
         line-height: 22px;
+        font-size: 22px;
     }
 
     .month2{
@@ -1449,8 +1456,8 @@ span {
         font-size: 9px;
     }
     .profileContainer>img {
-        width: 35px;
-        height: 35px;
+        width: 50px;
+        height: 50px;
     }
 
     .trajetBtn>a>button{
@@ -1488,4 +1495,14 @@ span {
 .listMain {
     margin: 0px;
 }
+}
+
+@media screen and (max-width: 1300px) {
+    .pcMain{
+        flex-direction: column;
+        
+    }
+    .box-apli{
+        max-width: 27vw;
+    }
 }
