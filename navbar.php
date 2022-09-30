@@ -19,7 +19,6 @@ else {
 
 
 ?>
-
 <div class="header">
         <div class="headerLogo">
         <a href="index.php">

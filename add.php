@@ -35,7 +35,7 @@ if(isset($_GET['addTraject'])) {
     $trajet->newTraject($depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3);
 }
 
-include('homePc.php')
+include('./homepc.php');
 ?>
 
 <div class="mainAdd">

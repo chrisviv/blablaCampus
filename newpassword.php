@@ -1,5 +1,5 @@
 <?php include('head.php');
-include('homepc.php'); ?>
+include('./homepc.php'); ?>
 
 
 

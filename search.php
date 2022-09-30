@@ -19,7 +19,7 @@ if(isset($_GET['search'])) {
     header('Location: ./list.php');
 }
 
-include('homePc.php')
+include('./homepc.php');
 ?>
 
 <div class="mainSearch">

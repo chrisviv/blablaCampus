@@ -39,7 +39,7 @@ if(isset($_POST['edit'])){
    
 
 }
-include('homePc.php');
+include('./homepc.php');
 
 ?>
 
@@ -80,7 +80,7 @@ include('homePc.php');
                         <img src="" alt="icon de plus" draggable="false" class='check-false'>
                         <h2 class="nameImg"></h2>
                     </div>
-                    <input type="hidden" name="pathPicture" value="<?= $user->picture?>">
+                
                     <input type="file" name="profilePic" id="addPic" style="display:none;"  accept=".JPG, .PNG, .GIF">
                 </label>
 

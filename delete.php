@@ -1,11 +1,10 @@
-<?php 
+<?php include('head.php');
 require_once("./class/Trajects.php");
 $trajet = new Trajects($_SESSION['name_user']);
 if(isset($_GET['delete'])) {
     $trajet->deleteTraject($_GET['id_trajet']);
 }
-include('head.php');
-include('homePc.php');
+include('./homepc.php');
 
 
 ?>

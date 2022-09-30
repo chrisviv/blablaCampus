@@ -7,7 +7,7 @@ if(isset($_POST['sendMail'])){
     var_dump($uniqid);
 }
 
-include('homePc.php');
+include('./homepc.php');
 ?>
 
 <div class="mainReset">

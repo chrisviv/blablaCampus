@@ -1,10 +1,8 @@
 <?php 
-$allowed = ['/blablacampus/index.php', '/blablacampus/login.php', '/blablacampus/register.php', '/blablacampus/passwordreset.php'];
-if(!empty($_SESSION['name_user']) && !in_array(($_SERVER['PHP_SELF']), $allowed)) {
-    header('Location: ./index.php');
-    var_dump($_SERVER);
-}
-
+// var_dump($_SESSION['name_user']);
+// if($_SESSION['name_user'] == '') {
+//     header('Location: ./index.php');
+// }
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -39,7 +39,7 @@ class User extends Database {
             $insert->execute();
             $_SESSION['name_user'] = $pseudo;
             $_SESSION['confirmMessage'] = 'Votre compte a bien été créé !';
-            header('Location: ./confirmation.php');
+            header('Location: ./confirmation.php'); 
         }
     }
 
@@ -54,7 +54,7 @@ class User extends Database {
             $_SESSION['confirmMessage'] = 'Vous êtes bien connecté !';
             header('Location: ./confirmation.php');
             $username = $logData['username'];
-            $this->getData($username);
+            getData($username);
         }
         else {
             echo "Nom d'utilisateur ou mot de passe incorrect !";
@@ -117,7 +117,7 @@ class User extends Database {
             $_SESSION['name_user'] = $username;
             $_SESSION['confirmMessage'] = 'Vos informations ont bien été mises à jour !';
             header("Location:./confirmation.php");
-            $this->getData($_SESSION['name_user']);
+            getData($_SESSION['name_user']);
         }
     }
 
@@ -145,6 +145,10 @@ class User extends Database {
 
     public function sendResetMail($mail) {
         $token = uniqid(uniqid());
+        $addToken = $this->connect()->prepare("UPDATE users SET `token` = :token WHERE `mail` = :mail");
+        $addToken->bindValue(':token', $token);
+        $addToken->bindValue(':mail', $mail);
+        $addToken->execute();
         return $token;
         $header="MIME-Version: 1.0\r\n";
         $header.='From:"support@blablacampus.fr"<'.$mail.'>'."\n";
@@ -161,6 +165,7 @@ class User extends Database {
             </body>
         </html>
         ";
+        var_dump($message);
         mail($mail, "SUPPORT - blablacampus.fr", $message, $header);
     }
 

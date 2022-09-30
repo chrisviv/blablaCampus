@@ -36,7 +36,7 @@ if(isset($_POST['register'])){
 
 
 
-include('homePc.php');
+include('./homepc.php');
 ?>
 
     <div class="mainRegister">

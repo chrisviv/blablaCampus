@@ -1,5 +1,5 @@
 <?php include('head.php');
-include('homePc.php');
+include('./homepc.php');
 require_once("./class/Trajects.php");
 
 ?>
