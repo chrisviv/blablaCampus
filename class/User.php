@@ -39,7 +39,7 @@ class User extends Database {
             $insert->execute();
             $_SESSION['name_user'] = $pseudo;
             $_SESSION['confirmMessage'] = 'Votre compte a bien été créé !';
-            header('Location: ./confirmation.php'); 
+            header('Location: ./confirmation.php');
         }
     }
 
@@ -54,7 +54,7 @@ class User extends Database {
             $_SESSION['confirmMessage'] = 'Vous êtes bien connecté !';
             header('Location: ./confirmation.php');
             $username = $logData['username'];
-            getData($username);
+            $this->getData($username);
         }
         else {
             echo "Nom d'utilisateur ou mot de passe incorrect !";
@@ -161,7 +161,6 @@ class User extends Database {
             </body>
         </html>
         ";
-        var_dump($message);
         mail($mail, "SUPPORT - blablacampus.fr", $message, $header);
     }
 
