@@ -2,7 +2,7 @@
 if(isset($_POST['register'])){
     $pseudo = $_POST['username'];
     $_SESSION['name_user'] = $pseudo;
-    require_once("./class/User.php");
+    require_once("./class/user.php");
     $user = new User();
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $name = $_POST['nom'];
@@ -36,7 +36,7 @@ if(isset($_POST['register'])){
 
 
 
-include('homePc.php');
+include('homepc.php');
 ?>
 
     <div class="mainRegister">

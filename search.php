@@ -1,5 +1,5 @@
 <?php include('head.php');
-require_once("./class/User.php");
+require_once("./class/user.php");
 
 if(!isset($_SESSION['name_user'])){
     header("Location:./index.php");
@@ -19,7 +19,7 @@ if(isset($_GET['search'])) {
     header('Location: ./list.php');
 }
 
-include('homePc.php')
+include('homepc.php')
 ?>
 
 <div class="mainSearch">

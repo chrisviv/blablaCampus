@@ -1,5 +1,5 @@
 <?php include("head.php");
-require_once("./class/User.php");
+require_once("./class/user.php");
 include('homePc.php');
 ?>  
 

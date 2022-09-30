@@ -1,6 +1,6 @@
 <?php include('head.php');
 include('homepc.php');
-require_once("./class/Trajects.php");
+require_once("./class/trajects.php");
 $trajet = new Trajects($_SESSION['name_user']);
 if(isset($_GET['destroy'])) {
     $trajet->cancelTraject($_GET['id_trajet']);

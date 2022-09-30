@@ -35,7 +35,7 @@ if(isset($_GET['addTraject'])) {
     $trajet->newTraject($depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3);
 }
 
-include('homePc.php')
+include('homepc.php')
 ?>
 
 <div class="mainAdd">
@@ -103,7 +103,7 @@ include('homePc.php')
             </div>
         </div>
 
-        <h3>Nombre de place disponibles</h3>
+        <h3>Nombre de place disponibles (max: 4)</h3>
 
         <div class="addBox">
             <img src="assets/img/places.svg" alt="">
@@ -112,7 +112,7 @@ include('homePc.php')
            
         </div>
 
-        <h3>Etapes éventuelles</h3>
+        <h3>Etapes éventuelles (max: 3)</h3>
 
       <div class="etapes-row autocomplete-container auto-complete-array">
           <div class="etapeSearchBox">
