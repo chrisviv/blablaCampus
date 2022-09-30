@@ -1,5 +1,5 @@
 <?php include('head.php');
-require_once("./class/User.php");
+require_once("./class/user.php");
 if(isset($_POST['sendMail'])){
     $user = new User();
     $user->passRemember($_POST['email']);
@@ -7,7 +7,7 @@ if(isset($_POST['sendMail'])){
     var_dump($uniqid);
 }
 
-include('homePc.php');
+include('homepc.php');
 ?>
 
 <div class="mainReset">

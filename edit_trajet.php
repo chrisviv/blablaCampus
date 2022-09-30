@@ -1,5 +1,5 @@
 <?php include('head.php');
-require_once("./class/Trajects.php");
+require_once("./class/trajects.php");
 
 $trajet = new Trajects($_SESSION['name_user']);
 if(isset($_GET['edit'])){
@@ -42,7 +42,7 @@ if(isset($_GET['editTraject'])) {
     $trajet->editTraject($id, $depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3);
 }
 
-include('homePc.php');
+include('homepc.php');
 
 ?>
 
@@ -120,7 +120,7 @@ include('homePc.php');
 
         <div class="addBox">
             <img src="assets/img/places.svg" alt="">
-            <input type="number" min="1" max="4" name="places" placeholder="Places disponibles" value="<?php echo $data['nb_voyageurs'] ?>">
+            <input type="number" min="1" max="4" name="places" placeholder="Places disponibles (max: 4)" value="<?php echo $data['nb_voyageurs'] ?>">
 
            
         </div>

@@ -1,5 +1,5 @@
 <?php include('head.php');
-require_once("./class/User.php");
+require_once("./class/user.php");
 $user = new User();
 $user->getData($_SESSION['name_user']);
 
@@ -39,7 +39,7 @@ if(isset($_POST['edit'])){
    
 
 }
-include('homePc.php');
+include('homepc.php');
 
 ?>
 

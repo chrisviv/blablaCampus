@@ -1,5 +1,5 @@
 <?php
-include('class/User.php');
+include('class/user.php');
 $user = new User('');
 $user->logout();
 ?>
