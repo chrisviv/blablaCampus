@@ -18,7 +18,7 @@ if(isset($_GET['destroy'])) {
             <input type='submit' name="destroy" value="ANNULER MA RESERVATION"  class="cancelBtn">
         </form>
     <div class="cancelReturn">
-        <p>RETOUR</p>
+        <a href="./reservations.php">RETOUR</a>
     </div>
 </div>
 

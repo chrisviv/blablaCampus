@@ -57,8 +57,10 @@ include('./homepc.php');
             </div>
 
             <div class="departBox">
+                <label for="date" class="flex">
                 <img src="assets/img/calendar.svg" alt="">
-                <input type="date" name="date" class="date" required>
+                <input type="date" name="date" class="date" id="date" required>
+                </label>
             </div>
 
 
@@ -80,7 +82,7 @@ include('./homepc.php');
 
 </div>
 
-<script src="assets/js/test.js"></script>
+
 <script src="assets/js/autocomplete.js"></script>
 <script src="assets/js/user.js"></script>
 
