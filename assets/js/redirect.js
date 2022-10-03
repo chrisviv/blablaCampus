@@ -4,7 +4,7 @@ if (msg.textContent == 'Vous êtes bien connecté !' || msg.textContent == 'Votr
     setTimeout(()=>{
         window.location.href='search.php'
     }, 1200);
-}else if(msg.textContent == 'Un email vient de vous être envoye pour réinitialiser votre mot de passe.'){
+}else if(msg.textContent == 'Un email vient de vous être envoye pour réinitialiser votre mot de passe.' || msg.textContent == 'Vous venez de recevoir un mail.' || msg.textContent == 'Votre mot de passe a été mis à jour avec succés !'){
     setTimeout(()=>{
         window.location.href='index.php'
     }, 1200);

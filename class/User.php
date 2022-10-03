@@ -129,6 +129,27 @@ class User extends Database {
         $mailExist = $checkMail->fetch();
         if($mailExist != false) {
             echo "Email envoyé !";
+            $token = uniqid(uniqid());
+            $addToken = $this->connect()->prepare("UPDATE users SET `token` = :token WHERE `mail` = :mail");
+            $addToken->bindValue(':token', $token);
+            $addToken->bindValue(':mail', $email);
+            $addToken->execute();
+            $header="MIME-Version: 1.0\r\n";
+            $header.='From:"nom_d\'expediteur"<"chris.vivancos@codeur.online">'."\n";
+            $header.='Content-Type:text/html; charset="uft-8"'."\n";
+            $header.='Content-Transfer-Encoding: 8bit';
+            $message="
+                <html>
+                    <body>
+                        <div align='center'>
+                            <a href='https://leog1514.promo-167.codeur.online/blablacampus/newpassword.php?t=$token'>https://leog1514.promo-167.codeur.online/blablacampus/newpassword.php?t=$token</a>
+                        </div>
+                    </body>
+                </html>
+                ";
+            mail($email, "SUPPORT - blablacampus.fr", $message, $header);
+            $_SESSION['confirmMessage'] = 'Vous venez de recevoir un mail.';
+            header('Location: ./confirmation.php'); 
         }
         else{
             echo "Aucun compte n'est associé à cette adresse mail.";
@@ -143,36 +164,16 @@ class User extends Database {
         return $id;
     }
 
-    public function sendResetMail($mail) {
-        $token = uniqid(uniqid());
-        $addToken = $this->connect()->prepare("UPDATE users SET `token` = :token WHERE `mail` = :mail");
-        $addToken->bindValue(':token', $token);
-        $addToken->bindValue(':mail', $mail);
-        $addToken->execute();
-        return $token;
-        $header="MIME-Version: 1.0\r\n";
-        $header.='From:"support@blablacampus.fr"<'.$mail.'>'."\n";
-        $header.='Content-Type:text/html; charset="uft-8"'."\n";
-        $header.='Content-Transfer-Encoding: 8bit';
-        $message="
-        <html>
-            <body>
-                <div align='center'>
-                    <u>Message de réinitialisation de mot de passe à l'adresse :</u>$mail<br />
-                    <br/>
-                    <p>$token</p>
-                </div>
-            </body>
-        </html>
-        ";
-        var_dump($message);
-        mail($mail, "SUPPORT - blablacampus.fr", $message, $header);
-    }
-
     public function resetPassword($password, $token) {
         $reset = $this->connect()->prepare("UPDATE users SET password_user = :newPassword WHERE token = :token");
         $reset->bindValue(':newPassword', $password);
         $reset->bindValue(':token', $token);
         $reset->execute();
+        $resetToken = $this->connect()->prepare("UPDATE users SET token = '' WHERE token = :token");
+        $resetToken->bindValue(':token', $token);
+        $resetToken->execute();
+        $_SESSION['confirmMessage'] = 'Votre mot de passe a été mis à jour avec succés !';
+        header('Location: ./confirmation.php'); 
+        
     }
 }

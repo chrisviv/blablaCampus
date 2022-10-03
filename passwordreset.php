@@ -2,8 +2,7 @@
 require_once("./class/User.php");
 if(isset($_POST['sendMail'])){
     $user = new User();
-    $user->passRemember($_POST['email']);
-    $uniqid = $user->sendResetMail($_POST['email']);
+    $uniqid = $user->passRemember($_POST['email']);
     var_dump($uniqid);
 }
 
