@@ -98,9 +98,13 @@ include('./homepc.php');
         <h3>Quand partez vous?</h3>
 
         <div class="addBox">
-            <img src="assets/img/calendar.svg" alt="">
-            <input type="date" name="jour_voyage" class="date" value="<?php echo $data['jour_voyage'] ?>">
+            <label for="date" class="flex">
+                <img src="assets/img/calendar.svg" alt="">
+                <input type="date" name="jour_voyage" class="date" id="date" value="<?php echo $data['jour_voyage'] ?>">
+            </label>
         </div>
+
+        
 
         <h3>Type de trajet</h3>
         
@@ -148,6 +152,6 @@ include('./homepc.php');
 
 
 
-<script src="assets/js/autocomplete3.js"></script>
+<script src="assets/js/editTravel.js"></script>
 <script src="assets/js/user.js"></script>
 <?php include('footer.php')?>
