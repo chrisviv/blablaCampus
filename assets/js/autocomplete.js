@@ -1,5 +1,7 @@
 let autocomplete = document.getElementById("autocomplete-container")
+let autocomplete2 = document.getElementById("container-add");
 let inputDepart = document.getElementById("inputDepart");
+let inputDepart2 = document.getElementById("inputDepart2");
 
 
 function addressAutocomplete(inputElement, containerElement, callback) {
@@ -132,6 +134,92 @@ addressAutocomplete(inputDepart, autocomplete, (data) => {
 
 });
 
+
+if(document.body.contains(inputDepart2) != false){
+  addressAutocomplete(inputDepart2, autocomplete2, (data) => {
+ 
+  });
+  let btnAdd = document.querySelector('.btnAdd')
+
+  function createElement(){
+    var forml = document.getElementById('formAdd')
+    let divContainer = document.createElement("div");
+    divContainer.classList.add("etapes-row", "autocomplete-container", "auto-complete-array")
+  
+  
+    let content = document.createElement("div");
+    content.classList.add('etapeSearchBox')
+  
+    let img = document.createElement('img')
+    img.src = "assets/img/markerMap.svg"
+  
+    let inputAdd = document.createElement('input')
+    inputAdd.classList.add('input-etape')
+    inputAdd.type = "text"
+    inputAdd.placeholder = 'Etape'
+   
+  
+   
+    
+    
+  
+    content.appendChild(img)
+    content.appendChild(inputAdd)
+    divContainer.appendChild(content);
+    forml.insertBefore(divContainer, submit);
+    divContainer.appendChild(btnAdd)
+  
+  
+   
+  }
+
+
+  btnAdd.addEventListener('click', ()=>{
+    let arrayInput = document.querySelectorAll('.etapes-row');
+    if (arrayInput.length <= 2 ) {
+      createElement()
+      autoArray()
+    }
+
+  
+    let cc = document.querySelectorAll('.input-etape')
+    if(cc[0].name == "etapes"){
+        for (let i = 1; i < cc.length; i++) {
+          
+          cc[i].name = "etapes" + i
+          
+          
+        }
+      
+  
+    }
+     
+    
+  
+  })
+
+  
+let submit = document.querySelector('.submitTs')
+
+
+function autoArray(){
+  let inputEtape = document.querySelectorAll(".input-etape");
+  let autocompleteArray = document.querySelectorAll(".auto-complete-array");
+
+  for (let i = 0; i < autocompleteArray.length; i++) {
+
+    addressAutocomplete(inputEtape[i], autocompleteArray[i], (data) => {
+      
+    });
+    
+}
+  
+}
+autoArray()
+
+}
+
+
 let allez = document.getElementById('allez')
 let retour = document.getElementById('retour')
 
@@ -147,6 +235,29 @@ let retour = document.getElementById('retour')
             allez.checked = false
         }
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 /* var myAPIKey = '360b948f27c34be5be832cd8c5e132e9' */

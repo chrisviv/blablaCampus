@@ -85,9 +85,16 @@ include('./homepc.php');
         <h3>Quand partez vous?</h3>
 
         <div class="addBox">
+            <label for="date" class="flex">
             <img src="assets/img/calendar.svg" alt="">
-            <input type="date" name="jour_voyage" class="date" required>
+            <input type="date" name="jour_voyage" class="date" id="date" required>
+            </label>
         </div>
+
+
+
+    
+
 
         <h3>Type de trajet</h3>
         
@@ -135,6 +142,6 @@ include('./homepc.php');
 
 
 
-<script src="assets/js/autocomplete2.js"></script>
+<script src="assets/js/autocomplete.js"></script>
 <script src="assets/js/user.js"></script>
 <?php include('footer.php')?>
