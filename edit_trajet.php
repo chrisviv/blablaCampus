@@ -42,11 +42,7 @@ if(isset($_GET['editTraject'])) {
     $trajet->editTraject($id, $depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3);
 }
 
-<<<<<<< HEAD
-include('homepc.php');
-=======
 include('./homepc.php');
->>>>>>> 5871de78af5df6328b1a1fc458927f81061b8ec7
 
 ?>
 

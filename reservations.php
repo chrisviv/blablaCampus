@@ -1,11 +1,6 @@
 <?php include('head.php');
-<<<<<<< HEAD
-include('homePc.php');
-require_once("./class/trajects.php");
-=======
 include('./homepc.php');
 require_once("./class/Trajects.php");
->>>>>>> 5871de78af5df6328b1a1fc458927f81061b8ec7
 
 ?>
 

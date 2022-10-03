@@ -1,12 +1,7 @@
 <?php include('head.php')?>
 <?php 
-<<<<<<< HEAD
-require_once("./class/trajects.php");
-include('homepc.php');
-=======
 require_once("./class/Trajects.php");
 include('./homepc.php');
->>>>>>> 5871de78af5df6328b1a1fc458927f81061b8ec7
 
 $trajet = new Trajects($_SESSION['name_user']);
 $trajects = $trajet->getTrajectData($trajet->idUser);

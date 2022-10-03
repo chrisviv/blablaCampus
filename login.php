@@ -10,11 +10,7 @@ elseif(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['use
     $login = $_POST['username'];
 }
 
-<<<<<<< HEAD
-include('homepc.php');
-=======
 include('./homepc.php');
->>>>>>> 5871de78af5df6328b1a1fc458927f81061b8ec7
 ?>
     <div class="mainLogin">
         <div class="header">
@@ -29,17 +25,13 @@ include('./homepc.php');
             </div>
         </div>
 
+        <form action="" method="post" class="formLogin">
+            <h2>ENTREZ VOS COORDONNÉES</h2>
+            <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php if(isset($login)){echo $login;}?>">
+            <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
+            <input class='submitLogin' type="submit" name="login" value="SE CONNECTER">
+        </form>
 
-       
-           
-            
-            <form action="" method="post" class="formLogin">
-                <h2>ENTREZ VOS COORDONNÉES</h2>
-                <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php if(isset($login)){echo $login;}?>">
-                <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
-                <input class='submitLogin' type="submit" name="login" value="SE CONNECTER">
-            </form>
-    
 
         <div class="passwordBtn">
             <a href="passwordreset.php">
