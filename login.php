@@ -1,5 +1,5 @@
 <?php include('head.php');
-require_once("./class/user.php");
+require_once("./class/User.php");
 if(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
