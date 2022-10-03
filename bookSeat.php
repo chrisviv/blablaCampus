@@ -1,6 +1,6 @@
 <?php include('head.php');
 
-require_once("./class/trajects.php");
+require_once("./class/Trajects.php");
 
 $trajet = new Trajects($_SESSION['name_user']);
 $user = new User();
