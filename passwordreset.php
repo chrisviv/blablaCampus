@@ -2,8 +2,7 @@
 require_once("./class/User.php");
 if(isset($_POST['sendMail'])){
     $user = new User();
-    $uniqid = $user->passRemember($_POST['email']);
-    var_dump($uniqid);
+    $user->passRemember($_POST['email']);
 }
 
 include('./homepc.php');
