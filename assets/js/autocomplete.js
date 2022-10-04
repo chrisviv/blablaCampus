@@ -62,6 +62,8 @@ function addressAutocomplete(inputElement, containerElement, callback) {
       currentPromiseReject = reject;
 
       var apiKey = '360b948f27c34be5be832cd8c5e132e9';
+      
+      
       var url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${encodeURIComponent(currentValue)}&lang=fr&filter=countrycode:fr&limit=5&apiKey=${apiKey}`;
 
       fetch(url)
@@ -130,9 +132,13 @@ function addressAutocomplete(inputElement, containerElement, callback) {
 }
 
 
+
+
+
 addressAutocomplete(inputDepart, autocomplete, (data) => {
 
 });
+
 
 
 if(document.body.contains(inputDepart2) != false){
