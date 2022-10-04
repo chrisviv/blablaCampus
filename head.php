@@ -19,6 +19,12 @@ if(!isset($_SESSION['name_user']) && !in_array($_SERVER['PHP_SELF'], $allowed)) 
     <title>BlaBlaCampus</title>
     <link rel="icon" type="image/x-icon" href="assets/img/bbcLogo.svg">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="manifest.json" />
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    </script>
     
 </head>
 <body>
