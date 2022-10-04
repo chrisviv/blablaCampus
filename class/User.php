@@ -178,7 +178,6 @@ class User extends Database {
         $resetToken->bindValue(':token', $token);
         $resetToken->execute();
         $_SESSION['confirmMessage'] = 'Votre mot de passe a été mis à jour avec succés !';
-        header('Location: ./confirmation.php'); 
-        
+        header('Location: ./confirmation.php');    
     }
 }
