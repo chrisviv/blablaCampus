@@ -10,6 +10,10 @@ if(isset($_GET['reserv']) && $_GET['reserv'] != "NULL") {
     $idReservation = $_GET['id_reservation'];
 }
 
+if(!isset($idReservation)) {
+    header('Location: ./search.php');
+}
+
 $data = $trajet->getDataValidation($idReservation);
 
 $day = substr($data['jour_voyage'], 8);

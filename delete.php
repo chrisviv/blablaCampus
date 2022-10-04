@@ -6,6 +6,10 @@ if(isset($_GET['delete'])) {
 }
 include('./homepc.php');
 
+if(!isset($id_trajet) && !isset($_GET['supp'])) {
+    header('Location: ./search.php');
+}
+
 
 ?>
 
