@@ -10,6 +10,10 @@ if(isset($_GET['reserv'])) {
 }elseif(isset($_GET['id_trajet'])) {
     $dataTrajet = $trajet->getTrajectDataByID($_GET['id_trajet']);
 }
+
+if(!isset($dataTrajet)) {
+    header('Location: ./search.php');
+}
 $day = substr($dataTrajet['jour_voyage'], 8);
 $monthNumber = substr($dataTrajet['jour_voyage'], 5, 2);
 $month = $trajet->checkMonth($monthNumber);

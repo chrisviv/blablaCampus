@@ -2,7 +2,7 @@
 require_once("./class/User.php");
 if(isset($_POST['sendMail'])){
     $user = new User();
-    $user->passRemember($_POST['email']);
+    $msg = $user->passRemember($_POST['email']);
 }
 
 include('./homepc.php');
@@ -26,6 +26,12 @@ include('./homepc.php');
                 <h2>PAS DE STRESS!</h2>
                 <h3 class='resetSubtitle'>Vous ne vous souvenez plus de votre mot de passe et ne parvenez plus à vous connecter. Entrez votre email et réinitialisez le.</h3>
                 <input class="ipLogin" type="email" name="email" placeholder="Email" required>
+                <!-- A STYLISER EN DESSOUS-->
+                <p>
+                    <?php if(isset($msg)) {
+                        echo $msg;
+                    }?>
+                </p>
                 <button class='submitLogin' type="submit" name="sendMail" value="">RÉINITIALISER LE MOT DE PASSE</button>
         </form>
 </div>

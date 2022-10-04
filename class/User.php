@@ -22,11 +22,13 @@ class User extends Database {
         $usernameExist = $checkName->fetch();
         $mailExist = $checkMail->fetch();
         if ($usernameExist != false) {
-            echo "Ce nom d'utilisateur est déjà utilisé.";
+            $msg = "Ce nom d'utilisateur est déjà utilisé.";
             session_destroy();
+            return $msg;
         }else if ($mailExist != false) {
-            echo "Cette adresse email est déjà utilisée.";
+            $msg = "Cette adresse mail est déjà utilisée.";
             session_destroy();
+            return $msg;
         }
         else {
             $insert = $this->connect()->prepare("INSERT INTO users (username, password_user, name_user, mail, bio, picture) VALUES (:username, :mdp, :nom, :mail, :bio, :picture)");
@@ -57,7 +59,8 @@ class User extends Database {
             getData($username);
         }
         else {
-            echo "Nom d'utilisateur ou mot de passe incorrect !";
+            $loginError = "Nom d'utilisateur ou mot de passe incorrect !";
+            return $loginError;
         }
     }
 
@@ -101,10 +104,12 @@ class User extends Database {
         $mailExist = $checkMail->fetch();
         $nameExist = $checkName->fetch();
         if ($mailExist != false && $mailExist['mail'] != $this->mail) {
-            echo "Cette adresse email est déjà utilisée.";
+            $msg = "Ce nom d'utilisateur est déjà utilisé.";
+            return $msg;
         }
         elseif ($nameExist != false && $nameExist['username'] != $this->username){
-            echo "Ce nom d'utilisateur est déjà utilisé.";
+            $msg = "Cette adresse mail est déjà utilisée.";
+            return $msg;
         }
         else {
             $insert = $this->connect()->prepare("UPDATE `users` SET `username`= :username , `mail`= :mail , `bio`= :bio , `picture`= :picture WHERE id_user = :id");
@@ -128,7 +133,6 @@ class User extends Database {
         $checkMail->execute();
         $mailExist = $checkMail->fetch();
         if($mailExist != false) {
-            echo "Email envoyé !";
             $token = uniqid(uniqid());
             $addToken = $this->connect()->prepare("UPDATE users SET `token` = :token WHERE `mail` = :mail");
             $addToken->bindValue(':token', $token);
@@ -152,7 +156,8 @@ class User extends Database {
             header('Location: ./confirmation.php'); 
         }
         else{
-            echo "Aucun compte n'est associé à cette adresse mail.";
+            $msg = "Aucun compte n'est associé à cette adresse mail.";
+            return $msg;
         }
     }
 

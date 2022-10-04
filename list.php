@@ -2,6 +2,10 @@
 include('./homepc.php');
 require_once("./class/Trajects.php");
 
+if(!isset($_SESSION['search'])) {
+    header('Location: ./search.php');
+}
+
 $trajet = new Trajects($_SESSION['name_user']);
 $depart = $_SESSION['search'][0];
 $destination = $_SESSION['search'][1];

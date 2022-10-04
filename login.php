@@ -4,7 +4,8 @@ if(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['usernam
     $username = $_POST['username'];
     $password = $_POST['password'];
     $user = new User();
-    $user->login($username, $password);
+    $msg = $user->login($username, $password);
+    
 }
 elseif(isset($_POST['login']) && isset($_POST['username']) && !empty($_POST['username'])){
     $login = $_POST['username'];
@@ -24,14 +25,20 @@ include('./homepc.php');
                 <h1>SE CONNECTER</h1>
             </div>
         </div>
-
-        <form action="" method="post" class="formLogin">
-            <h2>ENTREZ VOS COORDONNÉES</h2>
-            <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php if(isset($login)){echo $login;}?>">
-            <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
-            <input class='submitLogin' type="submit" name="login" value="SE CONNECTER">
-        </form>
-
+       
+            <form action="" method="post" class="formLogin">
+                <h2>ENTREZ VOS COORDONNÉES</h2>
+                <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php if(isset($login)){echo $login;}?>">
+                <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
+                <!-- A STYLISER EN DESSOUS-->
+                <p>
+                <?php if(isset($msg)) {
+                    echo $msg;
+                }?>
+                </p>
+                <input class='submitLogin' type="submit" name="login" value="SE CONNECTER">
+            </form>
+    
 
         <div class="passwordBtn">
             <a href="passwordreset.php">
