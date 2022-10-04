@@ -2,8 +2,6 @@
 require_once("./class/User.php");
 $user = new User('');
 $user->getData($_SESSION['name_user']);
-
-
 if(isset($user->picture)){
     $picture = $user->picture;
 }
