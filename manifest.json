@@ -1,0 +1,25 @@
+{
+  "background_color": "#ffffff",
+  "description": "BlaBlaCampus est une application de covoiturage conviviale dédiée aux apprenants du centre de formation Onlinformapro de Lons-le-Saunier. C est une alternative de locomotion que le bus ou le train.",
+  "dir": "ltr",
+  "display": "fullscreen",
+  "name": "BlaBlaCampus",
+  "orientation": "any",
+  "scope": "https://jorgeg1513.promo-167.codeur.online/",
+  "short_name": "BlaBlaCampus",
+  "start_url": "/blablacampus/index.php",
+  "theme_color": "#ffffff",
+    "icons": [
+      {
+        "src": "assets/img/bbcLogo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "assets/img/bbcLogo.svg",
+        "type": "image/svg",
+        "purpose": "any",
+        "sizes": "70x70"
+      }
+    ]
+  }
