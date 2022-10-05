@@ -1,13 +1,15 @@
 <?php
 
 include('head.php');
-require_once("./class/User.php");
+require_once("./class/Trajects.php");
+
 
 
 ?>
     <?php include('./homepc.php');
     if(isset($_SESSION['name_user'])){
-        header('Location: ./search.php');
+        $trajet = new Trajects($_SESSION['name_user']);
+        $trajet->redirect("./search.php", "0");
     }
     
     ?>

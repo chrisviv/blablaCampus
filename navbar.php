@@ -33,7 +33,7 @@ else {
     <div class="userPanel none" id="userPanel">
 
        <div class="profileContainer">
-            <img src="data:image;base64,
+            <img class="profilPic" src="data:image;base64,
             <?php 
             echo $picture
             ?>" 
