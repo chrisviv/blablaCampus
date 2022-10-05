@@ -71,6 +71,12 @@ select {
     -webkit-tap-highlight-color: transparent;
 }
 
+.error{
+    color: var(--lightGray);
+    font-family: "epilogue", sans-serif;
+    font-size: 13px;
+}
+
 /* -----------------------COLORS -------------------*/
 :root {
     --black: #000000;

@@ -34,8 +34,8 @@ include('./homepc.php');
                 <h2>ENTREZ VOS COORDONNÉES</h2>
                 <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php if(isset($login)){echo $login;}?>">
                 <input class="ipLogin" type="password" name="password" placeholder="Mot de passe">
-                <!-- A STYLISER EN DESSOUS-->
-                <p>
+              
+                <p class="error">
                 <?php if(isset($msg)) {
                     echo $msg;
                 }?>
