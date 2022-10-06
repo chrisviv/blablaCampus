@@ -366,7 +366,7 @@ select:focus {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px 15px 0px 15px;
+    margin: 20px 25px 0px 25px;
 }
 
 .submitLogin {
@@ -1469,6 +1469,17 @@ span {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.container-index-pc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+.container-index-pc>img{
+    margin: 15px 0px;
 }
 
 .logo-container-pc {

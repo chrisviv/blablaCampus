@@ -14,7 +14,7 @@ require_once("./class/Trajects.php");
     
     ?>
 
-    <div class="mainAccueil">
+    <div class="mainAccueil none">
         <div class="logo-container">
             <div class="logo-img"><img src="assets/img/bbcLogo.svg" alt="logo de blablacampus"></div>
             <div class="logo-Tittle">

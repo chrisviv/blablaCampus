@@ -15,6 +15,7 @@ let delRide = document.querySelector('.deleteRideMain')
 let resetpw = document.querySelector('.mainReset')
 let cancel = document.querySelector('.cancelMain')
 
+
 function append(element, element2) {
   if (window.matchMedia("(min-width: 1024px)").matches) {
     fullScreen.style = "display:flex;"
@@ -23,6 +24,7 @@ function append(element, element2) {
   }
 }else{
   fullScreen.style = "display:none;"
+  homeMobile.classList.remove('none')
 }
  
 }
@@ -43,6 +45,5 @@ append(homePc, delRide)
 append(homePc, resetpw)
 append(homePc, cancel)
 append(homePc, bookSeatMain)
-  
 
-  
+

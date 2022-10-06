@@ -33,7 +33,32 @@
 
 
 
-            <div class="box-apli" id="box-apli"> </div>
+            <div class="box-apli" id="box-apli">
+          
+
+
+                <div class="container-index-pc">
+                    <div class="logo-container-pc">
+                        <div class="logo-img"><img src="assets/img/bbcLogo.svg" alt="logo de blablacampus"></div>
+                            <div class="logo-Tittle">
+                                <h1>BLABLA</h1>
+                        </div>
+                    </div>
+                    <img src="assets/img/logo-pc.svg" alt="logo du pc">
+                    <div class="startBtn" id="startBtn">
+                        <a href="register.php">
+                            <img src="assets/img/car-icon.svg" alt="icon d'une voiture">
+                            <button>COMMENCER</button>
+                        </a>
+                    </div>
+
+                    <div class="loginBtn" id="loginBtn">
+                        <a href="login.php">
+                            <button>SE CONNECTER</button>
+                        </a>
+                    </div>
+                </div>    
+            </div>
 
 
 
