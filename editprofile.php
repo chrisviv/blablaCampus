@@ -64,8 +64,8 @@ include('./homepc.php');
 
                 <h2>MODIFIEZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php echo $user->username ?>" required>
-                <!-- A STYLISER EN DESSOUS-->
-                <p>
+                
+                <p class="error">
                 <?php 
                 if(isset($usernameError)) {
                     echo $usernameError;
@@ -74,8 +74,8 @@ include('./homepc.php');
                 <h2>MODIFIEZ VOTRE EMAIL</h2>
                 <input class="ipRegister" type="email" name="email" placeholder="Email" value="<?php echo $user->mail ?>" required>
                 <p class="infonMail">Ajoutez votre adresse e-mail pour recevoir des notifications sur votre activité sur Foundation. Cela ne sera pas affiché sur votre profil.</p>
-                <!-- A STYLISER EN DESSOUS-->
-                <p>
+               
+                <p class="error">
                 <?php 
                 if(isset($mailError)) {
                     echo $mailError;

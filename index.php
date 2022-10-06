@@ -1,18 +1,20 @@
 <?php
 
 include('head.php');
-require_once("./class/User.php");
+require_once("./class/Trajects.php");
+
 
 
 ?>
     <?php include('./homepc.php');
     if(isset($_SESSION['name_user'])){
-        header('Location: ./search.php');
+        $trajet = new Trajects($_SESSION['name_user']);
+        $trajet->redirect("./search.php", "0");
     }
     
     ?>
 
-    <div class="mainAccueil">
+    <div class="mainAccueil none">
         <div class="logo-container">
             <div class="logo-img"><img src="assets/img/bbcLogo.svg" alt="logo de blablacampus"></div>
             <div class="logo-Tittle">

@@ -64,6 +64,19 @@ select {
     width: 100%;
 }
 
+*{
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.error{
+    color: var(--lightGray);
+    font-family: "epilogue", sans-serif;
+    font-size: 13px;
+}
+
 /* -----------------------COLORS -------------------*/
 :root {
     --black: #000000;
@@ -353,7 +366,7 @@ select:focus {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px 15px 0px 15px;
+    margin: 20px 25px 0px 25px;
 }
 
 .submitLogin {
@@ -410,6 +423,10 @@ select:focus {
     position: relative;
 }
 
+.profilPic{
+    object-fit: cover;
+}
+
 .userPanel {
     display: flex;
     align-items: center;
@@ -442,7 +459,7 @@ select:focus {
 .profileContainer>img {
     width: 70px;
     height: 70px;
-    border-radius: 100px;
+    border-radius: 50%;
     border: 3px solid var(--red);
     margin-right: 10px;
 }
@@ -575,6 +592,7 @@ select {
 
 .flex {
     display: flex;
+    width: 100%;
 }
 
 input[type="date"]::-webkit-inner-spin-button,
@@ -655,13 +673,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /*------------------------------ TRAJET --------------------------------*/
 .listMain {
-    margin: 25px;
+   
 }
 
 .listMain>h1 {
     font-family: "bungee";
     font-size: 20px;
     color: var(--blackSubtitle);
+    margin: 20px;
 }
 
 .infoTrajet {
@@ -672,8 +691,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 15px;
     border-radius: 20px;
     position: relative;
-    margin: 20px 10px;
+    margin: 20px 20px;
 }
+
+
 
 .dateTrajet {
     display: flex;
@@ -737,6 +758,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--lightGray);
     font-size: 10px;
     width: 60%;
+}
+
+.trajetCount{
+    margin: 20px;
 }
 
 .trajetCount>h2 {
@@ -1448,6 +1473,17 @@ span {
     flex-wrap: wrap;
 }
 
+.container-index-pc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+.container-index-pc>img{
+    margin: 15px 0px;
+}
+
 .logo-container-pc {
     display: flex;
     justify-content: center;
@@ -1616,13 +1652,98 @@ span {
     position: absolute;
     bottom: 25px;
     left: 5%;
-
-}
-
-.info-legales>a {
     color: var(--red);
     font-family: "overpass";
     cursor: pointer;
+
+}
+
+/*------------------------------LEGALES----------------------------*/
+
+.legales{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}
+.titleLegales{
+    font-family: "merriweather-italic";
+    font-size: 25px;
+    color: var(--red);
+}
+
+.xmark{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    cursor: pointer;
+}
+.sublegales{
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    height: 50vh;
+    overflow: auto;
+    padding: 5px;
+}
+.sublegales >p{
+  font-family: "worksans";
+  font-size: 14px;
+  color: rgb(185, 185, 185);
+}
+.sublegales >h2{
+    font-family: "merriweather-italic";
+    font-size: 20px;
+    color: var(--red);
+}
+
+.sublegales::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sublegales::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.219);
+    border-radius: 20px;
+}
+
+.sublegales::-webkit-scrollbar-thumb {
+    background-color: var(--red);
+    border-radius: 20px;
+    padding: 1px;
+}
+.row{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+.columm{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 20px;
+}
+.columm>h3{
+    font-family: "merriweather-italic";
+    font-size: 14px;
+    color: var(--red);
+
+}
+.columm>p{
+    font-family: "worksans";
+  font-size: 13px;
+  color: rgb(185, 185, 185);
+
 }
 
 @media screen and (min-width: 1024px) {

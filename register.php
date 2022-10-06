@@ -61,8 +61,8 @@ include('./homepc.php');
                 <h2>ENTREZ VOS COORDONNÉS</h2>
                 <input class="ipRegister" type="text" name="nom" placeholder="Nom" required>
                 <input class="ipRegister" type="text" name="username" placeholder="Nom d'utilisateur" required>
-                <!-- A STYLISER EN DESSOUS-->
-                <p>
+              
+                <p class="error">
                 <?php 
                 if(isset($usernameError)) {
                     echo $usernameError;
@@ -73,8 +73,8 @@ include('./homepc.php');
 
                 <h2>ENTREZ VOTRE EMAIL</h2>
                 <input class="ipRegister" type="email" name="email" placeholder="Email" required>
-                <!-- A STYLISER EN DESSOUS-->
-                <p>
+               
+                <p class="error">
                 <?php 
                 if(isset($mailError)) {
                     echo $mailError;
