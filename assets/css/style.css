@@ -673,13 +673,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /*------------------------------ TRAJET --------------------------------*/
 .listMain {
-    margin: 25px;
+   
 }
 
 .listMain>h1 {
     font-family: "bungee";
     font-size: 20px;
     color: var(--blackSubtitle);
+    margin: 20px;
 }
 
 .infoTrajet {
@@ -690,8 +691,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 15px;
     border-radius: 20px;
     position: relative;
-    margin: 20px 10px;
+    margin: 20px 20px;
 }
+
+
 
 .dateTrajet {
     display: flex;
@@ -755,6 +758,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--lightGray);
     font-size: 10px;
     width: 60%;
+}
+
+.trajetCount{
+    margin: 20px;
 }
 
 .trajetCount>h2 {
