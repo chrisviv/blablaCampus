@@ -19,11 +19,19 @@ else {
 
 ?>
 <div class="header">
-        <div class="headerLogo">
-        <a href="index.php">
-            <img src="assets/img/bbcLogo.svg" alt="photo du logo">
-        </a>
-        </div>
+       <div class="card">
+         <div class="headerLogo card-side front">
+             <a href="index.php">
+                <img src="assets/img/bbcLogo.svg" alt="photo du logo">
+             </a>
+         </div>
+        
+         <div class="card-side back">
+            <a href="index.php">
+                <img src="assets/img/backwards.svg" class="arrow" alt="">
+            </a>
+          </div>
+       </div>
 
         <div class="headerTitle">
             <img src="assets/img/userIcon.svg" alt="icone de l'utilisateur" id="userBtn">
