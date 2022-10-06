@@ -38,6 +38,68 @@
     src: url(../fonts/Overpass-Bold.ttf);
 }
 
+/*--------------KEYFRAMES-----------------*/
+@keyframes front {
+    0% {
+        transform: rotateY(180deg);
+    }
+
+    100%{
+        transform: rotateY(0deg);
+    }
+    
+}
+@keyframes back {
+    0% {
+        transform: rotateY(0deg);
+       
+    }
+
+    100%{
+        transform: rotateY(180deg);
+    }
+    
+}
+
+.front-animation{ animation: front 2.5s ease alternate }
+.back-animation{animation: back 2s ease alternate ;}
+
+.front-reverse{
+    animation: back 2s ease alternate;
+}
+.back-reverse{
+    animation: front 2.5s ease alternate;
+}
+
+
+.arrow{
+    width: 42px;
+    height: 42px;
+}
+
+
+.card {
+    perspective: 150rem;
+    position: relative;
+    box-shadow: none;
+    background: none;
+  }
+  
+  .card-side {
+    border-radius: 15px;
+    transition: all 0.9s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white
+  }
+  
+  .card-side.back {
+    transform: rotateY(-180deg);
+
+  }
+
 /*--------------GLOBALS-----------------*/
 body {
     margin: 0;
@@ -92,7 +154,6 @@ select {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px 20px;
 }
 
@@ -107,7 +168,8 @@ select {
 }
 
 .headerLogo>a>img {
-    width: 50px;
+    width: 42px;
+    height: 42px;
 }
 
 input:focus,
@@ -421,6 +483,8 @@ select:focus {
 /*-------------------- PROFILE ------------------------------*/
 #userBtn {
     position: relative;
+    width: 42px;
+    height: 42px;
 }
 
 .profilPic{

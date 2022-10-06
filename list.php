@@ -100,11 +100,18 @@ elseif($_SESSION['search'][3] != 'on'){
             }else{
                 $etape3 ="";
             }
+
+            if($data[$i]['nb_voyageurs'] = 1) {
+                $places = 'PLACE DISPONIBLE';
+            }
+            else {
+                $places = 'PLACE DISPONIBLES';
+            }
     // Affichage des etapes
             echo "
     <a href='bookSeat.php?reserv=".$data[$i]['id_trajet']."'>
         <div class='card-trajet'>
-            <h2>PLACES DISPONIBLES
+            <h2>$places
                 <span class='phpNumber'>".$data[$i]['nb_voyageurs']."</span>
             </h2>
 
