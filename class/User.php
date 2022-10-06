@@ -146,7 +146,7 @@ class User extends Database {
                 <html>
                     <body>
                         <div align='center'>
-                            <a href='https://leog1514.promo-167.codeur.online/blablacampus/newpassword.php?t=$token'>https://leog1514.promo-167.codeur.online/blablacampus/newpassword.php?t=$token</a>
+                            <a href='https://chrisv1521.promo-167.codeur.online/blablacampus/newpassword.php?t=$token'>https://chrisv1521.promo-167.codeur.online/blablacampus/newpassword.php?t=$token</a>
                         </div>
                     </body>
                 </html>
