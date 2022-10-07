@@ -14,7 +14,7 @@ class Trajects extends User {
     public $heureDestination;
     public $allerRetour = false;
     public $nbPassagers = 1;
-    public $step1;    
+    public $step1;
     public $step2;    
     public $step3;
     public $idUser;
@@ -52,10 +52,6 @@ class Trajects extends User {
         $addTraject->bindValue(':destination', $destination);
         $addTraject->bindValue(':jour_voyage', $jour_voyage);
         $addTraject->bindValue(':heure_depart', $heure_depart);
-        // $addTraject->bindValue(':heure_etape1', '');
-        // $addTraject->bindValue(':heure_etape2', '');
-        // $addTraject->bindValue(':heure_etape3', '');
-        // $addTraject->bindValue(':heure_destination', '');
         $addTraject->bindValue(':aller_retour', $allerRetour);
         $addTraject->bindValue(':nb_voyageurs', $nbPassagers);
         $addTraject->bindValue(':etape_1', $step1);
@@ -63,7 +59,6 @@ class Trajects extends User {
         $addTraject->bindValue(':etape_3', $step3);
         $addTraject->bindValue(':id_user', $this->idUser);
         $addTraject->execute();
-       // $addTraject->debugDumpParams();
         $_SESSION['confirmMessage'] = 'Votre trajet a bien été créé !';
          header('Location: ./confirmation.php');
     }
@@ -301,14 +296,6 @@ class Trajects extends User {
         $data = $reservationdata->fetchAll();
         return $data;
     }
-    
-
-
-
 }
-
-
-
-
 
 ?>
