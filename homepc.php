@@ -4,7 +4,7 @@
         <div class="logo-container-pc">
             <div class="logo-img"><img src="assets/img/bbcLogo.svg" alt="logo de blablacampus"></div>
             <div class="logo-Tittle">
-                <h1>BLABLA</h1>
+                <h1 class="campusPc">BLABLA</h1>
             </div>
         </div>
 
@@ -41,11 +41,11 @@
                     <div class="logo-container-pc">
                         <div class="logo-img"><img src="assets/img/bbcLogo.svg" alt="logo de blablacampus"></div>
                             <div class="logo-Tittle">
-                                <h1>BLABLA</h1>
+                                <h1 class="campusPc">BLABLA</h1>
                         </div>
                     </div>
                    <div class="logo-pc-img">
-                     <img src="assets/img/logo-pc.svg" alt="logo du pc">
+                     <img src="assets/img/logo-pc.svg" alt="logo du pc" class="logoCar">
                      <img src="assets/img/markerMapBox.svg" alt="" class="markerpc">
                    </div>
                     <div class="startBtn" id="startBtn">

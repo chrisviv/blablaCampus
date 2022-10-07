@@ -75,6 +75,12 @@
     65%  { transform:  translateY(0);}
     100% { transform:  translateY(0);}
 }
+@keyframes bounce2 {
+  
+    100%  { transform:    translateY(-10px);}
+    
+    
+}
 
 
 .front-animation{ animation: front 2.5s ease alternate }
@@ -248,12 +254,15 @@ select:focus {
     position: relative;
     color: var(--blackTittle);
     font-weight: 100;
-   margin: 0;
+    margin: 0;
 }
 .campus{
  
     color: var(--red) !important;
    
+}
+.campusPc{
+    transform: translate(0px, -20px);
 }
 .animation>div {
     font-family: "bungee", sans-serif;
@@ -777,9 +786,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /*------------------------------ TRAJET --------------------------------*/
-.listMain {
-   
-}
 
 .listMain>h1 {
     font-family: "bungee";
@@ -1583,10 +1589,7 @@ span {
     flex-direction: column;
     height: 100%;
 }
-.container-index-pc>img{
-    margin: 35px 0px;
-    width: 80%;
-}
+
 
 .logo-container-pc {
     display: flex;
@@ -1895,13 +1898,24 @@ span {
   
   }
   
-.logo-img{position: relative;}
+.logo-pc-img{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 35px 0px;
+}
+
+.logoCar{
+    width: 80%;
+}
 
 .markerpc{
     position: absolute;
-    width: 60px;
-    top: 157px;
-    right: 55px;
+    width: 46px;
+    top: 38px;
+    right: 87px;
+    animation: bounce2 0.5s alternate infinite;
 }
 
 @media screen and (min-width: 1024px) {
