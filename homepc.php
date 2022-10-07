@@ -1,4 +1,4 @@
-<div class="pcMain">
+<div class="pcMain none">
     <img src="assets/img/road.svg" class="road" alt="">
     <div class="left-content">
         <div class="logo-container-pc">
