@@ -44,7 +44,10 @@
                                 <h1>BLABLA</h1>
                         </div>
                     </div>
-                    <img src="assets/img/logo-pc.svg" alt="logo du pc">
+                   <div class="logo-pc-img">
+                     <img src="assets/img/logo-pc.svg" alt="logo du pc">
+                     <img src="assets/img/markerMapBox.svg" alt="" class="markerpc">
+                   </div>
                     <div class="startBtn" id="startBtn">
                         <a href="register.php">
                             <img src="assets/img/car-icon.svg" alt="icon d'une voiture">

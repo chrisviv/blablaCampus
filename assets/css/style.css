@@ -1895,8 +1895,14 @@ span {
   
   }
   
- 
+.logo-img{position: relative;}
 
+.markerpc{
+    position: absolute;
+    width: 60px;
+    top: 157px;
+    right: 55px;
+}
 
 @media screen and (min-width: 1024px) {
     .mainAccueil {
