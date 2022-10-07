@@ -7,8 +7,20 @@ userBtn.addEventListener('click', ()=>{
 
 let front = document.querySelector('.front')
 let back = document.querySelector('.back')
+setTimeout(()=>{
+    front.classList.remove('front-animation')
+    back.classList.remove('back-animation')
+    front.classList.add('front-reverse')
+    back.classList.add('back-reverse')
+}, 1000)
+setTimeout(()=>{
+    front.classList.add('front-animation')
+    back.classList.add('back-animation')
+    front.classList.remove('front-reverse')
+    back.classList.remove('back-reverse')
+}, 2500)
+
 setInterval(() => {
-    console.log('ANIMATION');
     
     setTimeout(()=>{
         front.classList.remove('front-animation')
@@ -23,4 +35,6 @@ setInterval(() => {
         back.classList.remove('back-reverse')
     }, 2500)
 
-}, 6000);
+}, 15000);
+
+

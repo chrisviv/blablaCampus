@@ -47,6 +47,23 @@
         transform: rotateY(180deg);
     }
 }
+
+@keyframes move {
+    0%{
+        transform: translateX(235px);
+    }
+}
+
+@keyframes bounce {
+    0%   { transform:  translateY(0); }
+    10%  { transform:  translateY(0); }
+    30%  { transform:    translateY(-30px);}
+    50%  { transform:  translateY(0); }
+    65%  { transform:  translateY(0);}
+    100% { transform:  translateY(0);}
+}
+
+
 .front-animation{ animation: front 2.5s ease alternate }
 .back-animation{animation: back 2s ease alternate ;}
 .front-reverse{
@@ -158,33 +175,61 @@ select:focus {
     align-items: center;
     margin: 50px 15px;
 }
-.logo-img>img {
-    width: 100px;
+
+
+.logo-img{
+    position: relative;
+    width: 84px;
+    height: 80px;
+    
+}
+
+.bb{
+    width: 84px;
+    position: absolute;
+    left: 0;
+   
+}
+.car{
+    animation: move 2s alternate;
+    width: 36px;
+    position: absolute;
+    right: 10px;
+    top: 16px;
 }
 .logo-Tittle {
     margin: 0px 15px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     font-size: 20px;
+   
 }
 .logo-Tittle>h1 {
     font-family: "bungee", sans-serif;
-    margin: 0;
     position: relative;
     color: var(--blackTittle);
     font-weight: 100;
-    margin-bottom: 50px;
+   margin: 0;
 }
-.logo-Tittle>h1::after {
-    font-family: "bungee";
-    margin: 0;
-    content: 'CAMPUS';
-    position: absolute;
-    color: var(--red);
-    bottom: -40px;
-    left: calc(50% - 90px);
+.campus{
+ 
+    color: var(--red) !important;
+   
+}
+.animation>div {
+    font-family: "bungee", sans-serif;
+ 
+    color: var(--blackTittle);
     font-weight: 100;
+   
+    font-family: "bungee", sans-serif;
+    font-size: 40px;
+    height: 40px;
 }
+
+
 /*-------------BUTTONS----------------*/
 .startBtn {
     background: var(--red);
@@ -1322,7 +1367,8 @@ span {
     height: 100%;
 }
 .container-index-pc>img{
-    margin: 15px 0px;
+    margin: 35px 0px;
+    width: 80%;
 }
 .logo-container-pc {
     display: flex;
@@ -1553,6 +1599,55 @@ span {
   color: rgb(185, 185, 185);
 
 }
+
+
+
+
+.animation{
+   
+    display: flex;
+   
+  }
+  
+  .b, .l, .a, .b2, .l2, .a2 {
+    
+    color: var(--red);
+    
+  }
+  
+  .a2 {
+    animation: bounce 1s ease ;
+    
+  }
+  
+  .l2{
+    animation: bounce 1.1s ease  .1s;
+    
+  }
+  
+  .b2 {
+    animation: bounce 1.1s ease  .2s;
+    
+  }
+  
+  .a {
+    animation: bounce 1.1s ease  .3s;
+    
+  }
+  
+  .l {
+    animation: bounce 1.1s ease  .4s;
+   
+  }
+  
+  .b {
+    animation: bounce 1.5s ease  .5s;
+  
+  }
+  
+ 
+
+
 @media screen and (min-width: 1024px) {
     .mainAccueil {
         min-height: 70vh;

@@ -24,7 +24,9 @@ function append(element, element2) {
   }
 }else{
   fullScreen.style = "display:none;"
-  homeMobile.classList.remove('none')
+  if(document.body.contains(homeMobile) != false){
+    homeMobile.classList.remove('none')
+  }
 }
  
 }

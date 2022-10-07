@@ -16,10 +16,24 @@ require_once("./class/Trajects.php");
 
     <div class="mainAccueil none">
         <div class="logo-container">
-            <div class="logo-img"><img src="assets/img/bbcLogo.svg" alt="logo de blablacampus"></div>
-            <div class="logo-Tittle">
-                <h1>BLABLA</h1>
+      
+            <div class="logo-img">
+                <img src="assets/img/bubble.svg" alt="logo de blablacampus" class="bb">
+                <img src="assets/img/car.svg" alt="logo de blablacampus" class="car">
             </div>
+
+            <div class="logo-Tittle">           
+               <div class="animation">
+                    <div class="b">B</div>
+                    <div class="l">L</div>
+                    <div class="a">A</div>
+                    <div class="b2">B</div>
+                    <div class="l2">L</div>
+                    <div class="a2">A</div>
+               </div>
+                <h1 class="campus">CAMPUS</h1>
+            </div>
+            
         </div>
 
         <div class="startBtn" id="startBtn">

@@ -1,5 +1,5 @@
 <?php include('head.php');
-require_once("./class/trajects.php");
+require_once("./class/Trajects.php");
 
 if(isset($_GET['addTraject'])) {
     $trajet = new Trajects($_SESSION['name_user']);
