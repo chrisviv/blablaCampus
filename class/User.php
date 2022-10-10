@@ -11,6 +11,23 @@ class User extends Database {
     private $password;
     public $id;
 
+// FUNCTION DE REDIRECTION
+
+public function redirect($filename, $duree) {
+    if (!headers_sent()) {
+        header("Refresh: $duree;url=$this->baseurl/$filename");
+    }
+    else {
+    echo '<script type="text/javascript">';
+    echo 'window.location.href="'.$filename.'";';
+    echo '</script>';
+    echo '<noscript>';
+    echo '<meta http-equiv="refresh" content="'.$duree.';url='.$this->baseurl."/".$filename.'" />';
+    echo '</noscript>';
+    }
+
+}
+
 //Fonction d'enregistrement d'un nouvel utilisateur
     public function register($nom, $pseudo, $password, $email, $bio, $picture) {
         $checkName = $this->connect()->prepare("SELECT * FROM users WHERE username = :username");
@@ -139,7 +156,7 @@ class User extends Database {
             $addToken->bindValue(':mail', $email);
             $addToken->execute();
             $header="MIME-Version: 1.0\r\n";
-            $header.='From:"nom_d\'expediteur"<"chris.vivancos@codeur.online">'."\n";
+            $header.='From:"blablaCampus.fr"<"chris.vivancos@codeur.online">'."\n";
             $header.='Content-Type:text/html; charset="uft-8"'."\n";
             $header.='Content-Transfer-Encoding: 8bit';
             $message="
@@ -178,6 +195,6 @@ class User extends Database {
         $resetToken->bindValue(':token', $token);
         $resetToken->execute();
         $_SESSION['confirmMessage'] = 'Votre mot de passe a été mis à jour avec succés !';
-        header('Location: ./confirmation.php');    
+        $this->redirect("./confirmation.php", "0");
     }
 }
