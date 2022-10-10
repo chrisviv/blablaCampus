@@ -28,23 +28,6 @@ class Trajects extends User {
         $this->idUser = $id[0];
     }
 
-// FUNCTION DE REDIRECTION
-
-    public function redirect($filename, $duree) {
-        if (!headers_sent()) {
-            header("Refresh: $duree;url=$this->baseurl/$filename");
-        }
-        else {
-        echo '<script type="text/javascript">';
-        echo 'window.location.href="'.$filename.'";';
-        echo '</script>';
-        echo '<noscript>';
-        echo '<meta http-equiv="refresh" content="'.$duree.';url='.$this->baseurl."/".$filename.'" />';
-        echo '</noscript>';
-        }
-
-    }
-
 // Ajout de trajet
     public function newTraject($depart, $destination, $jour_voyage, $heure_depart, $allerRetour, $nbPassagers, $step1, $step2, $step3) {
         $addTraject = $this->connect()->prepare("INSERT INTO trajets (depart, destination, jour_voyage, heure_depart, aller_retour, nb_voyageurs, etape_1, etape_2, etape_3, id_user) VALUES (:depart, :destination, :jour_voyage, :heure_depart, :aller_retour, :nb_voyageurs, :etape_1, :etape_2, :etape_3, :id_user)");

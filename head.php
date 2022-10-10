@@ -1,6 +1,6 @@
 <?php 
 require_once("./class/User.php");
-$allowed = ['/blablacampus/index.php', '/blablacampus/register.php', '/blablacampus/login.php', '/blablacampus/passwordreset.php'];
+$allowed = ['/blablacampus/index.php', '/blablacampus/register.php', '/blablacampus/login.php', '/blablacampus/passwordreset.php', '/blablacampus/newpassword.php' , '/blablacampus/confirmation.php'];
 if(!isset($_SESSION['name_user']) && !in_array($_SERVER['PHP_SELF'], $allowed)) {
     header('Location: ./index.php');
 }
