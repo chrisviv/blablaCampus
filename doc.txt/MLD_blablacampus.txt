@@ -1,0 +1,4 @@
+users = (id_user VARCHAR(50), username VARCHAR(255), password VARCHAR(255), name VARCHAR(255), picture VARCHAR(255), mail VARCHAR(255), bio VARCHAR(255));
+trajets = (id_trajet VARCHAR(50), depart VARCHAR(255), destination VARCHAR(255), date_depart DATETIME, date_etape1 DATETIME, date_etape2 DATETIME, date_etape3 DATETIME, date_destination DATETIME, aller_retour LOGICAL, nb_voyageurs INT, etape_1 VARCHAR(255), etape_2 VARCHAR(255), etape_3 VARCHAR(255), #id_user);
+reservation = (id_reservation VARCHAR(50), #id_user, #id_trajet);
+demandes = (id_demande VARCHAR(50), #id_trajet, #id_user);
