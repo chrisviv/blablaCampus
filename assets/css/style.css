@@ -1958,6 +1958,10 @@ span {
     animation: bounce2 0.5s alternate infinite;
 }
 
+.displayflex{
+    display: flex;
+}
+
 @media screen and (min-width: 1024px) {
     .mainAccueil {
         min-height: 70vh;
