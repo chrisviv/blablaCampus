@@ -9,10 +9,8 @@ function addressAutocomplete(inputElement, containerElement, callback) {
   /* Active request promise reject function. To be able to cancel the promise when a new request comes */
   var currentPromiseReject;
 
-
   /* Current autocomplete items data (GeoJSON.Feature) */
   var currentItems;
-
 
   var clearButton = document.createElement("div");
   clearButton.classList.add("clear-button");
@@ -33,8 +31,6 @@ function addressAutocomplete(inputElement, containerElement, callback) {
     closeDropDownList();
 
     var currentValue = this.value;
-
-
 
     // Cancel previous request promise
     if (currentPromiseReject) {
@@ -77,7 +73,6 @@ function addressAutocomplete(inputElement, containerElement, callback) {
           }
         });
     });
-
 
     promise.then((data) => {
       currentItems = data.features;
@@ -131,15 +126,9 @@ function addressAutocomplete(inputElement, containerElement, callback) {
   }
 }
 
-
-
-
-
 addressAutocomplete(inputDepart, autocomplete, (data) => {
 
 });
-
-
 
 if(document.body.contains(inputDepart2) != false){
   addressAutocomplete(inputDepart2, autocomplete2, (data) => {
@@ -164,21 +153,13 @@ if(document.body.contains(inputDepart2) != false){
     inputAdd.type = "text"
     inputAdd.placeholder = 'Etape'
    
-  
-   
-    
-    
-  
     content.appendChild(img)
     content.appendChild(inputAdd)
     divContainer.appendChild(content);
     forml.insertBefore(divContainer, submit);
     divContainer.appendChild(btnAdd)
-  
-  
-   
+     
   }
-
 
   btnAdd.addEventListener('click', ()=>{
     let arrayInput = document.querySelectorAll('.etapes-row');
@@ -186,7 +167,6 @@ if(document.body.contains(inputDepart2) != false){
       createElement()
       autoArray()
     }
-
   
     let cc = document.querySelectorAll('.input-etape')
     if(cc[0].name == "etapes"){
@@ -194,14 +174,8 @@ if(document.body.contains(inputDepart2) != false){
           
           cc[i].name = "etapes" + i
           
-          
         }
-      
-  
     }
-     
-    
-  
   })
 
   
@@ -242,52 +216,3 @@ let retour = document.getElementById('retour')
         }
     })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-/* var myAPIKey = '360b948f27c34be5be832cd8c5e132e9' */
-
-/* const map = L.map('map', {zoomControl: false}).setView([48.864716, 2.349014], 12);
-
-  // Retina displays require different mat tiles quality
-const isRetina = L.Browser.retina;
-
-const baseUrl = "https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=" + myAPIKey;
-const retinaUrl = "https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}@2x.png?apiKey=" + myAPIKey;
-
-  // Add map tiles layer. Set 20 as the maximal zoom and provide map data attribution.
-L.tileLayer(isRetina ? retinaUrl : baseUrl, {
-    attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | <a href="https://openmaptiles.org/" rel="nofollow" target="_blank">(c) OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" rel="nofollow" target="_blank">(c) OpenStreetMap</a> contributors',
-    apiKey: myAPIKey,
-    maxZoom: 20,
-    
-    id: 'osm-bright'
-  }).addTo(map);
-
-  // add a zoom control to bottom-right corner
-
-L.control.zoom({
-    position: 'bottomright'
-  }).addTo(map); 
- */

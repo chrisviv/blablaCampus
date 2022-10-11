@@ -19,40 +19,55 @@
   
   
   function append(element, element2) {
-    if (window.matchMedia("(max-width: 1024px)").matches) {
+ 
       
-      if(document.body.contains(homeMobile) != false){
-        homeMobile.classList.remove('none')
-  
-    }
-  }else{
     
       fullScreen.style = "display:flex;"
       if(document.body.contains(element2) != false){
       element.appendChild(element2)
       fullScreen.classList.remove('none')
     }
-  }
+  
    
   }
   
-  
-  
-  append(homePc, homeMobile)
-  append(homePc, register)
-  append(homePc, login)
-  append(homePc, confirmation)
-  append(homePc, search)
-  append(homePc, add)
-  append(homePc, reservation)
-  append(homePc, messagerie)
-  append(homePc, list)
-  append(homePc, del)
-  append(homePc, delRide)
-  append(homePc, resetpw)
-  append(homePc, cancel)
-  append(homePc, bookSeatMain)
-  
-  
+  function childRemover(){
+    document.body.appendChild(homePc.lastChild)
+  }
 
 
+var mediaqueryList = window.matchMedia("(max-width: 1024px)")
+
+function handler(event) {
+  if(event.matches) {
+    if(document.body.contains(homeMobile) != false){
+      homeMobile.classList.remove('none')
+      
+      
+  }
+  document.body.appendChild(homePc.lastChild)
+  fullScreen.classList.add('none')
+  } else {
+    append(homePc, homeMobile)
+    append(homePc, register)
+    append(homePc, login)
+    append(homePc, confirmation)
+    append(homePc, search)
+    append(homePc, add)
+    append(homePc, reservation)
+    append(homePc, messagerie)
+    append(homePc, list)
+    append(homePc, del)
+    append(homePc, delRide)
+    append(homePc, resetpw)
+    append(homePc, cancel)
+    append(homePc, bookSeatMain)
+    if(document.body.contains(homeMobile) != false){
+    homeMobile.classList.add('none')}
+  }
+}
+
+handler(mediaqueryList)
+
+// asociamos el manejador de evento
+mediaqueryList.addEventListener('change', handler);

@@ -86,7 +86,7 @@
         <img src="assets/img/xmark.svg" class="xmark" alt="icon de fermeture">
         <h2 class="titleLegales">MENTIONS LEGALES</h2>
         <div class="sublegales">
-            <p>Le site web https://leog1514.promo-167.codeur.online/blablacampus/ est édité par les apprenants de l'Access Code School de Lons le Saunier et n'est en aucun cas destiné à une utilisation commerciale. Celui-ci à été développpé dans le cadre d'un projet d'étude.</p>
+            <p>Le site web https://jorgeg1513.promo-167.codeur.online/blablacampus/ est édité par les apprenants de l'Access Code School de Lons le Saunier et n'est en aucun cas destiné à une utilisation commerciale. Celui-ci à été développpé dans le cadre d'un projet d'étude.</p>
 
             <h2>Hébergement</h2>
 
