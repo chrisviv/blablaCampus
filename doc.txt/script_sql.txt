@@ -1,47 +1,54 @@
-CREATE TABLE users(
-   id_user VARCHAR(50),
-   username VARCHAR(255),
-   password VARCHAR(255),
-   name VARCHAR(255),
-   picture VARCHAR(255),
-   mail VARCHAR(255),
-   bio VARCHAR(255),
-   PRIMARY KEY(id_user)
-);
+-- Adminer 4.8.1 MySQL 5.5.5-10.6.7-MariaDB-1:10.6.7+maria~buster dump
 
-CREATE TABLE trajets(
-   id_trajet VARCHAR(50),
-   depart VARCHAR(255),
-   destination VARCHAR(255),
-   date_depart DATETIME,
-   date_etape1 DATETIME,
-   date_etape2 DATETIME,
-   date_etape3 DATETIME,
-   date_destination DATETIME,
-   aller_retour INT,
-   nb_voyageurs INT,
-   etape_1 VARCHAR(255),
-   etape_2 VARCHAR(255),
-   etape_3 VARCHAR(255),
-   id_user VARCHAR(50) NOT NULL,
-   PRIMARY KEY(id_trajet),
-   FOREIGN KEY(id_user) REFERENCES users(id_user)
-);
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-CREATE TABLE reservation(
-   id_reservation VARCHAR(50),
-   id_user VARCHAR(50) NOT NULL,
-   id_trajet VARCHAR(50) NOT NULL,
-   PRIMARY KEY(id_reservation),
-   FOREIGN KEY(id_user) REFERENCES users(id_user),
-   FOREIGN KEY(id_trajet) REFERENCES trajets(id_trajet)
-);
+DROP TABLE IF EXISTS `reservation`;
+CREATE TABLE `reservation` (
+  `id_reservation` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` varchar(50) NOT NULL,
+  `id_conducteur` int(11) NOT NULL,
+  `id_trajet` varchar(50) NOT NULL,
+  `accepted` tinyint(1) DEFAULT NULL,
+  `cancel` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_reservation`),
+  KEY `id_user` (`id_user`),
+  KEY `id_trajet` (`id_trajet`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE TABLE demandes(
-   id_demande VARCHAR(50),
-   id_trajet VARCHAR(50) NOT NULL,
-   id_user VARCHAR(50) NOT NULL,
-   PRIMARY KEY(id_demande),
-   FOREIGN KEY(id_trajet) REFERENCES trajets(id_trajet),
-   FOREIGN KEY(id_user) REFERENCES users(id_user)
-);
+
+DROP TABLE IF EXISTS `trajets`;
+CREATE TABLE `trajets` (
+  `id_trajet` int(11) NOT NULL AUTO_INCREMENT,
+  `depart` varchar(255) DEFAULT NULL,
+  `destination` varchar(255) DEFAULT NULL,
+  `jour_voyage` date DEFAULT NULL,
+  `heure_depart` time NOT NULL,
+  `aller_retour` varchar(255) DEFAULT NULL,
+  `nb_voyageurs` int(11) DEFAULT NULL,
+  `etape_1` varchar(255) DEFAULT NULL,
+  `etape_2` varchar(255) DEFAULT NULL,
+  `etape_3` varchar(255) DEFAULT NULL,
+  `id_user` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_trajet`),
+  KEY `id_user` (`id_user`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password_user` varchar(255) DEFAULT NULL,
+  `name_user` varchar(255) DEFAULT NULL,
+  `mail` varchar(255) DEFAULT NULL,
+  `bio` varchar(255) DEFAULT NULL,
+  `picture` longblob DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+-- 2022-10-12 07:14:31
