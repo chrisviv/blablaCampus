@@ -82,7 +82,7 @@ include('./homepc.php');
             echo "
             <form action='' method='get'>
                 <input type='hidden' name='id_trajet' value='$trajectID'>
-                <input class='bookSeatBtn' type='submit' name='reservation' value='$msg'>
+                <input style='letter-spacing: 3px;' class='bookSeatBtn' type='submit' name='reservation' value='$msg'>
             </form>
             ";
         }else {
