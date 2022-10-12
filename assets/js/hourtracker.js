@@ -7,9 +7,6 @@ window.onload = () => {
   let halfPlace = document.querySelectorAll('.half-place')
   let halfPlace2 = document.querySelectorAll('.half-place2')
   let halfPlace3 = document.querySelectorAll('.half-place3')
-
-
-
   let halfHour = document.querySelectorAll('.half-hour')
   let halfHour2 = document.querySelectorAll('.half-hour2')
   let halfHour3 = document.querySelectorAll('.half-hour3')
@@ -66,28 +63,38 @@ window.onload = () => {
 
           let replace = add[i].textContent.replace(':', '')
           let secondvalue = secondsToHms(time)
-
+        
 
           let finalValue = parseInt(replace) + parseInt(secondvalue)
-          if (finalValue <= 1000) {
+          if (finalValue < 1000) {
             finalValue = '0' + finalValue
-
+            
           }
+          if (finalValue < 100){
+            finalValue = "0" + finalValue
+          }
+          console.log(finalValue);
+         
           let opt1 = finalValue.toString().substring(0, 2)
           let opt2 = finalValue.toString().substring(2, 4)
 
-          if (opt2 > 60) {
+          if (opt2 >= 60) {
             opt2 = parseInt(opt2) - 60
             opt1 = parseInt(opt1) + 1
             if (opt1 < 10) {
-              opt1 = '0' + opt1
+              opt1 = 0 + opt1
             }
-
+            if (parseInt(opt1) == 0){
+              opt1 = "00"
+             
+            }
           }
+         
+
           if (opt2 < 10) {
             opt2 = '0' + opt2
           }
-
+          
           container.textContent = opt1 + ':' + opt2
         }
 
@@ -112,11 +119,7 @@ window.onload = () => {
       h = '0' + h
 
     }
-
-
     return h + m
-
-
 
   }
 
@@ -190,10 +193,13 @@ window.onload = () => {
           finalValue = '0' + finalValue
 
         }
+        if (finalValue < 100){
+          finalValue = "0" + finalValue
+        }
         let opt1 = finalValue.toString().substring(0, 2)
         let opt2 = finalValue.toString().substring(2, 4)
-
-        if (opt2 > 60) {
+        
+        if (opt2 >= 60) {
           opt2 = parseInt(opt2) - 60
           opt1 = parseInt(opt1) + 1
           if (opt1 < 10) {
@@ -206,6 +212,7 @@ window.onload = () => {
         }
 
         container.textContent = opt1 + ':' + opt2
+        
       }
     }
   }
