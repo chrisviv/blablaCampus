@@ -101,7 +101,7 @@ elseif($_SESSION['search'][3] != 'on'){
                 $etape3 ="";
             }
 
-            if($data[$i]['nb_voyageurs'] = 1) {
+            if($data[$i]['nb_voyageurs'] == 1) {
                 $places = 'PLACE DISPONIBLE';
             }
             else {
