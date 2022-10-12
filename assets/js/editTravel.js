@@ -168,8 +168,9 @@ function createElement(string){
 
 if(inputAdd.value != undefined){
   inputAdd.value = string
-}else{
-  
+}
+if(inputAdd.value == "undefined"){
+  inputAdd.value = ''
 }
   
   
