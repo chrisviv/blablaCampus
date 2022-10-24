@@ -169,7 +169,7 @@ class Trajects extends User {
         $newReservation->bindValue(':idTrajet', $idTrajet);
         $newReservation->execute();
         $_SESSION['confirmMessage'] = 'Votre message a bien été envoyé !';
-        $this->redirect("./blablacampus/confirmation.php", "0");
+        $this->redirect("./confirmation.php", "0");
 
     }
 
@@ -206,7 +206,7 @@ class Trajects extends User {
         $removePlace->bindValue(':nbVoyageurs', $placeDispo);
         $removePlace->execute();
         $_SESSION['confirmMessage'] = 'Votre message a bien été envoyé !';
-        $this->redirect("./blablacampus/confirmation.php", "0");
+        $this->redirect("./confirmation.php", "0");
     }
 
     public function checkReservations($idTrajet, $idUser) {
@@ -248,7 +248,7 @@ class Trajects extends User {
         $cancel->bindValue(':idTrajet', $idTrajet);
         $cancel->execute();
         $_SESSION['confirmMessage']= 'Votre réservation a bien été annulée.';
-        $this->redirect("./blablacampus/confirmation.php", "0");
+        $this->redirect("./confirmation.php", "0");
     }
 
     public function checkDeletedTraject($idUser) {
