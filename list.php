@@ -105,7 +105,7 @@ elseif($_SESSION['search'][3] != 'on'){
                 $places = 'PLACE DISPONIBLE';
             }
             else {
-                $places = 'PLACE DISPONIBLES';
+                $places = 'PLACES DISPONIBLES';
             }
     // Affichage des etapes
             echo "

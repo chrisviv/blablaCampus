@@ -8,7 +8,6 @@ if(isset($_GET['edit'])){
 }
 if(isset($_GET['editTraject'])) {
     $_SESSION['id_trajet'] = $_GET['id_trajet'];
-    var_dump($_SESSION['id_trajet']);
     $id = $_SESSION['id_trajet'];
     $depart = $_GET['depart'];
     $destination = $_GET['destination'];

@@ -4,8 +4,6 @@ require_once("./class/Trajects.php");
 $trajet = new Trajects($_SESSION['name_user']);
 if(isset($_GET['destroy'])) {
     $trajet->cancelTraject($_GET['id_trajet']);
-}else {
-    header('Location: ./search.php');
 }
 
 ?>

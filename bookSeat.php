@@ -40,6 +40,7 @@ if(isset($_GET['reservation'])){
         $trajet->addReservation($idUser, $idConducteur['id_user'],$idTrajet);
     }
     else {
+        $trajet->reReservation($existReserv['id_reservation']);
         $msg = 'Tu as déjà réservé ce trajet';
     }
 }

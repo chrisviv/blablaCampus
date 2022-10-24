@@ -8,7 +8,9 @@ $user->getData($_SESSION['name_user']);
 $dataReservation = $trajet->getReservations($user->id);
 $dataValidation = $trajet->getValidations($user->id);
 $dataCanceled = $trajet->getCanceled($user->id);
-$messages = count($dataReservation) + count($dataValidation) + count($dataCanceled);
+$dataPassagerCanceled = $trajet->getCanceledByPassager($user->id);
+$messages = count($dataReservation) + count($dataValidation) + count($dataCanceled) + count($dataPassagerCanceled);
+$trajet->checkDeletedTraject($user->id);
 
 
 ?>
@@ -81,6 +83,28 @@ $messages = count($dataReservation) + count($dataValidation) + count($dataCancel
             <div class="circul"></div>
             ';
         }
+        
+        for ($i=0; $i < count($dataPassagerCanceled); $i++) {
+            $dataPassager = $user->getDataByID($dataPassagerCanceled[$i]['id_user']);
+            $day = substr($dataPassagerCanceled[$i]['jour_voyage'], 8);
+            $monthNumber = substr($dataPassagerCanceled[$i]['jour_voyage'], 5, 2);
+            $month = $trajet->checkMonthFull($monthNumber);
+            $year = substr($dataPassagerCanceled[$i]['jour_voyage'], 0, 4);
+            echo '
+            <div class="messagerieMain">
+                <img class="redCircul" src="data:image;base64,'.$dataPassager['picture'].'" alt="">
+                <div class="messagerieCircul">
+    
+                    <p class="m-10"><span>'.$dataPassager["username"].'</span></p>
+                    <p><span> ANNULATION </span>de réservation pour le trajet</p>
+                    <p>'.$dataPassagerCanceled[$i]["depart"].' - '.$dataPassagerCanceled[$i]["destination"].' du '.$day.' '.$month.' '.$year.'</p>
+                </div>
+            </div>
+    
+            <div class="ligne"></div>
+            <div class="circul"></div>
+            ';
+        }
     }
     else {
         echo "<h2> Tu n'as aucun message.</h2>";
@@ -89,6 +113,8 @@ $messages = count($dataReservation) + count($dataValidation) + count($dataCancel
 
     
     ?>
+
+    <!-- MODEL HTML DE MESSAGERIE  -->
 
     <!-- <div class="messagerieMain">
         <img class='redCircul' src="https://picsum.photos/200" alt="">
