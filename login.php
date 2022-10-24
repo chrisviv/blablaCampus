@@ -25,11 +25,7 @@ include('./homepc.php');
                 <h1>SE CONNECTER</h1>
             </div>
         </div>
-
-
        
-           
-            
             <form action="" method="post" class="formLogin">
                 <h2>ENTREZ VOS COORDONNÉES</h2>
                 <input class="ipLogin" type="text" name="username" placeholder="Nom d'utilisateur" value="<?php if(isset($login)){echo $login;}?>">

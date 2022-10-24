@@ -1,6 +1,7 @@
 <?php include('head.php'); 
 require_once("./class/Trajects.php");
 include('./homepc.php');
+
 $user = new User();
 $trajet = new Trajects($_SESSION['name_user']);
 $user->getData($_SESSION['name_user']);
