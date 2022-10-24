@@ -49,9 +49,8 @@ labelContent.ondragover = labelContent.ondragenter = function(evt) {
         hiddenContent.classList.add('none')
         check_false.src = "assets/img/check.svg"
         nameImg.textContent = uploadField.files[0].name
-        console.log(uploadField.files[0]);
-       
-     };
+      
+      };
     
     evt.preventDefault();
   };

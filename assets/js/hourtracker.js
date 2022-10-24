@@ -73,7 +73,7 @@ window.onload = () => {
           if (finalValue < 100){
             finalValue = "0" + finalValue
           }
-          console.log(finalValue);
+    
          
           let opt1 = finalValue.toString().substring(0, 2)
           let opt2 = finalValue.toString().substring(2, 4)

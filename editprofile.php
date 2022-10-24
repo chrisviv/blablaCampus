@@ -13,7 +13,6 @@ if(isset($_POST['edit'])){
         $picture = $user->picture;
     }
     else {
-        var_dump($_FILES['profilePic']);
         $fileName = $_FILES['profilePic']['name'];
         $fileTmpName = $_FILES['profilePic']['tmp_name'];
         $fileSize = $_FILES['profilePic']['size'];
